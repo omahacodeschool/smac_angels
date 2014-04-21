@@ -11,7 +11,52 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140421204511) do
+ActiveRecord::Schema.define(:version => 20140421210258) do
+
+  create_table "emails", :force => true do |t|
+    t.integer  "request_id"
+    t.text     "content"
+    t.integer  "template_id"
+    t.string   "to_addresses"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "requests", :force => true do |t|
+    t.integer  "requestor_id"
+    t.integer  "angel_id"
+    t.integer  "sockmonkey_id"
+    t.boolean  "obo"
+    t.boolean  "anon_req"
+    t.boolean  "anon_angel"
+    t.string   "ship_address"
+    t.string   "ship_city"
+    t.string   "ship_state"
+    t.string   "ship_zipcode"
+    t.text     "story"
+    t.string   "external_url"
+    t.string   "before_photo_url"
+    t.string   "after_photo_url"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "sockmonkeys", :force => true do |t|
+    t.string   "name"
+    t.string   "image_url"
+    t.text     "description"
+    t.string   "cancertype"
+    t.string   "favcolor"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "templates", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                           :null => false
