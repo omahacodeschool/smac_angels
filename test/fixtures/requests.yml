@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  requester_id: 1
+  angel_id: 1
+  obo: false
+  anon_req: false
+  anon_angel: false
+  ship_address: MyString
+  ship_city: MyString
+  ship_state: MyString
+  ship_zipcode: MyString
+  story: MyText
+  external_url: MyString
+  before_photo_url: MyString
+  after_photo_url: MyString
+
+two:
+  requester_id: 1
+  angel_id: 1
+  obo: false
+  anon_req: false
+  anon_angel: false
+  ship_address: MyString
+  ship_city: MyString
+  ship_state: MyString
+  ship_zipcode: MyString
+  story: MyText
+  external_url: MyString
+  before_photo_url: MyString
+  after_photo_url: MyString

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  request_id: 1
+  content: MyText
+  template_id: 1
+  to_addresses: MyString
+
+two:
+  request_id: 1
+  content: MyText
+  template_id: 1
+  to_addresses: MyString

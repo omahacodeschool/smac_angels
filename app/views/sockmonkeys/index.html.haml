@@ -1,0 +1,27 @@
+%h1 Listing sockmonkeys
+
+%table
+  %tr
+    %th Name
+    %th Image url
+    %th Description
+    %th Cancertype
+    %th Favcolor
+    %th
+    %th
+    %th
+
+  - @sockmonkeys.each do |sockmonkey|
+    %tr
+      %td= sockmonkey.name
+      %td= sockmonkey.image_url
+      %td= sockmonkey.description
+      %td= sockmonkey.cancertype
+      %td= sockmonkey.favcolor
+      %td= link_to 'Show', sockmonkey
+      %td= link_to 'Edit', edit_sockmonkey_path(sockmonkey)
+      %td= link_to 'Destroy', sockmonkey, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Sockmonkey', new_sockmonkey_path
