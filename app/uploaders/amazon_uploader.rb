@@ -1,4 +1,4 @@
-class AmazonUploader < CarrierWave::Uploader::Base
+class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   include Sprockets::Helpers::RailsHelper
@@ -10,7 +10,7 @@ class AmazonUploader < CarrierWave::Uploader::Base
   process :set_content_type
 
   def store_dir
-    "uploads/#{@user.class.to_s.underscore}/#{mounted_as}/#{@user.id}"
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   version :user_thumb do
