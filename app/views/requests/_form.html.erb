@@ -14,8 +14,8 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :requester_id %>
-    <%= f.number_field :requester_id %>
+    <%= f.label :requestor_id %>
+    <%= f.number_field :requestor_id %>
   </div>
   <div class="field">
     <%= f.label :angel_id %>
@@ -58,8 +58,12 @@
     <%= f.text_field :external_url %>
   </div>
   <div class="field">
-    <%= f.label :before_photo_url %>
-    <%= f.text_field :before_photo_url %>
+    <p>
+      <%= f.file_field :avatar %>
+    </p>
+    <p>
+      <%= f.label :before_photo_url, "or image URL" %><br />
+      <%= f.text_field :before_photo_url %>
   </div>
   <div class="field">
     <%= f.label :after_photo_url %>

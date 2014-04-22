@@ -18,7 +18,7 @@ class RequestsControllerTest < ActionController::TestCase
 
   test "should create request" do
     assert_difference('Request.count') do
-      post :create, request: { after_photo_url: @request.after_photo_url, angel_id: @request.angel_id, anon_angel: @request.anon_angel, anon_req: @request.anon_req, before_photo_url: @request.before_photo_url, external_url: @request.external_url, obo: @request.obo, requester_id: @request.requester_id, ship_address: @request.ship_address, ship_city: @request.ship_city, ship_state: @request.ship_state, ship_zipcode: @request.ship_zipcode, story: @request.story }
+      post :create, request: { after_photo_url: @request.after_photo_url, angel_id: @request.angel_id, anon_angel: @request.anon_angel, anon_req: @request.anon_req, before_photo_url: @request.before_photo_url, external_url: @request.external_url, obo: @request.obo, requestor_id: @request.requestor_id, ship_address: @request.ship_address, ship_city: @request.ship_city, ship_state: @request.ship_state, ship_zipcode: @request.ship_zipcode, story: @request.story }
     end
 
     assert_redirected_to request_path(assigns(:request))
@@ -35,7 +35,7 @@ class RequestsControllerTest < ActionController::TestCase
   end
 
   test "should update request" do
-    put :update, id: @request, request: { after_photo_url: @request.after_photo_url, angel_id: @request.angel_id, anon_angel: @request.anon_angel, anon_req: @request.anon_req, before_photo_url: @request.before_photo_url, external_url: @request.external_url, obo: @request.obo, requester_id: @request.requester_id, ship_address: @request.ship_address, ship_city: @request.ship_city, ship_state: @request.ship_state, ship_zipcode: @request.ship_zipcode, story: @request.story }
+    put :update, id: @request, request: { after_photo_url: @request.after_photo_url, angel_id: @request.angel_id, anon_angel: @request.anon_angel, anon_req: @request.anon_req, before_photo_url: @request.before_photo_url, external_url: @request.external_url, obo: @request.obo, requestor_id: @request.requestor_id, ship_address: @request.ship_address, ship_city: @request.ship_city, ship_state: @request.ship_state, ship_zipcode: @request.ship_zipcode, story: @request.story }
     assert_redirected_to request_path(assigns(:request))
   end
 
