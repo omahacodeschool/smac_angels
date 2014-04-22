@@ -1,0 +1,26 @@
+<p id="notice">
+  <%= notice %>
+</p>
+<p>
+  <b>Name:</b>
+  <%= @sockmonkey.name %>
+</p>
+<p>
+  <b>Image url:</b>
+  <%= @sockmonkey.image_url %>
+</p>
+<p>
+  <b>Description:</b>
+  <%= @sockmonkey.description %>
+</p>
+<p>
+  <b>Cancertype:</b>
+  <%= @sockmonkey.cancertype %>
+</p>
+<p>
+  <b>Favcolor:</b>
+  <%= @sockmonkey.favcolor %>
+</p>
+<%= link_to 'Edit', edit_sockmonkey_path(@sockmonkey) %>
+\|
+<%= link_to 'Back', sockmonkeys_path %>

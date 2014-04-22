@@ -1,0 +1,43 @@
+<h1>Listing sockmonkeys</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Image url</th>
+    <th>Description</th>
+    <th>Cancertype</th>
+    <th>Favcolor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @sockmonkeys.each do |sockmonkey| %>
+    <tr>
+      <td>
+        <%= sockmonkey.name %>
+      </td>
+      <td>
+        <%= sockmonkey.image_url %>
+      </td>
+      <td>
+        <%= sockmonkey.description %>
+      </td>
+      <td>
+        <%= sockmonkey.cancertype %>
+      </td>
+      <td>
+        <%= sockmonkey.favcolor %>
+      </td>
+      <td>
+        <%= link_to 'Show', sockmonkey %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_sockmonkey_path(sockmonkey) %>
+      </td>
+      <td>
+        <%= link_to 'Destroy', sockmonkey, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+<%= link_to 'New Sockmonkey', new_sockmonkey_path %>
