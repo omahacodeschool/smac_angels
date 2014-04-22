@@ -1,26 +1,8 @@
 <p id="notice">
   <%= notice %>
 </p>
-<p>
-  <b>Requester:</b>
-  <%= @request.requester_id %>
-</p>
-<p>
-  <b>Angel:</b>
-  <%= @request.angel_id %>
-</p>
-<p>
-  <b>Obo:</b>
-  <%= @request.obo %>
-</p>
-<p>
-  <b>Anon req:</b>
-  <%= @request.anon_req %>
-</p>
-<p>
-  <b>Anon angel:</b>
-  <%= @request.anon_angel %>
-</p>
+<%#= image_tag(request.before_photo_url) %>
+Photo will be here.
 <p>
   <b>Ship address:</b>
   <%= @request.ship_address %>
@@ -45,13 +27,16 @@
   <b>External url:</b>
   <%= @request.external_url %>
 </p>
-<p>
-  <b>Before photo url:</b>
-  <%= @request.before_photo_url %>
-</p>
-<p>
-  <b>After photo url:</b>
-  <%= @request.after_photo_url %>
-</p>
+<%= form_tag(new_session_path) do %>
+  <%= hidden_field 'request_id', :value => @request.id %>
+  <div class="field">
+    <%= label_tag "Anonymous Angel?" %>
+    <%= check_box_tag 'anonymous' %>
+  </div>
+  <div>
+    <%= submit_tag "Become Angel" %>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_request_path(@request) %>
 <%= link_to 'Back', requests_path %>
