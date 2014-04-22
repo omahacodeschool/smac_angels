@@ -9,5 +9,5 @@ SmacAngel::Application.routes.draw do
   resources :requests
   resources :users
   resources :sessions
-
+  resources :password_resets
 end
