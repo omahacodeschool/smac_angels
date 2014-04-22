@@ -67,6 +67,11 @@
       <div class="container">
         <%= yield :hero_unit %>
       </div>
+    </div> 
+    
+    <div class="container">
+      <%= bootstrap_flash %>
+      <%= yield %>
     </div>
     
     <div class="container">
@@ -97,7 +102,6 @@
         <p>&copy; Our Friggin Logo</p>
       </footer>
 
-    </div> <!-- /container -->
 
   </body>
 </html>
