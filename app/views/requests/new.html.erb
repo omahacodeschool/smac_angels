@@ -1,3 +1,18 @@
+<!-- <div class="hero-unit">
+  <div class="container">
+  <h1>Hello World!</h1>
+  <p>Can anybody see me?</p>
+  <p>
+    <a class="btn btn-primary btn-large">
+      Enroll!
+    </a>
+  </p>
+  </div>
+</div> -->
+
+<%= request.original_url %>
+<%= Rails.root %>
+
 <%- model_class = Request -%>
 <div class="page-header">
   <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
