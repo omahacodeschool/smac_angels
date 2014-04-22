@@ -48,3 +48,5 @@ gem 'carrierwave'
 gem 'fog'
 
 gem 'negative_captcha'
+
+gem 'pry-rails', :group => :development
