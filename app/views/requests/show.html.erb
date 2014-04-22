@@ -1,0 +1,58 @@
+<p id="notice">
+  <%= notice %>
+</p>
+<p>
+  <b>Requester:</b>
+  <%= @request.requester_id %>
+</p>
+<p>
+  <b>Angel:</b>
+  <%= @request.angel_id %>
+</p>
+<p>
+  <b>Obo:</b>
+  <%= @request.obo %>
+</p>
+<p>
+  <b>Anon req:</b>
+  <%= @request.anon_req %>
+</p>
+<p>
+  <b>Anon angel:</b>
+  <%= @request.anon_angel %>
+</p>
+<p>
+  <b>Ship address:</b>
+  <%= @request.ship_address %>
+</p>
+<p>
+  <b>Ship city:</b>
+  <%= @request.ship_city %>
+</p>
+<p>
+  <b>Ship state:</b>
+  <%= @request.ship_state %>
+</p>
+<p>
+  <b>Ship zipcode:</b>
+  <%= @request.ship_zipcode %>
+</p>
+<p>
+  <b>Story:</b>
+  <%= @request.story %>
+</p>
+<p>
+  <b>External url:</b>
+  <%= @request.external_url %>
+</p>
+<p>
+  <b>Before photo url:</b>
+  <%= @request.before_photo_url %>
+</p>
+<p>
+  <b>After photo url:</b>
+  <%= @request.after_photo_url %>
+</p>
+<%= link_to 'Edit', edit_request_path(@request) %>
+\|
+<%= link_to 'Back', requests_path %>

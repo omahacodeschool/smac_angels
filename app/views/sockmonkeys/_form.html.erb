@@ -1,0 +1,39 @@
+<%= form_for @sockmonkey do |f| %>
+  <% if @sockmonkey.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(@sockmonkey.errors.count, "error")} prohibited this sockmonkey from being saved:" %>
+      </h2>
+      <ul>
+        <% @sockmonkey.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :cancertype %>
+    <%= f.text_field :cancertype %>
+  </div>
+  <div class="field">
+    <%= f.label :favcolor %>
+    <%= f.text_field :favcolor %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Save' %>
+  </div>
+<% end %>

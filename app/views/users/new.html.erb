@@ -1,0 +1,35 @@
+<%= form_for @user do%>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= raw negative_captcha(@captcha) %>
+  <div class="field">
+    <%= negative_label_tag(@captcha, :email, "Email:") %>
+    <%= negative_text_field_tag(@captcha, :email) %>
+  </div>
+  <div class="field">
+    <%= negative_label_tag(@captcha, :fname, "First Name:") %>
+    <%= negative_text_field_tag(@captcha, :fname) %>
+  </div>
+  <div class="field">
+    <%= negative_label_tag(@captcha, :lname, "Last Name:") %>
+    <%= negative_text_field_tag(@captcha, :lname) %>
+  </div>
+  <div class="field">
+    <%= negative_label_tag(@captcha, :password, "Password:") %>
+    <%= negative_text_field_tag(@captcha, :password) %>
+  </div>
+  <div class="field">
+    <%= negative_label_tag(@captcha, :password_confirmation, "Password Confirmation:") %>
+    <%= negative_text_field_tag(@captcha, :password_confirmation) %>
+  </div>
+  
+  <div class="actions"><%= submit_tag %></div>
+<% end %>
