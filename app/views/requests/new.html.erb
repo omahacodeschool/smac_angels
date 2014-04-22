@@ -1,3 +1,4 @@
 <h1>Recipient</h1>
-<%= render 'form' %>
+<% binding.pry %>
+<%= render :partial => 'form', :locals => {:request => @request} %>
 <%= link_to 'Back', requests_path %>
