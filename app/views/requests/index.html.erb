@@ -1,75 +1,17 @@
-<h1>Listing requests</h1>
-<table>
-  <tr>
-    <th>Requester</th>
-    <th>Angel</th>
-    <th>Obo</th>
-    <th>Anon req</th>
-    <th>Anon angel</th>
-    <th>Ship address</th>
-    <th>Ship city</th>
-    <th>Ship state</th>
-    <th>Ship zipcode</th>
-    <th>Story</th>
-    <th>External url</th>
-    <th>Before photo url</th>
-    <th>After photo url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div>
+  Short message on how to become an Angel...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat.
+</div>
+
+<h2>Select a recipient:</h2>
+
+<div>
   <% @requests.each do |request| %>
-    <tr>
-      <td>
-        <%= request.requestor_id %>
-      </td>
-      <td>
-        <%= request.angel_id %>
-      </td>
-      <td>
-        <%= request.obo %>
-      </td>
-      <td>
-        <%= request.anon_req %>
-      </td>
-      <td>
-        <%= request.anon_angel %>
-      </td>
-      <td>
-        <%= request.ship_address %>
-      </td>
-      <td>
-        <%= request.ship_city %>
-      </td>
-      <td>
-        <%= request.ship_state %>
-      </td>
-      <td>
-        <%= request.ship_zipcode %>
-      </td>
-      <td>
-        <%= request.story %>
-      </td>
-      <td>
-        <%= request.external_url %>
-      </td>
-      <td>
-        <%= request.before_photo_url %>
-      </td>
-      <td>
-        <%= request.after_photo_url %>
-      </td>
-      <td>
-        <%= link_to 'Show', request %>
-      </td>
-      <td>
-        <%= link_to 'Edit', edit_request_path(request) %>
-      </td>
-      <td>
-        <%= link_to 'Destroy', request, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
-      </td>
-    </tr>
+    <div>
+      <%= link_to "Requestor Pictures #{image_tag(request.before_photo_url)}".html_safe, request_path(request.id) %>
+    </div>
   <% end %>
-</table>
-<br/>
-<%= link_to 'New Request', new_request_path %>
+</div>
+
+<%= link_to "Show More" %>

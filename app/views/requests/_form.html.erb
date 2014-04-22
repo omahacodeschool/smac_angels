@@ -13,26 +13,17 @@
       </ul>
     </div>
   <% end %>
+
+  <%= f.hidden_field :requestor_id, :value => session[:user_id] %>
+  
   <div class="field">
-    <%= f.label :requestor_id %>
-    <%= f.number_field :requestor_id %>
-  </div>
-  <div class="field">
-    <%= f.label :angel_id %>
-    <%= f.number_field :angel_id %>
-  </div>
-  <div class="field">
-    <%= f.label :obo %>
+    <%= f.label "On behalf of someone else:" %>
     <%= f.check_box :obo %>
   </div>
-  <div class="field">
-    <%= f.label :anon_req %>
-    <%= f.check_box :anon_req %>
-  </div>
-  <div class="field">
-    <%= f.label :anon_angel %>
-    <%= f.check_box :anon_angel %>
-  </div>
+  <!--<div class="field">
+    <%#= f.label "Do you want to be anonymous?" %>
+    <%#= f.check_box :anon_req %>
+  </div>-->
   <div class="field">
     <%= f.label :ship_address %>
     <%= f.text_field :ship_address %>
@@ -58,17 +49,14 @@
     <%= f.text_field :external_url %>
   </div>
   <div class="field">
-    <p>
-      <%= f.file_field :avatar %>
-    </p>
-    <p>
-      <%= f.label :before_photo_url, "or image URL" %><br />
-      <%= f.text_field :before_photo_url %>
+    <%= f.label "Recipient Picture" %>
+    <%= f.file_field :avatar %>
   </div>
   <div class="field">
-    <%= f.label :after_photo_url %>
-    <%= f.text_field :after_photo_url %>
+    <%= f.label "Picture after your receive SMAC Monkey" %>
+    <%= f.file_field :after_photo_url %>
   </div>
+
   <div class="actions">
     <%= f.submit 'Save' %>
   </div>

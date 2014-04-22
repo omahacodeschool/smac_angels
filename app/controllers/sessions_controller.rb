@@ -3,6 +3,12 @@ class SessionsController < ApplicationController
   end
   
   def create
+    if params[:request_id]
+      session[:request_id] = params[:request_id]
+      if params[:anonymous]
+        session[:anonymous] = params[:anonymous]
+      end
+    end
     user = login(params[:email], params[:password], params[:remember_me])
     if user
       redirect_back_or_to root_url, :notice => "Logged in!"

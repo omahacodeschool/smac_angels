@@ -11,7 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20140422200703) do
+
 
   create_table "emails", :force => true do |t|
     t.integer  "request_id"
@@ -70,6 +72,11 @@ ActiveRecord::Schema.define(:version => 20140422200703) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
+    t.string   "activation_state"
+    t.string   "activation_token"
+    t.datetime "activation_token_expires_at"
+    t.string   "fname"
+    t.string   "lname"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
