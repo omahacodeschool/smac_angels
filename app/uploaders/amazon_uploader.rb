@@ -10,7 +10,7 @@ class AmazonUploader < CarrierWave::Uploader::Base
   process :set_content_type
 
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads/#{@user.class.to_s.underscore}/#{mounted_as}/#{@user.id}"
   end
 
   version :user_thumb do
