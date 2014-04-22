@@ -1,3 +1,4 @@
+
 SmacAngel::Application.routes.draw do
 
   get "logout" => "sessions#destroy", :as => "logout"
@@ -10,5 +11,5 @@ SmacAngel::Application.routes.draw do
   resources :users
   resources :sessions
   resources :password_resets
-  root :to => "requests#index"
 end
+
