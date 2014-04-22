@@ -162,7 +162,7 @@ DEPENDENCIES
   carrierwave
   debugger
   dotenv-rails
-  fog (~> 1.0.0)
+  fog
   jquery-rails
   negative_captcha
   pg

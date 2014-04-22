@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  requester_id: 1
+  requestor_id: 1
   angel_id: 1
   obo: false
   anon_req: false
@@ -16,7 +16,7 @@ one:
   after_photo_url: MyString
 
 two:
-  requester_id: 1
+  requestor_id: 1
   angel_id: 1
   obo: false
   anon_req: false

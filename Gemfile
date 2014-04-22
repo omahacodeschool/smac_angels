@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.17'
+ruby '1.9.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -44,7 +45,6 @@ gem 'sorcery'
 
 
 gem 'carrierwave'
-gem 'fog', '~> 1.0.0'
+gem 'fog'
 
 gem 'negative_captcha'
-
