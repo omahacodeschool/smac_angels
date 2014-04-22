@@ -1,4 +1,4 @@
-<%= form_for @request do |f| %>
+<%= form_for request do |f| %>
   <% if @request.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -50,7 +50,7 @@
   </div>
   <div class="field">
     <%= f.label "Recipient Picture" %>
-    <%= f.file_field :avatar %>
+    <%= f.file_field :before_photo_url %>
   </div>
   <div class="field">
     <%= f.label "Picture after your receive SMAC Monkey" %>

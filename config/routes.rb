@@ -1,3 +1,4 @@
+
 SmacAngel::Application.routes.draw do
 
   resources :statuses
@@ -14,3 +15,4 @@ SmacAngel::Application.routes.draw do
   resources :sessions
   resources :password_resets
 end
+
