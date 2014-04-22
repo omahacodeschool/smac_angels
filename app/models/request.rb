@@ -5,7 +5,7 @@ class Request < ActiveRecord::Base
   
   belongs_to :requestor, :class_name => :user
   belongs_to :angel, :class_name => :user
-  # has_many :statuses
+  has_many :statuses
   # has_many :comments
   has_many :emails
   belongs_to :sockmonkey
