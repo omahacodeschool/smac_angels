@@ -1,58 +1,47 @@
-<p id="notice">
-  <%= notice %>
-</p>
-<p>
-  <b>Requester:</b>
-  <%= @request.requester_id %>
-</p>
-<p>
-  <b>Angel:</b>
-  <%= @request.angel_id %>
-</p>
-<p>
-  <b>Obo:</b>
-  <%= @request.obo %>
-</p>
-<p>
-  <b>Anon req:</b>
-  <%= @request.anon_req %>
-</p>
-<p>
-  <b>Anon angel:</b>
-  <%= @request.anon_angel %>
-</p>
-<p>
-  <b>Ship address:</b>
-  <%= @request.ship_address %>
-</p>
-<p>
-  <b>Ship city:</b>
-  <%= @request.ship_city %>
-</p>
-<p>
-  <b>Ship state:</b>
-  <%= @request.ship_state %>
-</p>
-<p>
-  <b>Ship zipcode:</b>
-  <%= @request.ship_zipcode %>
-</p>
-<p>
-  <b>Story:</b>
-  <%= @request.story %>
-</p>
-<p>
-  <b>External url:</b>
-  <%= @request.external_url %>
-</p>
-<p>
-  <b>Before photo url:</b>
-  <%= @request.before_photo_url %>
-</p>
-<p>
-  <b>After photo url:</b>
-  <%= @request.after_photo_url %>
-</p>
-<%= link_to 'Edit', edit_request_path(@request) %>
-\|
-<%= link_to 'Back', requests_path %>
+<%- model_class = Request -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:requestor_id) %>:</strong></dt>
+  <dd><%= @request.requestor_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:angel_id) %>:</strong></dt>
+  <dd><%= @request.angel_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sockmonkey_id) %>:</strong></dt>
+  <dd><%= @request.sockmonkey_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:obo) %>:</strong></dt>
+  <dd><%= @request.obo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:anon_req) %>:</strong></dt>
+  <dd><%= @request.anon_req %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:anon_angel) %>:</strong></dt>
+  <dd><%= @request.anon_angel %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ship_address) %>:</strong></dt>
+  <dd><%= @request.ship_address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ship_city) %>:</strong></dt>
+  <dd><%= @request.ship_city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ship_state) %>:</strong></dt>
+  <dd><%= @request.ship_state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ship_zipcode) %>:</strong></dt>
+  <dd><%= @request.ship_zipcode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:story) %>:</strong></dt>
+  <dd><%= @request.story %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:external_url) %>:</strong></dt>
+  <dd><%= @request.external_url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:before_photo_url) %>:</strong></dt>
+  <dd><%= @request.before_photo_url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:after_photo_url) %>:</strong></dt>
+  <dd><%= @request.after_photo_url %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              requests_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_request_path(@request), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              request_path(@request),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
