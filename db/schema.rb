@@ -11,8 +11,8 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20140422215303) do
+
   create_table "emails", :force => true do |t|
     t.integer  "request_id"
     t.text     "content"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20140422215303) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
   create_table "requests", :force => true do |t|
     t.integer  "requestor_id"
     t.integer  "angel_id"
