@@ -1,3 +1,4 @@
+
 SmacAngel::Application.routes.draw do
 
   get "logout" => "sessions#destroy", :as => "logout"
@@ -13,3 +14,4 @@ SmacAngel::Application.routes.draw do
   
   root :to => "home#index"
 end
+

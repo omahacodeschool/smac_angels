@@ -1,45 +1,32 @@
-<%= form_for @request, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :requestor_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :requestor_id, :class => 'number_field' %>
+<%= form_for request do |f| %>
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(@request.errors.count, "error")} prohibited this request from being saved:" %>
+      </h2>
+      <ul>
+        <% @request.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
     </div>
+  <% end %>
+
+  <%= f.hidden_field :requestor_id, :value => session[:user_id] %>
+  
+  <div class="field">
+    <%= f.label "On behalf of someone else:" %>
+    <%= f.check_box :obo %>
   </div>
-  <div class="control-group">
-    <%= f.label :angel_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :angel_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :sockmonkey_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :sockmonkey_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :obo, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :obo, :class => 'check_box' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :anon_req, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :anon_req, :class => 'check_box' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :anon_angel, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :anon_angel, :class => 'check_box' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :ship_address, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :ship_address, :class => 'text_field' %>
-    </div>
+  <!--<div class="field">
+    <%#= f.label "Do you want to be anonymous?" %>
+    <%#= f.check_box :anon_req %>
+  </div>-->
+  <div class="field">
+    <%= f.label :ship_address %>
+    <%= f.text_field :ship_address %>
   </div>
   <div class="control-group">
     <%= f.label :ship_city, :class => 'control-label' %>
@@ -71,22 +58,16 @@
       <%= f.text_field :external_url, :class => 'text_field' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :before_photo_url, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :before_photo_url, :class => 'text_field' %>
-    </div>
+  <div class="field">
+    <%= f.label "Recipient Picture" %>
+    <%= f.file_field :before_photo_url %>
   </div>
-  <div class="control-group">
-    <%= f.label :after_photo_url, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :after_photo_url, :class => 'text_field' %>
-    </div>
+  <div class="field">
+    <%= f.label "Picture after your receive SMAC Monkey" %>
+    <%= f.file_field :after_photo_url %>
   </div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                requests_path, :class => 'btn' %>
+  <div class="actions">
+    <%= f.submit 'Save' %>
   </div>
 <% end %>

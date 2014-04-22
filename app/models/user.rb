@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :requests, :class_name => :request, :foreign_key => :requestor_id
   has_many :gifts, :class_name => :request, :foreign_key => :angel_id
   
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :fname, :lname
   
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
