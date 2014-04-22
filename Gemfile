@@ -41,3 +41,6 @@ gem 'debugger'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'sorcery'
+
+gem 'carrierwave'
+gem 'fog', '~> 1.0.0'
