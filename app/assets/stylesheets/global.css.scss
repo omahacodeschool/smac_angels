@@ -25,7 +25,7 @@ h1, h2, h3, h4 {
 //-----------------------------------------------------------------------------------------------------
 
 *, *:before, *:after{
-     box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .row.full-width {
@@ -52,12 +52,13 @@ h1, h2, h3, h4 {
 
 #top-bar{
   position: fixed;
+  width: 100%;
   top: 0;
   height: 60px;
-<<<<<<< HEAD
-  background-image: none;
-  box-shadow: none;
-  background: #FFF;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
 }
 
 .brand{
