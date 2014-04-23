@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(:version => 20140423174414) do
   create_table "emails", :force => true do |t|
     t.integer  "request_id"
     t.text     "content"
-    t.integer  "template_id"
     t.string   "to_addresses"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "subject"
   end
 
   create_table "requests", :force => true do |t|
