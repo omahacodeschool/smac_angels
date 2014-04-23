@@ -76,6 +76,10 @@
     <%= f.label "Picture after your receive SMAC Monkey" %>
     <%= f.file_field :after_photo_url %>
   </div>
+  <div>
+    <%= f.label "Agree Statement:" %>
+    <%= f.check_box :agree_to_terms %>
+  </div>
 
   <div class="actions">
     <%= f.submit 'Save' %>
