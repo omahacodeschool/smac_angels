@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <% content_for :banner do %>
   <div class="row">
       <!-- placeholder for @request.requestor.fname -->
@@ -6,8 +5,6 @@
         <div class="avatar-banner">
           <%= image_tag("avatar.png", :alt => "user avatar") %>
         </div>
-
-      
 
         <div class="name-banner center-banner">
           Sarah is asking for Nomo
@@ -30,25 +27,36 @@
   <%#= image_tag(request.before_photo_url) %>
 
   <div class="large-9 columns">
+    <%= image_tag(@request.before_photo_url) %>
+    
     <p>
       <!-- hardcoded name -->
       <h2>Sarah's Story:</h2>
       <%= @request.story %>
     </p>
     
-    <%= form_tag(new_session_path) do %>
-      <%= hidden_field 'request_id', :value => @request.id %>
-      <div class="field">
-        <%= label_tag "Anonymous Angel?" %>
-        <%= check_box_tag 'anonymous' %>
-      </div>
-    <br />      
-      <div>
-        <%= submit_tag "Become Angel" %>
-      </div>
-    <% end %>
+    <p>
+      <h2>External Link:</h2>
+      <%= @request.external_url %>
+    </p>
+  
     <br />    
     <br />
+    
+    <div id="share-buttons">
+      <!-- Share on facebook -->
+      <div class="fb-share-button" data-href="http://smac-angels-staging.herokuapp.com/requests/#{@request.id}" data-type="button"></div>
+  
+      <!-- Share on twitter -->
+      <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+  
+
+      <!-- Share on pinterest if there is an image to share -->
+      <a href      = "//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+      <!-- Please call pinit.js only once per page -->
+      <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+    
+    <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="470" data-num-posts="10"></div>
     
     <%= link_to 'Edit', edit_request_path(@request) %> |
     <%= link_to 'Back', requests_path %>
@@ -57,106 +65,39 @@
     <br />    
   </div>
   
-  <span class="private_info">
     <div class="large-3 columns">
-      <p>
+      <% if @request.angel_id %>
         <p>
-          <b>Street:</b><br>
-          <%= @request.ship_address %>
+          <p>
+            <b>Street:</b><br>
+            <%= @request.ship_address %>
+          </p>
+          <p>
+            <b>City:</b><br>
+            <%= @request.ship_city %>
+          </p>
+          <p>
+            <b>State:</b><br>
+            <%= @request.ship_state %>
+          </p>
+          <p>
+            <b>Zipcode:</b><br>
+            <%= @request.ship_zipcode %>
+          </p>
         </p>
-        <p>
-          <b>City:</b><br>
-          <%= @request.ship_city %>
-        </p>
-        <p>
-          <b>State:</b><br>
-          <%= @request.ship_state %>
-        </p>
-        <p>
-          <b>Zipcode:</b><br>
-          <%= @request.ship_zipcode %>
-        </p>
-        <p>
-          <b>Website:</b><br>
-          <%= @request.external_url %>
-        </p>
-        <p>
-          <b>Email:</b><br>
-          <!-- hardcoded placeholder -->
-          Sarah@example.com
-        </p>
-      </p>
+      <% else %>
+        <%= form_tag(become_angel_path) do %>
+          <%= hidden_field_tag 'request_id', @request.id %>
+          <div class="field">
+            <%= label_tag "Anonymous Angel?" %>
+            <%= check_box_tag 'anonymous' %>
+          </div>
+          <div>
+            <%= submit_tag "Become Angel" %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-  </span>
-
-
-
-
+  </div>
 </div>
-=======
-<div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="470" data-num-posts="10"></div>
 
-<p id="notice">
-  <%= notice %>
-</p>
-
-<%= image_tag(@request.before_photo_url) %>
-
-<p>
-  <b>Story:</b>
-  <%= @request.story %>
-</p>
-<p>
-  <b>External url:</b>
-  <%= @request.external_url %>
-</p>
-<% if @request.angel_id %>
-  <p>I have an angel!</p>
-  <p>
-    <b>Ship address:</b>
-    <%= @request.ship_address %>
-  </p>
-  <p>
-    <b>Ship city:</b>
-    <%= @request.ship_city %>
-  </p>
-  <p>
-    <b>Ship state:</b>
-    <%= @request.ship_state %>
-  </p>
-  <p>
-    <b>Ship zipcode:</b>
-    <%= @request.ship_zipcode %>
-  </p>
-<% else %>
-  <%= form_tag(become_angel_path) do %>
-    <%= hidden_field_tag 'request_id', @request.id %>
-    <div class="field">
-      <%= label_tag "Anonymous Angel?" %>
-      <%= check_box_tag 'anonymous' %>
-    </div>
-    <div>
-      <%= submit_tag "Become Angel" %>
-    </div>
-  <% end %>
-<% end %>
-
-    
-<%= link_to 'Edit', edit_request_path(@request) %>
-<%= link_to 'Back', requests_path %>
-<div id="share-buttons">
-  <!-- Share on facebook -->
-  <div class="fb-share-button" data-href="http://smac-angels-staging.herokuapp.com/requests/#{@request.id}" data-type="button"></div>
-  
-  <!-- Share on twitter -->
-  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
-  
-
-  <!-- Share on pinterest if there is an image to share -->
-  <a href      = "//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
-  <!-- Please call pinit.js only once per page -->
-  <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
-
-
-</div>
->>>>>>> master
