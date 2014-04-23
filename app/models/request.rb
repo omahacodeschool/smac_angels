@@ -30,7 +30,7 @@ class Request < ActiveRecord::Base
       
     self.angel_id = user_id
       
-    Status.create(:request_id => current_request.id, :status => 'Matched, initial')  
+    Status.create(:request_id => self.id, :status => 'Matched, initial')  
       
       
     self.save
