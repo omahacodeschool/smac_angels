@@ -97,3 +97,26 @@ User.create([
     is_admin: false
   },
 ])
+# :after_photo_url, :angel_id, :anon_angel, :anon_req, :before_photo_url, :external_url, :obo, :obo_fname, :obo_lname, :requestor_id, :ship_address, :ship_city, :ship_state, :ship_zipcode, :story, :agree_to_terms
+Request.create([
+  {
+    angel_id: 2
+    requestor_id: 3
+    Status.create(:request_id => 1, :status => 'Matched, initial') 
+  },
+  {
+    angel_id: 4
+    requestor_id: 5
+    Status.create(:request_id => 2, :status => 'Matched, confirmed') 
+  },
+  {
+    angel_id: 5
+    requestor_id: 2
+    Status.create(:request_id => 3, :status => 'Unmatched') 
+  },
+  {
+    angel_id: 6
+    requestor_id: 4
+    Status.create(:request_id => 2, :status => 'Unmatched') 
+  }
+])
