@@ -35,15 +35,15 @@ Template.create([
 User.create([
   {
   email: "admin@this.com",
-  password: "poopoop",
-  password_confirmation: "poopoop",
+  password: "password",
+  password_confirmation: "password",
   fname: "Admin",
   lname: "Admin",
   is_admin: true
   },{
   email: "lochlan.hehr@yahoo.com",
-  password: "poopoop",
-  password_confirmation: "poopoop",
+  password: "password",
+  password_confirmation: "password",
   fname: "Lochlan",
   lname: "Hehr",
   is_admin: false
