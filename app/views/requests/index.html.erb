@@ -8,11 +8,11 @@
 
 <div>
   <% @requests.each do |request| %>
-    <% if !request.angel_id %>
+  
       <div>
         <%= link_to "Requestor Pictures #{image_tag(request.before_photo_url)}".html_safe, request_path(request.id) %>
       </div>
-    <% end %>
+      
   <% end %>
 </div>
 
