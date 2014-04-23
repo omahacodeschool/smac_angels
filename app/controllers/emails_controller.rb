@@ -53,4 +53,5 @@ class EmailsController < ApplicationController
     end
 
   end
+  
 end

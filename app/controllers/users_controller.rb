@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(@captcha.values)
     
     if @user.save && @captcha.valid?
+      Email.new.email_new_user(@user)
       redirect_to root_url, :notice => "Signed up!"
     else
       flash[:notice] = @captcha.error if @captcha.error
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-  
+    
   private
   # Returns parameters from form fields after decoding MD5 hash field names. 
   ## https://github.com/subwindow/negative-captcha
