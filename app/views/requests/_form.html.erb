@@ -28,25 +28,35 @@
     <%= f.label :ship_address %>
     <%= f.text_field :ship_address %>
   </div>
-  <div class="field">
-    <%= f.label :ship_city %>
-    <%= f.text_field :ship_city %>
+  <div class="control-group">
+    <%= f.label :ship_city, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ship_city, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :ship_state %>
-    <%= f.text_field :ship_state %>
+  <div class="control-group">
+    <%= f.label :ship_state, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ship_state, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :ship_zipcode %>
-    <%= f.text_field :ship_zipcode %>
+  <div class="control-group">
+    <%= f.label :ship_zipcode, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ship_zipcode, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :story %>
-    <%= f.text_area :story %>
+  <div class="control-group">
+    <%= f.label :story, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :story, :class => 'text_area' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :external_url %>
-    <%= f.text_field :external_url %>
+  <div class="control-group">
+    <%= f.label :external_url, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :external_url, :class => 'text_field' %>
+    </div>
   </div>
   <div class="field">
     <%= f.label "Recipient Picture" %>

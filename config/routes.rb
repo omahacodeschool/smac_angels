@@ -12,5 +12,6 @@ SmacAngel::Application.routes.draw do
   resources :users
   resources :sessions
   resources :password_resets
-  root :to => "requests#index"
+  
+  root :to => "home#index"
 end

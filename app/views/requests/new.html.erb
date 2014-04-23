@@ -1,4 +1,26 @@
-<h1>Recipient</h1>
-<% binding.pry %>
-<%= render :partial => 'form', :locals => {:request => @request} %>
+<% content_for :hero_unit do %>
+  Create a New Request
+<% end %>
+
+<div class="row">
+  <div class="span9">
+    <%- model_class = Request -%>
+    <div class="page-header">
+      <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+    </div>
+    <%= render :partial => 'form', :locals => {:request => @request} %>
+  </div>
+  <div class="span3">
+    <div class="well sidebar-nav">
+      <h3>Sidebar</h3>
+      <ul class="nav nav-list">
+        <li class="nav-header">Sidebar</li>
+        <li><%= link_to "Link1", "/path1"  %></li>
+        <li><%= link_to "Link2", "/path2"  %></li>
+        <li><%= link_to "Link3", "/path3"  %></li>
+      </ul>
+    </div>
+  </div>
+</div>
 <%= link_to 'Back', requests_path %>
+
