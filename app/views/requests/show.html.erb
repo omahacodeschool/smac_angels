@@ -6,22 +6,6 @@
 Photo will be here.
 
 <p>
-  <b>Ship address:</b>
-  <%= @request.ship_address %>
-</p>
-<p>
-  <b>Ship city:</b>
-  <%= @request.ship_city %>
-</p>
-<p>
-  <b>Ship state:</b>
-  <%= @request.ship_state %>
-</p>
-<p>
-  <b>Ship zipcode:</b>
-  <%= @request.ship_zipcode %>
-</p>
-<p>
   <b>Story:</b>
   <%= @request.story %>
 </p>
@@ -30,7 +14,23 @@ Photo will be here.
   <%= @request.external_url %>
 </p>
 <% if @request.angel_id %>
-  I have an angel!
+  <p>I have an angel!</p>
+  <p>
+    <b>Ship address:</b>
+    <%= @request.ship_address %>
+  </p>
+  <p>
+    <b>Ship city:</b>
+    <%= @request.ship_city %>
+  </p>
+  <p>
+    <b>Ship state:</b>
+    <%= @request.ship_state %>
+  </p>
+  <p>
+    <b>Ship zipcode:</b>
+    <%= @request.ship_zipcode %>
+  </p>
 <% else %>
   <%= form_tag(become_angel_path) do %>
     <%= hidden_field_tag 'request_id', @request.id %>
