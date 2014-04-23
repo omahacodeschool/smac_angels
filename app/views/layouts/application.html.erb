@@ -57,7 +57,7 @@
               <li><%= link_to "Nominate", new_request_path %></li>
               <li><%= link_to "Request", new_request_path %></li>
               <% if current_user %>
-                Logged in as <%= current_user.email %>.
+                Logged in as <%= link_to current_user.email, user_path(current_user.id) %>.
                 <li><%= link_to "Log Out", logout_path %></li>
               <% else %>
                 <li><%= link_to "Sign Up", signup_path %></li>
