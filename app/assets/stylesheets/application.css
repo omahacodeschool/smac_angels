@@ -5,3 +5,21 @@
  *= require_self
  *= require_tree .
 */
+
+b {
+  color:#3299BB;
+}
+
+a {
+  text-decoration:none;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+a:hover{
+  color:white;
+}
+
+h1, h2, h3, h4 {
+  color:#FF9900;
+}
