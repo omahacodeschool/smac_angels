@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20140422215303) do
-=======
 ActiveRecord::Schema.define(:version => 20140423174414) do
->>>>>>> master
 
   create_table "emails", :force => true do |t|
     t.integer  "request_id"
