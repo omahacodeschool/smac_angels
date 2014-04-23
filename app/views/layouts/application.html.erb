@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "SmacAngel" %></title>
     <%= csrf_meta_tags %>
-<<<<<<< HEAD
-
-    <%= stylesheet_link_tag "application", :media => "all" %>
-=======
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -24,8 +20,6 @@
     <![endif]-->
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     <%= stylesheet_link_tag "application", :media => "all" %>
-
->>>>>>> master
     <%= javascript_include_tag "application" %>
   </head>
   <body id="controller_<%= params[:controller] %>">
@@ -57,17 +51,10 @@
         <%= yield :banner %>
       </div>
     </div>
-<<<<<<< HEAD
     
     <div>
       <%= yield %>
     </div>
-=======
-
-    <footer>
-      <p>&copy; Our Friggin Logo</p>
-    </footer>
->>>>>>> master
 
   <div class="footer" role="navigation">
     <div class="row">
