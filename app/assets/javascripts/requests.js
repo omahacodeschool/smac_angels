@@ -7,5 +7,5 @@ $(document).ready(function() {
     else
         $('.obo_name').slideToggle('slow');
   });
-
+    
 });
