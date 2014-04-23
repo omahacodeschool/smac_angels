@@ -64,43 +64,40 @@
     <br />
     <br />    
   </div>
-  <div class="large-3 columns">
-    <% if @request.angel_id %>
-      <span class="private_info">
-        <div class="large-3 columns">
+  
+    <div class="large-3 columns">
+      <% if @request.angel_id %>
+        <p>
           <p>
-            <p>
-              <b>Street:</b><br>
-              <%= @request.ship_address %>
-            </p>
-            <p>
-              <b>City:</b><br>
-              <%= @request.ship_city %>
-            </p>
-            <p>
-              <b>State:</b><br>
-              <%= @request.ship_state %>
-            </p>
-            <p>
-              <b>Zipcode:</b><br>
-              <%= @request.ship_zipcode %>
-            </p>
-            <p>
+            <b>Street:</b><br>
+            <%= @request.ship_address %>
           </p>
-        </div>
-      </span>
-    <% else %>
-      <%= form_tag(become_angel_path) do %>
-        <%= hidden_field_tag 'request_id', @request.id %>
-        <div class="field">
-          <%= label_tag "Anonymous Angel?" %>
-          <%= check_box_tag 'anonymous' %>
-        </div>
-        <div>
-          <%= submit_tag "Become Angel" %>
-        </div>
+          <p>
+            <b>City:</b><br>
+            <%= @request.ship_city %>
+          </p>
+          <p>
+            <b>State:</b><br>
+            <%= @request.ship_state %>
+          </p>
+          <p>
+            <b>Zipcode:</b><br>
+            <%= @request.ship_zipcode %>
+          </p>
+        </p>
+      <% else %>
+        <%= form_tag(become_angel_path) do %>
+          <%= hidden_field_tag 'request_id', @request.id %>
+          <div class="field">
+            <%= label_tag "Anonymous Angel?" %>
+            <%= check_box_tag 'anonymous' %>
+          </div>
+          <div>
+            <%= submit_tag "Become Angel" %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
 
