@@ -32,6 +32,7 @@ class Request < ActiveRecord::Base
       
     Status.create(:request_id => current_request.id, :status => 'Matched, initial')  
       
+      
     self.save
 
 	end
