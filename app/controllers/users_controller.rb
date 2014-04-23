@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :setup_negative_captcha, :only => [:new, :create]
-  require_login :only => [:index]
+  #require_login :only => [:index]
   # Creates User object for initial sign up form.
   
   def new
