@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   def index
-    @requests = Request.all
+    @requests = Request.order("created_at DESC").where(:angel_id => nil)
 
     respond_to do |format|
       format.html # index.html.erb
