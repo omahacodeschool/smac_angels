@@ -1,5 +1,11 @@
 <%= form_for @email, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
+    <%= f.label :subject, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :subject, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
     <%= f.label :request_id, :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :request_id, :class => 'number_field' %>

@@ -1,0 +1,28 @@
+<%= form_for @email, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <!-- <%= f.label "100", :class => 'control-label' %> -->
+    <div class="controls">
+      <%= f.button "1", :value => "1", :class => 'button' %>
+      <%= f.hidden_field :email_address, :value => "me@me.com", :class => "hidden" %>
+
+      <%= f.button "2", :value => "2", :class => 'button' %>
+      <%= f.hidden_field :email_address, :value => "me@me.com", :class => "hidden" %>
+
+      <%= f.button "3", :value => "3", :class => 'button' %>
+      <%= f.hidden_field :email_address, :value => "me@me.com", :class => "hidden" %>
+
+      <%= f.button "4", :value => "4", :class => 'button' %>
+      <%= f.hidden_field :email_address, :value => "me@me.com", :class => "hidden" %>
+
+      <%= f.button "5", :value => "5", :class => 'button' %>
+      <%= f.hidden_field :email_address, :value => "me@me.com", :class => "hidden" %>
+
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                emails_path, :class => 'btn' %>
+  </div>
+<% end %>

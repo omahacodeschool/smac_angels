@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140422200703) do
+ActiveRecord::Schema.define(:version => 20140423174820) do
 
   create_table "emails", :force => true do |t|
     t.integer  "request_id"
     t.text     "content"
-    t.integer  "template_id"
     t.string   "to_addresses"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "subject"
   end
 
   create_table "requests", :force => true do |t|
