@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140423174414) do
+ActiveRecord::Schema.define(:version => 20140423174820) do
 
   create_table "emails", :force => true do |t|
     t.integer  "request_id"
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(:version => 20140423174414) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "statuses", :force => true do |t|
+    t.integer  "request_id"
+    t.text     "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "templates", :force => true do |t|
     t.string   "name"
     t.text     "content"
@@ -73,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20140423174414) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
+    t.boolean  "is_admin"
     t.string   "fname"
     t.string   "lname"
   end

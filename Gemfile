@@ -48,7 +48,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'sorcery'
 
 gem 'carrierwave'
-gem 'fog'
+gem 'fog', '~> 1.22.0'
 
 gem 'negative_captcha'
 
