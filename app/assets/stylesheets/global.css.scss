@@ -1,9 +1,10 @@
-body{
-  padding-top: 60px; // Keep.
-}
-
 *, *:before, *:after{
      box-sizing: border-box;
+}
+
+.row.full-width {
+  width: 100%;
+  max-width: 100%; 
 }
 
 #controller_requests.hero-unit {
@@ -13,7 +14,7 @@ body{
   top: -20px
 }
 
-#controller_home.hero-unit{
+#controller_home{
   background: #FFF;
   height: 500px;
   top: -20px; 
@@ -23,199 +24,42 @@ body{
 /* `Navbar
 ----------------------------------------------------------------------------------------------------*/
 
-.navbar-fixed-top .navbar-inner{
+#top-bar{
+  position: fixed;
+  top: 0;
   height: 60px;
-  background-image: none;
-  box-shadow: none;
-  background: #FFF;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
 }
 
-.brand{
-  margin-top: 10px;
-}
-
-.container .nav-collapse ul{
-  float: right;
+.top-left{
+  float: left;
   margin-top: 20px;
 }
 
-.container .nav-collapse li{
+.top-left a{
+  text-decoration: none;
+  margin-left: 20px;
+  color: #000;
+}
+
+.top-right{
+  float: right;
+  margin-top: 5px;
+}
+
+.top-right li{
   display: inline;
   padding: 10px;
 }
 
-.navbar a{
-  color: #000;
-}
-
-/* `Homepage banner
-----------------------------------------------------------------------------------------------------*/
-
-.center{
-  text-align: center;
-}
-
-#hp_logo{
-  display: block;
-  margin: 0 auto;
-  width: 200px;
-  height: auto;
-  margin-top: 100px;
-}
-
-// TODO
-#hp_logo img{
-  
-}
-
-.name{
-  height: 120px;
-  line-height: 120px;
-  font-family: 'Lato', sans-serif;
-  font-size: 60px;
-  font-weight: 700;
-  color: #F75E11;
-  display:block;
-}
-
-.separator{
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  width: 350px;
-  margin: 0 auto;
-    display:block;
-}
-
-.tagline{
-  height: 60px;
-  line-height: 60px;
-  bottom: 0px;
-  font-family: 'Lato', sans-serif;
-  font-size: 32px;
-  font-weight: 300;
-  color: #000;
-    display:block;
-}
-
-/* `Banner text for other pages
-----------------------------------------------------------------------------------------------------*/
-
-.center-banner{
-  text-align: center;
-}
-
-.name-banner{
-  height: 120px;
-  line-height: 120px;
-  font-family: 'Lato', sans-serif;
-  font-size: 60px;
-  font-weight: 700;
-  color: gray;
-  margin-top: 100px;
-}
-
-.tagline-banner{
-  height: 60px;
-  line-height: 60px;
-  bottom: 0px;
-  font-family: 'Lato', sans-serif;
-  font-size: 32px;
-  font-weight: 300;
-  color: #000;
-  margin: auto;
-}
-
-.avatar-banner{
-  float:left;
-  margin-top: 75px;
-}
-
-.separator-banner{
-  position:relative;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  width: 350px;
-  margin: 0 auto;
-}
-
-.container-banner-text{
-  margin:0 auto;
-}
-
-/* `Request gallery
-----------------------------------------------------------------------------------------------------*/
-
-.container-fluid{
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.gallery {
-  width: 100%;
-  position: relative;
-  z-index: 100;
-  margin-bottom: 50px;
-}
-
-.gallery ul{
-  list-style-type: none;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-size: 0;
-}
-
-.gallery li{
-  display: inline-block;
-  width: 33.333333%;
-  margin: 0;
-  padding: 0;
-}
-
-/* `3 calls to action
-----------------------------------------------------------------------------------------------------*/
-
-.img_sq{
-  height: 140px;
-  width: 140px;
-  background: #E9E9E9;
-}
-
-
-
-
-
-/* `Quotes section
-----------------------------------------------------------------------------------------------------*/
-
-#quotes_section{
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-
-/*  'Footer section
-----------------------------------------------------------------------------------------------------*/
-.navbar-bottom {
-    padding: 1em;
-    background: gray;
-    display: block;
-    bottom: 0;
-    left: 0;
-    margin: 0; 
-    text-align: center;
-    color:white;
-    height: 200px;
-}
-
-.navbar-bottom a {
+.top-right a{
   text-decoration: none;
-  color:white;
+  margin-right: 10px;
+  color: #000;
 }
-
-
-/* `More info sections
-----------------------------------------------------------------------------------------------------*/
-
 
 
 
