@@ -1,32 +1,43 @@
-<%- model_class = User -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
+<h2><%= @user.fname %> <%= @user.lname %></h2>
+<%= @user.email %>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
-  <dd><%= @user.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:crypted_password) %>:</strong></dt>
-  <dd><%= @user.crypted_password %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:salt) %>:</strong></dt>
-  <dd><%= @user.salt %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:remember_me_token) %>:</strong></dt>
-  <dd><%= @user.remember_me_token %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:remember_me_token_expires_at) %>:</strong></dt>
-  <dd><%= @user.remember_me_token_expires_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:reset_password_token) %>:</strong></dt>
-  <dd><%= @user.reset_password_token %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:reset_password_token_expires_at) %>:</strong></dt>
-  <dd><%= @user.reset_password_token_expires_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:reset_password_email_sent_at) %>:</strong></dt>
-  <dd><%= @user.reset_password_email_sent_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:activation_state) %>:</strong></dt>
-  <dd><%= @user.activation_state %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:activation_token) %>:</strong></dt>
-  <dd><%= @user.activation_token %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:activation_token_expires_at) %>:</strong></dt>
-  <dd><%= @user.activation_token_expires_at %></dd>
-</dl>
+<% if @requests %>
+  <h3>Requests for a monkey:</h3>
+
+  <% @requests.each do |request| %>
+    <div><%= image_tag(request.before_photo_url) %></div>
+
+    <% if request.obo %>
+      <div><%= request.obo_fname %> <%= request.obo_lname %></div>
+    <% else %>
+      <div>Me</div>
+    <% end %>
+
+    <div><%= image_tag(request.sockmonkey.image_url)%></div>
+    <div><%= request.sockmonkey.name%></div>
+  <% end %>
+
+<% end %>
+
+<h3>I'm an Angel for:</h3>
+
+<% if @angels %>
+
+  <% @angels.each do |angel| %> 
+    <div><%= image_tag(angel.before_photo_url) %></div>
+
+    <% if angel.obo %>
+      <div><%= angel.obo_fname %> <%= angel.obo_lname %></div>
+    <% else %>
+      <div><%= angel.requestor.fname %> <%= angel.requestor.lname %></div>
+    <% end %>
+
+    <div><%= image_tag(angel.sockmonkey.image_url)%></div>
+    <div><%= angel.sockmonkey.name%></div>
+  <% end %>
+
+<% end %>
+
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

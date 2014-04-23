@@ -3,6 +3,12 @@ class UsersController < ApplicationController
   before_filter :require_login, :only => [:index]
   # Creates User object for initial sign up form.
   
+  def show
+    @user = User.find(params[:id])
+    @requests = Request.order(:created_at).where("requestor_id = ?", @user.id)
+    @angels = Request.order(:created_at).where("angel_id = ?", @user.id)
+  end
+
   def new
     @user = User.new
   end
