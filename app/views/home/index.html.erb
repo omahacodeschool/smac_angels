@@ -1,32 +1,39 @@
-<!DOCTYPE html>
-<html>
-  
   <% content_for :hero_unit do %> 
-        <div class="logo center">
-          Image here.
-        </div>
-        
-        <div class="name center">
-          SMAC Angels
-        </div>
-      
-        <div class="separator"></div>
-      
-        <div class="tagline center">
-          Sock Monkeys Against Cancer
-        </div>
-  <% end %>
-
-    <body>
-  
-      <div class="row">
-        <div class="span12">
-          <div id="request_gallery">
-              Array of images here.  
-          </div>
+    <div class="container">
+      <div class"span12">
+        <div id="hp_logo">
+          <img src="assets/Logo.jpg" alt="SMAC Angels" />
         </div>
       </div>
-      
+    </div>
+  
+    <div class="name center">
+      SMAC Angels
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="tagline center">
+      True "creature comforts" for those with cancer
+    </div>
+  <% end %>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="gallery">
+        <ul>
+          <li><img src="http://lorempixel.com/800/400/nature/2/" alt="" /></li>
+          <li><img src="http://lorempixel.com/800/400/nature/2/" alt="" /></li>
+          <li><img src="http://lorempixel.com/800/400/nature/2/" alt="" /></li>
+          <li><img src="http://lorempixel.com/800/400/nature/2/" alt="" /></li>
+          <li><img src="http://lorempixel.com/800/400/nature/2/" alt="" /></li>
+          <li><img src="http://lorempixel.com/800/400/nature/2/" alt="" /></li>
+        </ul>    
+      </div>
+    </div>
+    
+    <div class="container">
       <div class="row">
         <div class="span4">
           <img class="img-sq" data-src="holder.js/140x140" alt="Generic placeholder image">
@@ -47,17 +54,29 @@
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
-      
-      
-      <div class="row">
-        <div class="span12">
-          <div id="quotes_section">
-              Giant image here.  
+    </div>
+    
+    <div class="container-fluid">
+      <div class="quotes">
+        <div id="quotes_section">
+          <div id="back_image">
+            Giant image here. 
           </div>
-        </div>
-      </div>
       
-
+          <div class="container">
+            <div class="row">
+              <div class="span12">
+                <div id="quotes" class="center">
+                  Quotes here. 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    
+    <div class="container">
       <div class="row featurette">
         <div class="span7">
           <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
@@ -93,23 +112,8 @@
       </div>
 
       <hr class="featurette-divider">
+    </div>
 
-           
-      
-     
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    </body>
+  </body>
    
 </html>

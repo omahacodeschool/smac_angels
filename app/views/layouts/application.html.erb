@@ -4,10 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,900' rel='stylesheet' type='text/css'>
-    
     <title><%= content_for?(:title) ? yield(:title) : "SmacAngel" %></title>
     <%= csrf_meta_tags %>
 
@@ -56,15 +52,18 @@
               <li><%= link_to "Give", requests_path %></li>
               <li><%= link_to "Nominate", new_request_path %></li>
               <li><%= link_to "Request", new_request_path %></li>
+          <div class="container nav-collapse">
+            <ul class="nav">
               <% if current_user %>
               <%= link_to current_user.email, user_path(current_user.id) %>
                 <li><%= link_to "Log Out", logout_path %></li>
               <% else %>
                 <li><%= link_to "Sign Up", signup_path %></li>
                 <li><%= link_to "Log In", login_path %></li>
-              <% end %> 
+              <% end %>
+              
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
     </div>
@@ -73,20 +72,13 @@
       <div class="container">
         <%= yield :hero_unit %>
       </div>
-    </div> 
+    </div>
     
-    <div class="container">
+    <div>
       <%= bootstrap_flash %>
       <%= yield %>
     </div>
-  </body>
-  
-  <!-- <footer>
-    <div class="container">
-      <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>&copy; 2014 SMAC Angels, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </div>
-  </footer> -->
+
   <nav class="navbar navbar-default navbar-bottom" role="navigation">
     <div class="container">
           <br />
@@ -97,7 +89,5 @@
             <a href="http://omahacodeschool.com" target="_blank"><img src="https://s3.amazonaws.com/WorkHang/OCSlogo" alt="omaha code school" width=40></a>
     </div>
   </nav>
-  
-  
-  
+
 </html>
