@@ -20,4 +20,20 @@ class Request < ActiveRecord::Base
 #       redirect_to(new_session_path)
 #     end
 #   end
+	def add_angel(user_id, anonymous)
+    
+    if anonymous == "1"
+      self.anon_angel = true
+    else 
+      self.anon_angel = false
+    end
+      
+    self.angel_id = user_id
+      
+    Status.create(:request_id => current_request.id, :status => 'Matched, initial')  
+      
+    self.save
+
+	end
+
 end

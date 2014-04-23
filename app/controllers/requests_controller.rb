@@ -84,28 +84,19 @@ class RequestsController < ApplicationController
   
   def become_angel
     
-    session[:request_id] = params[:request_id]
-    
-    if params[:anonymous] == "1"
-      session[:anonymous] = true
-    else 
-      session[:anonymous] = false
+
+    if !current_user
+      redirect_to(new_session_path) and return
     end
-    
-    if current_user
-      
-      current_request = Request.find(session[:request_id])
-      
-      current_request.angel_id = session[:user_id]
-      current_request.anon_angel = session[:anonymous]
-      current_request.save
-      
-      Status.create(:request_id => current_request.id, :status => 'Matched, initial')
-      
-      redirect_to(request_path(session[:request_id]))
-    else
-      redirect_to(new_session_path)
-    end
+
+    @request = Request.find(session[:request_id])
+
+    @request.add_angel(session[:user_id], session[:anonymous])
+
+    session[:request_id] = nil    
+    session[:anonymous] = nil
+
+    redirect_to (request_path(@request.id))
   
   end
 end
