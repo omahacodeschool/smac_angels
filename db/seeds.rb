@@ -30,3 +30,70 @@ Template.create([
   content: "Your photo has been posted! Your feedback helps show others that they are not alone in their fight against cancer. Thank you for being a part of the SMAC Monkey program."
   }
 ])
+# :email, :password, :password_confirmation, :fname, :lname, :is_admin
+User.create([
+  {
+    email: "admin@this.com",
+    password: "poopoop",
+    password_confirmation: "poopoop",
+    fname: "Admin",
+    lname: "Admin",
+    is_admin: true
+  },
+  {
+    email: "lochlan.hehr@yahoo.com",
+    password: "poopoop",
+    password_confirmation: "poopoop",
+    fname: "Lochlan",
+    lname: "Hehr",
+    is_admin: false
+  },
+  {
+    email: "avondohren@gmail.com",
+    password: "password",
+    password_confirmation: "password",
+    fname: "Andy",
+    lname: "von Dohren",
+    is_admin: false
+  },
+  {
+    email: "ja.lueth@gmail.com",
+    password: "password",
+    password_confirmation: "password",
+    fname: "Johnathon",
+    lname: "Lueth",
+    is_admin: false
+  },
+  {
+    email: "britt@medles.com",
+    password: "password",
+    password_confirmation: "password",
+    fname: "Britt",
+    lname: "Woolf",
+    is_admin: false
+  },
+  {
+    email: "nivram80@gmail.com",
+    password: "password",
+    password_confirmation: "password",
+    fname: "Todd",
+    lname: "Nichols",
+    is_admin: false
+  },
+  {
+    email: "me@matthova.com",
+    password: "password",
+    password_confirmation: "password",
+    fname: "Matt",
+    lname: "Hova",
+    is_admin: false
+  },
+  {
+    email: "ytmoik@gmail.com",
+    password: "password",
+    password_confirmation: "password",
+    fname: "Yofred",
+    lname: "Moik",
+    is_admin: false
+  },
+])
