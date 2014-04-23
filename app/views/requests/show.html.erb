@@ -1,3 +1,5 @@
+<div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="470" data-num-posts="10"></div>
+
 <p id="notice">
   <%= notice %>
 </p>
@@ -42,6 +44,22 @@
     </div>
   <% end %>
 <% end %>
-<div id="fb-root"></div>
+
+    
 <%= link_to 'Edit', edit_request_path(@request) %>
 <%= link_to 'Back', requests_path %>
+<div id="share-buttons">
+  <!-- Share on facebook -->
+  <div class="fb-share-button" data-href="http://smac-angels-staging.herokuapp.com/requests/#{@request.id}" data-type="button"></div>
+  
+  <!-- Share on twitter -->
+  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+  
+
+  <!-- Share on pinterest if there is an image to share -->
+  <a href      = "//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+  <!-- Please call pinit.js only once per page -->
+  <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+
+
+</div>

@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(:version => 20140423174820) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "statuses", :force => true do |t|
+    t.integer  "request_id"
+    t.text     "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "templates", :force => true do |t|
     t.string   "name"
     t.text     "content"
@@ -75,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20140423174820) do
     t.datetime "reset_password_email_sent_at"
     t.string   "fname"
     t.string   "lname"
+    t.boolean  "is_admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
