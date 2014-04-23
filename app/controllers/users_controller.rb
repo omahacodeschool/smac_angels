@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :setup_negative_captcha, :only => [:new, :create]
-  #require_login :only => [:index]
+  before_filter :require_login, :only => [:index]
   # Creates User object for initial sign up form.
   
   def new
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(@captcha.values)
     
     if @user.save && @captcha.valid?
+      Email.new.send_email("Signup Confirmation", @user)
       redirect_to root_url, :notice => "Signed up!"
     else
       flash[:notice] = @captcha.error if @captcha.error
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-  
+    
   private
   # Returns parameters from form fields after decoding MD5 hash field names. 
   ## https://github.com/subwindow/negative-captcha

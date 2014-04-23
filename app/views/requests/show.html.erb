@@ -1,3 +1,99 @@
+<<<<<<< HEAD
+<% content_for :banner do %>
+  <div class="row">
+      <!-- placeholder for @request.requestor.fname -->
+
+        <div class="avatar-banner">
+          <%= image_tag("avatar.png", :alt => "user avatar") %>
+        </div>
+
+      
+
+        <div class="name-banner center-banner">
+          Sarah is asking for Nomo
+        </div>
+  
+        <div class="separator-banner"></div>
+  
+        <div class="tagline-banner center-banner">
+          Can you help?
+        </div>
+
+  </div>
+<% end %>
+
+<div class="row">
+  <p id="notice">
+    <%= notice %>
+  </p>
+
+  <%#= image_tag(request.before_photo_url) %>
+
+  <div class="large-9 columns">
+    <p>
+      <!-- hardcoded name -->
+      <h2>Sarah's Story:</h2>
+      <%= @request.story %>
+    </p>
+    
+    <%= form_tag(new_session_path) do %>
+      <%= hidden_field 'request_id', :value => @request.id %>
+      <div class="field">
+        <%= label_tag "Anonymous Angel?" %>
+        <%= check_box_tag 'anonymous' %>
+      </div>
+    <br />      
+      <div>
+        <%= submit_tag "Become Angel" %>
+      </div>
+    <% end %>
+    <br />    
+    <br />
+    
+    <%= link_to 'Edit', edit_request_path(@request) %> |
+    <%= link_to 'Back', requests_path %>
+        
+    <br />
+    <br />    
+  </div>
+  
+  <span class="private_info">
+    <div class="large-3 columns">
+      <p>
+        <p>
+          <b>Street:</b><br>
+          <%= @request.ship_address %>
+        </p>
+        <p>
+          <b>City:</b><br>
+          <%= @request.ship_city %>
+        </p>
+        <p>
+          <b>State:</b><br>
+          <%= @request.ship_state %>
+        </p>
+        <p>
+          <b>Zipcode:</b><br>
+          <%= @request.ship_zipcode %>
+        </p>
+        <p>
+          <b>Website:</b><br>
+          <%= @request.external_url %>
+        </p>
+        <p>
+          <b>Email:</b><br>
+          <!-- hardcoded placeholder -->
+          Sarah@example.com
+        </p>
+      </p>
+    </div>
+  </span>
+
+
+
+
+</div>
+=======
 <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="470" data-num-posts="10"></div>
 
 <p id="notice">
@@ -63,3 +159,4 @@
 
 
 </div>
+>>>>>>> master

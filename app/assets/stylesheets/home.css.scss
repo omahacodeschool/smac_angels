@@ -1,0 +1,102 @@
+#controller_home{
+  background: #FFF;
+  height: 800px;
+  top: -20px; 
+  position: relative; 
+}
+
+/* `Homepage banner
+----------------------------------------------------------------------------------------------------*/
+
+.center{
+  text-align: center;
+}
+
+#hp_logo{
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: auto;
+  margin-top: 300px;
+}
+
+.name{
+  height: 60px;
+  line-height: 75px;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  display:block;
+}
+
+.separator{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 350px;
+  margin: 0 auto;
+    display:block;
+}
+
+.tagline{
+  height: 60px;
+  line-height: 60px;
+  bottom: 0px;
+  font-family: 'Lato', sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: #000;
+    display:block;
+}
+
+
+/* `Request gallery
+----------------------------------------------------------------------------------------------------*/
+
+.container-fluid{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery {
+  width: 100%;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.gallery ul{
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+
+.gallery li{
+  display: inline-block;
+  width: 33.333333%;
+  margin: 0;
+  padding: 0;
+}
+
+/* `3 calls to action
+----------------------------------------------------------------------------------------------------*/
+
+.img_sq{
+  height: 140px;
+  width: 140px;
+  background: #E9E9E9;
+}
+
+
+/* `Quotes section
+----------------------------------------------------------------------------------------------------*/
+
+#quotes_section{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+/* `More info sections
+----------------------------------------------------------------------------------------------------*/

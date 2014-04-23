@@ -9,6 +9,7 @@ class Request < ActiveRecord::Base
   # has_many :comments
   has_many :emails
   belongs_to :sockmonkey
+  validates :agree_to_terms, :acceptance => {:accept => true}
   
   # def self.confirm_angel
 #     if current_user
