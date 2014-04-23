@@ -1,43 +1,44 @@
-<h1>Listing sockmonkeys</h1>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Image url</th>
-    <th>Description</th>
-    <th>Cancertype</th>
-    <th>Favcolor</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-  <% @sockmonkeys.each do |sockmonkey| %>
+<%- model_class = Sockmonkey -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <%= sockmonkey.name %>
-      </td>
-      <td>
-        <%= sockmonkey.image_url %>
-      </td>
-      <td>
-        <%= sockmonkey.description %>
-      </td>
-      <td>
-        <%= sockmonkey.cancertype %>
-      </td>
-      <td>
-        <%= sockmonkey.favcolor %>
-      </td>
-      <td>
-        <%= link_to 'Show', sockmonkey %>
-      </td>
-      <td>
-        <%= link_to 'Edit', edit_sockmonkey_path(sockmonkey) %>
-      </td>
-      <td>
-        <%= link_to 'Destroy', sockmonkey, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
-      </td>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:image_url) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:cancertype) %></th>
+      <th><%= model_class.human_attribute_name(:favcolor) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% @sockmonkeys.each do |sockmonkey| %>
+      <tr>
+        <td><%= link_to sockmonkey.id, sockmonkey_path(sockmonkey) %></td>
+        <td><%= sockmonkey.name %></td>
+        <td><%= sockmonkey.image_url %></td>
+        <td><%= sockmonkey.description %></td>
+        <td><%= sockmonkey.cancertype %></td>
+        <td><%= sockmonkey.favcolor %></td>
+        <td><%=l sockmonkey.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_sockmonkey_path(sockmonkey), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      sockmonkey_path(sockmonkey),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-<br/>
-<%= link_to 'New Sockmonkey', new_sockmonkey_path %>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_sockmonkey_path,
+            :class => 'btn btn-primary' %>

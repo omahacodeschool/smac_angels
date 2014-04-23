@@ -1,35 +1,32 @@
-<%= form_for @email do |f| %>
-  <% if @email.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= "#{pluralize(@email.errors.count, "error")} prohibited this email from being saved:" %>
-      </h2>
-      <ul>
-        <% @email.errors.full_messages.each do |msg| %>
-          <li>
-            <%= msg %>
-          </li>
-        <% end %>
-      </ul>
+<%= form_for @email, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :request_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :request_id, :class => 'number_field' %>
     </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :request_id %>
-    <%= f.number_field :request_id %>
   </div>
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+  <div class="control-group">
+    <%= f.label :content, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :content, :class => 'text_area' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :template_id %>
-    <%= f.number_field :template_id %>
+  <div class="control-group">
+    <%= f.label :template_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :template_id, :class => 'number_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :to_addresses %>
-    <%= f.text_field :to_addresses %>
+  <div class="control-group">
+    <%= f.label :to_addresses, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :to_addresses, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit 'Save' %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                emails_path, :class => 'btn' %>
   </div>
 <% end %>

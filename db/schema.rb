@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20140422215303) do
+=======
+ActiveRecord::Schema.define(:version => 20140423174414) do
+>>>>>>> master
 
   create_table "emails", :force => true do |t|
     t.integer  "request_id"
@@ -40,6 +44,9 @@ ActiveRecord::Schema.define(:version => 20140422215303) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "avatar"
+    t.string   "obo_fname"
+    t.string   "obo_lname"
+    t.boolean  "agree_to_terms"
   end
 
   create_table "sockmonkeys", :force => true do |t|

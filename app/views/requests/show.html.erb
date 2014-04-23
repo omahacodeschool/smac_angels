@@ -2,25 +2,8 @@
   <%= notice %>
 </p>
 
-<%#= image_tag(request.before_photo_url) %>
-Photo will be here.
+<%= image_tag(@request.before_photo_url) %>
 
-<p>
-  <b>Ship address:</b>
-  <%= @request.ship_address %>
-</p>
-<p>
-  <b>Ship city:</b>
-  <%= @request.ship_city %>
-</p>
-<p>
-  <b>Ship state:</b>
-  <%= @request.ship_state %>
-</p>
-<p>
-  <b>Ship zipcode:</b>
-  <%= @request.ship_zipcode %>
-</p>
 <p>
   <b>Story:</b>
   <%= @request.story %>
@@ -29,16 +12,36 @@ Photo will be here.
   <b>External url:</b>
   <%= @request.external_url %>
 </p>
-<%= form_tag(new_session_path) do %>
-  <%= hidden_field 'request_id', :value => @request.id %>
-  <div class="field">
-    <%= label_tag "Anonymous Angel?" %>
-    <%= check_box_tag 'anonymous' %>
-  </div>
-  <div>
-    <%= submit_tag "Become Angel" %>
-  </div>
+<% if @request.angel_id %>
+  <p>I have an angel!</p>
+  <p>
+    <b>Ship address:</b>
+    <%= @request.ship_address %>
+  </p>
+  <p>
+    <b>Ship city:</b>
+    <%= @request.ship_city %>
+  </p>
+  <p>
+    <b>Ship state:</b>
+    <%= @request.ship_state %>
+  </p>
+  <p>
+    <b>Ship zipcode:</b>
+    <%= @request.ship_zipcode %>
+  </p>
+<% else %>
+  <%= form_tag(become_angel_path) do %>
+    <%= hidden_field_tag 'request_id', @request.id %>
+    <div class="field">
+      <%= label_tag "Anonymous Angel?" %>
+      <%= check_box_tag 'anonymous' %>
+    </div>
+    <div>
+      <%= submit_tag "Become Angel" %>
+    </div>
+  <% end %>
 <% end %>
-
+<div id="fb-root"></div>
 <%= link_to 'Edit', edit_request_path(@request) %>
 <%= link_to 'Back', requests_path %>
