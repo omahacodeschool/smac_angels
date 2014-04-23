@@ -1,8 +1,9 @@
 class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
-  def index
-    @requests = Request.all
+  before_filter :require_login, :except => [:show]
+    def index
+    @requests = Request.order("created_at DESC").where(:angel_id => nil)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +15,7 @@ class RequestsController < ApplicationController
   # GET /requests/1.json
   def show
     @request = Request.find(params[:id])
-
+    @angel = User.where(:id => @request.angel_id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @request }
@@ -44,6 +45,7 @@ class RequestsController < ApplicationController
     #raise params.inspect
     respond_to do |format|
       if @request.save
+        Status.create(:request_id => @request.id, :status => 'Unmatched')
         format.html { redirect_to @request, notice: 'Request was successfully created.' }
         format.json { render json: @request, status: :created, location: @request }
       else
@@ -73,11 +75,29 @@ class RequestsController < ApplicationController
   # DELETE /requests/1.json
   def destroy
     @request = Request.find(params[:id])
+    @request.statuses.each { |s| s.destroy }
     @request.destroy
-
     respond_to do |format|
       format.html { redirect_to requests_url }
       format.json { head :no_content }
     end
+  end
+  
+  def become_angel
+    
+
+    if !current_user
+      redirect_to(new_session_path) and return
+    end
+
+    @request = Request.find(session[:request_id])
+
+    @request.add_angel(session[:user_id], session[:anonymous])
+
+    session[:request_id] = nil    
+    session[:anonymous] = nil
+
+    redirect_to (request_path(@request.id))
+  
   end
 end

@@ -16,10 +16,20 @@
 
   <%= f.hidden_field :requestor_id, :value => session[:user_id] %>
   
-  <div class="field">
+  <div class="obo_check field">
     <%= f.label "On behalf of someone else:" %>
     <%= f.check_box :obo %>
   </div>
+
+  <div class="obo_name field"> 
+    <%= f.label "On behalf of First Name" %>
+    <%= f.text_field :obo_fname %>
+  </div>
+  <div class="obo_name field"> 
+    <%= f.label "On behalf of Last Name" %>
+    <%= f.text_field :obo_lname %>
+  </div>
+
   <!--<div class="field">
     <%#= f.label "Do you want to be anonymous?" %>
     <%#= f.check_box :anon_req %>
@@ -65,6 +75,10 @@
   <div class="field">
     <%= f.label "Picture after your receive SMAC Monkey" %>
     <%= f.file_field :after_photo_url %>
+  </div>
+  <div>
+    <%= f.label "Agree Statement:" %>
+    <%= f.check_box :agree_to_terms %>
   </div>
 
   <div class="actions">

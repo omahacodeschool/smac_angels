@@ -3,23 +3,31 @@ class SessionsController < ApplicationController
   end
   
   def create
-    if params[:request_id]
-      session[:request_id] = params[:request_id]
-      if params[:anonymous]
-        session[:anonymous] = params[:anonymous]
-      end
-    end
     user = login(params[:email], params[:password], params[:remember_me])
-    if user
+
+    if session[:request_id]
+
+      @request = Request.find(session[:request_id])
+
+      @request.add_angel(session[:user_id], session[:anonymous])
+
+      session[:request_id] = nil    
+      session[:anonymous] = nil  
+
+      redirect_to (request_path(@request.id))
+
+    elsif user
       redirect_back_or_to root_url, :notice => "Logged in!"
+      session[:user_id] = user.id
     else
       flash.now.alert = "Email or password was invalid"
       render :new
     end
+
   end
 
   def destroy
-    logout
+    session[:user_id] = nil
     redirect_to root_url, :notice => "Logged out!"
   end
 end

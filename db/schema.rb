@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140422200703) do
+ActiveRecord::Schema.define(:version => 20140423174820) do
 
   create_table "emails", :force => true do |t|
     t.integer  "request_id"
     t.text     "content"
-    t.integer  "template_id"
     t.string   "to_addresses"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "subject"
   end
 
   create_table "requests", :force => true do |t|
@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(:version => 20140422200703) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "avatar"
+    t.string   "obo_fname"
+    t.string   "obo_lname"
+    t.boolean  "agree_to_terms"
   end
 
   create_table "sockmonkeys", :force => true do |t|
@@ -50,6 +53,13 @@ ActiveRecord::Schema.define(:version => 20140422200703) do
     t.string   "favcolor"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "statuses", :force => true do |t|
+    t.integer  "request_id"
+    t.text     "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "templates", :force => true do |t|
@@ -72,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20140422200703) do
     t.datetime "reset_password_email_sent_at"
     t.string   "fname"
     t.string   "lname"
+    t.boolean  "is_admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

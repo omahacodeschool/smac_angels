@@ -1,83 +1,57 @@
 class EmailsController < ApplicationController
-  # GET /emails
-  # GET /emails.json
+  # before_filter :only => [:index, :show] { |c| c.authorize 'pastor' }
+  # before_filter :only => [:new, :create] { |c| c.authorize 'coordinator' }
+  
+  # list past emails in DESC order
   def index
-    @emails = Email.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @emails }
-    end
+    # @emails = Email.joins(:event).select("emails.*, http://events.name as ename").order('created_at DESC')
   end
 
-  # GET /emails/1
-  # GET /emails/1.json
+  # Show contents of specific email
   def show
     @email = Email.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @email }
-    end
   end
 
-  # GET /emails/new
-  # GET /emails/new.json
+  # Create new email
   def new
     @email = Email.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @email }
-    end
   end
 
-  # GET /emails/1/edit
-  def edit
-    @email = Email.find(params[:id])
-  end
-
-  # POST /emails
-  # POST /emails.json
+  # Send email
   def create
-    @email = Email.new(params[:email])
+    case params["button"].to_i
+    when 1
+      @template = Template.find_by_name("Signup Confirmation")
+    when 2
+      @template = Template.find_by_name("Requestor Signup")
+    when 3
+      @template = Template.find_by_name("Angel Signup")
+    when 4
+      @template = Template.find_by_name("Shipping Notification for Angel")
+    when 5
+      @template = Template.find_by_name("Shipping Notification for Requestor")
+    when 6
+      @template = Template.find_by_name("Feedback Notification for Angel")
+    when 7
+      @template = Template.find_by_name("Feedback Notification for Requestor")
+    end      
 
-    respond_to do |format|
-      if @email.save
-        format.html { redirect_to @email, notice: 'Email was successfully created.' }
-        format.json { render json: @email, status: :created, location: @email }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @email.errors, status: :unprocessable_entity }
-      end
+    @email = Email.new
+    @email.content = @template.content
+    @email.subject = @template.name
+    @email.request_id = params["request_id"]
+    @email.to_addresses = params["email"]["email_address"]
+
+    if @email.save
+      UserMailer.email_layout(@email).deliver
+    
+      flash[:notice] = 'Email was successfully created.'
+      redirect_to root_path
+    else
+      flash[:notice] = "Please fix errors."
+      render "new"
     end
+
   end
-
-  # PUT /emails/1
-  # PUT /emails/1.json
-  def update
-    @email = Email.find(params[:id])
-
-    respond_to do |format|
-      if @email.update_attributes(params[:email])
-        format.html { redirect_to @email, notice: 'Email was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @email.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /emails/1
-  # DELETE /emails/1.json
-  def destroy
-    @email = Email.find(params[:id])
-    @email.destroy
-
-    respond_to do |format|
-      format.html { redirect_to emails_url }
-      format.json { head :no_content }
-    end
-  end
+  
 end
