@@ -1,44 +1,70 @@
-<p id="notice">
-  <%= notice %>
-</p>
-
-<%#= image_tag(request.before_photo_url) %>
-Photo will be here.
-
-<p>
-  <b>Ship address:</b>
-  <%= @request.ship_address %>
-</p>
-<p>
-  <b>Ship city:</b>
-  <%= @request.ship_city %>
-</p>
-<p>
-  <b>Ship state:</b>
-  <%= @request.ship_state %>
-</p>
-<p>
-  <b>Ship zipcode:</b>
-  <%= @request.ship_zipcode %>
-</p>
-<p>
-  <b>Story:</b>
-  <%= @request.story %>
-</p>
-<p>
-  <b>External url:</b>
-  <%= @request.external_url %>
-</p>
-<%= form_tag(new_session_path) do %>
-  <%= hidden_field 'request_id', :value => @request.id %>
-  <div class="field">
-    <%= label_tag "Anonymous Angel?" %>
-    <%= check_box_tag 'anonymous' %>
-  </div>
-  <div>
-    <%= submit_tag "Become Angel" %>
+<% content_for :hero_unit do %>
+  <div class="row">
+      <!-- placeholder for @request.requestor.fname -->
+      <div class="span3">
+        <div class="avatar-banner">
+          <%= image_tag("avatar.png", :alt => "user avatar") %>
+        </div>
+      </div>
+      
+      <div class="span9">      
+        <div class="name-banner center-banner">
+          Sarah is asking for Nomo
+        </div>
+  
+        <div class="separator-banner"></div>
+  
+        <div class="tagline-banner center-banner">
+          Can you help?
+        </div>
+      </div>
   </div>
 <% end %>
 
-<%= link_to 'Edit', edit_request_path(@request) %>
-<%= link_to 'Back', requests_path %>
+<div class="container">
+  <p id="notice">
+    <%= notice %>
+  </p>
+
+  <%#= image_tag(request.before_photo_url) %>
+
+
+  <p>
+    <b>Ship address:</b>
+    <%= @request.ship_address %>
+  </p>
+  <p>
+    <b>Ship city:</b>
+    <%= @request.ship_city %>
+  </p>
+  <p>
+    <b>Ship state:</b>
+    <%= @request.ship_state %>
+  </p>
+  <p>
+    <b>Ship zipcode:</b>
+    <%= @request.ship_zipcode %>
+  </p>
+  <p>
+    <b>Story:</b>
+    <%= @request.story %>
+  </p>
+  <p>
+    <b>External url:</b>
+    <%= @request.external_url %>
+  </p>
+  <%= form_tag(new_session_path) do %>
+    <%= hidden_field 'request_id', :value => @request.id %>
+    <div class="field">
+      <%= label_tag "Anonymous Angel?" %>
+      <%= check_box_tag 'anonymous' %>
+    </div>
+    <div>
+      <%= submit_tag "Become Angel" %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Edit', edit_request_path(@request) %>
+  <%= link_to 'Back', requests_path %>
+
+</div>
