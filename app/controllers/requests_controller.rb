@@ -14,7 +14,7 @@ class RequestsController < ApplicationController
   # GET /requests/1.json
   def show
     @request = Request.find(params[:id])
-
+    @angel = User.where(:id => @request.angel_id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @request }
@@ -79,5 +79,29 @@ class RequestsController < ApplicationController
       format.html { redirect_to requests_url }
       format.json { head :no_content }
     end
+  end
+  
+  def become_angel
+    
+    session[:request_id] = params[:request_id]
+    
+    if params[:anonymous] == "1"
+      session[:anonymous] = true
+    else 
+      session[:anonymous] = false
+    end
+    
+    if current_user
+      
+      current_request = Request.find(session[:request_id])
+      
+      current_request.angel_id = session[:user_id]
+      current_request.anon_angel = session[:anonymous]
+      current_request.save
+      redirect_to(request_path(session[:request_id]))
+    else
+      redirect_to(new_session_path)
+    end
+  
   end
 end

@@ -29,16 +29,19 @@ Photo will be here.
   <b>External url:</b>
   <%= @request.external_url %>
 </p>
-<%= form_tag(new_session_path) do %>
-  <%= hidden_field 'request_id', :value => @request.id %>
-  <div class="field">
-    <%= label_tag "Anonymous Angel?" %>
-    <%= check_box_tag 'anonymous' %>
-  </div>
-  <div>
-    <%= submit_tag "Become Angel" %>
-  </div>
+<% if @request.angel_id %>
+  I have an angel!
+<% else %>
+  <%= form_tag(become_angel_path) do %>
+    <%= hidden_field_tag 'request_id', @request.id %>
+    <div class="field">
+      <%= label_tag "Anonymous Angel?" %>
+      <%= check_box_tag 'anonymous' %>
+    </div>
+    <div>
+      <%= submit_tag "Become Angel" %>
+    </div>
+  <% end %>
 <% end %>
-
 <%= link_to 'Edit', edit_request_path(@request) %>
 <%= link_to 'Back', requests_path %>

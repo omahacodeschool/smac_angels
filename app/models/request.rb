@@ -10,4 +10,14 @@ class Request < ActiveRecord::Base
   has_many :emails
   belongs_to :sockmonkey
   
+  # def self.confirm_angel
+#     if current_user
+#       current_request = Request.find(session[:request_id])
+#       current_request.angel_id = current_user.id
+#       current_request.angel_anon = session[:anonymous]
+#       redirect_to(request_path(request_id))
+#     else
+#       redirect_to(new_session_path)
+#     end
+#   end
 end
