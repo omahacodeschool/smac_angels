@@ -80,9 +80,9 @@ ActiveRecord::Schema.define(:version => 20140423174820) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
-    t.boolean  "is_admin"
     t.string   "fname"
     t.string   "lname"
+    t.boolean  "is_admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
