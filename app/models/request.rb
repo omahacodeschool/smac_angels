@@ -5,7 +5,7 @@ class Request < ActiveRecord::Base
   
   belongs_to :requestor, :class_name => :user
   belongs_to :angel, :class_name => :user
-  # has_many :statuses
+  has_many :statuses
   # has_many :comments
   has_many :emails
   belongs_to :sockmonkey
@@ -29,6 +29,9 @@ class Request < ActiveRecord::Base
     end
       
     self.angel_id = user_id
+      
+    Status.create(:request_id => self.id, :status => 'Matched, initial')  
+      
       
     self.save
 

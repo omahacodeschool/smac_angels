@@ -44,6 +44,7 @@ class RequestsController < ApplicationController
     #raise params.inspect
     respond_to do |format|
       if @request.save
+        Status.create(:request_id => @request.id, :status => 'Unmatched')
         format.html { redirect_to @request, notice: 'Request was successfully created.' }
         format.json { render json: @request, status: :created, location: @request }
       else
@@ -73,8 +74,8 @@ class RequestsController < ApplicationController
   # DELETE /requests/1.json
   def destroy
     @request = Request.find(params[:id])
+    @request.statuses.each { |s| s.destroy }
     @request.destroy
-
     respond_to do |format|
       format.html { redirect_to requests_url }
       format.json { head :no_content }
@@ -83,6 +84,7 @@ class RequestsController < ApplicationController
   
   def become_angel
     
+
     if !current_user
       redirect_to(new_session_path) and return
     end
