@@ -31,6 +31,12 @@ GEM
     arel (3.0.3)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+    coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -38,12 +44,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
-    coderay (1.1.0)
     columnize (0.8.9)
     commonjs (0.2.7)
     debugger (1.6.6)
@@ -199,8 +199,8 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
-  coffee-rails (~> 3.2.1)
   carrierwave
+  coffee-rails (~> 3.2.1)
   debugger
   dotenv-rails
   fog
