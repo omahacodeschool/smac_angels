@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
   before_filter :setup_negative_captcha, :only => [:new, :create]
+  
+  # Creates User object for initial sign up form.
+  
   def new
     @user = User.new
   end
 
+  # Saves user from parameters on the sign up form from the @captcha params, using negative captcha
   def create
     @user = User.new(@captcha.values)
     
@@ -15,11 +19,13 @@ class UsersController < ApplicationController
     end
   end
   
+  #Select all users for index view 
   def index
     @users = User.all
   end
-  private
   
+  private
+  # Returns parameters from form fields after decoding MD5 hash field names. 
   ## https://github.com/subwindow/negative-captcha
   # Add to spec helper for tests - NegativeCaptcha.test_mode = true
     def setup_negative_captcha
