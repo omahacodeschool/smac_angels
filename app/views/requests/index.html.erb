@@ -1,62 +1,17 @@
-<%- model_class = Request -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+<div>
+  Short message on how to become an Angel...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat.
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:requestor_id) %></th>
-      <th><%= model_class.human_attribute_name(:angel_id) %></th>
-      <th><%= model_class.human_attribute_name(:sockmonkey_id) %></th>
-      <th><%= model_class.human_attribute_name(:obo) %></th>
-      <th><%= model_class.human_attribute_name(:anon_req) %></th>
-      <th><%= model_class.human_attribute_name(:anon_angel) %></th>
-      <th><%= model_class.human_attribute_name(:ship_address) %></th>
-      <th><%= model_class.human_attribute_name(:ship_city) %></th>
-      <th><%= model_class.human_attribute_name(:ship_state) %></th>
-      <th><%= model_class.human_attribute_name(:ship_zipcode) %></th>
-      <th><%= model_class.human_attribute_name(:story) %></th>
-      <th><%= model_class.human_attribute_name(:external_url) %></th>
-      <th><%= model_class.human_attribute_name(:before_photo_url) %></th>
-      <th><%= model_class.human_attribute_name(:after_photo_url) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @requests.each do |request| %>
-      <tr>
-        <td><%= link_to request.id, request_path(request) %></td>
-        <td><%= request.requestor_id %></td>
-        <td><%= request.angel_id %></td>
-        <td><%= request.sockmonkey_id %></td>
-        <td><%= request.obo %></td>
-        <td><%= request.anon_req %></td>
-        <td><%= request.anon_angel %></td>
-        <td><%= request.ship_address %></td>
-        <td><%= request.ship_city %></td>
-        <td><%= request.ship_state %></td>
-        <td><%= request.ship_zipcode %></td>
-        <td><%= request.story %></td>
-        <td><%= request.external_url %></td>
-        <td><%= request.before_photo_url %></td>
-        <td><%= request.after_photo_url %></td>
-        <td><%=l request.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_request_path(request), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      request_path(request),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_request_path,
-            :class => 'btn btn-primary' %>
+<h2>Select a recipient:</h2>
+
+<div>
+  <% @requests.each do |request| %>
+    <div>
+      <%= link_to "Requestor Pictures #{image_tag(request.before_photo_url)}".html_safe, request_path(request.id) %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Show More" %>
