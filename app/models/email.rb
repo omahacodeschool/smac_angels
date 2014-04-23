@@ -3,4 +3,6 @@ class Email < ActiveRecord::Base
   
   belongs_to :request
   belongs_to :template
+  
+  
 end
