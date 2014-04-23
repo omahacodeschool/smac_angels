@@ -2,8 +2,7 @@
   <%= notice %>
 </p>
 
-<%#= image_tag(request.before_photo_url) %>
-Photo will be here.
+<%= image_tag(@request.before_photo_url) %>
 
 <p>
   <b>Story:</b>
@@ -43,5 +42,6 @@ Photo will be here.
     </div>
   <% end %>
 <% end %>
+<div id="fb-root"></div>
 <%= link_to 'Edit', edit_request_path(@request) %>
 <%= link_to 'Back', requests_path %>
