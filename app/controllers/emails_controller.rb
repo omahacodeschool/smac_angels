@@ -19,7 +19,22 @@ class EmailsController < ApplicationController
 
   # Send email
   def create
-    @template = Template.find(params["button"].to_i)
+    case params["button"].to_i
+    when 1
+      @template = Template.find_by_name("Signup Confirmation")
+    when 2
+      @template = Template.find_by_name("Requestor Signup")
+    when 3
+      @template = Template.find_by_name("Angel Signup")
+    when 4
+      @template = Template.find_by_name("Shipping Notification for Angel")
+    when 5
+      @template = Template.find_by_name("Shipping Notification for Requestor")
+    when 6
+      @template = Template.find_by_name("Feedback Notification for Angel")
+    when 7
+      @template = Template.find_by_name("Feedback Notification for Requestor")
+    end      
 
     @email = Email.new
     @email.content = @template.content
