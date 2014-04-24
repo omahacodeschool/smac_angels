@@ -1,5 +1,65 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
-  hello: "Hello world"
+en:  
+  activerecord:
+    models: 
+      user: "SMAC Participant"
+      sockmonkey: "A SockMonkey"
+      request: "SMAC Request"
+    attributes:
+      user:
+        email: "Email address"
+        lname: "Last name"
+        fname: "First name"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+      sockmonkey:
+        name: "Name"
+      request:
+        ship_address: "Street Address"
+        ship_city: "City"
+        ship_state: "State"
+        ship_zipcode: "ZIP code"
+        story: "Background story"
+        agree_to_terms: "Angel sharing agreement"
+        sockmonkey_id: "Against Cancer"
+        obo_lname: "On Behalf of Name"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "must be a valid email address."
+              invalid: "must be a valid email address."
+            lname:
+              blank: "must have a valid last name."
+            fname:
+              blank: "must have a valid first name."
+            password:
+              blank: "can not be blank."
+            password_confirmation:
+              blank: "can not be blank."
+              invalid: "does not match the password field."
+        sockmonkey:
+          attributes:
+            name:  
+              blank: "must have a valid name."
+        request:
+          attributes:
+            ship_address:
+              blank: "can not be blank."
+            ship_city:
+              blank: "can not be blank."
+            ship_state:
+              blank: "can not be blank."
+            ship_zipcode:
+              blank: "can not be blank."
+            story:
+              blank: "can not be blank."
+            agree_to_terms:
+              invalid: "must agree to allowing their shipping address to be shared."  
+            sock_monkey_id:
+              blank: "must be selected."
+            obo_lname:
+              blank: "must have the last name of whom the request is on behalf of."
