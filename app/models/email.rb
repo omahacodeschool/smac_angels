@@ -21,6 +21,8 @@ class Email < ActiveRecord::Base
     email.subject = template.name
     email.to_addresses = user.email
     email.content = unique_email(email) #replace ((variables)) with "strings"
+
+    email.request_id = 
     if email.save
       UserMailer.email_layout(email).deliver    
     end
@@ -45,22 +47,24 @@ class Email < ActiveRecord::Base
   #
   # Returns the email's modified content
   def unique_email(email)
+    binding.pry
     user = User.find_by_email(email.to_addresses)
     email.content = email.content.gsub "((name))", user.fname
 
     if email.request_id
+      binding.pry
       request = Request.find(email.request_id)
-      
+      requestor = User.find(request.requestor_id)
+      email.content = email.content.gsub "((requestor))", requestor.fname
+      sockmonkey = Sockmonkey.find(request.sockmonkey_id)
+      email.content = email.content.gsub "((sockmonkey))", sockmonkey.name
+
       if request.angel_id
         angel = User.find(request.angel_id)
-        email.content.gsub "((angel))", angel.fname
+        email.content = email.content.gsub "((angel))", angel.fname
       end
-      
-      requestor = User.find(request.requestor_id)
-      email.content.gsub "((requestor))", requestor.fname
+      binding.pry 
 
-      sockmonkey = Sockmonkey.find(request.sockmonkey_id)
-      email.content.gsub "((sockmonkey))", sockmonkey.name
     end
     email.content
   end
