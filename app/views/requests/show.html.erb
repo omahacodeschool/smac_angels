@@ -34,6 +34,7 @@
   <%#= image_tag(request.before_photo_url) %>
 
   <div class="large-9 large-centered columns">
+
     <%= image_tag(@request.before_photo_url) %>
     
     <p>
@@ -77,6 +78,8 @@
       </p>
     <% else %>
       <%= form_tag(become_angel_path) do %>
+        <%= @request.id %>
+        <%= current_user.class %>
         <%= hidden_field_tag 'request_id', @request.id %>
         <div class="field">
           <%= label_tag "Anonymous Angel?" %>
