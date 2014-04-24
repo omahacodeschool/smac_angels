@@ -16,7 +16,12 @@
   <h3>Requests for a monkey:</h3>
 
   <% @requests.each do |request| %>
-    <div><%= image_tag(request.before_photo_url) %></div>
+    <div><% if request.before_photo_url %>
+      <%= image_tag(request.before_photo_url) %>
+    <% else %>
+      <%= image_tag("profile.png").html_safe %>
+    <% end %>
+    </div>
 
     <% if request.obo %>
       <div><%= request.obo_fname %> <%= request.obo_lname %></div>
@@ -37,7 +42,11 @@
 <% if @angels %>
 
   <% @angels.each do |angel| %> 
-    <div><%= image_tag(angel.before_photo_url) %></div>
+    <div><% if angel.before_photo_url %>
+      <%= image_tag(@request.before_photo_url) %>
+    <% else %>
+      <%= image_tag("profile.png") %>
+    <% end %></div>
 
     <% if angel.obo %>
       <div><%= angel.obo_name %></div>

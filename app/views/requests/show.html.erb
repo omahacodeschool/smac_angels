@@ -31,10 +31,10 @@
   </p>
 
   <div class="large-9 columns">
-    <% if request.before_photo_url %>
+    <% if @request.before_photo_url %>
       <%= image_tag(@request.before_photo_url) %>
     <% else %>
-      <%= link_to image_tag("profile.png").html_safe, request_path(request.id) %>
+      <%= image_tag("/profile.png") %>
     <% end %>
     <p>
       <!-- hardcoded name -->
