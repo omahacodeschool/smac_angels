@@ -117,7 +117,7 @@ Request.create([
   angel_id: 4,
   requestor_id: 5,
   current_status: 5,
-  remote_before_photo_url_url: "http://i.imgur.com/NEs33qS.gif",
+  remote_before_photo_url_url: "http://i.imgur.com/3eWraMU.jpg",
   ship_address: "1 Main St",
   ship_city: "Liconln",
   ship_state: "NE",
