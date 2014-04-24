@@ -15,8 +15,8 @@ class Request < ActiveRecord::Base
   validates :ship_address, :presence => true
   validates :ship_city, :presence => true
   validates :ship_state, :presence => true
-  validates :ship_zip, :presence => true
-  validates :obo_lname, presence: true, if :obo?
+  validates :ship_zipcode, :presence => true
+  validates :obo_lname, presence: true if :obo?
   validates :story, presence: true
   
   
@@ -43,8 +43,7 @@ class Request < ActiveRecord::Base
     self.angel_id = user_id
       
     Status.create(:request_id => self.id, :status => 'Matched, initial')  
-      
-      
+           
     self.save
     Email.new.send_email("Angel Signup", User.find(user_id))
 	end
