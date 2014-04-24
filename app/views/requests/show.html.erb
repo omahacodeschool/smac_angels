@@ -31,12 +31,12 @@
     <%= notice %>
   </p>
 
-  <%#= image_tag(request.before_photo_url) %>
-
   <div class="large-9 large-centered columns">
-
-    <%= image_tag(@request.before_photo_url) %>
-    
+    <% if @request.before_photo_url != nil %>
+      <%= image_tag(@request.before_photo_url) %>
+    <% else %>
+      <%= image_tag("profile.png") %>
+    <% end %>
     <p>
       <!-- hardcoded name -->
       <h2>Sarah's Story</h2>

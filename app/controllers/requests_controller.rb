@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   before_filter :require_login, :except => [:show, :index, :become_angel]
-    def index
+  def index
     @requests = Request.order("created_at DESC").where(:angel_id => nil)
 
     respond_to do |format|
