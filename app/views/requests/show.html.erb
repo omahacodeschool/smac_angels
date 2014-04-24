@@ -1,34 +1,29 @@
-<% content_for :banner do %>
-
-  <div class="banner">
-    <div class="row">
-      <!-- placeholder for @request.requestor.fname -->
-      <div class="large-4 large-centered small-6 small-centered columns">
-        <div class="avatar-banner">
-          <%= image_tag("avatar.png", :alt => "user avatar") %>
-        </div>
+<div id="controller_requests" class="requests-show-banner">
+  <div class="row">
+    <!-- placeholder for @request.requestor.fname -->
+    <div class="large-4 large-centered small-6 small-centered columns">
+      <div class="avatar-banner">
+        <%= image_tag("avatar.png", :alt => "user avatar") %>
       </div>
     </div>
-    
-    <div class="row">  
-      <span class="large-2 large-centered columns">
-        <div class="center-banner">
-        <div class="name-banner">
-          Sarah is asking for Nomo
-        </div>
+  </div>
   
-        <div class="separator-banner large-9 large-centered small-centered columns"></div>
-  
-        <div class="tagline-banner">
-          Can you help?
-        </div>
-        </div>
-      </span>
-     </div> 
-   </div>
+  <div class="row">  
+    <span class="large-2 large-centered columns">
+      <div class="center-banner">
+      <div class="name-banner">
+        Sarah is asking for Nomo
+      </div>
 
+      <div class="separator-banner large-9 large-centered small-centered columns"></div>
 
-<% end %>
+      <div class="tagline-banner">
+        Can you help?
+      </div>
+      </div>
+    </span>
+   </div> 
+ </div>
 
 <div class="row">
   <p id="notice">
