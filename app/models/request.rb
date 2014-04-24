@@ -11,16 +11,25 @@ class Request < ActiveRecord::Base
   belongs_to :sockmonkey
   
   # def self.confirm_angel
-#     if current_user
-#       current_request = Request.find(session[:request_id])
-#       current_request.angel_id = current_user.id
-#       current_request.angel_anon = session[:anonymous]
-#       redirect_to(request_path(request_id))
-#     else
-#       redirect_to(new_session_path)
-#     end
-#   end
-	def add_angel(user_id, anonymous)
+  #     if current_user
+  #       current_request = Request.find(session[:request_id])
+  #       current_request.angel_id = current_user.id
+  #       current_request.angel_anon = session[:anonymous]
+  #       redirect_to(request_path(request_id))
+  #     else
+  #       redirect_to(new_session_path)
+  #     end
+  #   end
+
+  # Public:
+  #
+  # Examples
+  #
+  #   current_user
+  #   # => current_user
+  #
+  # Returns the current user
+  def add_angel(user_id, anonymous)
     
     if anonymous == "1"
       self.anon_angel = true
