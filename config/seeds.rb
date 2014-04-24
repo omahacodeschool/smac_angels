@@ -102,7 +102,7 @@ User.create([
 # :after_photo_url, :angel_id, :anon_angel, :anon_req, :before_photo_url, :external_url, :obo, :obo_fname, :obo_lname, :requestor_id, :ship_address, :ship_city, :ship_state, :ship_zipcode, :story, :agree_to_terms
 Request.create([
   {
-  angel_id: 2,
+  angel_id: nil,
   requestor_id: 3,
   current_status: 5,
   before_photo_url: "http://i.imgur.com/miEgzKD.jpg",
@@ -110,7 +110,7 @@ Request.create([
   ship_city: "Omaha",
   ship_state: "NE"
   },{
-  angel_id: 4,
+  angel_id: nil,
   requestor_id: 5,
   current_status: 5,
   before_photo_url: "http://i.imgur.com/NEs33qS.gif",
