@@ -176,20 +176,114 @@ h1, h2, h3, h4 {
 /* `Footer
 ----------------------------------------------------------------------------------------------------*/
 
-
 .footer {
-    padding: 1em;
-    background: #424242;
-    display: block;
-    bottom: 0;
-    left: 0;
-    margin: 0; 
-    text-align: center;
-    color:white;
-    height: 200px;
+  padding: 1em;
+  background: #424242;
+  display: block;
+  bottom: 0;
+  left: 0;
+  margin: 0; 
+  text-align: center;
+  color: #E9E9E9;
+  height: 200px;
 }
 
 .footer a {
   text-decoration: none;
   color:white;
 }
+
+#footer .push {
+ height: 216px;
+}
+
+/* `Forms
+----------------------------------------------------------------------------------------------------*/
+
+.form_name{
+  height: 100px;
+  line-height: 100px;
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #E9E9E9;
+  display:block;
+}
+
+.form{
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 200px;
+  background: #3299BB;
+  height: 600px;
+  width: 500px;
+}
+
+.top_field{
+  margin-top: 30px;
+}
+
+.form input[type="text"]{
+  width: 295px;
+  height: 55px; 
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 5px;
+}
+
+.form input[type="password"]{
+  width: 295px;
+  height: 55px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 5px;
+}
+
+.form input[type="submit"]{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.ctr_button{
+  display: block;
+  margin: 0 auto;
+  margin-top: 24px;
+  border: none;
+  height: 60px;
+  width: 300px;
+  background: #424242;
+  color: #E9E9E9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
