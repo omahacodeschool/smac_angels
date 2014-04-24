@@ -8,12 +8,13 @@ class UsersController < ApplicationController
     @requests = Request.order(:created_at).where("requestor_id = ?", @user.id)
     @angels = Request.order(:created_at).where("angel_id = ?", @user.id)
 
+    # Cool join that won't allow images to display because of possible Carrierwave limitation.
+    #
     # @requests = Request
     #   .joins("JOIN users requestor ON requestor.id = requests.requestor_id")
     #   .joins("JOIN users angel ON angel.id = requests.angel_id")
     #   .joins(:sockmonkey)
     #   .select("requestor_id, requestor.fname || ' ' || requestor.lname AS requestor_name, requests.obo, requests.before_photo_url, requests.obo_fname || ' ' || requests.obo_lname AS obo_name, sockmonkey_id, sockmonkeys.image_url AS sockmonkey_pic, sockmonkeys.name AS sockmonkey_name")
-      
   end
 
   def new
@@ -35,6 +36,17 @@ class UsersController < ApplicationController
   #Select all users for index view 
   def index
     @users = User.all
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
+
+    redirect_to (user_path(@user.id))
   end
   
   private

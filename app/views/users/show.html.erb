@@ -8,7 +8,7 @@
     <div><%= image_tag(request.before_photo_url) %></div>
 
     <% if request.obo %>
-      <div><%= request.obo_fname %></div>
+      <div><%= request.obo_fname %> <%= request.obo_lname %></div>
     <% else %>
       <div>Me</div>
     <% end %>
@@ -29,7 +29,7 @@
     <% if angel.obo %>
       <div><%= angel.obo_name %></div>
     <% else %>
-      <div><%= angel.requestor.fname %></div>
+      <div><%= angel.requestor.fname %> <%= angel.requestor.lname %></div>
     <% end %>
 
     <div><%= image_tag(angel.sockmonkey.image_url)%></div>
