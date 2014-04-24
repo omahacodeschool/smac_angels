@@ -3,8 +3,8 @@ class AdminController < ApplicationController
   def index
     # !!! Should be changed to integer values from status when that is completed. !!!
 
-    @completed_req = Request.where(:current_status => 2)
-    @matched_req   = Request.where(:current_status => 1)
+    @completed_req = Request.where(:current_status => 10)
+    @matched_req   = Request.where(:current_status => 5)
     @unmatched_req = Request.where(:current_status => 0)
   end
   
