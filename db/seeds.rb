@@ -11,7 +11,7 @@
 
 User.create(fname: "Sarah", lname: "Jones", email: "sarah@example.com", password: "111", password_confirmation: "111")
 User.create(fname: "John", lname: "Doe", email: "john@example.com", password: "111", password_confirmation: "111")
-Request.create(requestor_id: 1, angel_id: 2, ship_address: "100 Main Street", ship_city: "Omaha", ship_state: "Nebraska", ship_zipcode: "10101", story: "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.", external_url: "www.yahoo.com")
+Request.create(requestor_id: 1, angel_id: 2, ship_address: "100 Main Street", ship_city: "Omaha", ship_state: "Nebraska", ship_zipcode: "10101", story: "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.", external_url: "www.yahoo.com", current_status: 1 )
 
 Template.create([
   {
@@ -103,16 +103,36 @@ User.create([
 Request.create([
   {
   angel_id: 2,
-  requestor_id: 3
+  requestor_id: 3,
+  current_status: 5,
+  before_photo_url: "http://i.imgur.com/miEgzKD.jpg",
+  ship_address: "17653 Mockingbird Ln",
+  ship_city: "Omaha",
+  ship_state: "NE"
   },{
   angel_id: 4,
-  requestor_id: 5
+  requestor_id: 5,
+  current_status: 5,
+  before_photo_url: "http://i.imgur.com/NEs33qS.gif",
+  ship_address: "1 Main St",
+  ship_city: "Liconln",
+  ship_state: "NE"
   },{
   angel_id: 5,
-  requestor_id: 2 
+  requestor_id: 2,
+  current_status: 0,
+  before_photo_url: "http://i.imgur.com/eJfN4IG.jpg",
+  ship_address: "17654637 Main Round St Avenue Lane",
+  ship_city: "Baminghamingmamington",
+  ship_state: "AL"
   },{
   angel_id: 6,
-  requestor_id: 4 
+  requestor_id: 4,
+  current_status: 0,
+  before_photo_url: "http://i.imgur.com/YTyjMza.jpg",
+  ship_address: "One",
+  ship_city: "Average City",
+  ship_state: "IA" 
   }
 ])
 
