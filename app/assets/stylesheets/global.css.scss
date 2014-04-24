@@ -93,31 +93,12 @@ ul{
   z-index: 1;
 }
 
-.brand{
-  margin-top: 10px;
-}
-
-.container .nav-collapse ul{
-  float: right;
-  margin-top: 50px;
-}
-
-.container .nav-collapse li{
-  display: inline;
-  padding: 10px;
-}
-
-.navbar a{
-  color: #BCBCBC;
-}
-
 .top-left{
   float: left;
   margin-top: 20px;
 }
 
 .top-left img{
-  margin-left: 20px;
   height: 60px;
   width: auto;
 }
@@ -202,20 +183,40 @@ ul{
 /* `Footer
 ----------------------------------------------------------------------------------------------------*/
 
-
 .footer {
-    padding: 1em;
-    background: #424242;
-    display: block;
-    bottom: 0;
-    left: 0;
-    margin: 0; 
-    text-align: center;
-    color:white;
-    height: 200px;
+  padding: 1em;
+  background: #424242;
+  display: block;
+  bottom: 0;
+  left: 0;
+  margin: 0; 
+  text-align: center;
+  color: #E9E9E9;
+  height: 200px;
 }
 
 .footer a {
   text-decoration: none;
   color:white;
 }
+
+#footer .push {
+ height: 216px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

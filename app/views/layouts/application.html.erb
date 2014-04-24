@@ -30,12 +30,14 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
   </head>
+  
   <body>
-
     <div id="top-bar" >
       <!-- Left Nav Section -->
       <div class="top-left">
-        <img src="assets/SMAC_logo.png" alt="SMAC Angels" /><!-- <%= link_to "SMAC Angels", root_path, :class => "brand" %> -->
+        <%= link_to :root do %>
+          <%= image_tag "/assets/SMAC_logo.png" %>
+        <% end %>
       </div>
 
       <div class="top-right">
@@ -59,15 +61,29 @@
     </div>
   </body>
 
-  <div class="footer">
-    <div class="row">
-          <br />
-          <br />
-          <p>&copy; 2014 SMAC Angels, Inc.</p>
-          <p><a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-          <br />
-            <a href="http://omahacodeschool.com" target="_blank"><img src="https://s3.amazonaws.com/WorkHang/OCSlogo" alt="omaha code school" width=40></a>
+  <footer class="row.full-width">
+    <div class="footer" role="navigation">
+      <br />
+      <br />
+      <p>&copy; 2014 SMAC Angels, Inc.</p>
+      <p><a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      <br />
+      <a href="http://omahacodeschool.com" target="_blank"><img src="https://s3.amazonaws.com/WorkHang/OCSlogo" alt="omaha code school" width=40></a>
     </div>
-  </div>
+  </footer>
 
 </html>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
