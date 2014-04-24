@@ -25,12 +25,13 @@
    </div> 
  </div>
 
-<div class="row">
+<div class="row center-text">
+      
   <p id="notice">
     <%= notice %>
   </p>
 
-  <div class="large-9 columns">
+  <div class="large-9 large-centered columns">
     <% if @request.before_photo_url %>
       <%= image_tag(@request.before_photo_url) %>
     <% else %>
@@ -38,43 +39,24 @@
     <% end %>
     <p>
       <!-- hardcoded name -->
-      <h2>Sarah's Story:</h2>
-      <%= @request.story %>
+      <h2>Sarah's Story</h2>
+      <span class="storytime"><%= @request.story %></span>
     </p>
     
     <p>
-      <h2>External Link:</h2>
-      <%= @request.external_url %>
+      <h2>Website</h2>
+      <span class="storytime"><%= @request.external_url %></span>
     </p>
-  
-    <br />    
-    <br />
-    
-    <div id="share-buttons">
-      <!-- Share on facebook -->
-      <div class="fb-share-button" data-href="http://smac-angels-staging.herokuapp.com/requests/#{@request.id}" data-type="button"></div>
-  
-      <!-- Share on twitter -->
-      <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
-  
-
-      <!-- Share on pinterest if there is an image to share -->
-      <a href      = "//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
-      <!-- Please call pinit.js only once per page -->
-      <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
-    
-    <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="470" data-num-posts="10"></div>
-    
-    <%= link_to 'Edit', edit_request_path(@request) %> |
-    <%= link_to 'Back', requests_path %>
-        
-    <br />
-    <br />    
   </div>
 </div>
 
+<div class="row center-text content-small-padding">
+  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="670" data-num-posts="10"></div>
+  </div>
+</div>
 
-  <div class="large-3 columns">
+<div class="row content-small-padding">
+  <div class="large-3 large-centered center-text columns">
     <% if @request.angel_id %>
       <p>
         <p>
@@ -109,4 +91,25 @@
       <% end %>
     <% end %>
   </div>
+</div>
+
+<div class="row content-small-padding center-text">
+  <div id="share-buttons">
+    <!-- Share on facebook -->
+    <div class="fb-share-button" data-href="http://smac-angels-staging.herokuapp.com/requests/#{@request.id}" data-type="button"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <!-- Share on twitter -->
+    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+
+
+    <!-- Share on pinterest if there is an image to share -->
+    <a href      = "//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+    <!-- Please call pinit.js only once per page -->
+    <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+  
+
+</div>
+
+<div class="row content-small-padding center-text">
+  <%= link_to 'Edit', edit_request_path(@request) %> | <%= link_to 'Back', requests_path %>
 </div>

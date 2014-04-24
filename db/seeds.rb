@@ -111,7 +111,8 @@ Request.create([
   ship_zipcode: 68128,
   story: "Some Story",
   agree_to_terms: TRUE,
-  sockmonkey_id: 1
+  sockmonkey_id: 1,
+  agree_to_terms: true
   },{
   angel_id: 4,
   requestor_id: 5,
@@ -122,8 +123,8 @@ Request.create([
   ship_state: "NE",
   ship_zipcode: 68128,
   story: "Some Story",
-  agree_to_terms: TRUE,
-  sockmonkey_id: 1
+  sockmonkey_id: 1,
+  agree_to_terms: true
   },{
   angel_id: nil,
   requestor_id: 2,
@@ -134,8 +135,8 @@ Request.create([
   ship_state: "AL",
   ship_zipcode: 68128,
   story: "Some Story",
-  agree_to_terms: TRUE,
-  sockmonkey_id: 2
+  sockmonkey_id: 2,
+  agree_to_terms: true
   },{
   angel_id: nil,
   requestor_id: 4,
@@ -146,8 +147,8 @@ Request.create([
   ship_state: "IA",
   ship_zipcode: 68128,
   story: "Some Story",
-  agree_to_terms: TRUE,
-  sockmonkey_id: 2
+  sockmonkey_id: 2,
+  agree_to_terms: true
   }
 ])
 
