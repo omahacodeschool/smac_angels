@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     if @user.save && @captcha.valid?
       Email.new.send_email("Signup Confirmation", @user)
       redirect_to root_url, :notice => "Signed up!"
+      session[:user_id] = @user.id
     else
       flash[:notice] = @captcha.error if @captcha.error
       render :new
