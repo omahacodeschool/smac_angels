@@ -11,13 +11,14 @@ class Request < ActiveRecord::Base
   # has_many :comments
   has_many :emails
   belongs_to :sockmonkey
+  
   validates :agree_to_terms, :acceptance => {:accept => true}
   validates :ship_address, :presence => true
   validates :ship_city, :presence => true
   validates :ship_state, :presence => true
   validates :ship_zipcode, :presence => true
-  validates :obo_lname, presence: true if :obo?
-  validates :story, presence: true
+  validates :obo_lname, presence: true, if: "obo"
+  validates :story, :presence => true
   
   
   # def self.confirm_angel
