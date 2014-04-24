@@ -118,7 +118,7 @@ Request.create([
   ship_city: "Liconln",
   ship_state: "NE"
   },{
-  angel_id: 5,
+  angel_id: nil,
   requestor_id: 2,
   current_status: 0,
   before_photo_url: "http://i.imgur.com/eJfN4IG.jpg",
@@ -126,7 +126,7 @@ Request.create([
   ship_city: "Baminghamingmamington",
   ship_state: "AL"
   },{
-  angel_id: 6,
+  angel_id: nil,
   requestor_id: 4,
   current_status: 0,
   before_photo_url: "http://i.imgur.com/YTyjMza.jpg",
