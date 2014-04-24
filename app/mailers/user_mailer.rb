@@ -3,11 +3,15 @@ class UserMailer < ActionMailer::Base
   from_address.display_name = "SMAC Monkey"
   default from: from_address.format
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
+  # Public: Parse email object and push to email_layout view
   #
-  #  en.site_mailer.recap.subject
+  # Examples
   #
+  # UserMailer.email_layout(email).deliver
+  # ^ This will send an email to email.to_addresses
+  # with the subject email.subject
+  # 
+  # The email's content will be rendered by email_layout.text.erb
   def email_layout(email)    
     @email = email
     mail({

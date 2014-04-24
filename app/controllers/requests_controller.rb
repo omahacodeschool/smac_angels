@@ -83,9 +83,12 @@ class RequestsController < ApplicationController
     end
   end
   
+  # Public: 
+  # Checks to see if the user is logged in
+  # Finds the user object that requested a smac monkey
+  # Adds the angel to requestor's request
   def become_angel
     
-
     if !current_user
       redirect_to(new_session_path) and return
     end
