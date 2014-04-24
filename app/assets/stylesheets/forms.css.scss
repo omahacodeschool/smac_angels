@@ -11,8 +11,18 @@
   display:block;
 }
 
+.form_name2{
+  height: 50px;
+  line-height: 50px;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #424242;
+  display:block;
+}
+
 .form input[type="text"]{
-  width: 295px;
+  width: 300px;
   height: 55px; 
   display: block;
   margin: 0 auto;
@@ -25,7 +35,7 @@
 }
 
 .form input[type="password"]{
-  width: 295px;
+  width: 300px;
   height: 55px;
   display: block;
   margin: 0 auto;
@@ -40,6 +50,63 @@
 .form input[type="submit"]{
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+input[type=checkbox] {
+	visibility: hidden;
+}
+
+.checkbox{
+	width: 20px;
+	margin: 20px 103px;
+	position: relative;
+}
+
+.checkbox label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+  left: 0;
+	background: #eee;
+	border: 1px solid #ddd;
+}
+
+.checkbox label:after {
+	opacity: 0.2;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 6px;
+	left: 5px;
+	border: 3px solid #333;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+// Create the hover event of the tick
+.checkbox label:hover::after {
+	opacity: 0.5;
+}
+
+// Create the checkbox state for the tick
+.checkbox input[type=checkbox]:checked + label:after {
+	opacity: 0.8;
+}
+
+#cbox_label{
+  width: 115px;
+  margin-left: 40px;
+  padding-top: 2px;
 }
 
 .ctr_button{
@@ -57,16 +124,44 @@
   cursor: pointer;
 }
 
+.ctr_button2{
+  display: block;
+  margin: 0 auto;
+  margin-top: 24px;
+  border: none;
+  height: 60px;
+  width: 300px;
+  background: #E9E9E9;
+  color: #424242;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 /* `Signup form
 ----------------------------------------------------------------------------------------------------*/
 
-#signup_form{
+#signup{
   display: block;
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 200px;
   background: #3299BB;
   height: 600px;
+  width: 500px;
+}
+
+/* `Login form
+----------------------------------------------------------------------------------------------------*/
+
+#login{
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 200px;
+  background: #3299BB;
+  height: 650px;
   width: 500px;
 }
 
