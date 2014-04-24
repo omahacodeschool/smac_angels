@@ -42,6 +42,7 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
     @request = Request.new(params[:request])
+    @sockmonkeys = Sockmonkey.all
     #raise params.inspect
     respond_to do |format|
       if @request.save
