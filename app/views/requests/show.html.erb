@@ -1,11 +1,13 @@
 <% content_for :banner do %>
   <div class="row">
       <!-- placeholder for @request.requestor.fname -->
-
+      <span class="large-3 columns">
         <div class="avatar-banner">
           <%= image_tag("avatar.png", :alt => "user avatar") %>
         </div>
-
+      </span>
+      
+      <span class="large-9 columns">
         <div class="name-banner center-banner">
           Sarah is asking for Nomo
         </div>
@@ -15,6 +17,7 @@
         <div class="tagline-banner center-banner">
           Can you help?
         </div>
+      </span>
 
   </div>
 <% end %>
