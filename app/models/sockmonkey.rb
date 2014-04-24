@@ -3,5 +3,6 @@ class Sockmonkey < ActiveRecord::Base
   
   has_many :requests
   mount_uploader :image_url, AvatarUploader
+  # mount_uploader :sockmonkey_pic, AvatarUploader, {:mount_on => :image_url}
   
 end
