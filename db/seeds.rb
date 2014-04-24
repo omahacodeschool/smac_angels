@@ -156,16 +156,17 @@ Sockmonkey.create([
   cancertype: 'All',
   description: 'The ALL cancer fighting monkey!',
   favcolor: 'Green',
-  image_url: 'nomo.jpg',
+  image_url: open('https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/nomo.jpg'),
   name: 'NoMo'
   },{
   cancertype: 'Lung',
   description: 'The lung cancer fighting monkey!',
   favcolor: 'Red',
-  image_url: 'phoenix.png',
+  image_url: open('https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/phoenix.jpg'),
   name: 'Phoenix'  
   }
 ])
+
 
 Status.create([
   {
