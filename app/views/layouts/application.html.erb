@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,900' rel='stylesheet' type='text/css'>
     
     <title><%= content_for?(:title) ? yield(:title) : "SMAC Angel" %></title>
     <%= csrf_meta_tags %>
@@ -28,12 +30,12 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
   </head>
-  <body id="controller_<%= params[:controller] %>">
+  <body>
 
     <div id="top-bar" >
       <!-- Left Nav Section -->
       <div class="top-left">
-        <%= link_to "SMAC Angels", root_path, :class => "brand" %>
+        <img src="assets/SMAC_logo.png" alt="SMAC Angels" /><!-- <%= link_to "SMAC Angels", root_path, :class => "brand" %> -->
       </div>
 
       <div class="top-right">
@@ -50,10 +52,6 @@
           <% end %>
         </ul>
       </div>
-    </div>
-    
-    <div id="controller_<%= params[:controller] %>">
-        <%= yield :banner %>
     </div>
     
     <div>

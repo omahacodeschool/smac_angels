@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
-  before_filter :require_login, :except => [:show]
+  before_filter :require_login, :except => [:show, :index, :become_angel]
     def index
     @requests = Request.order("created_at DESC").where(:angel_id => nil)
 
@@ -91,15 +91,14 @@ class RequestsController < ApplicationController
   def become_angel
     
     if !current_user
+      session[:request_id] = params[:request_id]
+      session[:anonymous] = params[:anonymous]
       redirect_to(new_session_path) and return
     end
 
-    @request = Request.find(session[:request_id])
+    @request = Request.find(params[:request_id])
 
-    @request.add_angel(session[:user_id], session[:anonymous])
-
-    session[:request_id] = nil    
-    session[:anonymous] = nil
+    @request.add_angel(session[:user_id], params[:anonymous])
 
     redirect_to (request_path(@request.id))
   

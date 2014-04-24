@@ -1,5 +1,25 @@
-<% @users.each do |user| %>
-  <%= user.fname %>
-  <%= user.lname %>
-  <%= user.email %>
-<% end %>
+<div id="controller_<%= params[:controller] %>" class="banner">
+  
+  <div class="row">  
+    <span class="large-2 large-centered columns">
+      <div class="center-banner">
+        <div class="text-banner">
+          Short message on how to become an User...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.
+        </div>
+
+        <div class="separator-banner large-9 large-centered small-centered columns"></div>
+          <div class="tagline-banner">
+            Check out our users below!
+          </div>
+        </div>
+    </span>
+   </div> 
+ </div>
+
+<div class="row">
+  <% @users.each do |user| %>
+    <%= user.fname %>
+    <%= user.lname %>
+    <%= user.email %>
+  <% end %>
+</div>

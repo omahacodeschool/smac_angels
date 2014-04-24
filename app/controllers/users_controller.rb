@@ -3,6 +3,21 @@ class UsersController < ApplicationController
   before_filter :require_login, :only => [:index]
 
   # Creates User object for initial sign up form.
+  
+  def show
+    @user = User.find(params[:id])
+    @requests = Request.order(:created_at).where("requestor_id = ?", @user.id)
+    @angels = Request.order(:created_at).where("angel_id = ?", @user.id)
+
+    # Cool join that won't allow images to display because of possible Carrierwave limitation.
+    #
+    # @requests = Request
+    #   .joins("JOIN users requestor ON requestor.id = requests.requestor_id")
+    #   .joins("JOIN users angel ON angel.id = requests.angel_id")
+    #   .joins(:sockmonkey)
+    #   .select("requestor_id, requestor.fname || ' ' || requestor.lname AS requestor_name, requests.obo, requests.before_photo_url, requests.obo_fname || ' ' || requests.obo_lname AS obo_name, sockmonkey_id, sockmonkeys.image_url AS sockmonkey_pic, sockmonkeys.name AS sockmonkey_name")
+  end
+
   def new
     @user = User.new
   end
@@ -14,6 +29,7 @@ class UsersController < ApplicationController
     if @user.save && @captcha.valid?
       Email.new.send_email("Signup Confirmation", @user)
       redirect_to root_url, :notice => "Signed up!"
+      session[:user_id] = @user.id
     else
       flash[:notice] = @captcha.error if @captcha.error
       render :new
@@ -24,7 +40,18 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-    
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
+
+    redirect_to (user_path(@user.id))
+  end
+  
   private
   # Returns parameters from form fields after decoding MD5 hash field names. 
   ## https://github.com/subwindow/negative-captcha
