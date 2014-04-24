@@ -92,7 +92,6 @@ class RequestsController < ApplicationController
     if !current_user
       session[:request_id] = params[:request_id]
       session[:anonymous] = params[:anonymous]
-      binding.pry
       redirect_to(new_session_path) and return
     end
 
