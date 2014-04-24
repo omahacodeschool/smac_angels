@@ -44,17 +44,18 @@
     
     <p>
       <h2>Website</h2>
-      <%= @request.external_url %>
+      <span class="storytime"><%= @request.external_url %></span>
     </p>
   </div>
 </div>
 
-<div class="row content-small-padding">
-  <div class="large-9 columns">
-  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="470" data-num-posts="10"></div>
+<div class="row center-text content-small-padding">
+  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="670" data-num-posts="10"></div>
   </div>
+</div>
 
-  <div class="large-3 columns">
+<div class="row content-small-padding">
+  <div class="large-3 large-centered center-text columns">
     <% if @request.angel_id %>
       <p>
         <p>
@@ -87,7 +88,6 @@
       <% end %>
     <% end %>
   </div>
-  
 </div>
 
 <div class="row content-small-padding center-text">
