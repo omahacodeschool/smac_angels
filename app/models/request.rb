@@ -19,6 +19,7 @@ class Request < ActiveRecord::Base
   validates :ship_zipcode, :presence => true
   validates :obo_lname, presence: true, if: "obo"
   validates :story, :presence => true
+  validates :sockmonkey_id, :presence => true
   
   
   # def self.confirm_angel
