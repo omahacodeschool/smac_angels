@@ -46,7 +46,7 @@ class RequestsController < ApplicationController
     respond_to do |format|
       if @request.save
         Status.create(:request_id => @request.id, :status => 'Unmatched')
-        Email.new.send_email("Requestor Signup", User.find(@request.requestor_id))
+        Email.new.send_email("Requestor Signup", User.find(@request.requestor_id), @request.id)
         format.html { redirect_to @request, notice: 'Request was successfully created.' }
         format.json { render json: @request, status: :created, location: @request }
       else
