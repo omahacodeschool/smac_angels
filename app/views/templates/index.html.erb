@@ -7,7 +7,7 @@
     <tbody>
       <% @templates.each do |template| %>
         <tr>
-          <td><%= link_to template.id, template_path(template) %></td>
+          <td><%= link_to template.id, template_path(template) %> </td>
           <td><%= template.name %></td>
           <td><%= template.content %></td>
           <td><%=l template.created_at %></td>
