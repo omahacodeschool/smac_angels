@@ -76,15 +76,15 @@
     <%= f.label "Picture after your receive SMAC Monkey" %>
     <%= f.file_field :after_photo_url %>
   </div>
-  <div>
-    <%= f.label "By checking this box, you understand we need to give your SMAC! Angel your mailing address in order for them to send him to you. We want to make sure you are cool with that!" %>
+  <div class="field">
     <%= f.check_box :agree_to_terms %>
+    By checking this box, you understand we need to give your SMAC! Angel your mailing address in order for them to send him to you. We want to make sure you are cool with that!
   </div>
   <div class="monkey">
-<% @sockmonkeys.each do |monkey| %>
-  <%= f.radio_button :sockmonkey_id, monkey.id %>
-  <%= f.label :sockmonkey_id, image_tag(monkey.image_url), :value => monkey.id %>
-<% end %>
+    <% @sockmonkeys.each do |monkey| %>
+      <%= f.radio_button :sockmonkey_id, monkey.id %>
+      <%= f.label :sockmonkey_id, image_tag(monkey.image_url), :value => monkey.id %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit 'Save' %>
