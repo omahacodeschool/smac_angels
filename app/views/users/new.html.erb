@@ -11,7 +11,7 @@
   <% end %>
   <%= raw negative_captcha(@captcha) %>
   <div class="field">
-    <%= negative_label_tag(@captcha, :email, "Email:") %>
+    <%= negative_label_tag(@captcha, :email, "") %>
     <%= negative_text_field_tag(@captcha, :email) %>
   </div>
   <div class="field">
@@ -24,11 +24,11 @@
   </div>
   <div class="field">
     <%= negative_label_tag(@captcha, :password, "Password:") %>
-    <%= negative_text_field_tag(@captcha, :password) %>
+    <%= negative_password_field_tag(@captcha, :password) %>
   </div>
   <div class="field">
     <%= negative_label_tag(@captcha, :password_confirmation, "Password Confirmation:") %>
-    <%= negative_text_field_tag(@captcha, :password_confirmation) %>
+    <%= negative_password_field_tag(@captcha, :password_confirmation) %>
   </div>
   
   <div class="actions"><%= submit_tag %></div>
