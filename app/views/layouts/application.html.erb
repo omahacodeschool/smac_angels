@@ -35,7 +35,9 @@
     <div id="top-bar" >
       <!-- Left Nav Section -->
       <div class="top-left">
-        <img src="assets/SMAC_logo.png" alt="SMAC Angels" /><!-- <%= link_to "SMAC Angels", root_path, :class => "brand" %> -->
+        <%= link_to :root do %>
+          <%= image_tag "/assets/SMAC_logo.png" %>
+        <% end %>
       </div>
 
       <div class="top-right">
