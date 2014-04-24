@@ -16,7 +16,12 @@
   <h3>Requests for a monkey:</h3>
 
   <% @requests.each do |request| %>
-    <div><%= image_tag(request.before_photo_url) %></div>
+    <div><% if request.before_photo_url != nil %>
+      <%= image_tag(request.before_photo_url) %>
+    <% else %>
+      <%= image_tag("app/assets/images/profile.png") %>
+    <% end %>
+    </div>
 
     <% if request.obo %>
       <div><%= request.obo_fname %> <%= request.obo_lname %></div>
@@ -24,9 +29,12 @@
       <div>Me</div>
     <% end %>
 
+
     <div><%= image_tag(request.sockmonkey.image_url) %></div>
-    <div><%= request.sockmonkey.name%></div>
+    <div><%= request.sockmonkey.name %></div>
     <div><%= request.current_status %></div>
+
+    
     <%= link_to "View Request", request_path(request.id) %>
   <% end %>
 
@@ -37,10 +45,16 @@
 <% if @angels %>
 
   <% @angels.each do |angel| %> 
-    <div><%= image_tag(angel.before_photo_url) %></div>
+    <div>
+    <% if angel.before_photo_url %>
+      <%= image_tag(angel.before_photo_url) %>
+    <% else %>
+      <%= image_tag("profile.png") %>
+    <% end %>
+    </div>
 
     <% if angel.obo %>
-      <div><%= angel.obo_name %></div>
+      <div><%= angel.obo_fname %> <%= angel.obo_lname %></div>
     <% else %>
       <div><%= angel.requestor.fname %> <%= angel.requestor.lname %></div>
     <% end %>
