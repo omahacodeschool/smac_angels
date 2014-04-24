@@ -27,6 +27,7 @@
     <div><%= image_tag(request.sockmonkey.image_url) %></div>
     <div><%= request.sockmonkey.name%></div>
     <div><%= request.current_status %></div>
+    <%= link_to "View Request", request_path(request.id) %>
   <% end %>
 
 <% end %>
@@ -47,6 +48,7 @@
     <div><%= image_tag(angel.sockmonkey.image_url)%></div>
     <div><%= angel.sockmonkey.name %></div>
     <div><%= angel.current_status %></div>
+    <%= link_to "View Request", request_path(angel.id) %>
   <% end %>
 
 <% end %>
