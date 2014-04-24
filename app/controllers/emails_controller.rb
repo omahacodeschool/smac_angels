@@ -1,8 +1,5 @@
 class EmailsController < ApplicationController
-  # before_filter :only => [:index, :show] { |c| c.authorize 'pastor' }
-  # before_filter :only => [:new, :create] { |c| c.authorize 'coordinator' }
-  
-  # list past emails in DESC order
+  # Show all emails
   def index
     # @emails = Email.joins(:event).select("emails.*, http://events.name as ename").order('created_at DESC')
   end
@@ -19,7 +16,22 @@ class EmailsController < ApplicationController
 
   # Send email
   def create
-    @template = Template.find(params["button"].to_i)
+    case params["button"].to_i
+    when 1
+      @template = Template.find_by_name("Signup Confirmation")
+    when 2
+      @template = Template.find_by_name("Requestor Signup")
+    when 3
+      @template = Template.find_by_name("Angel Signup")
+    when 4
+      @template = Template.find_by_name("Shipping Notification for Angel")
+    when 5
+      @template = Template.find_by_name("Shipping Notification for Requestor")
+    when 6
+      @template = Template.find_by_name("Feedback Notification for Angel")
+    when 7
+      @template = Template.find_by_name("Feedback Notification for Requestor")
+    end      
 
     @email = Email.new
     @email.content = @template.content
@@ -38,4 +50,5 @@ class EmailsController < ApplicationController
     end
 
   end
+  
 end

@@ -1,32 +1,137 @@
-<!DOCTYPE html>
-<html>
+  <% content_for :banner do %> 
+  <div class="row">
+    <div class"large-12 columns">
+      <div id="hp_logo">
+        <img src="assets/Logo.jpg" alt="SMAC Angels" />
+      </div>
+    </div>
   
-  <% content_for :hero_unit do %>
-        <h1>Hello World!</h1>
-        <p>Can anybody see me?</p>
-        <p>
-          <a class="btn btn-primary btn-large">
-            Enroll!
-          </a>
-        </p>
+    <div class="name center">
+      SMAC Angels
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="tagline center">
+      True "creature comforts" for those with cancer
+    </div>
+  </div>
   <% end %>
 
   <body>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    
+    <div class="row full-width"></div>
+      <div class="gallery">
+        <ul>
+          <li><img src="http://lorempixel.com/800/800/people/1" alt="" /></li>
+          <li><img src="http://lorempixel.com/800/800/people/2" alt="" /></li>
+          <li><img src="http://lorempixel.com/800/800/people/3" alt="" /></li>
+          <li><img src="http://lorempixel.com/800/800/people/4" alt="" /></li>
+          <li><img src="http://lorempixel.com/800/800/people/5" alt="" /></li>
+          <li><img src="http://lorempixel.com/800/800/people/6" alt="" /></li>
+        </ul>    
+      </div>
+    </div>
+    
+    <div class="options">
+      <div class="row">
+        <div id="opt1" class="large-4 columns">
+          <div id="give_icon" class="center">
+            <a href="#" class="give_icon"></a>
+          </div>
+          <div class="opt_text center">
+            <h2>Give</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+          </div>
+        </div>
+        
+        
+        <div id="opt2" class="large-4 columns">
+          <div id="nom_icon" class="center">
+            <a href="#" class="nom_icon"></a>
+          </div>
+          <div class="opt_text center">
+            <h2>Nominate</h2>
+            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
+            <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+          </div>
+        </div>
+        
+        <div id="opt3" class="large-4 columns">
+          <div id="req_icon" class="center">
+            <a href="#" class="req_icon"></a>
+          </div>
+          <div class="opt_text center">
+            <h2>Request</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis.</p>
+            <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row full-width"></div>
+      <div class="quotes">
+        <div id="quotes_section">
+          <div class="backdrop image">
+            <div class="row">
+              <div class="span12">
+                <div id="quotes" class="center">
+                    <div id="q_icons">
+                      <a href="#" class="qleft_icon"></a>   <a href="#" class="qright_icon"></a>
+                    </div>
+                    <div id="q_text">
+                    Receiving a sock monkey helped me fight off my cancer.
+                    </div>
+                    <div id="quoter">
+                    - Firstname Lastname
+                    </div> 
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div> 
+      </div>
+    </div>
+    
+    <div class="features">
+      <div class="row featurette">
+        <div class="large-7 columns">
+          <h2 class="feature-heading-left"><span class="text-muted">Be an Angel! Give a sock monkey.</span></h2>
+          <p class="feature-text-left">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="large-5 columns">
+          <img src="http://lorempixel.com/400/400/people/2" alt="" />
+        </div>
+      </div>
+
+      <div class="feature-divider"></div>
+
+      <div class="row featurette">
+        <div class="large-5 columns">
+          <img src="http://lorempixel.com/400/400/people/5" alt="" />
+        </div>
+        <div class="large-7 columns">
+          <h2 class="feature-heading-right"><span class="text-muted">Nominate someone you know.</span></h2>
+          <p class="feature-text-right">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+      </div>
+
+      <div class="feature-divider"></div>
+
+      <div class="row featurette">
+        <div class="large-7 columns">
+          <h2 class="feature-heading-left"><span class="text-muted">Do you want a sock monkey?</span></h2>
+          <p class="feature-text-left">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="large-5 columns">
+          <img src="http://lorempixel.com/400/400/people/4" alt="" />
+        </div>
+      </div>
+
+    </div>
+
   </body>
    
 </html>

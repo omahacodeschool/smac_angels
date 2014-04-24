@@ -1,0 +1,274 @@
+//#F75E11
+
+#controller_home{
+  background: #FFF;
+  height: 700px;
+  top: -20px; 
+  position: relative; 
+}
+
+/* `Homepage banner
+----------------------------------------------------------------------------------------------------*/
+
+.center{
+  text-align: center;
+}
+
+#hp_logo{
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: auto;
+  margin-top: 250px;
+}
+
+.name{
+  height: 60px;
+  line-height: 75px;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  display:block;
+}
+
+.separator{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 350px;
+  margin: 0 auto;
+  display:block;
+}
+
+.tagline{
+  height: 60px;
+  line-height: 60px;
+  bottom: 0px;
+  font-family: 'Lato', sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: #000;
+  display: block;
+}
+
+
+/* `Request gallery
+----------------------------------------------------------------------------------------------------*/
+
+.container-fluid{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery {
+  width: 100%;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.gallery ul{
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+
+.gallery li{
+  display: inline-block;
+  width: 33.333333%;
+  margin: 0;
+  padding: 0;
+}
+
+/* `3 calls to action
+----------------------------------------------------------------------------------------------------*/
+
+.give_icon {
+  position: relative;
+}
+ 
+.give_icon:before {
+  content: "\f06b"; 
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #BCBCBC;
+  font-size: 80px;
+}
+
+.nom_icon {
+  position: relative;
+}
+ 
+.nom_icon:before {
+  content: "\f004"; 
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #BCBCBC;
+  font-size: 80px;
+}
+
+.req_icon {
+  position: relative;
+}
+ 
+.req_icon:before {
+  content: "\f0a1"; 
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #BCBCBC;
+  font-size: 80px;
+}
+
+.opt_text{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.opt_text p{
+  font-size: 18px;
+}
+
+/* `Quotes section
+----------------------------------------------------------------------------------------------------*/
+
+#quotes_section{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.backdrop{
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  background: url("SMAC_Angel_1.jpg");
+  background-size: 100%;
+}
+
+.image{
+  background-position: 0px 0px;
+}
+
+#quotes{
+margin-top: 225px;
+}
+
+.qleft_icon {
+  position: relative;
+}
+ 
+.qleft_icon:before {
+  content: "\f10d"; 
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 40px;
+}
+
+.qright_icon {
+  position: relative;
+}
+
+.qright_icon:before {
+  content: "\f10e"; 
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 40px;
+}
+
+#q_text{
+  margin-top: 50px;
+  font-family: 'Lato', sans-serif;
+  font-size: 40px;
+  color: #FFF;
+}
+
+#quoter{
+  margin-top: 20px;
+  font-family: 'Lato', sans-serif;
+  font-style: italic;
+  font-size: 30px;
+  font-weight: 100;
+  color: #FFF;
+}
+
+/* `Features
+----------------------------------------------------------------------------------------------------*/
+
+.feature-divider{
+  margin: 0 auto;
+  width: 80%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+}
+
+.featurette{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.featurette img{
+  border-radius: 100%;
+}
+
+.feature-heading-left{
+  margin-top: 70px;
+  padding-right: 40px;
+}
+
+.feature-text-left{
+  padding-right: 40px;
+  line-height: 24px;
+  font-size: 18px;
+}
+
+.feature-heading-right{
+  margin-top: 70px;
+  margin-left: 40px;
+}
+
+.feature-text-right{
+  margin-left: 40px;
+  line-height: 24px;
+  font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

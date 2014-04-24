@@ -17,6 +17,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   process :resize_to_limit => [200, 200]
   # end
 
+  # Public: Declares the file extensions allowed when uploading a photo
   def extension_white_list
     %w(jpg jpeg gif png)
   end

@@ -1,7 +1,8 @@
 class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
-  def index
+  before_filter :require_login, :except => [:show]
+    def index
     @requests = Request.order("created_at DESC").where(:angel_id => nil)
 
     respond_to do |format|
@@ -82,9 +83,12 @@ class RequestsController < ApplicationController
     end
   end
   
+  # Public: 
+  # Checks to see if the user is logged in
+  # Finds the user object that requested a smac monkey
+  # Adds the angel to requestor's request
   def become_angel
     
-
     if !current_user
       redirect_to(new_session_path) and return
     end
