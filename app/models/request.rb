@@ -22,14 +22,7 @@ class Request < ActiveRecord::Base
   #     end
   #   end
 
-  # Public:
-  #
-  # Examples
-  #
-  #   current_user
-  #   # => current_user
-  #
-  # Returns the current user
+  # Public: Adds an angel to an existing request
   def add_angel(user_id, anonymous)
     
     if anonymous == "1"
@@ -44,7 +37,7 @@ class Request < ActiveRecord::Base
       
       
     self.save
-
+    Email.new.send_email("Angel Signup", User.find(user_id))
 	end
 
 end

@@ -8,8 +8,6 @@
   <dd><%= @email.request_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
   <dd><%= @email.content %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:template_id) %>:</strong></dt>
-  <dd><%= @email.template_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:to_addresses) %>:</strong></dt>
   <dd><%= @email.to_addresses %></dd>
 </dl>
@@ -17,8 +15,6 @@
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               emails_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_email_path(@email), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               email_path(@email),
               :method => 'delete',

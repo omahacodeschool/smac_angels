@@ -20,8 +20,49 @@ class Email < ActiveRecord::Base
     email.content = template.content
     email.subject = template.name
     email.to_addresses = user.email
+    email.content = unique_email(email) #replace ((variables)) with "strings"
     if email.save
       UserMailer.email_layout(email).deliver    
     end
   end
+  
+  # Public: Replaces text within ((parenthesis)) with corresponding data strings
+  #
+  # Examples
+  #
+  #   email.content = "Hello, ((name))!"
+  #   user.fname = "Bob"
+  #
+  #   unique_email(email)
+  #=> unique_email.content = "Hello, Bob!"
+  #
+  #
+  #   email.content = "Thank you for your help, ((angel))!"
+  #   angel.fname = "Angela"
+  #
+  #   unique_email(email)
+  #=> unique_email.content = "Thank you for your help, Angela"
+  #
+  # Returns the email's modified content
+  def unique_email(email)
+    user = User.find_by_email(email.to_addresses)
+    email.content = email.content.gsub "((name))", user.fname
+
+    if email.request_id
+      request = Request.find(email.request_id)
+      
+      if request.angel_id
+        angel = User.find(request.angel_id)
+        email.content.gsub "((angel))", angel.fname
+      end
+      
+      requestor = User.find(request.requestor_id)
+      email.content.gsub "((requestor))", requestor.fname
+
+      sockmonkey = Sockmonkey.find(request.sockmonkey_id)
+      email.content.gsub "((sockmonkey))", sockmonkey.name
+    end
+    email.content
+  end
+  
 end

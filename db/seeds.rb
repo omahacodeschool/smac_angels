@@ -16,7 +16,7 @@ Request.create(requestor_id: 1, angel_id: 2, ship_address: "100 Main Street", sh
 Template.create([
   {
   name: "Signup Confirmation",
-  content: "Hooray, you signed up!"
+  content: "Hooray! Thank you for signing up, ((name))!"
   },{
   name: "Requestor Signup",
   content: "Thank you for signing up to receive a SMAC Monkey!"
