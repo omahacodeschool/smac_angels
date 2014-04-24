@@ -1,0 +1,4 @@
+<% @request.each do |req| %>
+  <% requestor = User.find(req.requestor_id) %>
+  <%= link_to "#{requestor.lname}, #{requestor.fname}, #{req.current_status}", request_path(req.id) %><br/>
+<% end %>

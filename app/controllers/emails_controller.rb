@@ -1,8 +1,5 @@
 class EmailsController < ApplicationController
-  # before_filter :only => [:index, :show] { |c| c.authorize 'pastor' }
-  # before_filter :only => [:new, :create] { |c| c.authorize 'coordinator' }
-  
-  # list past emails in DESC order
+  # Show all emails
   def index
     # @emails = Email.joins(:event).select("emails.*, http://events.name as ename").order('created_at DESC')
   end
