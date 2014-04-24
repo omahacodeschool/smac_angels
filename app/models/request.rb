@@ -4,8 +4,9 @@ class Request < ActiveRecord::Base
   mount_uploader :before_photo_url, AvatarUploader
   mount_uploader :after_photo_url, AvatarUploader
   
-  belongs_to :requestor, :class_name => :user
-  belongs_to :angel, :class_name => :user
+  belongs_to :requestor, class_name: User
+  belongs_to :angel, class_name: User
+  
   has_many :statuses
   # has_many :comments
   has_many :emails
