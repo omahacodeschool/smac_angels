@@ -27,6 +27,41 @@
   color:#808080;
 }
 
-.row, .private-info{
-  
+.private-info{
+  background-color:#E9E9E9;
+  height:150px;
+}
+
+.private-box{
+  float:right;
+  border:5px solid black;
+  width:80%;
+  height:135px;
+}
+
+.full-width-requests{
+  width: 100%;
+  max-width: 100%; 
+  margin-top:-20px;
+}
+
+.gallery-requests {
+  width: 100%;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.gallery-requests ul{
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+
+.gallery-requests li{
+  display: inline-block;
+  width: 33.333333%;
+  margin: 0;
+  padding: 0;
 }
