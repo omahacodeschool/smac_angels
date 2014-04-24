@@ -1,15 +1,23 @@
 class Request < ActiveRecord::Base
-  attr_accessible :after_photo_url, :angel_id, :anon_angel, :anon_req, :before_photo_url, :external_url, :obo, :obo_fname, :obo_lname, :requestor_id, :ship_address, :ship_city, :ship_state, :ship_zipcode, :story, :agree_to_terms, :current_status, :sockmonkey_id
+  attr_accessible :after_photo_url, :angel_id, :anon_angel, :anon_req, :before_photo_url, :external_url, :obo, :obo_fname, :obo_lname, :requestor_id, :ship_address, :ship_city, :ship_state, :ship_zipcode, :story, :agree_to_terms, :current_status
   
   mount_uploader :before_photo_url, AvatarUploader
-
-  belongs_to :requestor, class_name: User
-  belongs_to :angel, class_name: User
+  mount_uploader :after_photo_url, AvatarUploader
+  
+  belongs_to :requestor, :class_name => :user
+  belongs_to :angel, :class_name => :user
   has_many :statuses
   # has_many :comments
   has_many :emails
   belongs_to :sockmonkey
   validates :agree_to_terms, :acceptance => {:accept => true}
+  validates :ship_address, :presence => true
+  validates :ship_city, :presence => true
+  validates :ship_state, :presence => true
+  validates :ship_zip, :presence => true
+  validates :obo_lname, presence: true, if :obo?
+  validates :story, presence: true
+  
   
   # def self.confirm_angel
   #     if current_user
