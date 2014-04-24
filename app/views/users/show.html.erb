@@ -16,10 +16,10 @@
   <h3>Requests for a monkey:</h3>
 
   <% @requests.each do |request| %>
-    <div><% if request.before_photo_url %>
+    <div><% if request.before_photo_url != nil %>
       <%= image_tag(request.before_photo_url) %>
     <% else %>
-      <%= image_tag("profile.png").html_safe %>
+      <%= image_tag("app/assets/images/profile.png") %>
     <% end %>
     </div>
 

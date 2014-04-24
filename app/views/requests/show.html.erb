@@ -32,10 +32,10 @@
   </p>
 
   <div class="large-9 large-centered columns">
-    <% if @request.before_photo_url %>
+    <% if @request.before_photo_url != nil %>
       <%= image_tag(@request.before_photo_url) %>
     <% else %>
-      <%= image_tag("/profile.png") %>
+      <%= image_tag("profile.png") %>
     <% end %>
     <p>
       <!-- hardcoded name -->

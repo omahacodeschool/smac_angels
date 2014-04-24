@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140424201204) do
+ActiveRecord::Schema.define(:version => 20140424220146) do
 
   create_table "emails", :force => true do |t|
     t.integer  "request_id"
@@ -52,9 +52,8 @@ ActiveRecord::Schema.define(:version => 20140424201204) do
     t.text     "description"
     t.string   "cancertype"
     t.string   "favcolor"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.string   "remote_image_url"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "statuses", :force => true do |t|

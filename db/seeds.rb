@@ -157,13 +157,13 @@ Sockmonkey.create([
   cancertype: 'All',
   description: 'The ALL cancer fighting monkey!',
   favcolor: 'Green',
-  remote_image_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/nomo.jpg',
+  remote_image_url_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/nomo.jpg',
   name: 'NoMo'
   },{
   cancertype: 'Lung',
   description: 'The lung cancer fighting monkey!',
   favcolor: 'Red',
-  remote_image_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/phoenix.png',
+  remote_image_url_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/phoenix.png',
   name: 'Phoenix'  
   }
 ])
