@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140423174820) do
+ActiveRecord::Schema.define(:version => 20140424143112) do
 
   create_table "emails", :force => true do |t|
     t.integer  "request_id"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20140423174820) do
     t.string   "obo_fname"
     t.string   "obo_lname"
     t.boolean  "agree_to_terms"
+    t.integer  "current_status"
   end
 
   create_table "sockmonkeys", :force => true do |t|
