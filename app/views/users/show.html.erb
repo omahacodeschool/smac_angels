@@ -1,4 +1,14 @@
-<<<<<<< HEAD
+<% content_for :banner do %>
+  <div class="name-banner">
+  </div>
+<% end %>
+
+<%- model_class = User -%>
+
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
 <h2><%= @user.fname %> <%= @user.lname %></h2>
 <%= @user.email %>
 
@@ -16,6 +26,7 @@
 
     <div><%= image_tag(request.sockmonkey.image_url) %></div>
     <div><%= request.sockmonkey.name%></div>
+    <div><%= request.current_status %></div>
   <% end %>
 
 <% end %>
@@ -35,22 +46,10 @@
 
     <div><%= image_tag(angel.sockmonkey.image_url)%></div>
     <div><%= angel.sockmonkey.name %></div>
+    <div><%= angel.current_status %></div>
   <% end %>
 
 <% end %>
-=======
-<% content_for :banner do %>
-  <div class="name-banner">
-  </div>
-<% end %>
-
-<%- model_class = User -%>
-
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
->>>>>>> 70080851fad9ed681a35a88f78488f4f870f82ec
-
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
