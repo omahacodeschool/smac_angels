@@ -110,7 +110,8 @@ Request.create([
   ship_state: "NE",
   ship_zipcode: 68128,
   story: "Some Story",
-  agree_to_terms: TRUE
+  agree_to_terms: TRUE,
+  sockmonkey_id: 1
   },{
   angel_id: 4,
   requestor_id: 5,
@@ -121,7 +122,8 @@ Request.create([
   ship_state: "NE",
   ship_zipcode: 68128,
   story: "Some Story",
-  agree_to_terms: TRUE
+  agree_to_terms: TRUE,
+  sockmonkey_id: 1
   },{
   angel_id: nil,
   requestor_id: 2,
@@ -132,7 +134,8 @@ Request.create([
   ship_state: "AL",
   ship_zipcode: 68128,
   story: "Some Story",
-  agree_to_terms: TRUE
+  agree_to_terms: TRUE,
+  sockmonkey_id: 2
   },{
   angel_id: nil,
   requestor_id: 4,
@@ -143,25 +146,42 @@ Request.create([
   ship_state: "IA",
   ship_zipcode: 68128,
   story: "Some Story",
-  agree_to_terms: TRUE
+  agree_to_terms: TRUE,
+  sockmonkey_id: 2
+  }
+])
+
+Sockmonkey.create([
+  {
+  cancertype: 'All',
+  description: 'The ALL cancer fighting monkey!',
+  favcolor: 'Green',
+  image_url: 'nomo.jpg',
+  name: 'NoMo'
+  },{
+  cancertype: 'Lung',
+  description: 'The lung cancer fighting monkey!',
+  favcolor: 'Red',
+  image_url: 'phoenix.png',
+  name: 'Phoenix'  
   }
 ])
 
 Status.create([
   {
-    :request_id => 1, 
-    :status => 'Matched, initial'
+  :request_id => 1, 
+  :status => 'Matched, initial'
   },
   {
-    :request_id => 2, 
-    :status => 'Matched, confirmed'
+  :request_id => 2, 
+  :status => 'Matched, confirmed'
   },
   {
-    :request_id => 3, 
-    :status => 'Unmatched'
+  :request_id => 3, 
+  :status => 'Unmatched'
   },
   {
-    :request_id => 2, 
-    :status => 'Unmatched'
+  :request_id => 2, 
+  :status => 'Unmatched'
   }
 ])
