@@ -8,32 +8,32 @@
     <div><%= image_tag(request.before_photo_url) %></div>
 
     <% if request.obo %>
-      <div><%= request.obo_fname %> <%= request.obo_lname %></div>
+      <div><%= request.obo_name %></div>
     <% else %>
       <div>Me</div>
     <% end %>
 
-    <div><%= image_tag(request.sockmonkey.image_url)%></div>
-    <div><%= request.sockmonkey.name%></div>
+    <div><%= image_tag(request.sockmonkey_pic)%></div>
+    <div><%= request.sockmonkey_name%></div>
   <% end %>
 
 <% end %>
 
 <h3>I'm an Angel for:</h3>
 
-<% if @angels %>
+<% if @requests %>
 
-  <% @angels.each do |angel| %> 
-    <div><%= image_tag(angel.before_photo_url) %></div>
+  <% @requests.each do |request| %> 
+    <div><%= image_tag(request.before_photo_url) %></div>
 
-    <% if angel.obo %>
-      <div><%= angel.obo_fname %> <%= angel.obo_lname %></div>
+    <% if request.obo %>
+      <div><%= request.obo_name %></div>
     <% else %>
-      <div><%= angel.requestor.fname %> <%= angel.requestor.lname %></div>
+      <div><%= request.requestor_name %></div>
     <% end %>
 
-    <div><%= image_tag(angel.sockmonkey.image_url)%></div>
-    <div><%= angel.sockmonkey.name%></div>
+    <div><%= image_tag(request.sockmonkey_pic)%></div>
+    <div><%= request.sockmonkey_name%></div>
   <% end %>
 
 <% end %>
