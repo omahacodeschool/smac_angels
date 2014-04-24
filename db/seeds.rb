@@ -18,13 +18,13 @@ Template.create([
   content: "Hooray! Thank you for signing up, ((name))!"
   },{
   name: "Requestor Signup",
-  content: "Thank you for signing up to receive a SMAC Monkey!"
+  content: "((requestor)), thank you for signing up to receive a SMAC Monkey!"
   },{
   name: "Angel Signup",
-  content: "Thank you for signing up to give a SMAC Monkey!"
+  content: "((angel)), thank you for signing up to give a SMAC Monkey!"
   },{
   name: "Shipping Notification for Angel",
-  content: "Your SMAC Monkey has shipped! We will notify you when the recipient posts photos with it!"
+  content: "((angel)), your SMAC Monkey has shipped! We will notify you when the recipient posts photos with it!"
   },{
   name: "Shipping Notification for Requestor",
   content: "MONKEY EN ROUTE!!! We're so excited! Please post a picture with your SMAC Monkey here once you receive it."
