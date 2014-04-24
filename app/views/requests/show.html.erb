@@ -25,28 +25,29 @@
    </div> 
  </div>
 
-<div class="row private-info full-width-requests">
-  <div class="gallery-requests">
-    <ul>
-      <li>
-        <div class="large-1 private-box columns">    
-        </div>
-      </li>
-      <li>
-        <div class="large-1 private-box columns">    
-        </div>
-      </li>
-      <li>
-        <div class="large-1 private-box columns">
-        </div>
-      </li>
-      <li>
-        <div class="large-1 private-box columns">
-        </div>
-      </li>    
-    </ul>
+<% if @request.angel_id %>
+  <div class="row full-width-requests">
+    <div class="large-3 small-6 private-box columns">  
+        <b>Street:</b><br>
+        <%= @request.ship_address %>
+    </div>
+
+    <div class="large-3 small-6 private-box columns">    
+        <b>City:</b><br>
+        <%= @request.ship_city %>
+    </div>
+
+    <div class="large-3 small-6 private-box columns">
+        <b>State:</b><br>
+        <%= @request.ship_state %>
+    </div>
+
+    <div class="large-3 small-6 private-box columns">
+        <b>Zipcode:</b><br>
+        <%= @request.ship_zipcode %>
+    </div>
   </div>
-</div>
+<% end %>
 
 <div class="row center-text">
       
@@ -79,27 +80,7 @@
 </div>
 
 <div class="row content-small-padding">
-  <div class="large-3 large-centered center-text columns">
-    <% if @request.angel_id %>
-      <p>
-        <p>
-          <b>Street:</b><br>
-          <%= @request.ship_address %>
-        </p>
-        <p>
-          <b>City:</b><br>
-          <%= @request.ship_city %>
-        </p>
-        <p>
-          <b>State:</b><br>
-          <%= @request.ship_state %>
-        </p>
-        <p>
-          <b>Zipcode:</b><br>
-          <%= @request.ship_zipcode %>
-        </p>
-      </p>
-    <% else %>
+    <% if !@request.angel_id %>
       <%= form_tag(become_angel_path) do %>
         <%= @request.id %>
         <%= current_user.class %>
