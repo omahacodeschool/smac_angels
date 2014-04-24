@@ -1,6 +1,6 @@
 #controller_home{
   background: #FFF;
-  height: 800px;
+  height: 700px;
   top: -20px; 
   position: relative; 
 }
@@ -17,7 +17,7 @@
   margin: 0 auto;
   width: 300px;
   height: auto;
-  margin-top: 300px;
+  margin-top: 250px;
 }
 
 .name{
@@ -34,7 +34,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   width: 350px;
   margin: 0 auto;
-    display:block;
+  display:block;
 }
 
 .tagline{
@@ -45,7 +45,7 @@
   font-size: 32px;
   font-weight: 300;
   color: #000;
-    display:block;
+  display:block;
 }
 
 
@@ -82,12 +82,19 @@
 /* `3 calls to action
 ----------------------------------------------------------------------------------------------------*/
 
-.img_sq{
-  height: 140px;
-  width: 140px;
-  background: #E9E9E9;
+.give_icon {
+    position: relative;
 }
-
+ 
+.give_icon:before {
+    content: "\f06b"; 
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    color: #BCBCBC;
+    font-size: 120px;
+}
 
 /* `Quotes section
 ----------------------------------------------------------------------------------------------------*/

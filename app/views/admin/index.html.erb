@@ -1,0 +1,17 @@
+<h1>Unmatched Requests</h1>
+<% @unmatched_req.each do |unmatched|  %>
+  <% requestor = User.find(unmatched.requestor_id) %>
+  <%= link_to "#{requestor.lname}, #{requestor.fname}", request_show_path(unmatched.id) %>
+<% end %>
+
+<h1>Matched Requests</h1>
+<% @matched_req.each do |matched|  %>
+  <% requestor = User.find(matched.requestor_id) %>
+  <%= link_to "#{requestor.lname}, #{requestor.fname}", request_show_path(matched.id) %>
+<% end %>
+
+<h1>Completed Requests</h1>
+<% @completed_req.each do |completed|  %>
+  <% requestor = User.find(completed.requestor_id) %>
+  <%= link_to "#{requestor.lname}, #{requestor.fname}", request_show_path(completed.id) %>
+<% end %>
