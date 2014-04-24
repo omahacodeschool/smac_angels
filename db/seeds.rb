@@ -11,7 +11,6 @@
 
 User.create(fname: "Sarah", lname: "Jones", email: "sarah@example.com", password: "111", password_confirmation: "111")
 User.create(fname: "John", lname: "Doe", email: "john@example.com", password: "111", password_confirmation: "111")
-Request.create(requestor_id: 1, angel_id: 2, ship_address: "100 Main Street", ship_city: "Omaha", ship_state: "Nebraska", ship_zipcode: "10101", story: "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.", external_url: "www.yahoo.com", current_status: 1 )
 
 Template.create([
   {
@@ -108,7 +107,10 @@ Request.create([
   before_photo_url: "http://i.imgur.com/miEgzKD.jpg",
   ship_address: "17653 Mockingbird Ln",
   ship_city: "Omaha",
-  ship_state: "NE"
+  ship_state: "NE",
+  ship_zipcode: 68128,
+  story: "Some Story",
+  agree_to_terms: TRUE
   },{
   angel_id: 4,
   requestor_id: 5,
@@ -116,7 +118,10 @@ Request.create([
   before_photo_url: "http://i.imgur.com/NEs33qS.gif",
   ship_address: "1 Main St",
   ship_city: "Liconln",
-  ship_state: "NE"
+  ship_state: "NE",
+  ship_zipcode: 68128,
+  story: "Some Story",
+  agree_to_terms: TRUE
   },{
   angel_id: nil,
   requestor_id: 2,
@@ -124,7 +129,10 @@ Request.create([
   before_photo_url: "http://i.imgur.com/eJfN4IG.jpg",
   ship_address: "17654637 Main Round St Avenue Lane",
   ship_city: "Baminghamingmamington",
-  ship_state: "AL"
+  ship_state: "AL",
+  ship_zipcode: 68128,
+  story: "Some Story",
+  agree_to_terms: TRUE
   },{
   angel_id: nil,
   requestor_id: 4,
@@ -132,7 +140,10 @@ Request.create([
   before_photo_url: "http://i.imgur.com/YTyjMza.jpg",
   ship_address: "One",
   ship_city: "Average City",
-  ship_state: "IA" 
+  ship_state: "IA",
+  ship_zipcode: 68128,
+  story: "Some Story",
+  agree_to_terms: TRUE
   }
 ])
 
