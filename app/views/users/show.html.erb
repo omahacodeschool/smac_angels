@@ -45,11 +45,13 @@
 <% if @angels %>
 
   <% @angels.each do |angel| %> 
-    <div><% if angel.before_photo_url %>
+    <div>
+    <% if angel.before_photo_url %>
       <%= image_tag(angel.before_photo_url) %>
     <% else %>
       <%= image_tag("profile.png") %>
-    <% end %></div>
+    <% end %>
+    </div>
 
     <% if angel.obo %>
       <div><%= angel.obo_fname %> <%= angel.obo_lname %></div>
