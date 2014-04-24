@@ -1,17 +1,25 @@
-<h1>Unmatched Requests</h1>
-<% @unmatched_req.each do |unmatched|  %>
+<h2>Unmatched Requests</h2>
+<ul>
+  <% @unmatched_req.each do |unmatched|  %>
   <% requestor = User.find(unmatched.requestor_id) %>
-  <%= link_to "#{requestor.lname}, #{requestor.fname}", request_show_path(unmatched.id) %>
+  <li><%= link_to "#{requestor.lname}, #{requestor.fname}", request_path(unmatched.id) %></li>
 <% end %>
+</ul>
 
-<h1>Matched Requests</h1>
+
+<h2>Matched Requests</h2>
+<ul>
 <% @matched_req.each do |matched|  %>
   <% requestor = User.find(matched.requestor_id) %>
-  <%= link_to "#{requestor.lname}, #{requestor.fname}", request_show_path(matched.id) %>
+  <li><%= link_to "#{requestor.lname}, #{requestor.fname}", request_path(matched.id) %></li>
 <% end %>
+</ul>
 
-<h1>Completed Requests</h1>
+<h2>Completed Requests</h2>
+<ul>
 <% @completed_req.each do |completed|  %>
   <% requestor = User.find(completed.requestor_id) %>
-  <%= link_to "#{requestor.lname}, #{requestor.fname}", request_show_path(completed.id) %>
+  <li><%= link_to "#{requestor.lname}, #{requestor.fname}", request_path(completed.id) %></li>
 <% end %>
+</ul>
+<h2><%= link_to "View All Requests", request_history_path %></h2>
