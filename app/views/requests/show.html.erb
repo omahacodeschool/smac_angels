@@ -84,20 +84,20 @@
 
 <div class="row content-small-padding">
   <div class="large-7 small-3 large-centered small-centered center-text columns">
-    <%# if !@request.angel_id %>
+    <% if !@request.angel_id %>
       <%= form_tag(become_angel_path) do %>
         <%= hidden_field_tag 'request_id', @request.id %>
         <div class="row center-text">
-          <div class="field">
-            <%= label_tag "Anonymous Angel?" %>
-            <%= check_box_tag 'anonymous' %>
-          </div>
-          <%= submit_tag "     BECOME ANGEL    ", :class => "submit-button" %>
-          <%= submit_tag "ANONYMOUS ANGEL", :class => "submit-button" %>
+          <!--<div class="field">
+            <%#= label_tag "Anonymous Angel?" %>
+            <%#= check_box_tag 'anonymous' %>
+          </div>-->
+          <%= submit_tag "BECOME ANGEL", :class => "submit-button" %>
+          <%= submit_tag "ANONYMOUS ANGEL", :class => "submit-button", :name => "anon_button" %>
         </div>
 
       <% end %>
-    <%# end %>
+    <% end %>
   </div>
 </div>
 
