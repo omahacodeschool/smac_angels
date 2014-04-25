@@ -8,7 +8,7 @@
 #controller_requests.requests-show-banner{
   height:800px;
   width:100%;
-  background-color:#FF9900;
+  background-color:#F75E11;
   margin-top:-40px;
 }
 
@@ -34,10 +34,69 @@
 //  min-width: 50px;
   height:135px;
   background-color:#E9E9E9;
+  padding-top:50px;
 }
 
 .full-width-requests{
   width: 100%;
   max-width: 100%; 
   margin-top:-20px;
+}
+
+//Icons ----------------------------------------------------------------------
+
+.fa-facebook-square {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #BCBCBC;
+  font-size: 80px;
+  margin:0 20px;
+}
+
+.fa-facebook-square:hover {
+  color:#FFF;
+}
+ 
+.fa-twitter {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #BCBCBC;
+  font-size: 80px;
+  margin:0 20px;
+}
+
+.fa-twitter:hover {
+  color:#FFF;
+}
+ 
+.fa-pinterest {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #BCBCBC;
+  font-size: 80px;
+  margin:0 20px;
+}
+
+.fa-pinterest:hover {
+  color:#FFF;
+}
+ 
+.fa-shopping-cart {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #BCBCBC;
+  font-size: 80px;
+  margin:0 20px;
+}
+
+.fa-shopping-cart:hover {
+  color:#FFF;
 }

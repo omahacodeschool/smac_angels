@@ -18,6 +18,10 @@ body{
   padding-top: 60px; // Keep.;
 }
 
+p {
+  font-family: "HelveticaNeue-Light", helvetica, arial, sans-serif;
+}
+
 b {
   color:#3299BB;
 }
@@ -34,11 +38,17 @@ a:hover{
 }
 
 h1, h2, h3, h4 {
-  color:#424242;
+  color:#3299BB;
 }
 
 ul{
   list-style-type: none;
+}
+
+.button-link {
+    padding: 15px 45px;
+    color: #BCBCBC;
+    border: 1px solid #BCBCBC;
 }
 
 
@@ -183,6 +193,20 @@ ul{
 /* `Footer
 ----------------------------------------------------------------------------------------------------*/
 
+.top-footer{
+  height:110px;
+  background:#F75E11;
+}
+
+.footer-icons {
+  display:inline;
+//  float:right;
+//  padding-bottom:15px;
+//  padding-right:20px;
+//  padding-left:20px;
+    padding:0px 30px;
+}
+
 .footer {
   padding: 1em;
   background: #424242;
@@ -192,7 +216,8 @@ ul{
   margin: 0; 
   text-align: center;
   color: #E9E9E9;
-  height: 200px;
+  height: 400px;
+  padding-top:100px;
 }
 
 .footer a {
