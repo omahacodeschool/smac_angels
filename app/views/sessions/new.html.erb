@@ -5,34 +5,49 @@
         Login to SMAC Angels!
       </div>
 
-    <div class="clear"></div>
-  
-    <div class="form_main">
-      <%= form_tag sessions_path do %>
-        <div class="field">
-          <%= text_field_tag(:email, params[:email], placeholder: "Email") %>
-        </div>
-        <div class="field">
-          <%= password_field_tag(:password, nil, placeholder: "Password") %>
-        </div>
-            
-        <div class="checkbox">
-          <div id="cbox_label">Remember me.</div>
-          <%= check_box_tag(:remember_me, "1", params[:remember_me]) %>
-          <%= label_tag(:remember_me, "") %>
-        </div>
+      <div class="clear"></div>
+    
+      <div class="form_main">
+        <%= form_tag sessions_path do %>
+          <div id="primary_email" class="field">
+            <%= text_field_tag(:email, params[:email], placeholder: "Email") %>
+          </div>
+          <div class="field">
+            <%= password_field_tag(:password, nil, placeholder: "Password") %>
+          </div>
+              
+          <div class="checkbox">
+            <%= check_box_tag(:remember_me, "1", params[:remember_me]) %>
+            <%= label_tag(:remember_me, "Remember me.") %>
+          </div>
+          
+          <div id="actions">
+            <%= submit_tag "Log In", :class => 'ctr_button' %>
+          </div>
+        <% end %>
         
-        
-        <div id="actions">
-          <%= submit_tag "Log In", :class => 'ctr_button' %>
+        <div class="form_name2 forgot center">
+          Forgot Password?
         </div>
-      <% end %>
-      
-      <div class="form_name2 center">
-        Forgot Password?
+
+        <div class="forgot_pass_container">
+          <%= render 'forgot_password_form' %>
+        </div>
+
       </div>
-      <%= render 'forgot_password_form' %>
+
     </div>
+
+    <div class="no_account">
+      <div class="form_name2 no_link center">
+        No Account?
+      </div>
+
+      <div class="login_sign_up">
+        <%= link_to 'Sign Up', :new_user, :class => 'ctr_button' %>
+      </div>
+    </div>
+
   </div>
 </div>
 
