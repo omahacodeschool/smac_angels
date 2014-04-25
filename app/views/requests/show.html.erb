@@ -72,7 +72,15 @@
     <br>
     <p>
       <h2>Website</h2>
-      <span class="storytime"><%= @request.external_url %></span>
+      <span class="storytime"><%= @request.external_url ? @request.external_url : "No website" %></span>
+    </p>
+    <br>
+    <br>
+    <p>
+      <% if @request.angel_id %>
+        <h2>Angel Name</h2>
+        <span class="storytime"><%= @request.anon_angel ? "The angel has chosen to remain anonymous" : @request.angel.shortname %></span>
+      <% end %>
     </p>
     <div class="row content-padding center-text">
       <% if current_user %>

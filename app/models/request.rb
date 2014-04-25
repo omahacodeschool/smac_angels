@@ -42,7 +42,7 @@ class Request < ActiveRecord::Base
   #
   # Returns the current user
   def add_angel(user_id, anonymous)
-    binding.pry
+
     if anonymous == 1
       self.anon_angel = true
     else 

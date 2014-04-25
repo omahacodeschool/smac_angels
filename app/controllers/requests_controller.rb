@@ -90,7 +90,6 @@ class RequestsController < ApplicationController
   # Finds the user object that requested a smac monkey
   # Adds the angel to requestor's request
   def become_angel
-    binding.pry
     if !current_user
       session[:request_id] = params[:request_id]
 
@@ -101,9 +100,9 @@ class RequestsController < ApplicationController
 
     @request = Request.find(params[:request_id])
     
-    params[:anon_button] ? session[:anonymous] = 1 : session[:anonymous] = 0
     
-    @request.add_angel(session[:user_id], session[:anonymous])
+    
+    @request.add_angel(session[:user_id], params[:anon_button] ? 1 : 0)
 
     redirect_to (request_path(@request.id))
   
