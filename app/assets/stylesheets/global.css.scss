@@ -130,10 +130,11 @@ ul{
 
 .top-right a{
   text-decoration: none;
-  margin-right: 30px;
+  margin-right: 20px;
   color:#BCBCBC;
+//  font-weight:bold;
   transition-property: all;
-  transition-duration: 0.5s;
+  transition-duration: 1s;
 }
 
 .top-right a:hover {
