@@ -1,19 +1,21 @@
-<% content_for :hero_unit do %>
-  Create a New Request
-<% end %>
-
 <div class="row">
-  <div class="span9">
-    <%- model_class = Request -%>
-    <div class="page-header">
-      <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
-    </div>
-    <%= render :partial => 'form', :locals => {:request => @request} %>
-  </div>
+  <div class"large-12 columns">
+    <div id="request" class="form" >
+      <div class="form_name center">
+        Request a sock monkey!
+      </div>
+
+    <div class="clear"></div>
   
+    <div class="form_main">
+      <%- model_class = Request -%>
+        
+      <%= render :partial => 'form', :locals => {:request => @request} %>
+        
+      <%= link_to 'Back', requests_path %>
+    </div>
+  </div>
 </div>
-<%= link_to 'Back', requests_path %>
 
-
-
+<div class="push"></div>
 

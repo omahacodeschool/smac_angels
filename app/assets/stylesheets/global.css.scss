@@ -111,12 +111,7 @@ ul{
 .top-left img{
   height: 60px;
   width: auto;
-}
-
-.top-left a{
-  text-decoration: none;
   margin-left: 20px;
-  color: #000;
 }
 
 .top-right{
@@ -132,7 +127,13 @@ ul{
 .top-right a{
   text-decoration: none;
   margin-right: 10px;
-  color: #000;
+  color: #BCBCBC;
+}
+
+.top-right a:hover{
+  text-decoration: none;
+  margin-right: 10px;
+  color: #424242;
 }
 
 /* `Banner text for other pages
@@ -148,10 +149,10 @@ ul{
   font-size: 50px;
   font-weight: 700;
   color: rgba(255,255,255, 0.7);
-  display:block;
+  display: block;
   vertical-align:middle;
-  padding-top:100px;
-  margin-top:450px;
+  padding-top: 100px;
+  margin-top: 450px;
 }
 
 .tagline-banner{
@@ -162,12 +163,12 @@ ul{
   font-size: 32px;
   font-weight: 300;
   color: #FFF;
-  display:block;
+  display: block;
 }
 
 .avatar-banner{
 //  float:left;
-  position:absolute;
+  position: absolute;
   margin-top: 195px;
   border-radius: 100%;
   border: 15px solid rgba(255,255,255, 0.7);
@@ -176,8 +177,8 @@ ul{
 .separator-banner{
   border-bottom: 1px solid rgba(255,255,255, 0.5);
   width: 350px;
-  display:block;
-  margin-top:20px;
+  display: block;
+  margin-top: 20px;
 }
 
 .text-banner{
@@ -185,9 +186,9 @@ ul{
   font-size: 50px;
   font-weight: 700;
   color: rgba(255,255,255, 0.7);
-  display:block;
-  vertical-align:middle;
-  margin-top:190px;
+  display: block;
+  vertical-align: middle;
+  margin-top: 190px;
 }
 
 /* `Footer
