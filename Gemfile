@@ -61,3 +61,4 @@ gem 'negative_captcha'
 
 gem 'pry-rails', :group => :development
 gem 'rspec-rails', :group => [:development, :test]
+gem 'ckeditor'
