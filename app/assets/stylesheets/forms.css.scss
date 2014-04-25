@@ -69,63 +69,80 @@
   opacity: 0;
 }
 
-input[type=checkbox] {
-	visibility: hidden;
+.form input[type="checkbox"]{
+  float: left;
+  margin: 20px 103px;
 }
 
 .checkbox{
-	width: 20px;
-	margin: 20px 103px;
-	position: relative;
+  width: 20px;
+  margin: 20px 103px;
+  position: relative;
+  display: inline;
 }
 
-.checkbox label {
-	cursor: pointer;
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	top: 0;
-  left: 0;
-	background: #eee;
-	border: 1px solid #ddd;
-}
-
-.checkbox label:after {
-	opacity: 0.2;
-	content: '';
-	position: absolute;
-	width: 9px;
-	height: 5px;
-	background: transparent;
-	top: 6px;
-	left: 5px;
-	border: 3px solid #333;
-	border-top: none;
-	border-right: none;
-
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-}
-
-// Create the hover event of the tick
-.checkbox label:hover::after {
-	opacity: 0.5;
-}
-
-// Create the checkbox state for the tick
-.checkbox input[type=checkbox]:checked + label:after {
-	opacity: 0.8;
-}
-
-#cbox_label{
+.checkbox label{
+  margin-top: 2px;
+  margin-left: -90px;
+  display: inline;
   width: 250px;
-  margin-left: 40px;
-  padding-top: 2px;
   color: #E9E9E9;
+  float: left;
 }
+
+// Checkbox that didn't work...
+
+//input[type=checkbox] {
+//  visibility: hidden;
+//}
+//
+//.checkbox label {
+//  cursor: pointer;
+//  position: absolute;
+//  width: 20px;
+//  height: 20px;
+//  top: 0;
+//  left: 0;
+//  background: #eee;
+//  border: 1px solid #ddd;
+//}
+//
+//.checkbox label:after {
+//  opacity: 0.2;
+//  content: '';
+//  position: absolute;
+//  width: 9px;
+//  height: 5px;
+//  background: transparent;
+//  top: 6px;
+//  left: 5px;
+//  border: 3px solid #333;
+//  border-top: none;
+//  border-right: none;
+//
+//  -webkit-transform: rotate(-45deg);
+//  -moz-transform: rotate(-45deg);
+//  -o-transform: rotate(-45deg);
+//  -ms-transform: rotate(-45deg);
+//  transform: rotate(-45deg);
+//}
+//
+//// Create the hover event of the tick
+//.checkbox label:hover::after {
+//  opacity: 0.5;
+//}
+//
+//// Create the checkbox state for the tick
+//.checkbox input[type=checkbox]:checked + label:after {
+//  opacity: 0.8;
+//}
+//
+//#cbox_label{
+//  width: 250px;
+//  margin-left: 40px;
+//  padding-top: 2px;
+//  color: #E9E9E9;
+//}
 
 .ctr_button{
   display: block;
@@ -200,7 +217,7 @@ input[type=checkbox] {
   margin-top: 100px;
   margin-bottom: 200px;
   background: #3299BB;
-  height: 1800px;
+  height: 1700px;
   width: 500px;
 }
 
@@ -213,9 +230,33 @@ input[type=checkbox] {
 }
 
 .monkeys{
-  margin: 0 auto;
-  margin-top: 35px;
+  display: block;
+  height: 350px;
+  margin-top: 125px;
 }
+
+.monkeys ul{
+  display: block;
+  text-decoration: none;
+  margin-top: 50px;
+}
+
+.monkeys li{
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.monkeys a{
+  color: #E9E9E9;
+  font-size: 24px;
+}
+
+#monkey_name{
+  margin-top: 15px;
+}
+
 
 
 
