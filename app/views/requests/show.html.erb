@@ -76,13 +76,9 @@
   </div>
 </div>
 
-<div class="row center-text content-small-padding">
-  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="670" data-num-posts="10"></div>
-  </div>
-</div>
-
 <div class="row content-small-padding">
-    <% if !@request.angel_id %>
+  <div class="large-6 small-3 large-centered small-centered center-text columns">
+    <%# if !@request.angel_id %>
       <%= form_tag(become_angel_path) do %>
         <%= hidden_field_tag 'request_id', @request.id %>
         <div class="field">
@@ -93,7 +89,12 @@
           <%= submit_tag "Become Angel" %>
         </div>
       <% end %>
-    <% end %>
+    <%# end %>
+  </div>
+</div>
+
+<div class="row center-text content-small-padding">
+  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="670" data-num-posts="10"></div>
   </div>
 </div>
 
