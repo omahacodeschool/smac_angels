@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   before_filter :require_login, :except => [:show, :index, :become_angel]
-    def index
+  def index
     @requests = Request.order("created_at DESC").where(:angel_id => nil)
 
     respond_to do |format|
@@ -26,7 +26,7 @@ class RequestsController < ApplicationController
   # GET /requests/new.json
   def new
     @request = Request.new
-
+    @sockmonkeys = Sockmonkey.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @request }
@@ -42,6 +42,7 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
     @request = Request.new(params[:request])
+    @sockmonkeys = Sockmonkey.all
     #raise params.inspect
     respond_to do |format|
       if @request.save

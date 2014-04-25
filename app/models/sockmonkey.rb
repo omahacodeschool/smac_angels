@@ -1,5 +1,5 @@
 class Sockmonkey < ActiveRecord::Base
-  attr_accessible :cancertype, :description, :favcolor, :image_url, :name
+  attr_accessible :cancertype, :description, :favcolor, :image_url, :name, :remote_image_url_url
   
   has_many :requests
   mount_uploader :image_url, AvatarUploader

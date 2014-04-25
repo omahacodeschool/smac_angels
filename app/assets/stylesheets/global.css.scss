@@ -15,7 +15,7 @@
 //'Basics
 
 body{
-  padding-top: 60px; // Keep.
+  padding-top: 60px; // Keep.;
 }
 
 b {
@@ -26,15 +26,41 @@ a {
   text-decoration:none;
   transition-property: all;
   transition-duration: 0.5s;
+  color:#3299BB;
 }
 
 a:hover{
-  color:white;
+  color:#424242;
 }
 
 h1, h2, h3, h4 {
   color:#424242;
 }
+
+ul{
+  list-style-type: none;
+}
+
+
+//-----------------------------------------------------------------------------------------------------
+
+.content-padding{
+  padding-top:100px;
+  padding-bottom:100px;
+}
+
+.content-small-padding{
+  padding-top:25px;
+  padding-bottom:25px;
+}
+
+.center-text{
+  text-align:center;
+}
+
+.row ul, li {
+  padding: 0;
+} 
 
 //-----------------------------------------------------------------------------------------------------
 
@@ -67,31 +93,12 @@ h1, h2, h3, h4 {
   z-index: 1;
 }
 
-.brand{
-  margin-top: 10px;
-}
-
-.container .nav-collapse ul{
-  float: right;
-  margin-top: 50px;
-}
-
-.container .nav-collapse li{
-  display: inline;
-  padding: 10px;
-}
-
-.navbar a{
-  color: #BCBCBC;
-}
-
 .top-left{
   float: left;
   margin-top: 20px;
 }
 
 .top-left img{
-  margin-left: 20px;
   height: 60px;
   width: auto;
 }
@@ -134,7 +141,7 @@ h1, h2, h3, h4 {
   display:block;
   vertical-align:middle;
   padding-top:100px;
-  margin-top:350px;
+  margin-top:450px;
 }
 
 .tagline-banner{
@@ -151,7 +158,7 @@ h1, h2, h3, h4 {
 .avatar-banner{
 //  float:left;
   position:absolute;
-  margin-top: 95px;
+  margin-top: 195px;
   border-radius: 100%;
   border: 15px solid rgba(255,255,255, 0.7);
 }
@@ -170,26 +177,46 @@ h1, h2, h3, h4 {
   color: rgba(255,255,255, 0.7);
   display:block;
   vertical-align:middle;
-  margin-top:90px;
+  margin-top:190px;
 }
 
 /* `Footer
 ----------------------------------------------------------------------------------------------------*/
 
-
 .footer {
-    padding: 1em;
-    background: #424242;
-    display: block;
-    bottom: 0;
-    left: 0;
-    margin: 0; 
-    text-align: center;
-    color:white;
-    height: 200px;
+  padding: 1em;
+  background: #424242;
+  display: block;
+  bottom: 0;
+  left: 0;
+  margin: 0; 
+  text-align: center;
+  color: #E9E9E9;
+  height: 200px;
 }
 
 .footer a {
   text-decoration: none;
   color:white;
 }
+
+#footer .push {
+ height: 216px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

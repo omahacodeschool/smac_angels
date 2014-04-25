@@ -110,7 +110,9 @@ Request.create([
   ship_state: "NE",
   ship_zipcode: 68128,
   story: "Some Story",
-  agree_to_terms: TRUE
+  agree_to_terms: TRUE,
+  sockmonkey_id: 1,
+  agree_to_terms: true
   },{
   angel_id: 4,
   requestor_id: 5,
@@ -121,7 +123,8 @@ Request.create([
   ship_state: "NE",
   ship_zipcode: 68128,
   story: "Some Story",
-  agree_to_terms: TRUE
+  sockmonkey_id: 1,
+  agree_to_terms: true
   },{
   angel_id: nil,
   requestor_id: 2,
@@ -132,7 +135,8 @@ Request.create([
   ship_state: "AL",
   ship_zipcode: 68128,
   story: "Some Story",
-  agree_to_terms: TRUE
+  sockmonkey_id: 2,
+  agree_to_terms: true
   },{
   angel_id: nil,
   requestor_id: 4,
@@ -143,25 +147,43 @@ Request.create([
   ship_state: "IA",
   ship_zipcode: 68128,
   story: "Some Story",
-  agree_to_terms: TRUE
+  sockmonkey_id: 2,
+  agree_to_terms: true
   }
 ])
 
+Sockmonkey.create([
+  {
+  cancertype: 'All',
+  description: 'The ALL cancer fighting monkey!',
+  favcolor: 'Green',
+  remote_image_url_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/nomo.jpg',
+  name: 'NoMo'
+  },{
+  cancertype: 'Lung',
+  description: 'The lung cancer fighting monkey!',
+  favcolor: 'Red',
+  remote_image_url_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/phoenix.png',
+  name: 'Phoenix'  
+  }
+])
+
+
 Status.create([
   {
-    :request_id => 1, 
-    :status => 'Matched, initial'
+  :request_id => 1, 
+  :status => 'Matched, initial'
   },
   {
-    :request_id => 2, 
-    :status => 'Matched, confirmed'
+  :request_id => 2, 
+  :status => 'Matched, confirmed'
   },
   {
-    :request_id => 3, 
-    :status => 'Unmatched'
+  :request_id => 3, 
+  :status => 'Unmatched'
   },
   {
-    :request_id => 2, 
-    :status => 'Unmatched'
+  :request_id => 2, 
+  :status => 'Unmatched'
   }
 ])

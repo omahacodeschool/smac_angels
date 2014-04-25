@@ -1,9 +1,9 @@
-<div id="controller_<%= params[:controller] %>" class="banner">
+<div id="controller_users" class="banner">
   
   <div class="row">  
     <span class="large-2 large-centered columns">
       <div class="center-banner">
-        <div class="text-banner">
+        <div class="users-text-banner">
           Short message on how to become an User...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.
         </div>
 
@@ -16,10 +16,15 @@
    </div> 
  </div>
 
-<div class="row">
+<div class="row content-padding center-text">
   <% @users.each do |user| %>
-    <%= user.fname %>
-    <%= user.lname %>
-    <%= user.email %>
+  <ul>
+    <li>
+      <b>
+        <%= link_to "#{user.fname} #{user.lname}", user_path(user.id) %>
+      </b>
+        <%= user.email %>
+    </li>
+  </ul>
   <% end %>
 </div>
