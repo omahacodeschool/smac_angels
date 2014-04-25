@@ -19,6 +19,7 @@
   font-weight: 700;
   color: #424242;
   display:block;
+  cursor: pointer;
 }
 
 .form input[type="text"]{
@@ -157,11 +158,34 @@ input[type=checkbox] {
 
 #login{
   display: block;
-  margin: 0 auto;
-  margin-top: 100px;
-  margin-bottom: 200px;
+  margin: 100px auto 10px auto;
   background: #3299BB;
-  height: 650px;
+  /*height: 650px;*/
+  width: 500px;
+  padding-bottom: 20px;
+}
+
+.login_sign_up {
+  text-align: center;
+}
+.login_sign_up a {
+  padding-top: 15px;
+}
+.login_sign_up a:hover {
+  color: #E9E9E9;
+}
+
+.no_account {
+  margin: 0 auto 200px auto;
+  padding: 10px 0 30px 0;
+  background: #3299BB;
   width: 500px;
 }
 
+.password_resets {
+  padding-bottom: 25px;
+}
+
+.no_link {
+  cursor: default
+}
