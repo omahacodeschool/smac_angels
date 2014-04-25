@@ -16,6 +16,7 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
     @angel = User.where(:id => @request.angel_id)
+    @user_id = session[:user_id]
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @request }
@@ -90,16 +91,19 @@ class RequestsController < ApplicationController
   # Finds the user object that requested a smac monkey
   # Adds the angel to requestor's request
   def become_angel
-    
     if !current_user
       session[:request_id] = params[:request_id]
-      session[:anonymous] = params[:anonymous]
+
+      params[:anon_button] ? session[:anonymous] = 1 : session[:anonymous] = 0
+
       redirect_to(new_session_path) and return
     end
 
     @request = Request.find(params[:request_id])
-
-    @request.add_angel(session[:user_id], params[:anonymous])
+    
+    
+    
+    @request.add_angel(session[:user_id], params[:anon_button] ? 1 : 0)
 
     redirect_to (request_path(@request.id))
   
