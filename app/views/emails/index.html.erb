@@ -8,7 +8,6 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:request_id) %></th>
       <th><%= model_class.human_attribute_name(:content) %></th>
-      <th><%= model_class.human_attribute_name(:template_id) %></th>
       <th><%= model_class.human_attribute_name(:to_addresses) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -20,7 +19,6 @@
         <td><%= link_to email.id, email_path(email) %></td>
         <td><%= email.request_id %></td>
         <td><%= email.content %></td>
-        <td><%= email.template_id %></td>
         <td><%= email.to_addresses %></td>
         <td><%=l email.created_at %></td>
         <td>
