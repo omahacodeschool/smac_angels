@@ -24,6 +24,17 @@ group :assets do
 
 end
 
+group :development, :test do
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'factory_girl_rails'
+  # gem 'capybara-webkit'
+  gem 'launchy'
+  gem 'pry-rails'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -50,4 +61,3 @@ gem 'fog', '~> 1.22.0'
 
 gem 'negative_captcha'
 
-gem 'pry-rails', :group => :development

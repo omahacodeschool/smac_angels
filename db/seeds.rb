@@ -15,16 +15,16 @@ User.create(fname: "John", lname: "Doe", email: "john@example.com", password: "1
 Template.create([
   {
   name: "Signup Confirmation",
-  content: "Hooray, you signed up!"
+  content: "Hooray! Thank you for signing up, ((name))!"
   },{
   name: "Requestor Signup",
-  content: "Thank you for signing up to receive a SMAC Monkey!"
+  content: "((requestor)), thank you for signing up to receive a SMAC Monkey!"
   },{
   name: "Angel Signup",
-  content: "Thank you for signing up to give a SMAC Monkey!"
+  content: "((angel)), thank you for signing up to give a SMAC Monkey!"
   },{
   name: "Shipping Notification for Angel",
-  content: "Your SMAC Monkey has shipped! We will notify you when the recipient posts photos with it!"
+  content: "((angel)), your SMAC Monkey has shipped! We will notify you when the recipient posts photos with it!"
   },{
   name: "Shipping Notification for Requestor",
   content: "MONKEY EN ROUTE!!! We're so excited! Please post a picture with your SMAC Monkey here once you receive it."
@@ -104,7 +104,7 @@ Request.create([
   angel_id: 2,
   requestor_id: 3,
   current_status: 5,
-  before_photo_url: "http://i.imgur.com/miEgzKD.jpg",
+  remote_before_photo_url_url: "http://i.imgur.com/miEgzKD.jpg",
   ship_address: "17653 Mockingbird Ln",
   ship_city: "Omaha",
   ship_state: "NE",
@@ -117,7 +117,7 @@ Request.create([
   angel_id: 4,
   requestor_id: 5,
   current_status: 5,
-  before_photo_url: "http://i.imgur.com/NEs33qS.gif",
+  remote_before_photo_url_url: "http://i.imgur.com/3eWraMU.jpg",
   ship_address: "1 Main St",
   ship_city: "Liconln",
   ship_state: "NE",
@@ -129,7 +129,7 @@ Request.create([
   angel_id: nil,
   requestor_id: 2,
   current_status: 0,
-  before_photo_url: "http://i.imgur.com/eJfN4IG.jpg",
+  remote_before_photo_url_url: "http://i.imgur.com/eJfN4IG.jpg",
   ship_address: "17654637 Main Round St Avenue Lane",
   ship_city: "Baminghamingmamington",
   ship_state: "AL",
@@ -141,7 +141,7 @@ Request.create([
   angel_id: nil,
   requestor_id: 4,
   current_status: 0,
-  before_photo_url: "http://i.imgur.com/YTyjMza.jpg",
+  remote_before_photo_url_url: "http://i.imgur.com/YTyjMza.jpg",
   ship_address: "One",
   ship_city: "Average City",
   ship_state: "IA",
