@@ -3,7 +3,11 @@
     <!-- placeholder for @request.requestor.fname -->
     <div class="large-4 large-centered small-6 small-centered columns">
       <div class="avatar-banner">
-        <%= image_tag("avatar.png", :alt => "user avatar") %>
+        <% if @request.before_photo_url.url == nil %>
+          <%= image_tag("profile.png") %>
+        <% else %>
+          <%= image_tag(@request.before_photo_url, :alt => "user avatar") %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -12,7 +16,7 @@
     <span class="large-2 large-centered columns">
       <div class="center-banner">
       <div class="name-banner">
-        Sarah is asking for Nomo
+        <%= @request.obo ? @request.obo_fname : @request.requestor.fname %> is asking for <%= @request.sockmonkey.name %>
       </div>
 
       <div class="separator-banner large-9 large-centered small-centered columns"></div>
@@ -57,15 +61,10 @@
 
   <div class="large-9 large-centered columns">
 
-    <div><% if @request.before_photo_url.url == nil %>
-      <%= image_tag("profile.png") %>
-    <% else %>
-      <%= image_tag(@request.before_photo_url) %>
-    <% end %>
+    <div>
     </div>
     <p>
-      <!-- hardcoded name -->
-      <h2>Sarah's Story</h2>
+      <h2><%= @request.obo ? @request.obo_fname : @request.requestor.fname %>'s Story</h2>
       <br>
       <span class="storytime"><%= @request.story %></span>
     </p>
