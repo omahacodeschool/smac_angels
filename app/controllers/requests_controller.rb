@@ -16,6 +16,7 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
     @angel = User.where(:id => @request.angel_id)
+    @user = session[:user_id]
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @request }
