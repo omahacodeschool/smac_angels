@@ -48,12 +48,10 @@ class Email < ActiveRecord::Base
   #
   # Returns the email's modified content
   def unique_email(email)
-    binding.pry
     user = User.find_by_email(email.to_addresses)
     email.content = email.content.gsub "((name))", user.fname
 
     if email.request_id
-      binding.pry
       request = Request.find(email.request_id)
       requestor = User.find(request.requestor_id)
       email.content = email.content.gsub "((requestor))", requestor.fname
@@ -67,7 +65,6 @@ class Email < ActiveRecord::Base
         angel = User.find(request.angel_id)
         email.content = email.content.gsub "((angel))", angel.fname
       end
-      binding.pry 
 
     end
     email.content
