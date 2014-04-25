@@ -56,11 +56,13 @@
   </p>
 
   <div class="large-9 large-centered columns">
-    <% if @request.before_photo_url != nil %>
-      <%= image_tag(@request.before_photo_url) %>
-    <% else %>
+
+    <div><% if @request.before_photo_url.url == nil %>
       <%= image_tag("profile.png") %>
+    <% else %>
+      <%= image_tag(@request.before_photo_url) %>
     <% end %>
+    </div>
     <p>
       <!-- hardcoded name -->
       <h2>Sarah's Story</h2>
