@@ -72,7 +72,7 @@
     <br>
     <p>
       <h2>Website</h2>
-      <span class="storytime"><%= @request.external_url || "No website" %></span>
+      <span class="storytime"><%= @request.external_url || "No website provided" %></span>
     </p>
     <br>
     <br>
@@ -82,7 +82,7 @@
         <span class="storytime"><%= @request.anon_angel ? "The angel has chosen to remain anonymous" : @request.angel.shortname %></span>
       <% end %>
     </p>
-    <% if current_user && (@request.requestor_id == @user || is_admin?) %>
+    <% if current_user && (@request.requestor_id == @user_id || is_admin?) %>
       <div class="row content-padding center-text">
         <%= link_to ' EDIT PROFILE ', edit_request_path(@request), :class => "button-link" %> &nbsp;
       </div>
