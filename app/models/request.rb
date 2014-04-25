@@ -1,5 +1,5 @@
 class Request < ActiveRecord::Base
-  attr_accessible :after_photo_url, :angel_id, :anon_angel, :anon_req, :before_photo_url, :external_url, :obo, :obo_fname, :obo_lname, :requestor_id, :ship_address, :ship_city, :ship_state, :ship_zipcode, :story, :agree_to_terms, :current_status, :sockmonkey_id, :remote_before_photo_url_url
+  attr_accessible :remote_before_photo_url, :after_photo_url, :angel_id, :anon_angel, :anon_req, :before_photo_url, :external_url, :obo, :obo_fname, :obo_lname, :requestor_id, :ship_address, :ship_city, :ship_state, :ship_zipcode, :story, :agree_to_terms, :current_status, :sockmonkey_id, :remote_before_photo_url_url
   
   mount_uploader :before_photo_url, AvatarUploader
   mount_uploader :after_photo_url, AvatarUploader
