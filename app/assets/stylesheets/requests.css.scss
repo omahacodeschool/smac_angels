@@ -43,11 +43,35 @@
   margin-top:-20px;
 }
 .request {
-  padding: 5px;
 }
 .request a {
-  width: 300px;
-  height: 300px;
+  width: 225px;
+  height: 225px;
+  margin: 5px 10px 0 10px;
+}
+.add_request {
+  display: block;
+  width: 225px;
+  height: 225px;
+  margin: 5px 10px 0 10px;
+  background-color: #f1712f;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: bold;
+  transition: all 1s ease;
+  opacity: 0.5;
+  overflow: hidden;
+}
+.add_request:hover {
+  opacity: 1.00;
+  color: #424242;
+}
+.plus {
+  font-size: 340px;
+  margin: -135px;
+  padding: 0;
 }
 
 //Icons ----------------------------------------------------------------------

@@ -24,11 +24,25 @@
   <div class="requests clear">
 
     <% if @requests %>
+
+      <%= link_to :new_request do %>
+        <div class="add_request left">
+          <p>Request A Monkey</p>
+          <p class="plus">+</p>
+        </div>
+      <% end %>
+
+      <div class="add_request left">
+        <p>Request A Monkey</p>
+        <p class="plus">+</p>
+      </div>
+      <%#= link_to '+', :new_request, :class => 'add_request left' %>
+
       <% @requests.each do |request| %>
     
-          <div class="request">
-            <%= link_to image_tag(request.before_photo_url).html_safe, request_path(request.id), :class => 'left' %>
-          </div>
+        <div class="request">
+          <%= link_to image_tag(request.before_photo_url).html_safe, request_path(request.id), :class => 'left' %>
+        </div>
         
       <% end %>
     <% else %>
