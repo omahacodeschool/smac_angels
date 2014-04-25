@@ -21,7 +21,7 @@
         <% end %>
         <%= raw negative_captcha(@captcha) %>
         <div class="field">
-          <%= negative_label_tag(@captcha, :email, "") %>
+          <%= negative_label_tag(@captcha, :email, "email") %>
           <%= negative_text_field_tag(@captcha, :email, placeholder: "Email") %>
         </div>
         <div class="field">
