@@ -62,3 +62,7 @@ gem 'fog', '~> 1.22.0'
 
 gem 'negative_captcha'
 
+gem 'ckeditor'
+
+gem 'rmagick', :require => 'RMagick'  
+# ^if you have bundle errors run: 'brew install imagemagick'
