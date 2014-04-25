@@ -29,8 +29,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'factory_girl_rails'
   # gem 'capybara-webkit'
   gem 'launchy'
+  gem 'pry-rails'
 end
 
 gem 'jquery-rails'
@@ -59,5 +61,3 @@ gem 'fog', '~> 1.22.0'
 
 gem 'negative_captcha'
 
-gem 'pry-rails', :group => :development
-gem 'rspec-rails', :group => [:development, :test]
