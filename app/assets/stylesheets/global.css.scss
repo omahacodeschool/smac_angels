@@ -94,7 +94,7 @@ ul{
 
 nav {  
     margin-top:-60px;
-    height: 40px;  
+    height: 60px;  
     width: 100%;  
     background-color: rgba(255, 255, 255, 0.9); 
     font-size: 11pt;  
@@ -123,9 +123,11 @@ nav a {
     text-decoration: none;  
     line-height: 40px;  
     font-family: 'Lato', sans-serif;
+    padding-top:10px;
 }  
 
 nav li a {  
+  padding-bottom:10px;
     border-right: 1px solid #E9E9E9;  
     box-sizing:border-box;  
     -moz-box-sizing:border-box;  
@@ -160,8 +162,8 @@ nav a#pull {
         position: relative;  
     }  
     nav li a {  
-        border-bottom: 1px solid #576979;  
-        border-right: 1px solid #576979;  
+        border-bottom: 1px solid #E9E9E9;  
+        border-right: 1px solid #E9E9E9;  
     }  
     nav a {  
         text-align: left;  
