@@ -6,7 +6,7 @@
         <% if @request.before_photo_url.url == nil %>
           <%= image_tag("profile.png") %>
         <% else %>
-          <%= image_tag(@request.before_photo_url, :alt => "user avatar") %>
+          <%= image_tag(@request.before_photo_url_url(:thumb), :alt => "user avatar") %>
         <% end %>
       </div>
     </div>
