@@ -75,6 +75,11 @@
       <h2>Website</h2>
       <span class="storytime"><%= @request.external_url %></span>
     </p>
+    <div class="row content-padding center-text">
+      <% if current_user %>
+        <%= link_to ' EDIT PROFILE ', edit_request_path(@request), :class => "button-link" %> &nbsp;
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -117,9 +122,4 @@
     <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
   
 
-</div>
-
-<div class="row content-padding center-text">
-  <%= link_to ' EDIT ', edit_request_path(@request), :class => "button-link" %> &nbsp;
-  <%= link_to 'BACK', requests_path, :class => "button-link" %>
 </div>
