@@ -32,29 +32,6 @@
   </head>
   
   <body>
-    
-    <div class="top-bar">
-      <div class="top-left">
-        <!-- <%= link_to :root do %> -->
-          <%= image_tag "/assets/SMAC_logo.png" %>
-        <!-- <% end %> -->
-      </div>
-      
-      <ul> 
-        <li><%= link_to "Home", root_path %></li> 
-        <li><%= link_to "Give", requests_path %></li>  
-        <li><%= link_to "Nominate", new_request_path %></li>
-        <li><%= link_to "Request", new_request_path %></li>
-        <li><%= link_to "Sign Up", signup_path %></li>  
-        <% if current_user %>
-          <li><%= link_to current_user.email, user_path(current_user.id) %></li>
-          <li><%= link_to "Log Out", logout_path %></li>  
-        <% else %>
-          <li><%= link_to "Log In", login_path %></li>
-        <% end %>
-      </ul> 
-    </div>
-    
     <div>
       <%= yield %>
     </div>
@@ -84,17 +61,3 @@
   </footer>
 
 </html>
-
-
-  
-
-
-
-
-
-
-
-
-
-
-

@@ -18,5 +18,5 @@ SmacAngel::Application.routes.draw do
   resources :sessions
   resources :password_resets
   
-  root :to => "home#index"
+  root :to => "home#index", layout: "homepage"
 end
