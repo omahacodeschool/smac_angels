@@ -82,13 +82,11 @@
         <span class="storytime"><%= @request.anon_angel ? "The angel has chosen to remain anonymous" : @request.angel.shortname %></span>
       <% end %>
     </p>
-    <div class="row content-padding center-text">
-      <% binding.pry %>
-      <% if current_user && (@request.requestor_id == @user || is_admin?) %>
-
+    <% if current_user && (@request.requestor_id == @user || is_admin?) %>
+      <div class="row content-padding center-text">
         <%= link_to ' EDIT PROFILE ', edit_request_path(@request), :class => "button-link" %> &nbsp;
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
