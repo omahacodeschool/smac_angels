@@ -26,30 +26,30 @@
  </div>
 
 <% if @request.angel_id %>
-  <div class="row full-width-requests">
+  <div class="row full-width-requests center-text">
     <div class="large-3 small-6 private-box columns">  
-        <b>Street:</b><br>
+        <b>Street</b><br>
         <%= @request.ship_address %>
     </div>
 
     <div class="large-3 small-6 private-box columns">    
-        <b>City:</b><br>
+        <b>City</b><br>
         <%= @request.ship_city %>
     </div>
 
     <div class="large-3 small-6 private-box columns">
-        <b>State:</b><br>
+        <b>State</b><br>
         <%= @request.ship_state %>
     </div>
 
     <div class="large-3 small-6 private-box columns">
-        <b>Zipcode:</b><br>
+        <b>Zipcode</b><br>
         <%= @request.ship_zipcode %>
     </div>
   </div>
 <% end %>
 
-<div class="row center-text">
+<div class="row center-text content-padding">
       
   <p id="notice">
     <%= notice %>
@@ -64,9 +64,11 @@
     <p>
       <!-- hardcoded name -->
       <h2>Sarah's Story</h2>
+      <br>
       <span class="storytime"><%= @request.story %></span>
     </p>
-    
+    <br>
+    <br>
     <p>
       <h2>Website</h2>
       <span class="storytime"><%= @request.external_url %></span>
