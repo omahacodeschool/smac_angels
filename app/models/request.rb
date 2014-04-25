@@ -54,7 +54,7 @@ class Request < ActiveRecord::Base
     Status.create(:request_id => self.id, :status => 'Matched, initial')  
            
     self.save
-
+    Email.new.send_email("Angel Signup", User.find(self.requestor_id), self.id)
 	end
 
 end
