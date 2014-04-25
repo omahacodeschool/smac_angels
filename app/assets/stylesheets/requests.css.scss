@@ -162,13 +162,56 @@ input[type=submit].submit-button:hover {
 //Facebook Comments --------------------------------------------------------------------------
 
 .fb-comments {
-  background:yellow;
+  margin-top:30px;
+  padding-top:80px;
+  background:#F6F6F6;
 }
 
 .fb-comments-container {
   background:#E9E9E9;
+  margin:0;
+  padding:0;
   width:100%;
 }
 
+.full-width-requests-facebook{
+  width: 100%;
+  max-width: 100%; 
+  margin-top:-20px;
+  height:400px;
+}
+
+@media screen and (max-width: 600px) {
+  .fa {
+    font-size:60px;
+    margin:10px;
+  }
+}
+
+//@media screen and (max-width: 600px) {  
+//    nav {  
+//        height: auto;  
+//    }  
+//    nav ul {  
+//        width: 100%;  
+//        display: block;  
+//        height: auto;  
+//    }  
+//    nav li {  
+//        width: 50%;  
+//        float: left;  
+//        position: relative;  
+//    }  
+//    nav li a {  
+//        border-bottom: 1px solid #E9E9E9;  
+//        border-right: 1px solid #E9E9E9;  
+//    }  
+//    nav a {  
+//        text-align: left;  
+//        width: 100%;  
+////        text-indent: 25px;  
+//        text-align:center;
+//    }  
+//} 
 
     
