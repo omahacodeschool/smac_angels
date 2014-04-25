@@ -1,4 +1,5 @@
 class AvatarUploader < CarrierWave::Uploader::Base
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   # 
   # include Sprockets::Helpers::RailsHelper
