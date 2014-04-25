@@ -16,18 +16,17 @@
 
   <%= f.hidden_field :requestor_id, :value => session[:user_id] %>
   
-  <div class="obo_check field">
-    <%= f.label "On behalf of someone else:" %>
+  <div class="checkbox">
+    <div id="cbox_label">On behalf of someone else?</div>
+    <%= label_tag(:obo, "") %>
     <%= f.check_box :obo %>
   </div>
 
   <div class="obo_name field"> 
-    <%= f.label "On behalf of First Name" %>
-    <%= f.text_field :obo_fname %>
+    <%= f.text_field(:obo_fname, placeholder: "On behalf of, First Name") %>
   </div>
   <div class="obo_name field"> 
-    <%= f.label "On behalf of Last Name" %>
-    <%= f.text_field :obo_lname %>
+    <%= f.text_field(:obo_lname, placeholder: "On behalf of, Last Name") %>
   </div>
 
   <!--<div class="field">
@@ -35,58 +34,66 @@
     <%#= f.check_box :anon_req %>
   </div>-->
   <div class="field">
-    <%= f.label :ship_address %>
-    <%= f.text_field :ship_address %>
+    <%= f.text_field(:ship_address, placeholder: "Shipping Address") %>
   </div>
   <div class="control-group">
-    <%= f.label :ship_city, :class => 'control-label' %>
+    <%= f.label(:ship_city, :class => 'control-label') %>
     <div class="controls">
-      <%= f.text_field :ship_city, :class => 'text_field' %>
+      <%= f.text_field :ship_city, :class => 'text_field', placeholder: "City" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :ship_state, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :ship_state, :class => 'text_field' %>
+      <%= f.text_field :ship_state, :class => 'text_field', placeholder: "State" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :ship_zipcode, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :ship_zipcode, :class => 'text_field' %>
+      <%= f.text_field :ship_zipcode, :class => 'text_field', placeholder: "Zipcode" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :story, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :story, :class => 'text_area' %>
+      <%= f.text_area :story, :class => 'text_area', placeholder: "Tell us your story." %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :external_url, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :external_url, :class => 'text_field' %>
+      <%= f.text_field :external_url, :class => 'text_field', placeholder: "URL Link" %>
     </div>
   </div>
-  <div class="field">
-    <%= f.label "Recipient Picture" %>
+  
+  <p class="center">Who will be receiving the sock monkey?</p>
+  <div class="ctr_button">
+    <p class="center">Upload Photo</p>
     <%= f.file_field :before_photo_url %>
   </div>
-  <div class="field">
-    <%= f.label "Picture after your receive SMAC Monkey" %>
+  <p class="center">Share an 'after' photo!</p>
+  <div class="ctr_button">
+    <p class="center">Upload After Photo</p>
     <%= f.file_field :after_photo_url %>
   </div>
-  <div class="field">
+  
+  <div class="checkbox">
+    <div id="cbox_label">By checking this box, you understand we need to give your SMAC! Angel your mailing address in order for them to send him to you. We want to make sure you are cool with that!</div>
+    <%= label_tag(:agree_to_terms, "") %>
     <%= f.check_box :agree_to_terms %>
-    By checking this box, you understand we need to give your SMAC! Angel your mailing address in order for them to send him to you. We want to make sure you are cool with that!
   </div>
-  <div class="monkey">
+  
+  <p class="center">Choose a sock monkey!</p>
+  <div class="monkeys center">
     <% @sockmonkeys.each do |monkey| %>
       <%= f.radio_button :sockmonkey_id, monkey.id %>
-      <%= f.label :sockmonkey_id, image_tag(monkey.image_url), :value => monkey.id %>
+      <%= f.label :sockmonkey_id, image_tag(monkey.image_url, height: '200', width: '200'), :value => monkey.id %>
+      <!-- <%= link_to "View#{monkey.name}", "http://google.com", :class => "fancybox", :rel => "sockmonkey", :title => monkey.name %> -->
     <% end %>
   </div>
+
   <div class="actions">
-    <%= f.submit 'Save' %>
+    <%= f.submit 'Save', :class => "ctr_button" %>
   </div>
 <% end %>

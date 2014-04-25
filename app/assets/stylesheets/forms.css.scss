@@ -8,7 +8,7 @@
   font-size: 24px;
   font-weight: 700;
   color: #E9E9E9;
-  display:block;
+  display: block;
 }
 
 .form_name2{
@@ -24,6 +24,19 @@
 .form input[type="text"]{
   width: 300px;
   height: 55px; 
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 5px;
+}
+
+.text_area{
+  width: 300px;
+  height: 300px; 
   display: block;
   margin: 0 auto;
   margin-top: 15px;
@@ -50,6 +63,10 @@
 .form input[type="submit"]{
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.form input[type="file"]{
+  opacity: 0;
 }
 
 input[type=checkbox] {
@@ -104,9 +121,10 @@ input[type=checkbox] {
 }
 
 #cbox_label{
-  width: 115px;
+  width: 250px;
   margin-left: 40px;
   padding-top: 2px;
+  color: #E9E9E9;
 }
 
 .ctr_button{
@@ -124,6 +142,10 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
+.ctr_button p{
+  margin-top: 24px;
+}
+
 .ctr_button2{
   display: block;
   margin: 0 auto;
@@ -139,6 +161,10 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
+.control-label{
+  display: none;
+}
+
 /* `Signup form
 ----------------------------------------------------------------------------------------------------*/
 
@@ -147,7 +173,7 @@ input[type=checkbox] {
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 200px;
-  background: #F75E11;
+  background: #3299BB;
   height: 600px;
   width: 500px;
 }
@@ -164,4 +190,47 @@ input[type=checkbox] {
   height: 650px;
   width: 500px;
 }
+
+/* `Request form
+----------------------------------------------------------------------------------------------------*/
+
+#request{
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 200px;
+  background: #3299BB;
+  height: 1800px;
+  width: 500px;
+}
+
+#request p{
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-top: 17px;
+  color: #E9E9E9;
+}
+
+.monkeys{
+  margin: 0 auto;
+  margin-top: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
