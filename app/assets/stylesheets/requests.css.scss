@@ -1,7 +1,7 @@
 #controller_requests.banner{
   height:800px;
   width:100%;
-  background-color:#FF9900;
+  background-color:#F75E11;
   margin-top:-40px;
 }
 
@@ -100,3 +100,27 @@
 .fa-shopping-cart:hover {
   color:#FFF;
 }
+
+// Submit Buttons ------------------------------------------------------------------------
+
+input[type=text].submit-button {padding:5px; border:2px solid #ccc; 
+-webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+input[type=text].submit-button:focus {border-color:#FFF; }
+
+input[type=submit].submit-button {
+    cursor:pointer;
+    padding: 15px 45px;
+    color: #3299BB;
+    border: 1px solid #3299BB;
+    background-color:white;
+    transition-property: all;
+    transition-duration: .8s;
+}
+
+input[type=submit].submit-button:hover {
+    color: #FFF;
+    background-color:#3299BB;
+}
+    

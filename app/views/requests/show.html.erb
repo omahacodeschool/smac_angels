@@ -49,7 +49,7 @@
   </div>
 <% end %>
 
-<div class="row center-text content-padding">
+<div class="row center-text">
       
   <p id="notice">
     <%= notice %>
@@ -79,24 +79,26 @@
 </div>
 
 <div class="row content-small-padding">
-  <div class="large-6 small-3 large-centered small-centered center-text columns">
+  <div class="large-7 small-3 large-centered small-centered center-text columns">
     <%# if !@request.angel_id %>
       <%= form_tag(become_angel_path) do %>
         <%= hidden_field_tag 'request_id', @request.id %>
-        <div class="field">
-          <%= label_tag "Anonymous Angel?" %>
-          <%= check_box_tag 'anonymous' %>
+        <div class="row center-text">
+          <div class="field">
+            <%= label_tag "Anonymous Angel?" %>
+            <%= check_box_tag 'anonymous' %>
+          </div>
+          <%= submit_tag "     BECOME ANGEL    ", :class => "submit-button" %>
+          <%= submit_tag "ANONYMOUS ANGEL", :class => "submit-button" %>
         </div>
-        <div>
-          <%= submit_tag "Become Angel" %>
-        </div>
+
       <% end %>
     <%# end %>
   </div>
 </div>
 
 <div class="row center-text content-small-padding">
-  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="670" data-num-posts="10"></div>
+  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="500" data-num-posts="10"></div>
   </div>
 </div>
 
