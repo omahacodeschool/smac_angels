@@ -88,21 +88,12 @@
       <%= form_tag(become_angel_path) do %>
         <%= hidden_field_tag 'request_id', @request.id %>
         <div class="row center-text">
-          <div class="field">
-            <%= label_tag "Anonymous Angel?" %>
-            <%= check_box_tag 'anonymous' %>
-          </div>
           <%= submit_tag "     BECOME ANGEL    ", :class => "submit-button" %>
           <%= submit_tag "ANONYMOUS ANGEL", :class => "submit-button" %>
         </div>
 
       <% end %>
     <%# end %>
-  </div>
-</div>
-
-<div class="row center-text content-small-padding">
-  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="500" data-num-posts="10"></div>
   </div>
 </div>
 
@@ -119,6 +110,10 @@
     <a href      = "//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
     <!-- Please call pinit.js only once per page -->
     <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
-  
-
 </div>
+
+<div class="row large-12 content-small-padding fb-comments-container">
+  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="500" data-num-posts="10"></div>
+  </div>
+</div>
+
