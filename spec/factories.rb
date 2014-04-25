@@ -72,4 +72,9 @@ FactoryGirl.define do
       name                  'Signup Confirmation'
       content               'Hooray! Thank you for signing up, ((name))!'
     end
+    
+    factory :request_template, class: Template do
+      name                  "Requestor Signup"
+      content               "((requestor)), thank you for signing up to receive a SMAC Monkey!"
+    end
 end
