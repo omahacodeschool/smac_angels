@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
   validates :email, :uniqueness => true, :format => { :with => /.+@.+\..+/i }
+
+  def shortname
+  	"#{fname} #{lname[0]}."
+  end
 end
