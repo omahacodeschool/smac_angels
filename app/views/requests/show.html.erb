@@ -3,7 +3,11 @@
     <!-- placeholder for @request.requestor.fname -->
     <div class="large-4 large-centered small-6 small-centered columns">
       <div class="avatar-banner">
-        <%= image_tag("avatar.png", :alt => "user avatar") %>
+        <% if @request.before_photo_url.url == nil %>
+          <%= image_tag("profile.png") %>
+        <% else %>
+          <%= image_tag(@request.before_photo_url, :alt => "user avatar") %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -12,7 +16,7 @@
     <span class="large-2 large-centered columns">
       <div class="center-banner">
       <div class="name-banner">
-        Sarah is asking for Nomo
+        <%= @request.obo ? @request.obo_fname : @request.requestor.fname %> is asking for <%= @request.sockmonkey.name %>
       </div>
 
       <div class="separator-banner large-9 large-centered small-centered columns"></div>
@@ -49,7 +53,7 @@
   </div>
 <% end %>
 
-<div class="row center-text content-padding">
+<div class="row center-text">
       
   <p id="notice">
     <%= notice %>
@@ -57,15 +61,10 @@
 
   <div class="large-9 large-centered columns">
 
-    <div><% if @request.before_photo_url.url == nil %>
-      <%= image_tag("profile.png") %>
-    <% else %>
-      <%= image_tag(@request.before_photo_url) %>
-    <% end %>
+    <div>
     </div>
     <p>
-      <!-- hardcoded name -->
-      <h2>Sarah's Story</h2>
+      <h2><%= @request.obo ? @request.obo_fname : @request.requestor.fname %>'s Story</h2>
       <br>
       <span class="storytime"><%= @request.story %></span>
     </p>
@@ -75,28 +74,35 @@
       <h2>Website</h2>
       <span class="storytime"><%= @request.external_url %></span>
     </p>
+    <div class="row content-padding center-text">
+      <% if current_user %>
+        <%= link_to ' EDIT PROFILE ', edit_request_path(@request), :class => "button-link" %> &nbsp;
+      <% end %>
+    </div>
   </div>
 </div>
 
 <div class="row content-small-padding">
-  <div class="large-6 small-3 large-centered small-centered center-text columns">
+  <div class="large-7 small-3 large-centered small-centered center-text columns">
     <%# if !@request.angel_id %>
       <%= form_tag(become_angel_path) do %>
         <%= hidden_field_tag 'request_id', @request.id %>
-        <div class="field">
-          <%= label_tag "Anonymous Angel?" %>
-          <%= check_box_tag 'anonymous' %>
+        <div class="row center-text">
+          <div class="field">
+            <%= label_tag "Anonymous Angel?" %>
+            <%= check_box_tag 'anonymous' %>
+          </div>
+          <%= submit_tag "     BECOME ANGEL    ", :class => "submit-button" %>
+          <%= submit_tag "ANONYMOUS ANGEL", :class => "submit-button" %>
         </div>
-        <div>
-          <%= submit_tag "Become Angel" %>
-        </div>
+
       <% end %>
     <%# end %>
   </div>
 </div>
 
 <div class="row center-text content-small-padding">
-  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="670" data-num-posts="10"></div>
+  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="500" data-num-posts="10"></div>
   </div>
 </div>
 
@@ -115,9 +121,4 @@
     <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
   
 
-</div>
-
-<div class="row content-padding center-text">
-  <%= link_to ' EDIT ', edit_request_path(@request), :class => "button-link" %> &nbsp;
-  <%= link_to 'BACK', requests_path, :class => "button-link" %>
 </div>

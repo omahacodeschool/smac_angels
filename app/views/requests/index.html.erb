@@ -4,7 +4,7 @@
       <span class="large-2 large-centered columns">
         <div class="center-banner">
         <div class="requests-text-banner">
-          Short message on how to become an Angel...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.
+          Short message on how to become an Angel.
         </div>
   
         <div class="separator-banner large-9 large-centered small-centered columns"></div>
@@ -18,22 +18,30 @@
    </div>
    
 <div class="row content-padding">
-<div>
-    Short message on how to become an Angel...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat.
-  </div>
 
   <h2>Select a recipient:</h2>
 
-  <div>
+  <div class="requests clear">
 
     <% if @requests %>
+
+      <%= link_to :new_request do %>
+        <div class="add_request left">
+          <p>Request A Monkey</p>
+          <p class="plus">+</p>
+        </div>
+      <% end %>
+
+      <div class="add_request left">
+        <p>Placeholder</p>
+      </div>
+      <%#= link_to '+', :new_request, :class => 'add_request left' %>
+
       <% @requests.each do |request| %>
     
-          <div>
-            <%= link_to image_tag(request.before_photo_url).html_safe, request_path(request.id) %>
-          </div>
+        <div class="request">
+          <%= link_to image_tag(request.before_photo_url).html_safe, request_path(request.id), :class => 'left' %>
+        </div>
         
       <% end %>
     <% else %>

@@ -8,5 +8,15 @@ $(document).ready(function() {
     else
         $('.obo_name').slideToggle('slow');
   });
-    
+
+  $("a.fancybox").fancybox({
+    type: 'iframe',
+    overlayOpacity: .5,
+    overlayColor: '#f64',
+    transitionIn: 'elastic',
+    transitionOut: 'elastic',
+    easingOut: 'easeOutSine',
+    cyclic: true
+  });
+        
 });

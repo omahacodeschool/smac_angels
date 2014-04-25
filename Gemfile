@@ -29,11 +29,14 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'factory_girl_rails'
   # gem 'capybara-webkit'
   gem 'launchy'
+  gem 'pry-rails'
 end
 
 gem 'jquery-rails'
+gem 'fancybox2-rails', '~> 0.2.8'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -59,6 +62,4 @@ gem 'fog', '~> 1.22.0'
 
 gem 'negative_captcha'
 
-gem 'pry-rails', :group => :development
-gem 'rspec-rails', :group => [:development, :test]
 gem 'ckeditor'
