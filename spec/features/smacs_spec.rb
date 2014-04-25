@@ -47,7 +47,17 @@ describe "SMACs" do
       fill_in_request
       expect(page).to have_content("Request was successfully created.")
     end
-  
+
+    it "can visit the user profile page" do
+      newuser = FactoryGirl.create(:user)
+      visit user_path(newuser.id)
+      expect(page).to have_content(newuser.lname)
+    end
+    
+    it "" do
+      
+    end
+
     def sign_up
       fill_in("test-email", :with => "test@test.com", :match => :prefer_exact)
       fill_in("test-fname", :with => "rspec")
