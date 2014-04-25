@@ -9,7 +9,7 @@
   
     <div class="form_main">
       <%= form_tag sessions_path do %>
-        <div class="field">
+        <div class="field" id="primary_email">
           <%= text_field_tag(:email, params[:email], placeholder: "Email") %>
         </div>
         <div class="field">
