@@ -48,6 +48,11 @@
   width: 225px;
   height: 225px;
   margin: 5px 10px 0 10px;
+  transition: all 1s ease;
+}
+.request a:hover {
+  -webkit-transform: scale(1.5);
+  border: 3px solid #f1712f;
 }
 .add_request {
   display: block;
@@ -58,7 +63,6 @@
   color: #fff;
   font-size: 16px;
   text-align: center;
-  border-radius: 3px;
   font-weight: bold;
   transition: all 1s ease;
   opacity: 0.5;
