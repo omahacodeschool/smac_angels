@@ -51,7 +51,6 @@ ul{
     border: 1px solid #BCBCBC;
 }
 
-
 //-----------------------------------------------------------------------------------------------------
 
 .content-padding{
@@ -90,8 +89,8 @@ ul{
   top: -20px
 }
 
-/* `Navbar
-----------------------------------------------------------------------------------------------------*/
+
+//------------------------------------------------------------------------------------------------------
 
 #top-bar{
   position: fixed;
@@ -99,7 +98,7 @@ ul{
   top: 0;
   height: 100px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   z-index: 1;
 }
 
@@ -126,14 +125,15 @@ ul{
 
 .top-right a{
   text-decoration: none;
-  margin-right: 10px;
-  color: #BCBCBC;
+  margin-right: 20px;
+  color:#BCBCBC;
+//  font-weight:bold;
+  transition-property: all;
+  transition-duration: 1s;
 }
 
-.top-right a:hover{
-  text-decoration: none;
-  margin-right: 10px;
-  color: #424242;
+.top-right a:hover {
+  color:#F75E11;
 }
 
 /* `Banner text for other pages
