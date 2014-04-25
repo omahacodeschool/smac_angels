@@ -31,29 +31,60 @@
 
 <% if @request.angel_id %>
   <div class="row full-width-requests center-text">
-    <div class="large-3 small-6 private-box columns">  
+
+    <div class="large-2 small-0 private-box columns mobile-hide">
+    </div>
+    <div class="large-2 small-6 private-box columns">  
         <b>Street</b><br>
         <%= @request.ship_address %>
     </div>
 
-    <div class="large-3 small-6 private-box columns">    
+    <div class="large-2 small-6 private-box columns">    
         <b>City</b><br>
         <%= @request.ship_city %>
     </div>
 
-    <div class="large-3 small-6 private-box columns">
+    <div class="large-2 small-6 private-box columns">
         <b>State</b><br>
         <%= @request.ship_state %>
     </div>
 
-    <div class="large-3 small-6 private-box columns">
+    <div class="large-2 small-6 private-box columns">
         <b>Zipcode</b><br>
         <%= @request.ship_zipcode %>
     </div>
+    <div class="large-2 small-0 private-box columns mobile-hide">
+    </div>
+ 
   </div>
 <% end %>
 
-<div class="row center-text">
+<div class="row full-width-admin center-text">
+  <div class="large-1 admin-box columns">
+  </div>
+
+  <div class="large-2 small-6 admin-box columns mobile-hide">
+    email requestor
+  </div>
+  <div class="large-2 small-6 admin-box columns">
+    email angel
+  </div>
+  <div class="large-2 small-6 admin-box columns">
+    unmatch angel
+  </div>
+  <div class="large-2 small-6 admin-box columns">
+    match an angel
+  </div>
+  <div class="large-2 small-12 admin-box columns">
+    delete request
+  </div>
+  <div class="large-1 admin-box columns mobile-hide">
+  </div>
+</div>
+
+<!-- send email to requestor, send email to angel, unmatch, match angel, delete request -->
+
+<div class="row content-padding center-text">
       
   <p id="notice">
     <%= notice %>
@@ -90,7 +121,7 @@
   </div>
 </div>
 
-<div class="row content-small-padding">
+<div class="row">
   <div class="large-7 small-3 large-centered small-centered center-text columns">
     <% if !@request.angel_id %>
       <%= form_tag(become_angel_path) do %>
@@ -102,11 +133,6 @@
 
       <% end %>
     <% end %>
-  </div>
-</div>
-
-<div class="row center-text content-small-padding">
-  <div class="fb-comments" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="500" data-num-posts="10"></div>
   </div>
 </div>
 
@@ -123,6 +149,18 @@
     <a href      = "//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
     <!-- Please call pinit.js only once per page -->
     <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
-  
+</div>
+
+    <div class="row content-padding center-text">
+      <% if current_user %>
+        <%= link_to ' EDIT PROFILE ', edit_request_path(@request), :class => "button-link" %> &nbsp;
+      <% end %>
+    </div>
+
+
+
+<div class="row">
+
+          <div class="fb-comments content-small-padding large-12 columns" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="500" data-num-posts="10"></div>
 
 </div>
