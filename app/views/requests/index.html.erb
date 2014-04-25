@@ -40,7 +40,7 @@
       <% @requests.each do |request| %>
     
         <div class="request">
-          <%= link_to image_tag(request.before_photo_url).html_safe, request_path(request.id), :class => 'left' %>
+          <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id), :class => 'left' %>
         </div>
         
       <% end %>
