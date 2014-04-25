@@ -5,10 +5,14 @@ class UsersController < ApplicationController
   # Creates User object for initial sign up form.
   
   def show
-    @user = User.find(params[:id])
-    @requests = Request.order(:created_at).where("requestor_id = ?", @user.id)
-    @angels = Request.order(:created_at).where("angel_id = ?", @user.id)
-
+    if is_admin? || session[:user_id] == params[:id].to_i
+      @user = User.find(params[:id])
+      @requests = Request.order(:created_at).where("requestor_id = ?", @user.id)
+      @angels = Request.order(:created_at).where("angel_id = ?", @user.id)
+    else
+      flash[:notice] = "I am sorry, you do not have permission to view the profile of a user you are not affiliated with a request."
+      redirect_to root_path
+    end
     # Cool join that won't allow images to display because of possible Carrierwave limitation.
     #
     # @requests = Request
@@ -38,11 +42,21 @@ class UsersController < ApplicationController
   
   #Select all users for index view 
   def index
-    @users = User.all
+    if is_admin?
+      @users = User.all
+    else
+      flash[:notice] = "I am sorry, you are unable to view this profile."
+      redirect_to root_path
+    end
   end
 
   def edit
-    @user = User.find(params[:id])
+    if is_admin? || session[:user_id] == params[:id]
+      @user = User.find(params[:id])
+    else
+      flash[:notice] = "I am sorry, you are unable to edit this profile."
+      redirect_to root_path
+    end
   end
 
   def update
@@ -52,6 +66,7 @@ class UsersController < ApplicationController
     redirect_to (user_path(@user.id))
   end
   
+
   private
   # Returns parameters from form fields after decoding MD5 hash field names. 
   ## https://github.com/subwindow/negative-captcha

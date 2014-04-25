@@ -14,6 +14,21 @@
     </div>
   <% end %>
 
+  <div class="monkeys center">
+    <p class="center">Choose a sock monkey!<br><br>Click my name to learn more about me.</p>
+      <ul>
+        <% @sockmonkeys.each do |monkey| %>
+          <li>
+            <%= f.label :sockmonkey_id, image_tag(monkey.image_url, height: '100', width: '100'), :value => monkey.id %>
+            <%= f.radio_button :sockmonkey_id, monkey.id %>
+            <div id="monkey_name">
+              <%= link_to "#{monkey.name}", sockmonkey_path(monkey.id), :class => "fancybox", :rel => "sockmonkey", :title => monkey.name %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+  
   <%= f.hidden_field :requestor_id, :value => session[:user_id] %>
   
   <!-- <div class="checkbox">
@@ -86,22 +101,6 @@
   <div class="checkbox">
     <%= f.check_box :agree_to_terms %>
     <%= f.label(:agree_to_terms, "By checking this box you understand your mailing address will be given to your SMAC! Angel so they can ship your sock moneky to you!") %>
-  </div>
-  
-  
-  <div class="monkeys center">
-    <p class="center">Choose a sock monkey!<br><br>Click my name to learn more about me.</p>
-      <ul>
-        <% @sockmonkeys.each do |monkey| %>
-          <li>
-            <%= f.label :sockmonkey_id, image_tag(monkey.image_url, height: '100', width: '100'), :value => monkey.id %>
-            <%= f.radio_button :sockmonkey_id, monkey.id %>
-            <div id="monkey_name">
-              <%= link_to "#{monkey.name}", sockmonkey_path(monkey.id), :class => "fancybox", :rel => "sockmonkey", :title => monkey.name %>
-            </div>
-          </li>
-        <% end %>
-      </ul>
   </div>
 
   <div class="actions">
