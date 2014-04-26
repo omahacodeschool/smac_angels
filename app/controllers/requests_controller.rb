@@ -18,6 +18,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @angel = User.where(:id => @request.angel_id)
     @user_id = session[:user_id]
+    @emails = Email.where(:request_id => @request.id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @request }

@@ -213,5 +213,15 @@ input[type=submit].submit-button:hover {
   }
 }
 
-
+.email_log {
+  width: 80%;
+  margin: 0 auto 0px auto;
+}
+.email_log thead th, .email_log tbody td {
+  padding-bottom: 10px;
+}
+.email tr:nth-child(odd) {
+  background-color: #3299BB;
+  opacity: 0.50;
+}
     

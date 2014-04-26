@@ -34,14 +34,10 @@
 
     <div class="large-2 small-0 private-box columns mobile-hide">
     </div>
-    <div class="large-2 small-6 private-box columns">  
-        <b>Street</b><br>
-        <%= @request.ship_address %>
-    </div>
 
-    <div class="large-2 small-6 private-box columns">    
-        <b>City</b><br>
-        <%= @request.ship_city %>
+    <div class="large-2 small-6 private-box columns">
+        <b>Zipcode</b><br>
+        <%= @request.ship_zipcode %>
     </div>
 
     <div class="large-2 small-6 private-box columns">
@@ -49,38 +45,46 @@
         <%= @request.ship_state %>
     </div>
 
-    <div class="large-2 small-6 private-box columns">
-        <b>Zipcode</b><br>
-        <%= @request.ship_zipcode %>
+    <div class="large-2 small-6 private-box columns">    
+        <b>City</b><br>
+        <%= @request.ship_city %>
     </div>
+
+    <div class="large-2 small-6 private-box columns">  
+        <b>Street</b><br>
+        <%= @request.ship_address %>
+    </div>
+
     <div class="large-2 small-0 private-box columns mobile-hide">
     </div>
  
   </div>
 <% end %>
 
-<div class="row full-width-admin center-text">
-  <div class="large-1 admin-box columns">
-  </div>
+<% if is_admin? %>
+  <div class="row full-width-admin center-text">
+    <div class="large-1 admin-box columns">
+    </div>
 
-  <div class="large-2 small-6 admin-box columns mobile-hide">
-    email requestor
+    <div class="large-2 small-6 admin-box columns mobile-hide">
+      email requestor
+    </div>
+    <div class="large-2 small-6 admin-box columns">
+      email angel
+    </div>
+    <div class="large-2 small-6 admin-box columns">
+      unmatch angel
+    </div>
+    <div class="large-2 small-6 admin-box columns">
+      match an angel
+    </div>
+    <div class="large-2 small-12 admin-box columns">
+      delete request
+    </div>
+    <div class="large-1 admin-box columns mobile-hide">
+    </div>
   </div>
-  <div class="large-2 small-6 admin-box columns">
-    email angel
-  </div>
-  <div class="large-2 small-6 admin-box columns">
-    unmatch angel
-  </div>
-  <div class="large-2 small-6 admin-box columns">
-    match an angel
-  </div>
-  <div class="large-2 small-12 admin-box columns">
-    delete request
-  </div>
-  <div class="large-1 admin-box columns mobile-hide">
-  </div>
-</div>
+<% end %>
 
 <!-- send email to requestor, send email to angel, unmatch, match angel, delete request -->
 
@@ -113,12 +117,33 @@
         <span class="storytime"><%= @request.anon_angel ? "The angel has chosen to remain anonymous" : @request.angel.shortname %></span>
       <% end %>
     </p>
-    <% if current_user && (@request.requestor_id == @user_id || is_admin?) %>
-      <div class="row content-padding center-text">
-        <%= link_to ' EDIT PROFILE ', edit_request_path(@request), :class => "button-link" %> &nbsp;
-      </div>
-    <% end %>
+
   </div>
+  <br>
+  <br>
+  <% if is_admin? %>
+    <h2>Email Log</h2>
+    <table class="email_log">
+      <thead>
+        <tr>
+          <th>To</th>
+          <th>Subject</th>
+          <th>Body</th>
+          <th>Date Sent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @emails.each do |email| %>
+          <tr class="email">
+            <td><%= email.to_addresses %></td>
+            <td><%= email.subject %></td>
+            <td><%= link_to "#{email.content[0..40]}...", email_path(email.id) %></td>
+            <td><%= email.created_at.strftime("%b %d") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>
 
 <div class="row">
@@ -136,6 +161,12 @@
   </div>
 </div>
 
+<% if current_user && (is_admin? || @request.requestor_id == @user_id ) %>
+  <div class="row content-padding center-text">
+    <%= link_to ' EDIT PROFILE ', edit_request_path(@request), :class => "button-link" %> &nbsp;
+  </div>
+<% end %>
+
 <div class="row content-small-padding center-text">
   <div id="share-buttons">
     <!-- Share on facebook -->
@@ -150,14 +181,6 @@
     <!-- Please call pinit.js only once per page -->
     <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
 </div>
-
-    <div class="row content-padding center-text">
-      <% if current_user %>
-        <%= link_to ' EDIT PROFILE ', edit_request_path(@request), :class => "button-link" %> &nbsp;
-      <% end %>
-    </div>
-
-
 
 <div class="row">
 
