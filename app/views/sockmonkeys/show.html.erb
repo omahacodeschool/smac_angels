@@ -27,6 +27,7 @@ p {
 }
 .monkey_info {
   float: right;
+  width: 200px;
   padding: 0 0 0 30px;
 }
 </style>
@@ -35,15 +36,15 @@ p {
 
   <div class="monkey_pic">
     <%= image_tag @sockmonkey.image_url %>
+    <h3>Cancer Type</h3>
+    <p><%= @sockmonkey.cancertype %></p>
+    <h3>Favorite Color</h3>
+    <p><%= @sockmonkey.favcolor %></p>  
   </div>
 
   <div class="monkey_info">
     <h1>I'm <%= @sockmonkey.name %></h1>
     <p><%= @sockmonkey.description %></p>
-    <h3>Cancer Type</h3>
-    <p><%= @sockmonkey.cancertype %></p>
-    <h3>Favorite Color</h3>
-    <p><%= @sockmonkey.favcolor %></p>
   </div>
 
 </div>
