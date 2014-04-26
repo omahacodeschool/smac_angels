@@ -18,5 +18,17 @@ $(document).ready(function() {
     easingOut: 'easeOutSine',
     cyclic: true
   });
-        
+
+
+  $(".rimage").hover(
+    function () {
+      originalText="Todd is a genious.";
+      var story = $(".rimage").data("story");
+      $("#story").text(story);
+    }, 
+    function () {
+      $("#story").text(originalText);
+    }
+        );
+
 });
