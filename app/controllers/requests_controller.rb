@@ -2,6 +2,7 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   before_filter :require_login, :except => [:show, :index, :become_angel]
+  layout false, :only => :iframe
   def index
     @requests = Request.order("created_at DESC").where(:angel_id => nil)
 
@@ -112,8 +113,9 @@ class RequestsController < ApplicationController
   def iframe
     @requests = Request.where(:angel_id => nil && :requestor_id != nil)
     while @requests.length < 6
-      @options = Request.where(:current_status => 10)
-      @requests << @options.rand
+      #@options = Request.where(:current_status => 10)
+      @options = Request.all
+      @requests << @options.sample
     end
   end
 end

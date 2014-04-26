@@ -8,6 +8,7 @@ SmacAngel::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
   post "create_session" => "sessions#create", :as => "create_session"
   post "become_angel" => "requests#become_angel", :as => "become_angel"
+  get "requests/iframe" => "requests#iframe", :as => "request_iframe"
   get "admin/index" => "admin#index", :as =>"admin_index"
   get "admin/history" => "admin#history", :as => "request_history"
   resources :templates

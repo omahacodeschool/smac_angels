@@ -2,6 +2,7 @@ class SockmonkeysController < ApplicationController
   # GET /sockmonkeys
   # GET /sockmonkeys.json
   before_filter :require_login, :except => [:show]
+  layout false, :only => :show
   def index
     @sockmonkeys = Sockmonkey.all
 
