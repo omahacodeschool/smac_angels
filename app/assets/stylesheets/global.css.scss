@@ -254,7 +254,45 @@ ul{
 
 @media screen and (max-width: 600px) {  
 
-  /* Need to add for top fixed nav bar.*/
+  .fixed{
+    height: 0px;
+  }
+  
+  .top-bar {  
+    position: fixed; 
+    top: 0; 
+    z-index: 1; 
+  }  
+
+  .top-bar ul {  
+    width: 100%;  
+    display: block;  
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1;  
+  }  
+
+  .top-bar li {  
+    width: 50%;  
+    float: left;  
+    position: relative;
+    margin-top: 0;  
+  }  
+
+  .top-bar li a {  
+    border-bottom: 1px solid #E9E9E9;  
+    border-right: 1px solid #E9E9E9;  
+  }  
+
+  .top-bar a {  
+    text-align: left;  
+    width: 100%; 
+    text-align:center;
+  }
+
+  .top-bar img{
+    display: none;
+  }
      
 }
 

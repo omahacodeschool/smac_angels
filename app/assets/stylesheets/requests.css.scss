@@ -43,6 +43,9 @@
   margin-top:-20px;
 }
 
+.request {
+}
+
 .request a {
   width: 225px;
   height: 225px;
@@ -75,8 +78,10 @@
   color: #424242;
 }
 
-.add_request p{
-  color: #E9E9E9;
+.plus {
+  font-size: 340px;
+  margin: -135px;
+  padding: 0;
 }
 
 //Icons ----------------------------------------------------------------------
@@ -92,7 +97,7 @@
 }
 
 .fa-facebook-square:hover {
-  color: #E9E9E9;
+  color:#FFF;
 }
  
 .fa-twitter {
@@ -106,7 +111,7 @@
 }
 
 .fa-twitter:hover {
-  color: #E9E9E9;
+  color:#FFF;
 }
  
 .fa-pinterest {
@@ -120,7 +125,7 @@
 }
 
 .fa-pinterest:hover {
-  color: #E9E9E9;
+  color:#FFF;
 }
  
 .fa-shopping-cart {
@@ -134,21 +139,7 @@
 }
 
 .fa-shopping-cart:hover {
-  color: #E9E9E9;
-}
-
-.fa-plus {
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: none;
-  color: #F39A7E;
-  font-size: 200px;
-  margin-top: -15px;
-}
-
-.fa-plus:hover {
-  color: #E9E9E9;
+  color:#FFF;
 }
 
 // Submit Buttons ------------------------------------------------------------------------
