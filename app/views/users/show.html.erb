@@ -40,11 +40,8 @@
      
  </div>
 
-
-
-
-<div="row">
-  <div class="large-4 small-12 center-text columns">
+<div class="row container content-small-padding">
+  <div class="large-5 small-12 center-text columns">
     <% if @requests %>
 
       <h3><%= @user.fname %> is requesting:</h3>
@@ -65,8 +62,7 @@
 
 
         <div><%= image_tag(request.sockmonkey.image_url) %></div>
-        <div><%= request.sockmonkey.name %></div>
-        <div><%= request.current_status %></div>
+        <div class="storytime content-small-padding"><%= request.sockmonkey.name %></div>
 
         <div class="row content-small-padding">
           <%= link_to "View Request", request_path(request.id), :class => "button-link-blue" %>
@@ -75,34 +71,44 @@
 
     <% end %>
   </div>
-</div>
 
-<div class="row">
-  <div class="large-4 small-12 center-text columns">
-    <h3>I'm an Angel for:</h3>
+
+
+  <div class="large-5 small-12 center-text columns">
+    <h3><%= @user.fname %> is an Angel for:</h3>
 
     <% if @angels %>
 
       <% @angels.each do |angel| %> 
-        <div>
-        <% if angel.before_photo_url %>
-          <%= image_tag(angel.before_photo_url) %>
-        <% else %>
-          <%= image_tag("profile.png") %>
-        <% end %>
-        </div>
+        
+        <div class="row">
+          <div class="large-6 small-6 columns">
+            <% if angel.before_photo_url %>
+              <%= image_tag(angel.before_photo_url) %>
+            <% else %>
+              <%= image_tag("profile.png") %>
+            <% end %>
+            
+            <% if angel.obo %>
+              <div class="storytime content-small-padding"><%= angel.obo_fname %></div>
+            <% else %>
+              <div class="storytime content-small-padding"><%= angel.requestor.fname %></div>
+            <% end %>
+          </div>
 
-        <% if angel.obo %>
-          <div><%= angel.obo_fname %> <%= angel.obo_lname %></div>
-        <% else %>
-          <div><%= angel.requestor.fname %> <%= angel.requestor.lname %></div>
-        <% end %>
-
-        <div><%= image_tag(angel.sockmonkey.image_url)%></div>
-        <div><%= angel.sockmonkey.name %></div>
-        <div><%= angel.current_status %></div>
-        <div class="row content-small-padding">
-          <%= link_to "View Request", request_path(angel.id), :class => "button-link-blue" %>
+          <div class="large-6 small-6 columns">
+            <div ><%= image_tag(angel.sockmonkey.image_url)%></div>
+            <div class="storytime content-small-padding"><%= angel.sockmonkey.name %></div>
+          </div>
+          
+          <div class="row">
+            <div class="small-12 content-small-padding columns">
+              <div class="row content-small-padding">
+                <%= link_to "View Request", request_path(angel.id), :class => "button-link-blue" %>
+              </div>
+            </div>
+          </div>
+            
         </div>
       <% end %>
 
