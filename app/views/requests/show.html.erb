@@ -16,13 +16,13 @@
     <span class="large-2 large-centered columns">
       <div class="center-banner">
       <div class="name-banner">
-        <%= @request.obo ? @request.obo_fname : @request.requestor.fname %> is asking for <%= @request.sockmonkey.name %>
+        <%= @request.obo ? @request.obo_fname : @request.requestor.fname %> <%= @request.current_status > 0 ? "was" : "is" %> asking for <%= @request.sockmonkey.name %>
       </div>
 
       <div class="separator-banner large-9 large-centered small-centered columns"></div>
 
       <div class="tagline-banner">
-        <%= @request.angel_id ? "Request Fulfilled!" : "Can you help?" %>
+        <%= @tag %>
       </div>
       </div>
     </span>
@@ -118,7 +118,7 @@
       <p>
         <h2>Status</h2>
         <br>
-        <span class="storytime"><%= @request.current_status %></span>
+        <span class="storytime"><%= @status %></span>
       </p>
       <br>
       <br>
@@ -147,6 +147,27 @@
   <br>
   <br>
   <% if is_admin? %>
+    <h2>Status Log</h2>
+    <table class="status_log">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @request.statuses.each do |status| %>
+          <tr class="status">
+            <td><%= status.status %></td>
+            <td><%= status.created_at.strftime("%b %d") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
     <h2>Email Log</h2>
     <table class="email_log">
       <thead>
