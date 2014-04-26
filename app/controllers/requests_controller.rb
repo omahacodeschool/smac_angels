@@ -1,7 +1,8 @@
 class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
-  before_filter :require_login, :except => [:show, :index, :become_angel]
+  before_filter :require_login, :except => [:show, :index, :become_angel, :iframe]
+  layout false, :only => :iframe
   def index
     @requests = Request.order("created_at DESC").where(:angel_id => nil)
 
@@ -107,5 +108,14 @@ class RequestsController < ApplicationController
 
     redirect_to (request_path(@request.id))
   
+  end
+  
+  def iframe
+    @requests = Request.where(:angel_id => nil && :requestor_id != nil)
+    while @requests.length < 6
+      #@options = Request.where(:current_status => 10)
+      @options = Request.all
+      @requests << @options.sample
+    end
   end
 end
