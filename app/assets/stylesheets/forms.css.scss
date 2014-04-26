@@ -70,80 +70,55 @@
   opacity: 0;
 }
 
-.form input[type="checkbox"]{
-  float: left;
-  margin: 20px 103px;
+.checkbox{
+  display: inline-block;
+  width: 100%;
+  margin: 20px 0;
 }
 
-.checkbox{
-  width: 20px;
-  margin: 20px 103px;
-  position: relative;
-  display: inline;
+.checkbox span{
+  display: block;
+  text-align: left;
+  margin-left: 22%;
+  margin-right: 22%;
+  margin-top: 0;
+  padding-top: 10px;
+  color: #E9E9E9;
+  line-height: 18px;
+}
+
+.form input[type="checkbox"]{
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #FFF;
+  margin-left: 22%;
+  vertical-align: middle;
+}
+
+.form input[type="checkbox"]:checked{
+  background: #F75E11;
 }
 
 .checkbox label{
-  margin-top: 2px;
-  margin-left: -90px;
-  display: inline;
-  width: 250px;
+  margin-left: 10px;
   color: #E9E9E9;
-  float: left;
+  line-height: 18px;
 }
 
-// Checkbox that didn't work...
+.form input[type="radio"]{
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #FFF;
+  margin-left: 10px;
+}
 
-//input[type=checkbox] {
-//  visibility: hidden;
-//}
-//
-//.checkbox label {
-//  cursor: pointer;
-//  position: absolute;
-//  width: 20px;
-//  height: 20px;
-//  top: 0;
-//  left: 0;
-//  background: #eee;
-//  border: 1px solid #ddd;
-//}
-//
-//.checkbox label:after {
-//  opacity: 0.2;
-//  content: '';
-//  position: absolute;
-//  width: 9px;
-//  height: 5px;
-//  background: transparent;
-//  top: 6px;
-//  left: 5px;
-//  border: 3px solid #333;
-//  border-top: none;
-//  border-right: none;
-//
-//  -webkit-transform: rotate(-45deg);
-//  -moz-transform: rotate(-45deg);
-//  -o-transform: rotate(-45deg);
-//  -ms-transform: rotate(-45deg);
-//  transform: rotate(-45deg);
-//}
-//
-//// Create the hover event of the tick
-//.checkbox label:hover::after {
-//  opacity: 0.5;
-//}
-//
-//// Create the checkbox state for the tick
-//.checkbox input[type=checkbox]:checked + label:after {
-//  opacity: 0.8;
-//}
-//
-//#cbox_label{
-//  width: 250px;
-//  margin-left: 40px;
-//  padding-top: 2px;
-//  color: #E9E9E9;
-//}
+.form input[type="radio"]:checked{
+  background: #F75E11;
+}
 
 .ctr_button{
   display: block;
@@ -193,7 +168,7 @@
   margin-bottom: 200px;
   background: #3299BB;
   height: 600px;
-  width: 500px;
+  width: 100%;
 }
 
 /* `Login form
@@ -204,7 +179,7 @@
   margin: 100px auto 10px auto;
   background: #3299BB;
   /*height: 650px;*/
-  width: 500px;
+  width: 100%;
   padding-bottom: 20px;
 }
 
@@ -222,7 +197,7 @@
   margin: 0 auto 200px auto;
   padding: 10px 0 30px 0;
   background: #3299BB;
-  width: 500px;
+  width: 100%;
 }
 
 .password_resets {
@@ -242,12 +217,12 @@
   margin-top: 100px;
   margin-bottom: 200px;
   background: #3299BB;
-  height: 1700px;
-  width: 500px;
+  height: 1775px;
+  width: 100%;
 }
 
 #request p{
-  width: 300px;
+  width: 100%;
   margin: 0 auto;
   margin-top: 20px;
   padding-top: 17px;
@@ -281,6 +256,27 @@
 #monkey_name{
   margin-top: 15px;
 }
+
+/* `Responsive styles
+----------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 600px) {  
+
+  .form input[type="checkbox"]{
+    margin: 10px 12%;
+  }
+  
+  .checkbox label{
+    margin-left: -30px;
+  }
+  
+  .checkbox span{
+    margin-left: 12%;
+    margin-right: 12%;
+  } 
+     
+}
+
 
 
 

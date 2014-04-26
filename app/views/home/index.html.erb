@@ -14,9 +14,12 @@
       <li><%= link_to "Give", requests_path %></li>  
       <li><%= link_to "Nominate", new_request_path %></li>
       <li><%= link_to "Request", new_request_path %></li>
-      <li><%= link_to "Sign Up", signup_path %></li>  
+      <% if !current_user %>
+      <li><%= link_to "Sign Up", signup_path %></li> 
+      <% else %> 
+      <% end %>
       <% if current_user %>
-        <li><%= link_to current_user.email, user_path(current_user.id) %></li>
+        <li><%= link_to "Me", user_path(current_user.id) %></li>
         <li><%= link_to "Log Out", logout_path %></li>  
       <% else %>
         <li><%= link_to "Log In", login_path %></li>
@@ -75,76 +78,51 @@
     <div class="options">
       <div class="row">
         <div id="opt1" class="large-4 columns">
-          <div id="give_icon" class="center">
-            <a href="#" class="give_icon"></a>
+          <div class="opt_icon center">
+            <a href="<%= requests_path %>" class="fa fa-gift" title="Give"></a>
           </div>
           <div class="opt_text center">
             <h2>Give</h2>
             <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
           </div>
         </div>
         
         
         <div id="opt2" class="large-4 columns">
-          <div id="nom_icon" class="center">
-            <a href="#" class="nom_icon"></a>
+          <div class="opt_icon center">
+            <a href="<%= new_request_path %>" class="fa fa-heart" title="Give"></a>
           </div>
           <div class="opt_text center">
             <h2>Nominate</h2>
             <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
-            <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
           </div>
         </div>
         
         <div id="opt3" class="large-4 columns">
-          <div id="req_icon" class="center">
-            <a href="#" class="req_icon"></a>
+          <div class="opt_icon center">
+            <a href="<%= new_request_path %>" class="fa fa-bullhorn" title="Give"></a>
           </div>
           <div class="opt_text center">
             <h2>Request</h2>
             <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis.</p>
-            <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
           </div>
         </div>
       </div>
     </div>
     
-    <!-- <div class="row full-width"></div>
-      <div class="quotes">
-        <div id="quotes_section">
-          <div class="backdrop image">
-            <div class="row">
-              <div class="large-12 columns">
-                <div id="quotes" class="center">
-                    <div id="q_icons">
-                      <a href="#" class="qleft_icon"></a> <a href="#" class="qright_icon"></a>
-                    </div>
-                    <div id="q_text">
-                    Receiving a sock monkey helped me fight off my cancer.
-                    </div>
-                    <div id="quoter">
-                    - Firstname Lastname
-                    </div> 
-                </div>
-              </div>
-            </div> 
-          </div>
-        </div> 
-      </div>
-    </div> -->
-    
     <div class="row full-width"></div>
-      <div id="quotes" class="center">
-          <div id="q_icons">
-            <a href="#" class="qleft_icon"></a> <a href="#" class="qright_icon"></a>
-          </div>
-          <div id="q_text">
-          Receiving a sock monkey helped me fight off my cancer.
-          </div>
-          <div id="quoter">
-          - Firstname Lastname
-          </div> 
+      <div id="q_bkgrd">
+        <div id="quotes" class="center">
+            <div id="q_icons">
+              <a href="#" class="qleft_icon"></a> <a href="#" class="qright_icon"></a>
+            </div>
+            <div id="q_text">
+            I look into their little eyes (NoMo & Phoenix) and they just make my heart melt... even on my darkest days.
+            </div>
+            <div id="quoter">
+            - Leslie Lehrman
+            </div> 
+        </div>
       </div>
     </div>
     
@@ -154,17 +132,18 @@
           <h2 class="feature-heading-left"><span class="text-muted">Be an Angel! Give a sock monkey.</span></h2>
           <p class="feature-text-left">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
-        <div class="large-5 columns">
-          <img src="http://lorempixel.com/400/400/people/2" alt="" />
-        </div>
+        <a href="<%= requests_path %>"><div id="f_img1" class="large-5 columns">
+          <!-- <%= link_to "Give", requests_path %> -->
+          <!-- Background image is in css style -->
+        </div></a>
       </div>
 
       <div class="feature-divider"></div>
 
       <div class="row featurette">
-        <div class="large-5 columns">
-          <img src="http://lorempixel.com/400/400/people/5" alt="" />
-        </div>
+        <a href="<%= new_request_path %>"><div id="f_img2" class="large-5 columns">
+          <!-- Background image is in css style -->
+        </div></a>
         <div class="large-7 columns">
           <h2 class="feature-heading-right"><span class="text-muted">Nominate someone you know.</span></h2>
           <p class="feature-text-right">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
@@ -178,9 +157,9 @@
           <h2 class="feature-heading-left"><span class="text-muted">Do you want a sock monkey?</span></h2>
           <p class="feature-text-left">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
-        <div class="large-5 columns">
-          <img src="http://lorempixel.com/400/400/people/4" alt="" />
-        </div>
+        <a href="<%= new_request_path %>"><div id="f_img3" class="large-5 columns">
+          <!-- Background image is in css style -->
+        </div></a>
       </div>
 
     </div>

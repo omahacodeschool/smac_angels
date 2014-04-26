@@ -90,46 +90,59 @@
 /* `3 calls to action
 ----------------------------------------------------------------------------------------------------*/
 
-.give_icon {
-  position: relative;
-}
- 
-.give_icon:before {
-  content: "\f06b"; 
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: none;
-  color: #BCBCBC;
-  font-size: 80px;
+.opt_icon{
+  display: block;
+  height: 120px;
+  width: 120px;
+  margin: 0 auto;
+  background: #E9E9E9;
+  border-radius: 100%;
+  z-index: 0;
 }
 
-.nom_icon {
-  position: relative;
-}
- 
-.nom_icon:before {
-  content: "\f004"; 
+.fa-gift {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
   color: #BCBCBC;
   font-size: 80px;
+  margin-top: 19px;
+  margin-left: 1px;
 }
 
-.req_icon {
-  position: relative;
+.fa-gift:hover {
+  color: #F75E11;
 }
- 
-.req_icon:before {
-  content: "\f0a1"; 
+
+.fa-heart {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
   color: #BCBCBC;
   font-size: 80px;
+  margin-top: 23px;
+  margin-left: 1px;
+}
+
+.fa-heart:hover {
+  color: #F75E11;
+}
+
+.fa-bullhorn {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #BCBCBC;
+  font-size: 80px;
+  margin-top: 20px;
+  margin-left: 1px;
+}
+
+.fa-bullhorn:hover {
+  color: #F75E11;
 }
 
 .opt_text{
@@ -144,18 +157,20 @@
 /* `Quotes section
 ----------------------------------------------------------------------------------------------------*/
 
-#quotes_section{
+#q_bkgrd{
   margin-top: 100px;
   margin-bottom: 100px;
 }
 
-.backdrop{
+#q_bkgrd {
   width: 100%;
   height: 700px;
-  overflow: hidden;
+  display: block;
+  position: relative;
   background: url("SMAC_1.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
+  overflow: hidden;
 }
 
 .image{
@@ -163,7 +178,15 @@
 }
 
 #quotes{
-margin-top: 225px;
+  width: 98%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+#q_icons{
+  margin-top: 225px;
+  padding-top: 25px;
 }
 
 .qleft_icon {
@@ -176,7 +199,7 @@ margin-top: 225px;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
-  color: #FFF;
+  color: #424242;
   font-size: 40px;
 }
 
@@ -190,15 +213,17 @@ margin-top: 225px;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
-  color: #FFF;
+  color: #424242;
   font-size: 40px;
 }
 
 #q_text{
-  margin-top: 50px;
+  margin-top: 25px;
+  padding-left: 350px;
+  padding-right: 350px;
   font-family: 'Lato', sans-serif;
   font-size: 40px;
-  color: #FFF;
+  color: #424242;
 }
 
 #quoter{
@@ -207,7 +232,8 @@ margin-top: 225px;
   font-style: italic;
   font-size: 30px;
   font-weight: 100;
-  color: #FFF;
+  color: #424242;
+  padding-bottom: 25px;
 }
 
 /* `Features
@@ -226,9 +252,13 @@ margin-top: 225px;
   margin-bottom: 100px;
 }
 
-.featurette img{
-  border-radius: 100%;
-}
+//.featurette img{
+//  width: 100%;
+//  height: auto;
+//  border-radius: 100%;
+//  background-position: center;
+//  background-size: cover;
+//}
 
 .feature-heading-left{
   margin-top: 70px;
@@ -253,17 +283,53 @@ margin-top: 225px;
 }
 
 
-//.large-5 {
-//width: 41.6666667%;
-//height: 417px;
-//border-radius: 100%;
-//background-position: center;
-//background-size: cover;
-//}
-//
-//#specific photo{
-//  background-image: url("assets/Recipient3.jpg");
-//}
+#f_img1{
+  background-image: url("feature1.jpg");
+  width: 41.6666667%;
+  height: 417px;
+  border: 20px solid #E9E9E9;
+  border-radius: 100%;
+  background-position: 0px -100px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#f_img1:hover{
+  transition: all 2s ease;
+  border: 20px solid #F75E11;
+}
+
+#f_img2{
+  background-image: url("feature2.jpg");
+  width: 41.6666667%;
+  height: 417px;
+  border: 20px solid #E9E9E9;
+  border-radius: 100%;
+  background-position: 0px 0px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#f_img2:hover{
+  transition: all 2s ease;
+  border: 20px solid #F75E11;
+}
+
+#f_img3{
+  background-image: url("feature3.jpg");
+  width: 41.6666667%;
+  height: 417px;
+  border: 20px solid #E9E9E9;
+  border-radius: 100%;
+  background-position: 0px 0px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#f_img3:hover{
+  transition: all 2s ease;
+  border: 20px solid #F75E11;
+}
 
 /* `Navigation
 ----------------------------------------------------------------------------------------------------*/
@@ -343,7 +409,10 @@ nav img{
 
 nav a#pull {  
   display: none;  
-}  
+}
+
+/* `Responsive styles
+----------------------------------------------------------------------------------------------------*/  
 
 @media screen and (max-width: 600px) {  
 
