@@ -1,29 +1,49 @@
-<%- model_class = Sockmonkey -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
+<style type="text/css">
+body {
+  background-color: #3299BB;
+  color: #424242;
+}
+img {
+  border: 2px solid #fff;
+}
+h1 {
+  margin-top: 0px;
+  color: #fff;
+}
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @sockmonkey.name %></dd>
-  <dt><img src="<%=@sockmonkey.image_url %>"  </dt>
-  <dd><% @sockmonkey.image_url %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @sockmonkey.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cancertype) %>:</strong></dt>
-  <dd><%= @sockmonkey.cancertype %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:favcolor) %>:</strong></dt>
-  <dd><%= @sockmonkey.favcolor %></dd>
-</dl>
+h3 {
+  color: #fff;
+}
+p {
+  font-weight: bold;
+}
+.monkey {
+  width: 485px;
+  margin: 50px auto 0 auto;
+}
+.monkey_pic {
+  float: left;
+  margin: 0 0 0 20px;
+}
+.monkey_info {
+  float: right;
+  padding: 0 0 0 30px;
+}
+</style>
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              sockmonkeys_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_sockmonkey_path(@sockmonkey), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              sockmonkey_path(@sockmonkey),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<div class="monkey">
+
+  <div class="monkey_pic">
+    <%= image_tag @sockmonkey.image_url %>
+  </div>
+
+  <div class="monkey_info">
+    <h1>I'm <%= @sockmonkey.name %></h1>
+    <p><%= @sockmonkey.description %></p>
+    <h3>Cancer Type</h3>
+    <p><%= @sockmonkey.cancertype %></p>
+    <h3>Favorite Color</h3>
+    <p><%= @sockmonkey.favcolor %></p>
+  </div>
+
 </div>
