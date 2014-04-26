@@ -19,6 +19,22 @@ class RequestsController < ApplicationController
     @angel = User.where(:id => @request.angel_id)
     @user_id = session[:user_id]
     @emails = Email.where(:request_id => @request.id)
+    
+    case @request.current_status
+    when 0
+      @status = "Unmatched"
+      @tag = "Can you help?" 
+    when 5
+      @status = "Matched"
+      @tag = "Request Fulfilled!"
+    when 10
+      @status = "Complete"
+      @tag = "Request Fulfilled!"
+    else
+      @status = "Canceled"
+      @tag = "Canceled"
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @request }
