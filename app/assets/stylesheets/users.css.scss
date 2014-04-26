@@ -21,3 +21,36 @@
   background-color:#3299BB;
   margin-top:-60px;
 }
+
+
+.user-avatar{
+  border-radius: 100%;
+  border: 15px solid rgba(255,255,255, 0.7);
+  overflow: hidden;
+}
+
+.user-avatar-angel{
+  border-radius: 100%;
+  border: 15px solid rgba(255,255,255, 0.7);
+  overflow: hidden;
+//  height:200px;
+}
+
+.fa-angle-double-right {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #BCBCBC;
+  font-size: 80px;
+//  margin-left:-60px;
+  padding-top:30px;
+  padding-right:70px;
+  padding-left:30px;
+}
+
+@media screen and (max-width: 600px) {
+  .fa-angle-double-right {
+
+  }
+}
