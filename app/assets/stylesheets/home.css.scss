@@ -169,33 +169,8 @@
   background: url("SMAC_1.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
-  //background:rgba(0,0,0,0.3);
-//  opacity: 1;
   overflow: hidden;
 }
-
-//.q_bkgrd::after {
-//  content: "";
-//  background: url("SMAC_1.jpg");
-//  background-repeat: no-repeat;
-//  background-size: 100%;
-//  //opacity: 0.5;
-//  top: 0;
-//  left: 0;
-//  bottom: 0;
-//  right: 0;
-//  position: absolute;
-//  z-index: -1;   
-//}
-
-//.backdrop{
-//  width: 100%;
-//  height: 700px;
-//  overflow: hidden;
-//  background: url("SMAC_1.jpg");
-//  background-repeat: no-repeat;
-//  background-size: 100%;
-//}
 
 .image{
   background-position: 0px -150px;
@@ -276,9 +251,13 @@
   margin-bottom: 100px;
 }
 
-.featurette img{
-  border-radius: 100%;
-}
+//.featurette img{
+//  width: 100%;
+//  height: auto;
+//  border-radius: 100%;
+//  background-position: center;
+//  background-size: cover;
+//}
 
 .feature-heading-left{
   margin-top: 70px;
@@ -303,17 +282,53 @@
 }
 
 
-//.large-5 {
-//width: 41.6666667%;
-//height: 417px;
-//border-radius: 100%;
-//background-position: center;
-//background-size: cover;
-//}
-//
-//#specific photo{
-//  background-image: url("assets/Recipient3.jpg");
-//}
+#f_img1{
+background-image: url("feature1.jpg");
+width: 41.6666667%;
+height: 417px;
+border: 20px solid #E9E9E9;
+border-radius: 100%;
+background-position: 0px -100px;
+background-size: 100%;
+background-repeat: no-repeat;
+}
+
+#f_img1:hover{
+  transition: all 2s ease;
+  border: 20px solid #F75E11;
+}
+
+#f_img2{
+background-image: url("feature2.jpg");
+width: 41.6666667%;
+height: 417px;
+border: 20px solid #E9E9E9;
+border-radius: 100%;
+background-position: 0px 0px;
+background-size: 100%;
+background-repeat: no-repeat;
+}
+
+#f_img2:hover{
+  transition: all 2s ease;
+  border: 20px solid #F75E11;
+}
+
+#f_img3{
+background-image: url("feature3.jpg");
+width: 41.6666667%;
+height: 417px;
+border: 20px solid #E9E9E9;
+border-radius: 100%;
+background-position: 0px 0px;
+background-size: 100%;
+background-repeat: no-repeat;
+}
+
+#f_img3:hover{
+  transition: all 2s ease;
+  border: 20px solid #F75E11;
+}
 
 /* `Navigation
 ----------------------------------------------------------------------------------------------------*/
