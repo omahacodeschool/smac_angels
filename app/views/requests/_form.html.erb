@@ -20,9 +20,10 @@
         <% @sockmonkeys.each do |monkey| %>
           <li>
             <%= f.label :sockmonkey_id, image_tag(monkey.image_url, height: '100', width: '100'), :value => monkey.id %>
-            <%= f.radio_button :sockmonkey_id, monkey.id %>
+            
             <div id="monkey_name">
               <%= link_to "#{monkey.name}", sockmonkey_path(monkey.id), :class => "fancybox", :rel => "sockmonkey", :title => monkey.name %>
+              <%= f.radio_button :sockmonkey_id, monkey.id %>
             </div>
           </li>
         <% end %>
@@ -100,7 +101,7 @@
   
   <div class="checkbox">
     <%= f.check_box :agree_to_terms %>
-    <%= f.label(:agree_to_terms, "By checking this box you understand your mailing address will be given to your SMAC! Angel so they can ship your sock moneky to you!") %>
+    <span>By checking this box you understand your mailing address will be given to your SMAC! Angel so they can ship your sock monkey to you!</span>
   </div>
 
   <div class="actions">
