@@ -45,10 +45,35 @@ ul{
   list-style-type: none;
 }
 
+.container{
+  width:60%;
+  margin:0 auto;
+}
+
+// Buttons ----------------------------------------------------------------------------------------------
+
 .button-link {
-    padding: 15px 45px;
-    color: #BCBCBC;
-    border: 1px solid #BCBCBC;
+  padding: 15px 45px;
+  color: rgba(255,255,255, 0.5);
+  border: 1px solid rgba(255,255,255, 0.5);
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.button-link:hover {
+  color:#FFF;
+}
+
+.button-link-blue {
+  padding: 15px 45px;
+  border: 1px solid #3299BB;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.button-link-blue:hover {
+  color:#FFF;
+  background:#3299BB;
 }
 
 //-----------------------------------------------------------------------------------------------------
