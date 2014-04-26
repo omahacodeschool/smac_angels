@@ -19,7 +19,7 @@
    
 <div class="row content-padding">
 
-  <h2>Select a recipient:</h2>
+  <h2>Select a lucky recipient.</h2>
 
   <div class="requests clear">
 
@@ -27,8 +27,8 @@
 
       <%= link_to :new_request do %>
         <div class="add_request left">
-          <p>Request A Monkey</p>
-          <p class="plus">+</p>
+          <p>Request Monkey</p>
+          <a href="<%= new_request_path %>" class="fa fa-plus" title="New Request"></a>
         </div>
       <% end %>
 
@@ -45,10 +45,9 @@
         
       <% end %>
     <% else %>
-      <h2>There are no requests at this time.  You still can become an Angel and for the next Sock Monkey requestor!</h2>
+      <h2>There are no requests at this time.  You still can become an Angel for the next Sock Monkey requestor!</h2>
       <p><%= link_to "Become Angel", "http://smacmonkey.com" %></p>
     <% end %>
   </div>
-
-  <%= link_to "Show More" %>
+  <%= button_to "Show More", nil, :method => "get", :class => "ctr_button" %>
 </div>
