@@ -50,6 +50,7 @@ class Request < ActiveRecord::Base
     end
       
     self.angel_id = user_id
+    self.current_status = 5
       
     Status.create(:request_id => self.id, :status => 'Matched, initial')  
            

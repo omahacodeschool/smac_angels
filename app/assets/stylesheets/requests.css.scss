@@ -42,18 +42,22 @@
   max-width: 100%; 
   margin-top:-20px;
 }
+
 .request {
 }
+
 .request a {
   width: 225px;
   height: 225px;
   margin: 5px 10px 0 10px;
   transition: all 1s ease;
 }
+
 .request a:hover {
   -webkit-transform: scale(1.5);
   border: 3px solid #f1712f;
 }
+
 .add_request {
   display: block;
   width: 225px;
@@ -68,10 +72,12 @@
   opacity: 0.5;
   overflow: hidden;
 }
+
 .add_request:hover {
   opacity: 1.00;
   color: #424242;
 }
+
 .plus {
   font-size: 340px;
   margin: -135px;
@@ -212,6 +218,32 @@ input[type=submit].submit-button:hover {
     height:0px;
   }
 }
+.email_log {
+  width: 80%;
+  margin: 0 auto;
+}
+.email_log thead{
+  border-bottom: 1px solid black;
+}
+.email_log thead th, .email_log tbody td {
+  padding: 5px 0;
+}
+.email_log tr:nth-child(even) {
+  background-color: rgba(0,150,225,0.2);
+}
 
-
+.status_log {
+  width: 40%;
+  margin: 0 auto;
+}
+.status_log thead{
+  border-bottom: 1px solid black;
+}
+.status_log thead th, .status_log tbody td {
+  text-align: left;
+  padding: 5px 0;
+}
+.status_log tr:nth-child(even){
+  background-color: rgba(0,150,225,0.2);
+}
     
