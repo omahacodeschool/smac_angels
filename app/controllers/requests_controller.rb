@@ -108,4 +108,12 @@ class RequestsController < ApplicationController
     redirect_to (request_path(@request.id))
   
   end
+  
+  def iframe
+    @requests = Request.where(:angel_id => nil && :requestor_id != nil)
+    while @requests.length < 6
+      @options = Request.where(:current_status => 10)
+      @requests << @options.rand
+    end
+  end
 end
