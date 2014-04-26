@@ -29,7 +29,8 @@
    </div> 
  </div>
 
-<% if @request.angel_id %>
+<% if is_admin? || current_user.id == @request.requestor_id || current_user.id == @request.angel_id %>
+
   <div class="row full-width-requests center-text">
 
     <div class="large-2 small-0 private-box columns mobile-hide">
