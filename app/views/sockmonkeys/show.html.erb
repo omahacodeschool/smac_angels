@@ -1,21 +1,33 @@
 <style type="text/css">
+body {
+  background-color: #3299BB;
+  color: #424242;
+}
+img {
+  border: 2px solid #fff;
+}
 h1 {
   margin-top: 0px;
+  color: #fff;
 }
 
-h2 {
-  color: #3299BB;
+h3 {
+  color: #fff;
+}
+p {
+  font-weight: bold;
 }
 .monkey {
-  width: 550px;
-  margin: 100px auto 0 auto;
+  width: 485px;
+  margin: 50px auto 0 auto;
 }
 .monkey_pic {
   float: left;
+  margin: 0 0 0 20px;
 }
 .monkey_info {
   float: right;
-  padding: 0 0 0 100px;
+  padding: 0 0 0 30px;
 }
 </style>
 
@@ -28,10 +40,10 @@ h2 {
   <div class="monkey_info">
     <h1>I'm <%= @sockmonkey.name %></h1>
     <p><%= @sockmonkey.description %></p>
-    <h2>Cancer Type</h2>
-    <%= @sockmonkey.cancertype %>
-    <h2>Favorite Color</h2>
-    <%= @sockmonkey.favcolor %>
+    <h3>Cancer Type</h3>
+    <p><%= @sockmonkey.cancertype %></p>
+    <h3>Favorite Color</h3>
+    <p><%= @sockmonkey.favcolor %></p>
   </div>
 
 </div>

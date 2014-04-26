@@ -11,6 +11,9 @@ $(document).ready(function() {
 
   $("a.fancybox").fancybox({
     type: 'iframe',
+    autoSize: false,
+    width: 550,
+    height: 400,
     overlayOpacity: .5,
     overlayColor: '#f64',
     transitionIn: 'elastic',
