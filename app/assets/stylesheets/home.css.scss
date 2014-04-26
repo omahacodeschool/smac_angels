@@ -90,58 +90,59 @@
 /* `3 calls to action
 ----------------------------------------------------------------------------------------------------*/
 
-.give_icon {
-  position: relative;
+.opt_icon{
+  display: block;
+  height: 120px;
+  width: 120px;
+  margin: 0 auto;
+  background: #E9E9E9;
+  border-radius: 100%;
+  z-index: 0;
 }
- 
-.give_icon:before {
-  content: "\f06b"; 
+
+.fa-gift {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
   color: #BCBCBC;
   font-size: 80px;
+  margin-top: 19px;
+  margin-left: 1px;
 }
 
-.give_icon:hover {
-  color: #424242;
+.fa-gift:hover {
+  color: #F75E11;
 }
 
-.nom_icon {
-  position: relative;
-}
- 
-.nom_icon:before {
-  content: "\f004"; 
+.fa-heart {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
   color: #BCBCBC;
   font-size: 80px;
+  margin-top: 23px;
+  margin-left: 1px;
 }
 
-.nom_icon:hover {
-  color: #424242;
+.fa-heart:hover {
+  color: #F75E11;
 }
 
-.req_icon {
-  position: relative;
-}
- 
-.req_icon:before {
-  content: "\f0a1"; 
+.fa-bullhorn {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
   color: #BCBCBC;
   font-size: 80px;
+  margin-top: 20px;
+  margin-left: 1px;
 }
 
-.req_icon:hover {
-  color: #424242;
+.fa-bullhorn:hover {
+  color: #F75E11;
 }
 
 .opt_text{
@@ -283,14 +284,14 @@
 
 
 #f_img1{
-background-image: url("feature1.jpg");
-width: 41.6666667%;
-height: 417px;
-border: 20px solid #E9E9E9;
-border-radius: 100%;
-background-position: 0px -100px;
-background-size: 100%;
-background-repeat: no-repeat;
+  background-image: url("feature1.jpg");
+  width: 41.6666667%;
+  height: 417px;
+  border: 20px solid #E9E9E9;
+  border-radius: 100%;
+  background-position: 0px -100px;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 #f_img1:hover{
@@ -299,14 +300,14 @@ background-repeat: no-repeat;
 }
 
 #f_img2{
-background-image: url("feature2.jpg");
-width: 41.6666667%;
-height: 417px;
-border: 20px solid #E9E9E9;
-border-radius: 100%;
-background-position: 0px 0px;
-background-size: 100%;
-background-repeat: no-repeat;
+  background-image: url("feature2.jpg");
+  width: 41.6666667%;
+  height: 417px;
+  border: 20px solid #E9E9E9;
+  border-radius: 100%;
+  background-position: 0px 0px;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 #f_img2:hover{
@@ -315,14 +316,14 @@ background-repeat: no-repeat;
 }
 
 #f_img3{
-background-image: url("feature3.jpg");
-width: 41.6666667%;
-height: 417px;
-border: 20px solid #E9E9E9;
-border-radius: 100%;
-background-position: 0px 0px;
-background-size: 100%;
-background-repeat: no-repeat;
+  background-image: url("feature3.jpg");
+  width: 41.6666667%;
+  height: 417px;
+  border: 20px solid #E9E9E9;
+  border-radius: 100%;
+  background-position: 0px 0px;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 #f_img3:hover{
