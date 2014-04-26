@@ -54,7 +54,7 @@ gem 'unicorn'
 # To use debugger
 gem 'debugger'
 
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails'#, :groups => [:development, :test]
 
 gem 'sorcery'
 
@@ -63,7 +63,7 @@ gem 'fog', '~> 1.22.0'
 
 gem 'negative_captcha'
 
-gem 'ckeditor'
+# gem 'ckeditor'
 
 gem 'rmagick', :require => 'RMagick'  
 # ^if you have bundle errors run: 'brew install imagemagick'
