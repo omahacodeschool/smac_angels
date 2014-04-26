@@ -211,17 +211,17 @@ ul{
 ----------------------------------------------------------------------------------------------------*/
 
 .top-footer{
-  height:110px;
-  background:#F75E11;
+  height: 110px;
+  background: #F75E11;
 }
 
 .footer-icons {
-  display:inline;
+  display: inline;
 //  float:right;
 //  padding-bottom:15px;
 //  padding-right:20px;
 //  padding-left:20px;
-    padding:0px 30px;
+  padding: 0px 30px;
 }
 
 .footer {
@@ -233,17 +233,23 @@ ul{
   margin: 0; 
   text-align: center;
   height: 400px;
-  padding-top:100px;
+  padding-top: 100px;
 }
 
 .footer a {
   text-decoration: none;
-  color:white;
+  color: white;
+}
+
+.footer img{
+  width: 300px;
 }
 
 #footer .push {
  height: 216px;
 }
+
+
 
 
 

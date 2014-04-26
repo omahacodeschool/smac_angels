@@ -104,6 +104,10 @@
   font-size: 80px;
 }
 
+.give_icon:hover {
+  color: #424242;
+}
+
 .nom_icon {
   position: relative;
 }
@@ -116,6 +120,10 @@
   text-decoration: none;
   color: #BCBCBC;
   font-size: 80px;
+}
+
+.nom_icon:hover {
+  color: #424242;
 }
 
 .req_icon {
@@ -132,6 +140,10 @@
   font-size: 80px;
 }
 
+.req_icon:hover {
+  color: #424242;
+}
+
 .opt_text{
   padding-left: 20px;
   padding-right: 20px;
@@ -144,26 +156,61 @@
 /* `Quotes section
 ----------------------------------------------------------------------------------------------------*/
 
-#quotes_section{
+#q_bkgrd{
   margin-top: 100px;
   margin-bottom: 100px;
 }
 
-.backdrop{
+#q_bkgrd {
   width: 100%;
   height: 700px;
-  overflow: hidden;
+  display: block;
+  position: relative;
   background: url("SMAC_1.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
+  //background:rgba(0,0,0,0.3);
+//  opacity: 1;
+  overflow: hidden;
 }
+
+//.q_bkgrd::after {
+//  content: "";
+//  background: url("SMAC_1.jpg");
+//  background-repeat: no-repeat;
+//  background-size: 100%;
+//  //opacity: 0.5;
+//  top: 0;
+//  left: 0;
+//  bottom: 0;
+//  right: 0;
+//  position: absolute;
+//  z-index: -1;   
+//}
+
+//.backdrop{
+//  width: 100%;
+//  height: 700px;
+//  overflow: hidden;
+//  background: url("SMAC_1.jpg");
+//  background-repeat: no-repeat;
+//  background-size: 100%;
+//}
 
 .image{
   background-position: 0px -150px;
 }
 
 #quotes{
-margin-top: 225px;
+  width: 98%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+#q_icons{
+  margin-top: 225px;
+  padding-top: 25px;
 }
 
 .qleft_icon {
@@ -176,7 +223,7 @@ margin-top: 225px;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
-  color: #FFF;
+  color: #424242;
   font-size: 40px;
 }
 
@@ -190,15 +237,17 @@ margin-top: 225px;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
-  color: #FFF;
+  color: #424242;
   font-size: 40px;
 }
 
 #q_text{
-  margin-top: 50px;
+  margin-top: 25px;
+  padding-left: 350px;
+  padding-right: 350px;
   font-family: 'Lato', sans-serif;
   font-size: 40px;
-  color: #FFF;
+  color: #424242;
 }
 
 #quoter{
@@ -207,7 +256,8 @@ margin-top: 225px;
   font-style: italic;
   font-size: 30px;
   font-weight: 100;
-  color: #FFF;
+  color: #424242;
+  padding-bottom: 25px;
 }
 
 /* `Features
