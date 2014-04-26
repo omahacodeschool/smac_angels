@@ -155,13 +155,13 @@ Request.create([
 Sockmonkey.create([
   {
   cancertype: 'All',
-  description: 'The ALL cancer fighting monkey!',
+  description: "My name is NoMo. I'm ring leader of SMAC! So, it's my job to make sure those with/impacted by ALL types of cancer get TONS of love and comfort.  Let's face it, family and friends can't always be ther...but, I CAN!\n\nYou can hold and hug me whenever you want. Heck, I will even let you punch me if you need to. Cancer brings out a lot of emotions and I totally understand that. I'm there whenever, wherever you need me.\n\nBottom line: No one fights cancer alone.",
   favcolor: 'Green',
   remote_image_url_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/nomo.jpg',
   name: 'NoMo'
   },{
   cancertype: 'Lung',
-  description: 'The lung cancer fighting monkey!',
+  description: "Hi! My name is Phoenix. I am proud to be the very first custom SMAC! monkey. I fight lung cancer.  The whole SMAC! monkey idea was inspired by Leslie Lehrman's journey with Stage IV lung cancer.  No, she never smoked. ANYONE can get lung cancer.\n\nJust like NoMo, my job duties are short and sweet: To be there for those with lung cancer - ALWAYS.\n\nI have many, many hugzzz to give and I really like to snuggle. Leslie experienced that first-hand.",
   favcolor: 'Red',
   remote_image_url_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/phoenix.png',
   name: 'Phoenix'  
