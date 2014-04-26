@@ -1,16 +1,35 @@
-<% content_for :banner do %>
-  <div class="name-banner">
+<div id="controller_users" class="user-show-banner">
+  <div class="row">
+    <!-- placeholder for @request.requestor.fname -->
+    <div class="large-4 large-centered small-6 small-centered columns">
+      <div class="avatar-banner">
+
+         <%= image_tag('avatar.png') %>
+
+      </div>
+    </div>
   </div>
-<% end %>
+  
+  <div class="row">  
+    <span class="large-2 large-centered columns">
+      <div class="center-banner">
+      <div class="name-banner">
+        <%= @user.fname %> <%= @user.lname %>
+      </div>
 
-<%- model_class = User -%>
+      <div class="separator-banner large-9 large-centered small-centered columns"></div>
+        
+      <div class="tagline-banner">
+        <%= @user.email %>
+      </div>
+      </div>
+    </span>
+   </div> 
+ </div>
 
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
 
-<h2><%= @user.fname %> <%= @user.lname %></h2>
-<%= @user.email %>
+
+
 
 <% if @requests %>
   <h3>Requests for a monkey:</h3>
@@ -67,14 +86,12 @@
 
 <% end %>
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              users_path, :class => 'btn'  %>
+<div class="form-actions">%>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_user_path(@user), :class => 'btn' %>
+              edit_user_path(@user), :class => "button-link" %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               user_path(@user),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+              :class => "button-link btn-danger" %>
 </div>
