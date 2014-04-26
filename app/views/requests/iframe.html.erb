@@ -1,4 +1,13 @@
-<% @requests.each do |req| %>
-
-  <%= image_tag req.before_photo_url %>
-<% end %>
+<div = "iframe_requests">
+  <% @requests.each do |req| %>
+    <%= image_tag req.before_photo_url, size: "300x300" %>
+    <div = "req_story">
+      <h2><%= req.story %></h2>
+    </div>
+  <% end %>
+</div>
+<div = "iframe_slogan">
+  <h1>Give someone a SMAC!</h1>
+</div>  
+<div> 
+  
