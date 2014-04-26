@@ -109,7 +109,7 @@ Request.create([
   ship_city: "Omaha",
   ship_state: "NE",
   ship_zipcode: 68128,
-  story: "Some Story",
+  story: "Some Story 1",
   agree_to_terms: TRUE,
   sockmonkey_id: 1,
   agree_to_terms: true
@@ -122,7 +122,7 @@ Request.create([
   ship_city: "Liconln",
   ship_state: "NE",
   ship_zipcode: 68128,
-  story: "Some Story",
+  story: "Some Story 2",
   sockmonkey_id: 1,
   agree_to_terms: true
   },{
@@ -134,7 +134,7 @@ Request.create([
   ship_city: "Baminghamingmamington",
   ship_state: "AL",
   ship_zipcode: 68128,
-  story: "Some Story",
+  story: "Some Story 3",
   sockmonkey_id: 2,
   agree_to_terms: true
   },{
@@ -146,7 +146,7 @@ Request.create([
   ship_city: "Average City",
   ship_state: "IA",
   ship_zipcode: 68128,
-  story: "Some Story",
+  story: "Some Story 4",
   sockmonkey_id: 2,
   agree_to_terms: true
   }
