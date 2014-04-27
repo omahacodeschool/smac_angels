@@ -73,10 +73,8 @@
 input[type="file"] {
   box-sizing: border-box;
   display: block;
-  //font-weight: bold;
-//  font-size: 24px;
   margin: 0 auto;
-  padding: 15px 45px;
+  padding: 12px 45px;
   //padding: 8px;
   position: relative;
   background: #3299BB;
@@ -107,18 +105,21 @@ input[type="file"]::-webkit-file-upload-button { /* Style the button */
   background: #3299BB;
   display: block;
   margin: 0 auto;
-  //margin-top: 8px;
   color: rgba(255,255,255, 0.5);
   transition-property: all;
   transition-duration: 0.5s;
   font: inherit;
-  //padding: 15px 45px;
+  font-size: 24px;
   border: none;
   text-align: center;
   position: relative;
   z-index: 100;
   -webkit-appearance: none;
   cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  color: #FFF;
 }
 
 .checkbox{
