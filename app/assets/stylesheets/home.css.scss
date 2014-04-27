@@ -3,10 +3,12 @@
   height: 700px;
   top: -60px; 
   position: relative;
-  background: url("sockmonkey2.png");
+  background-image: url("sockmonkey2.png");
   background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: 900px 150px;
+  background-size: contain;
+  background-position: center;
+  //background-size: 50%;
+  //background-position: 650px 25px;
 }
 
 /* `Homepage banner
@@ -16,15 +18,8 @@
   text-align: center;
 }
 
-#hp_logo{
-  display: block;
-  margin: 0 auto;
-  width: 300px;
-  height: auto;
-  margin-top: 300px;
-}
-
 .name{
+  margin-top: 300px;
   height: 100px;
   line-height: 100px;
   font-family: 'Lato', sans-serif;
@@ -69,7 +64,7 @@
 .gallery {
   width: 100%;
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 25px;
 }
 
 .gallery ul{
@@ -157,35 +152,30 @@
 /* `Quotes section
 ----------------------------------------------------------------------------------------------------*/
 
-#q_bkgrd{
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
+//#q_bkgrd{
+//  margin-top: 100px;
+//  margin-bottom: 100px;
+//}
 
-#q_bkgrd {
-  width: 100%;
-  height: 700px;
-  display: block;
-  position: relative;
-  background: url("SMAC_1.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  overflow: hidden;
-}
-
-.image{
-  background-position: 0px -150px;
-}
+//#q_bkgrd {
+//  width: 100%;
+//  height: 700px;
+//  display: block;
+//  position: relative;
+//  background: url("SMAC_1.jpg");
+//  background-repeat: no-repeat;
+//  background-size: 100%;
+//  overflow: hidden;
+//}
 
 #quotes{
-  width: 98%;
+  width: 100%;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.5);
   opacity: 1;
 }
 
 #q_icons{
-  margin-top: 225px;
   padding-top: 25px;
 }
 
@@ -269,6 +259,7 @@
   padding-right: 40px;
   line-height: 24px;
   font-size: 18px;
+  color: #424242;
 }
 
 .feature-heading-right{
@@ -280,6 +271,7 @@
   margin-left: 40px;
   line-height: 24px;
   font-size: 18px;
+  color: #424242;
 }
 
 
@@ -411,6 +403,12 @@ nav a#pull {
   display: none;  
 }
 
+.logo_bott{
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
 /* `Responsive styles
 ----------------------------------------------------------------------------------------------------*/  
 
@@ -454,13 +452,122 @@ nav a#pull {
 
   nav img{
     display: none;
+    margin-top: 0px;
+  }
+  
+  #controller_home{
+    background-image: none;
   }
   
   #resp_monkey{
     display: block;
     margin: 0 auto;
+    margin-left: -145px;
     margin-top: 100px;
     width: 400px;
   }
+  
+  .fa {
+    padding-top: 20px;
+  }
+  
+  #q_text{
+    margin-top: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+  }
+  
+  #quoter{
+    font-size: 16px;
+  }
+  
+  .featurette{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .feature-heading-left{
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+  }
+
+  .feature-text-left{
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+  }
+
+  .feature-heading-right{
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+  }
+
+  .feature-text-right{
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+  }
+  
+  #f_img1{
+    width: 100%;
+    height: 417px;
+    border: 20px solid #E9E9E9;
+    border-radius: 100%;
+    background-position: 0px 0px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
      
 }
+
+/* `Parallax scrolling
+----------------------------------------------------------------------------------------------------*/ 
+
+#screen3 {  
+  margin: 0 auto; 
+  width: 100%; 
+  position: relative; 
+  padding: 100px 0;
+}
+
+#screen4 { 
+  position: relative;
+  background: url("SMAC_1.jpg") 50% 0 fixed;
+  background-repeat: no-repeat;
+  height: 700px;  
+  margin: 0 auto; 
+  width: 100%; 
+  bottom: 0;
+  position: relative; 
+  padding: 200px 0;
+}
+
+//#screen4 .image{
+//  background-position: 0px -150px;
+//}
+
+#screen5 { 
+  margin: 0 auto; 
+  width: 100%; 
+  position: relative; 
+  padding: 25px 0;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
