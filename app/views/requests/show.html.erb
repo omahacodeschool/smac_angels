@@ -28,8 +28,7 @@
     </span>
    </div> 
  </div>
-
-<% if is_admin? || current_user.id == @request.requestor_id || current_user.id == @request.angel_id %>
+<% if current_user && (is_admin? || current_user.id == @request.requestor_id || current_user.id == @request.angel_id) %>
 
   <div class="row full-width-requests center-text">
 
@@ -67,19 +66,33 @@
     <div class="large-1 admin-box columns">
     </div>
 
-    <!-- <%= link_to(new_email_path) do %> -->
+      <%= link_to("/emails/new?request_id=#{@request.id}&to_id=#{@request.requestor_id}") do %>
       <div class="large-2 small-6 admin-box columns mobile-hide">
         email requestor
       </div>
-    <!-- <% end %> -->
-    <!-- <%= link_to(new_email_path) do %> -->
+    <% end %>
+    <% if !@request.angel_id.nil? %>
+      <%= link_to("/emails/new?request_id=#{@request.id}&to_id=#{@request.angel_id}") do %>
+        <div class="large-2 small-6 admin-box columns">
+          email angel
+        </div>
+      <% end %>
+    <% else %>
       <div class="large-2 small-6 admin-box columns">
-        email angel
+        <del>email angel</del>
+        <p>no angel, yet</p>
       </div>
-    <!-- <% end %> -->
-    <%= link_to(request_unmatch_path(@request.id)) do %>
+    <% end %>
+    <% if !@request.angel_id.nil? %>
+      <%= link_to(request_unmatch_path(@request.id)) do %>
+        <div class="large-2 small-6 admin-box columns">
+          unmatch angel
+        </div>
+      <% end %>
+    <% else %>
       <div class="large-2 small-6 admin-box columns">
-        unmatch angel
+        <del>unmatch angel</del>
+        <p>no angel, yet</p>
       </div>
     <% end %>
     <%= link_to(request_match_path(@request.id)) do %>
