@@ -11,6 +11,10 @@
   font-size:20px;
 }
 
+#iframe_slogan img{
+  width:10%;
+}
+
 #logo_story{
   background-image: url("/assets/SMAC_logotrans.png");
   opacity: 85%;
@@ -26,6 +30,7 @@
 #request_image {
   overflow:hidden;
   padding:10px;
+  margin-top:15px;
 }
 
 .smooth h1 h2{

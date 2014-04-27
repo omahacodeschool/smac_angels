@@ -6,14 +6,14 @@
   <div id="iframe_requests">
     <div id="request_image" class="small-12 medium-6 large-6 columns">
       <% @requests.each_with_index do |req, index| %>
-        <%= link_to "#{image_tag(req.before_photo_url, size: "150x150", :class => "rimage", :data => { :story => edit_story(req.story) })}".html_safe, request_path(:id => req.id) %>
+        <%= link_to "#{image_tag(req.before_photo_url_url(:thumb), size: "150x150", :class => "rimage", :data => { :story => edit_story(req.story) })}".html_safe, request_path(:id => req.id) %>
       <% end %>
     </div>
   </div>
 
   <div id = "logo_story" class="small-12 medium-6 large-6 columns">
     <div id="iframe_slogan">
-       <h3>Give A SMAC!</h3>
+       <h3>Join the SMAC<img src="/assets/favicon2_large.png"> Angel Program</h3>
     </div>  
 
     <div id="story" class="smooth">
