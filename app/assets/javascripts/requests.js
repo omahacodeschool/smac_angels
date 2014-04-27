@@ -22,12 +22,12 @@ $(document).ready(function() {
 
   $(".rimage").hover(
     function () {
-      originalText="Todd is a genious.";
+      originalText="<h1>It is a great feeling to be able to comfort someone in need. Please view the stories of those suffering with cancer who would like a SMAC by scrolling over their name. Clicking a picture will take you to their profile.</h1>";
       var story = $(".rimage").data("story");
       $("#story").text(story);
     }, 
     function () {
-      $("#story").text(originalText);
+      $("#story").html(originalText);
     }
         );
 
