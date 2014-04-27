@@ -116,30 +116,6 @@ input[type="file"]::-webkit-file-upload-button { /* Style the button */
   cursor: pointer;
 }
 
- 
-/* "x::-webkit-file-upload-button" forces the rules to only apply to browsers that support this pseudo-element */
-//x::-webkit-file-upload-button, input[type=file]:after {
-//  content: 'Upload File';
-//  display: inline-block;
-//  left: 100%;
-//  margin-left:3px;
-//  padding: 3px 8px 2px;
-//  position: relative;
-//  -webkit-appearance: button;
-//  display: block;
-//  margin: 0 auto;
-//  margin-top: 24px;
-//  border: none;
-//  height: 60px;
-//  width: 300px;
-//  background: #424242;
-//  color: #E9E9E9;
-//  font-family: Arial, Helvetica, sans-serif;
-//  font-weight: bold;
-//  font-size: 24px;
-//  cursor: pointer;
-//}
-
 .checkbox{
   display: inline-block;
   width: 100%;
@@ -150,8 +126,9 @@ input[type="file"]::-webkit-file-upload-button { /* Style the button */
   display: block;
   text-align: left;
   margin-left: 22%;
-  margin-right: 22%;
+  margin-right: 21%;
   margin-top: 0;
+  margin-bottom: 10px;
   padding-top: 10px;
   color: #E9E9E9;
   line-height: 18px;
