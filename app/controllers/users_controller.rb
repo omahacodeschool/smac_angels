@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if is_admin? || session[:user_id] == params[:id]
+    if is_admin? || session[:user_id] == params[:id].to_i
       @user = User.find(params[:id])
     else
       flash[:notice] = "I am sorry, you are unable to edit this profile."
@@ -65,6 +65,11 @@ class UsersController < ApplicationController
 
     redirect_to (user_path(@user.id))
   end
+
+  # def destroy
+  #   @user = User.find(params[:id])
+  #   @user.delete
+  # end
   
 
   private

@@ -55,6 +55,7 @@ class RequestsController < ApplicationController
   # GET /requests/1/edit
   def edit
     @request = Request.find(params[:id])
+    @sockmonkeys = Sockmonkey.all
   end
 
   # POST /requests
@@ -128,12 +129,15 @@ class RequestsController < ApplicationController
   end
   
   def iframe
-    @requests = Request.where(:angel_id => nil && :requestor_id != nil)
-    while @requests.length < 6
-      #@options = Request.where(:current_status => 10)
-      @options = Request.all
-      @requests << @options.sample
-    end
+    @requests = Request.where("current_status = 0").sample(6)
+    @filler = Request.where("current_status > ? AND current_status < ?", 0, 11).sample(6 - @requests.length)
+    @fallback = 6 - @requests.length - @filler.length
+    # @requests = Request.where(:angel_id => nil && :requestor_id != nil)
+#     while @requests.length < 6
+#       #@options = Request.where(:current_status => 10)
+#       @options = Request.all
+#       @requests << @options.sample
+#     end
   end
   
   def unmatch
