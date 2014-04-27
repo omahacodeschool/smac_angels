@@ -62,16 +62,27 @@
       <div class="gallery">
         <ul>
           <li>
+            <!-- <%= link_to :new_request do %>
+              <div class="add_req_gallery left">
+                <p>Request Monkey</p>
+                <a href="<%= new_request_path %>" class="hp fa fa-plus" title="New Request"></a>
+              </div>
+            <% end %> -->
+            
             <div class="idx_square">
-              <!-- Background image is in css style -->
-              <%= link_to image_tag("Request_Monkey.jpg"), new_request_path %>
+              <p>Request Monkey</p>
+              <a href="<%= new_request_path %>" class="hp fa fa-plus" title="New Request"></a>
             </div>
           </li>
 
           <% @requests.each do |request| %>
           <li>
             <div class="idx_square">
-              <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id) %>
+              <% if !request.before_photo_url_url.nil? %>
+                <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id) %>
+              <% else %>
+                <%= link_to image_tag("profile.png"), request_path(request.id) %>
+              <% end %>
             </div>
           </li>
           <% end %>
@@ -79,7 +90,13 @@
           <% @filler.each do |filler| %>
             <li>
               <div class="idx_square">
-                <%= link_to image_tag(filler.before_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
+                <% if !filler.after_photo_url_url.nil? %>\
+                  <%= link_to image_tag(filler.after_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
+                <% elsif !filler.before_photo_url_url.nil?   %>
+                  <%= link_to image_tag(filler.before_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
+                <% else %>
+                  <%= link_to image_tag("profile.png"), request_path(filler.id) %>
+                <% end %>
                 <%= link_to image_tag("matched-ribbon.png", class: "ribbon").html_safe, request_path(filler.id) %>
               </div>
             </li>
@@ -146,7 +163,7 @@
             <div id="q_icons">
               <a href="#" class="qleft_icon"></a> <a href="#" class="qright_icon"></a>
             </div>
-            <div id="q_text">
+            <div id="q_text" class="center-text">
             I look into their little eyes (NoMo & Phoenix) and they just make my heart melt... even on my darkest days.
             </div>
             <div id="quoter">

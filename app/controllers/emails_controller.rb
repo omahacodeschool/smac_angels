@@ -12,34 +12,16 @@ class EmailsController < ApplicationController
 
   # Create new email
   def new
-    @email = Email.new
+    if params[:request_id] && params[:to_id]
+      @email = Email.new
+    else
+      redirect_to emails_path
+    end
   end
 
   # Send email
-  def create
-    case params["button"].to_i
-    when 1
-      @template = Template.find_by_name("Signup Confirmation")
-    when 2
-      @template = Template.find_by_name("Requestor Signup")
-    when 3
-      @template = Template.find_by_name("Angel Signup")
-    when 4
-      @template = Template.find_by_name("Shipping Notification for Angel")
-    when 5
-      @template = Template.find_by_name("Shipping Notification for Requestor")
-    when 6
-      @template = Template.find_by_name("Feedback Notification for Angel")
-    when 7
-      @template = Template.find_by_name("Feedback Notification for Requestor")
-    end      
-
-    @email = Email.new
-    @email.content = @template.content
-    @email.subject = @template.name
-    @email.request_id = params["request_id"]
-    @email.to_addresses = params["email"]["email_address"]
-
+  def create    
+    @email = Email.new(params[:email])
     if @email.save
       UserMailer.email_layout(@email).deliver
     

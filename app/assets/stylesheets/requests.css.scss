@@ -1,3 +1,7 @@
+.unavailable_option{
+  color:#777;
+}
+
 #controller_requests.banner{
   height:800px;
   width:100%;
@@ -88,11 +92,11 @@
   text-decoration: none;
   color: #F39A7E;
   font-size: 80px;
-  margin:0 20px;
+  margin: 0 20px;
 }
 
 .fa-facebook-square:hover {
-  color:#FFF;
+  color: #FFF;
 }
  
 .fa-twitter {
@@ -106,7 +110,7 @@
 }
 
 .fa-twitter:hover {
-  color:#FFF;
+  color: #FFF;
 }
  
 .fa-pinterest {
@@ -134,7 +138,7 @@
 }
 
 .fa-shopping-cart:hover {
-  color:#FFF;
+  color: #FFF;
 }
 
 .fa-plus {
@@ -198,10 +202,17 @@ input[type=submit].submit-button:hover {
 }
 
 @media screen and (max-width: 600px) {
-  .fa {
-    font-size:60px;
-    margin:5px;
+  
+  .fa-facebook-square, 
+  .fa-twitter,
+  .fa-pinterest,
+  .fa-shopping-cart
+   {
+    font-size: 60px;
+    margin: 0 5px;
+    margin-top: 10px;
   }
+    
 }
 
 //Admin Controls -------------------------------------------------------------------------------
