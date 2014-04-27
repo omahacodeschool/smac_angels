@@ -1,38 +1,32 @@
 <%= form_for @email, :html => { :class => 'form-horizontal' } do |f| %>
+  <center><div class="control-group">
+    <%= f.label :to_addresses, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :to_addresses, :class => 'text_field', :value => "#{User.find(params[:to_id]).email}" %>
+    </div>
+  </div></center>
   <div class="control-group">
     <%= f.label :subject, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :subject, :class => 'text_field' %>
+      <center><%= f.text_field :subject, :class => 'text_field', :placeholder => "Subject" %></center>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :request_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :request_id, :class => 'number_field' %>
+      <%= f.hidden_field :request_id, :class => 'hidden', :value => params[:request_id] %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :content, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :body, rows: 10, :class => 'text_area' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :template_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :template_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :to_addresses, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :to_addresses, :class => 'text_field' %>
+      <%= f.text_area :content, rows: 10, :class => 'text_area', :placeholder => "Write email here" %>
     </div>
   </div>
 
-  <div class="form-actions">
+  <center><div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 emails_path, :class => 'btn' %>
-  </div>
+  </div></center>
+  <br/>
 <% end %>
