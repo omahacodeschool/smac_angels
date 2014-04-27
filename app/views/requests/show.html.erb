@@ -71,6 +71,7 @@
         email requestor
       </div>
     <% end %>
+    
     <% if !@request.angel_id.nil? %>
       <%= link_to("/emails/new?request_id=#{@request.id}&to_id=#{@request.angel_id}") do %>
         <div class="large-2 small-6 admin-box columns">
@@ -79,27 +80,24 @@
       <% end %>
     <% else %>
       <div class="large-2 small-6 admin-box columns">
-        <del>email angel</del>
-        <p>no angel, yet</p>
+        <span class="unavailable_option">email angel</span>
       </div>
     <% end %>
-    <% if !@request.angel_id.nil? %>
+    
+    <% if @request.angel_id.nil? %>
+      <%= link_to(request_match_path(@request.id)) do %>
+        <div class="large-2 small-6 admin-box columns">
+          match an angel
+        </div>
+      <% end %>
+    <% else %>
       <%= link_to(request_unmatch_path(@request.id)) do %>
         <div class="large-2 small-6 admin-box columns">
           unmatch angel
         </div>
       <% end %>
-    <% else %>
-      <div class="large-2 small-6 admin-box columns">
-        <del>unmatch angel</del>
-        <p>no angel, yet</p>
-      </div>
     <% end %>
-    <%= link_to(request_match_path(@request.id)) do %>
-      <div class="large-2 small-6 admin-box columns">
-        match an angel
-      </div>
-    <% end %>
+    
     <%= link_to(request_path(@request.id), :method => :delete) do %>
       <div class="large-2 small-12 admin-box columns">
         delete request

@@ -14,5 +14,5 @@ module ApplicationHelper
     else
       false
     end
-  end  
+  end
 end
