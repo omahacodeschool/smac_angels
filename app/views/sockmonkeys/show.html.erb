@@ -1,29 +1,74 @@
-<%- model_class = Sockmonkey -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
+<style type="text/css">
+body {
+  background-color: #3299BB;
+  color: #424242;
+}
+img {
+  border: 4px solid #fff;
+  margin-top: 10px;
+}
+h1 {
+  margin: 0 0 5px 0;
+  color: #fff;
+}
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @sockmonkey.name %></dd>
-  <dt><img src="<%=@sockmonkey.image_url %>"  </dt>
-  <dd><% @sockmonkey.image_url %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @sockmonkey.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cancertype) %>:</strong></dt>
-  <dd><%= @sockmonkey.cancertype %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:favcolor) %>:</strong></dt>
-  <dd><%= @sockmonkey.favcolor %></dd>
-</dl>
+h3 {
+  color: #fff;
+}
+p {
+  font-weight: bold;
+  margin: 0;
+  text-align: justify;
+}
+.monkey {
+  width: 550px;
+  margin: 40px auto 0 auto;
+}
+.monkey_pic {
+  float: left;
+  margin: 0 0 0 20px;
+}
+.monkey_info {
+  float: right;
+  width: 225px;
+  line-height: 1.75;
+  padding: 0 0 0 30px;
+}
+.monkey_stats {
+  clear: both;
+  width: 75%;
+  margin: 0 auto;
+}
+.stat {
+  float: left;
+  text-align: center;
+  padding: 0 45px;
+}
+.stat p {
+  text-align: center;
+}
+</style>
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              sockmonkeys_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_sockmonkey_path(@sockmonkey), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              sockmonkey_path(@sockmonkey),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<div class="monkey">
+
+  <div class="monkey_pic">
+    <%= image_tag @sockmonkey.image_url %> 
+  </div>
+
+  <div class="monkey_info">
+    <h1>I'm <%= @sockmonkey.name %></h1>
+    <p><%= @sockmonkey.description %></p>
+  </div>
+
+  <div class="monkey_stats">
+    <div class="stat">
+      <h3>Cancer Type</h3>
+      <p><%= @sockmonkey.cancertype %></p>
+    </div>
+    <div class="stat">
+      <h3>Favorite Color</h3>
+      <p><%= @sockmonkey.favcolor %></p>
+    </div>
+  </div>
+
 </div>
