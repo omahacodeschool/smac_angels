@@ -79,7 +79,11 @@
           <% @filler.each do |filler| %>
             <li>
               <div class="idx_square">
-                <%= link_to image_tag(filler.before_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
+                <% if filler.after_photo_url %>
+                  <%= link_to image_tag(filler.after_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
+                <% else %>
+                  <%= link_to image_tag(filler.before_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
+                <% end %>
                 <%= link_to image_tag("matched-ribbon.png", class: "ribbon").html_safe, request_path(filler.id) %>
               </div>
             </li>
