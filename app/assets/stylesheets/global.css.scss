@@ -212,6 +212,7 @@ ul{
   border-radius: 100%;
   border: 15px solid rgba(255,255,255, 0.7);
   overflow: hidden;
+  max-width:350px;
 }
 
 .separator-banner{
@@ -230,6 +231,13 @@ ul{
   vertical-align: middle;
   margin-top: 190px;
 }
+
+@media screen and (max-width: 660px) {
+  .name-banner {
+    margin-top:350px;
+  }
+}
+
 
 /* `Footer
 ----------------------------------------------------------------------------------------------------*/

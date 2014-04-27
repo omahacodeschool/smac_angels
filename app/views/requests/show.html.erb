@@ -26,7 +26,7 @@
       </div>
       
       <% if current_user && (@request.requestor_id == @user_id || is_admin?) %>
-        <div class="row content-small-padding center-text">
+        <div class="row content-small-padding center-text edit-buttons">
           <%= link_to 'Edit', edit_request_path(@request), :class => "button-link" %> &nbsp;
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       user_path(@request),
@@ -82,7 +82,7 @@
   <div class="row full-width-admin center-text">
 
     <!-- <%= link_to(new_email_path) do %> -->
-      <div class="large-2 small-6 admin-box columns mobile-hide">
+      <div class="large-2 small-6 admin-box columns">
         email requestor
       </div>
     <!-- <% end %> -->
