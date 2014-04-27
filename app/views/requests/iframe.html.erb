@@ -6,23 +6,19 @@
   <div id="iframe_requests">
     <div id="request_image" class="small-6 columns">
       <% @requests.each_with_index do |req, index| %>
-        <%= link_to "#{image_tag(req.before_photo_url, size: "150x150", :class => "rimage", :data => { :story => req.story })}".html_safe, request_path(:id => req.id) %>
+        <%= link_to "#{image_tag(req.before_photo_url, size: "150x150", :class => "rimage", :data => { :story => edit_story(req.story) })}".html_safe, request_path(:id => req.id) %>
       <% end %>
     </div>
   </div>
 
   <div id = "logo_story" class="small-6 columns">
-    <div id="iframe_image">
-       <%= image_tag "/assets/SMAC_logo.png", size: "120x120" %>
-    </div>
-
     <div id="iframe_slogan">
-       <h1>Give A SMAC!</h1>
+       <h3>Give A SMAC!</h3>
     </div>  
 
-    <div id="story">
-       <h1>It is a great feeling to be able to comfort someone in need. Please view the stories of those suffering with cancer who would like a SMAC by scrolling over their name. Clicking a picture will take you to their profile.</h1>
+    <div id="story" class="smooth">
+       <h2>It is a great feeling to be able to comfort someone in need. Please view the stories of those suffering with cancer who would like a SMAC by scrolling over their name. Clicking a picture will take you to their profile.</h2>
     </div>
   </div>
 </div >
-987x350  
+<!-- 987x350   -->

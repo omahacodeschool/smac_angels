@@ -1,10 +1,25 @@
 
-#iframe_slogan
-{
+#iframe_slogan{
   
 }
+#logo_story{
+  background-image: url("/assets/SMAC_logotrans.png");
+  opacity: 85%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width:50%;
+  height:350px;
+}
 
-#story
-{
- transition-duration: 0.5s; 
+
+.smooth h1 h2{
+  //background-color:rgba(255,0,0,0.5);
+}
+.smooth h2{
+//  transition: all 1s ease;
+//
+//  padding: 10px;
+//  
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  //background-color:rgba(255,0,0,0.5);
 }
