@@ -1,3 +1,18 @@
+#iframe-image{
+  width:33%;
+  float:left;
+  position:relative;
+}
+
+#iframe-image .ribbon{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: .75;
+  width: 75%;
+  height: 75%;
+  float:left;
+}
 
 #iframe.row{
   position:relative;
