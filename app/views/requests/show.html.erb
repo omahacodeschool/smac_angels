@@ -24,12 +24,23 @@
       <div class="tagline-banner">
         <%= @tag %>
       </div>
+      
+      <% if current_user && (@request.requestor_id == @user_id || is_admin?) %>
+        <div class="row content-small-padding center-text">
+          <%= link_to 'Edit', edit_request_path(@request), :class => "button-link" %> &nbsp;
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      user_path(@request),
+                      :method => 'delete',
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => "button-link btn-danger" %>
+        </div>
+      <% end %>
+      
       </div>
     </span>
    </div> 
  </div>
 <% if current_user && (is_admin? || current_user.id == @request.requestor_id || current_user.id == @request.angel_id) %>
-
   <div class="row full-width-requests center-text">
 
     <div class="large-2 small-0 private-box columns mobile-hide">
@@ -153,7 +164,6 @@
         <span class="storytime"><%= @request.anon_angel ? "The angel has chosen to remain anonymous" : @request.angel.shortname %></span>
       <% end %>
     </p>
-
   </div>
   <br>
   <br>
@@ -218,29 +228,24 @@
   </div>
 </div>
 
-<% if current_user && (is_admin? || @request.requestor_id == @user_id ) %>
-  <div class="row content-padding center-text">
-    <%= link_to ' EDIT PROFILE ', edit_request_path(@request), :class => "button-link" %> &nbsp;
+
+<div class="row fb-comments">
+  
+  <div class="large-12 small-12 center-text columns">
+    <div id="share-buttons">
+      <!-- Share on facebook -->
+      <div class="fb-share-button" data-href="http://smac-angels-staging.herokuapp.com/requests/#{@request.id}" data-type="button"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <!-- Share on twitter -->
+      <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+
+
+      <!-- Share on pinterest if there is an image to share -->
+      <a href      = "//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+      <!-- Please call pinit.js only once per page -->
+      <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
   </div>
-<% end %>
 
-<div class="row content-small-padding center-text">
-  <div id="share-buttons">
-    <!-- Share on facebook -->
-    <div class="fb-share-button" data-href="http://smac-angels-staging.herokuapp.com/requests/#{@request.id}" data-type="button"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-    <!-- Share on twitter -->
-    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
-
-
-    <!-- Share on pinterest if there is an image to share -->
-    <a href      = "//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
-    <!-- Please call pinit.js only once per page -->
-    <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
-</div>
-
-<div class="row">
-
-          <div class="fb-comments content-small-padding large-12 columns" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="500" data-num-posts="10"></div>
+          <div class="fb-comments large-12 small-12 columns" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="500" data-num-posts="10"></div>
 
 </div>

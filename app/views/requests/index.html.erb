@@ -32,11 +32,6 @@
         </div>
       <% end %>
 
-      <div class="add_request left">
-        <p>Placeholder</p>
-      </div>
-      <%#= link_to '+', :new_request, :class => 'add_request left' %>
-
       <% @requests.each do |request| %>
     
         <div class="request">
@@ -49,5 +44,5 @@
       <p><%= link_to "Become Angel", "http://smacmonkey.com" %></p>
     <% end %>
   </div>
-  <%= button_to "Show More", nil, :method => "get", :class => "ctr_button" %>
+  <%#= button_to "Show More", nil, :method => "get", :class => "ctr_button" %>
 </div>

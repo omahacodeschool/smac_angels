@@ -3,7 +3,7 @@
 <section id="screen1">
    
   <nav>
-    <div class="top-left">
+    <div class="logo_bott">
       <!-- <%= link_to :root do %> -->
         <%= image_tag "/assets/SMAC_logo.png" %>
       <!-- <% end %> -->
@@ -61,12 +61,42 @@
     <div class="row full-width"></div>
       <div class="gallery">
         <ul>
-          <li><img src="http://lorempixel.com/800/800/people/1" alt="" /></li>
-          <li><img src="http://lorempixel.com/800/800/people/2" alt="" /></li>
-          <li><img src="http://lorempixel.com/800/800/people/3" alt="" /></li>
-          <li><img src="http://lorempixel.com/800/800/people/4" alt="" /></li>
-          <li><img src="http://lorempixel.com/800/800/people/5" alt="" /></li>
-          <li><img src="http://lorempixel.com/800/800/people/6" alt="" /></li>
+          <li>
+            <div class="idx_square">
+              <!-- Background image is in css style -->
+              <%= link_to image_tag("Request_Monkey.jpg"), new_request_path %>
+            </div>
+          </li>
+
+          <% @requests.each do |request| %>
+          <li>
+            <div class="idx_square">
+              <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id) %>
+            </div>
+          </li>
+          <% end %>
+          
+          <% @filler.each do |filler| %>
+            <li>
+              <div class="idx_square">
+                <% if filler.after_photo_url %>
+                  <%= link_to image_tag(filler.after_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
+                <% else %>
+                  <%= link_to image_tag(filler.before_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
+                <% end %>
+                <%= link_to image_tag("matched-ribbon.png", class: "ribbon").html_safe, request_path(filler.id) %>
+              </div>
+            </li>
+          <% end %>
+          
+          <% @fallback.times do |x| %>
+            <li>
+              <div class="idx_square">
+                <%= image_tag("landing_page/#{x+1}.jpg") %>
+                <%= image_tag("matched-ribbon.png", class: "ribbon") %>
+              </div>
+            </li>
+          <% end %>
         </ul>    
       </div>
     </div>
@@ -110,6 +140,10 @@
       </div>
     </div>
     
+</section>     
+    
+<section id="screen4" data-speed="6" data-type="background">   
+    
     <div class="row full-width"></div>
       <div id="q_bkgrd">
         <div id="quotes" class="center">
@@ -125,6 +159,10 @@
         </div>
       </div>
     </div>
+    
+</section>
+    
+<section id="screen5" data-speed="6" data-type="background">    
     
     <div class="features">
       <div class="row featurette">
@@ -163,7 +201,7 @@
       </div>
 
     </div>
-    
-</section>    
+
+</section>
     
 </body>

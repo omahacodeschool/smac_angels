@@ -1,13 +1,24 @@
-<div = "iframe_requests">
-  <% @requests.each do |req| %>
-    <%= image_tag req.before_photo_url, size: "300x300" %>
-    <div = "req_story">
-      <h2><%= req.story %></h2>
+    
+<script src="//http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<%= stylesheet_link_tag "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<div id="iframe" class="row collapse">
+  <div id="iframe_requests">
+    <div id="request_image" class="small-12 medium-6 large-6 columns">
+      <% @requests.each_with_index do |req, index| %>
+        <%= link_to "#{image_tag(req.before_photo_url_url(:thumb), size: "150x150", :class => "rimage", :data => { :story => edit_story(req.story) })}".html_safe, request_path(:id => req.id) %>
+      <% end %>
     </div>
-  <% end %>
-</div>
-<div = "iframe_slogan">
-  <h1>Give someone a SMAC!</h1>
-</div>  
-<div> 
-  
+  </div>
+
+  <div id = "logo_story" class="small-12 medium-6 large-6 columns">
+    <div id="iframe_slogan">
+       <h3>Join the SMAC<img src="/assets/favicon2_large.png"> Angel Program</h3>
+    </div>  
+
+    <div id="story" class="smooth">
+       <h2>It is a great feeling to be able to comfort someone in need. Please view the stories of those suffering with cancer who would like a SMAC by scrolling over their name. Clicking a picture will take you to their profile.</h2>
+    </div>
+  </div>
+</div >
+<!-- 987x350   -->

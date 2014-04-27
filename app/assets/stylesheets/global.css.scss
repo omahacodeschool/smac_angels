@@ -1,5 +1,3 @@
-
-
 * {
   .clear:before,
   .clear:after {
@@ -45,10 +43,35 @@ ul{
   list-style-type: none;
 }
 
+.container{
+  width:800px;
+  margin:0 auto;
+}
+
+// Buttons ----------------------------------------------------------------------------------------------
+
 .button-link {
   padding: 15px 45px;
-  color: #BCBCBC;
-  border: 1px solid #BCBCBC;
+  color: rgba(255,255,255, 0.5);
+  border: 1px solid rgba(255,255,255, 0.5);
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.button-link:hover {
+  color:#FFF;
+}
+
+.button-link-blue {
+  padding: 15px 45px;
+  border: 1px solid #3299BB;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.button-link-blue:hover {
+  color:#FFF;
+  background:#3299BB;
 }
 
 //-----------------------------------------------------------------------------------------------------
@@ -102,9 +125,10 @@ ul{
   z-index: 1;
 }
 
-.top-left{
+.logo_top{
   float: left;
   margin-top: 20px;
+  margin-left: 20px;
 }
 
 .top-bar ul{
@@ -261,7 +285,8 @@ ul{
   .top-bar {  
     position: fixed; 
     top: 0; 
-    z-index: 1; 
+    z-index: 1;
+    background: none; 
   }  
 
   .top-bar ul {  
@@ -293,8 +318,16 @@ ul{
   .top-bar img{
     display: none;
   }
+  
+  .logo_top{
+    display: none;
+  }
      
 }
+
+ 
+ 
+
 
 
 

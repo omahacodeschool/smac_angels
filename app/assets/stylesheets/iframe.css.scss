@@ -1,16 +1,48 @@
-#iframe_requests
-{
-  float: left;
-  display: block;  
+
+#iframe.row{
+  position:relative;
+  margin-top:-50px;
+  left:0px;
+  display: block;
+  height:350px;
+}
+#iframe_slogan h3{
+  color:black;
+  font-size:20px;
 }
 
-#req_story h2
-{
- 
+#iframe_slogan img{
+  width:10%;
 }
 
-#iframe_slogan
-{
-  
+#logo_story{
+  background-image: url("/assets/SMAC_logotrans.png");
+  opacity: 85%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height:350px;
+  background-position:16px;
+  text-align:center;
+  color:black;
+  margin-top:15px;
 }
 
+#request_image {
+  overflow:hidden;
+  padding:10px;
+  margin-top:15px;
+}
+
+.smooth h1 h2{
+  //background-color:rgba(255,0,0,0.5);
+}
+.smooth h2{
+//  transition: all 1s ease;
+//
+//  padding: 10px;
+//  
+  line-height:1.2;
+  font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
+  color:black;
+  //background-color:rgba(255,0,0,0.5);
+}
