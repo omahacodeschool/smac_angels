@@ -198,8 +198,8 @@ ul{
   color: rgba(255,255,255, 0.7);
   display: block;
   vertical-align:middle;
-  padding-top: 100px;
-  margin-top: 450px;
+  transition-property: all;
+  transition-duration: 1s;
 }
 
 .tagline-banner{
@@ -215,12 +215,17 @@ ul{
 
 .avatar-banner{
 //  float:left;
-  position: absolute;
-  margin-top: 195px;
+  position: relative;
+  top: 170px;
   border-radius: 100%;
-  border: 15px solid rgba(255,255,255, 0.7);
+  border: 15px solid rgba(255, 255, 255, 0.7);
   overflow: hidden;
-  max-width:350px;
+  max-width: 315px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 220px;
+  transition-property: all;
+  transition-duration: 2s;
 }
 
 .separator-banner{
@@ -237,12 +242,17 @@ ul{
   color: rgba(255,255,255, 0.7);
   display: block;
   vertical-align: middle;
-  margin-top: 190px;
+//  margin-top: 190px;
 }
 
 @media screen and (max-width: 660px) {
   .name-banner {
-    margin-top:350px;
+//    margin-top:-45px;
+    font-size: 30px;
+  }
+  .avatar-banner {
+    top:200px;
+    max-width: 285px;
   }
 }
 
