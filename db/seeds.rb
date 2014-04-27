@@ -155,7 +155,7 @@ Request.create([
 Sockmonkey.create([
   {
   cancertype: 'All',
-  description: "My name is NoMo. I'm ring leader of SMAC! So, it's my job to make sure those with/impacted by ALL types of cancer get TONS of love and comfort.  Let's face it, family and friends can't always be ther...but, I CAN!",
+  description: "My name is NoMo. I'm the ring leader of SMAC! So, it's my job to make sure those with/impacted by ALL types of cancer get TONS of love and comfort.  Let's face it, family and friends can't always be ther...but, I CAN!",
   favcolor: 'Green',
   remote_image_url_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/nomo.jpg',
   name: 'NoMo'
