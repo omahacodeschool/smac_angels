@@ -61,7 +61,7 @@
         <% end %>
 
         <div class="content-small-padding"></div>
-        <div><%= image_tag(request.sockmonkey.image_url, :class => "user-avatar") %></div>
+        <div><%= image_tag(request.sockmonkey.image_url_url(:thumb), :class => "user-avatar") %></div>
         <div class="storytime content-small-padding"><%= request.sockmonkey.name %></div>
 
         <div class="row content-small-padding">
@@ -86,7 +86,7 @@
           <!-- <div class="large-5 small-3 columns">TEST</div> -->
           
           <div class="large-3 large-offset-2 small-offset-2 small-3 columns">
-            <div ><%= image_tag(angel.sockmonkey.image_url, :class => "user-avatar-angel")%></div>
+            <div ><%= image_tag(angel.sockmonkey.image_url_url(:thumb), :class => "user-avatar-angel")%></div>
             <div class="storytime content-small-padding"><%= angel.sockmonkey.name %></div>
           </div>
           
@@ -95,7 +95,7 @@
           
           <div class="large-3 small-3 columns">
             <% if angel.before_photo_url %>
-              <%= image_tag(angel.before_photo_url, :class => "user-avatar-angel") %>
+              <%= image_tag(angel.before_photo_url_url(:thumb), :class => "user-avatar-angel") %>
             <% else %>
               <%= image_tag("profile.png", :class => "user-avatar-angel") %>
             <% end %>
