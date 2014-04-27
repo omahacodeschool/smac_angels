@@ -2,7 +2,7 @@
 <script src="//http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <%= stylesheet_link_tag "application", :media => "all" %>
 <%= javascript_include_tag "application" %>
-<div class="row">
+<div id="iframe" class="row collapse">
   <div id="iframe_requests">
     <div id="request_image" class="small-12 medium-6 large-6 columns">
       <% @requests.each_with_index do |req, index| %>

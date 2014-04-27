@@ -1,18 +1,31 @@
 
-#iframe_slogan{
-  
+#iframe.row{
+  position:relative;
+  margin-top:-50px;
+  left:0px;
+  display: block;
+  height:350px;
 }
+#iframe_slogan h3{
+  color:black;
+  font-size:20px;
+}
+
 #logo_story{
   background-image: url("/assets/SMAC_logotrans.png");
   opacity: 85%;
   background-size: 100%;
   background-repeat: no-repeat;
   height:350px;
-  background-position: 10px;
+  background-position:16px;
+  text-align:center;
+  color:black;
+  margin-top:15px;
 }
 
 #request_image {
   overflow:hidden;
+  padding:10px;
 }
 
 .smooth h1 h2{
@@ -23,7 +36,8 @@
 //
 //  padding: 10px;
 //  
-  line-height:1.5;
-  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  line-height:1.2;
+  font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
+  color:black;
   //background-color:rgba(255,0,0,0.5);
 }
