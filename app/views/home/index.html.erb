@@ -71,7 +71,11 @@
           <% @requests.each do |request| %>
           <li>
             <div class="idx_square">
-              <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id) %>
+              <% if !request.before_photo_url_url.nil? %>
+                <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id) %>
+              <% else %>
+                <%= link_to image_tag("profile.png"), request_path(request.id) %>
+              <% end %>
             </div>
           </li>
           <% end %>
@@ -79,10 +83,12 @@
           <% @filler.each do |filler| %>
             <li>
               <div class="idx_square">
-                <% if filler.after_photo_url %>
+                <% if !filler.after_photo_url_url.nil? %>\
                   <%= link_to image_tag(filler.after_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
-                <% else %>
+                <% elsif !filler.before_photo_url_url.nil?   %>
                   <%= link_to image_tag(filler.before_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
+                <% else %>
+                  <%= link_to image_tag("profile.png"), request_path(filler.id) %>
                 <% end %>
                 <%= link_to image_tag("matched-ribbon.png", class: "ribbon").html_safe, request_path(filler.id) %>
               </div>
