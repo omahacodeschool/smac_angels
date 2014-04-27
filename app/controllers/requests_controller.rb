@@ -55,6 +55,7 @@ class RequestsController < ApplicationController
   # GET /requests/1/edit
   def edit
     @request = Request.find(params[:id])
+    @sockmonkeys = Sockmonkey.all
   end
 
   # POST /requests
