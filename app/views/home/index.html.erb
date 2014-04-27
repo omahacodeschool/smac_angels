@@ -84,6 +84,15 @@
               </div>
             </li>
           <% end %>
+          
+          <% @fallback.times do |x| %>
+            <li>
+              <div class="idx_square">
+                <%= image_tag("landing_page/#{x+1}.jpg") %>
+                <%= image_tag("matched-ribbon.png", class: "ribbon") %>
+              </div>
+            </li>
+          <% end %>
         </ul>    
       </div>
     </div>
