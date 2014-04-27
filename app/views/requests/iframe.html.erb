@@ -14,10 +14,10 @@
       <% @filler.each do |req| %>
         <div id="iframe-image" class="img-req" data-story="<%= edit_story(req.story) %>">
           <% if req.after_photo_url_url %>
-            <%= link_to "#{image_tag(req.after_photo_url_url(:thumb), :class => "rimage", :data => { :story => edit_story(req.story) })}".html_safe, request_path(:id => req.id) %>
+            <%= link_to "#{image_tag(req.after_photo_url_url(:thumb), :class => "rimage")}".html_safe, request_path(:id => req.id) %>
             
           <% else %>
-            <%= link_to "#{image_tag(req.before_photo_url_url(:thumb), :class => "rimage", :data => { :story => edit_story(req.story) })}".html_safe, request_path(:id => req.id) %>
+            <%= link_to "#{image_tag(req.before_photo_url_url(:thumb), :class => "rimage")}".html_safe, request_path(:id => req.id) %>
           <% end %>
         <%= link_to image_tag("matched-ribbon.png", class: "ribbon").html_safe, request_path(req.id) %>
         </div>
