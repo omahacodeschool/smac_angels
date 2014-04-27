@@ -43,9 +43,6 @@
   margin-top:-20px;
 }
 
-.request {
-}
-
 .request a {
   width: 225px;
   height: 225px;
@@ -78,10 +75,8 @@
   color: #424242;
 }
 
-.plus {
-  font-size: 340px;
-  margin: -135px;
-  padding: 0;
+.add_request p{
+  color: #E9E9E9;
 }
 
 //Icons ----------------------------------------------------------------------
@@ -142,12 +137,27 @@
   color:#FFF;
 }
 
+.fa-plus {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #F39A7E;
+  font-size: 200px;
+  margin-top: -15px;
+}
+
+.fa-plus:hover {
+  color: #E9E9E9;
+}
+
 // Submit Buttons ------------------------------------------------------------------------
 
 input[type=text].submit-button {padding:5px; border:2px solid #ccc; 
 -webkit-border-radius: 5px;
     border-radius: 5px;
 }
+
 input[type=text].submit-button:focus {border-color:#FFF; }
 
 input[type=submit].submit-button {
@@ -188,10 +198,29 @@ input[type=submit].submit-button:hover {
 }
 
 @media screen and (max-width: 600px) {
-  .fa {
-    font-size:60px;
-    margin:10px;
+  
+  .fa-facebook-square {
+    font-size: 60px;
+    margin: 0 5px;
+    padding-top: 10px;
   }
+  
+  .fa-twitter {
+    font-size: 60px;
+    margin: 0 5px;
+  }
+  
+  .fa-pinterest {
+    font-size: 60px;
+    margin: 0 5px;
+  }
+  
+  .fa-shopping-cart {
+    font-size: 60px;
+    margin: 0 5px;
+  }
+  
+  
 }
 
 //Admin Controls -------------------------------------------------------------------------------
