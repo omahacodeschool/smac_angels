@@ -109,7 +109,7 @@ Request.create([
   ship_city: "Omaha",
   ship_state: "NE",
   ship_zipcode: 68128,
-  story: "Some Story",
+  story: "Some Story 1",
   agree_to_terms: TRUE,
   sockmonkey_id: 1,
   agree_to_terms: true
@@ -122,7 +122,7 @@ Request.create([
   ship_city: "Liconln",
   ship_state: "NE",
   ship_zipcode: 68128,
-  story: "Some Story",
+  story: "Some Story 2",
   sockmonkey_id: 1,
   agree_to_terms: true
   },{
@@ -134,7 +134,7 @@ Request.create([
   ship_city: "Baminghamingmamington",
   ship_state: "AL",
   ship_zipcode: 68128,
-  story: "Some Story",
+  story: "Some Story 3",
   sockmonkey_id: 2,
   agree_to_terms: true
   },{
@@ -146,7 +146,7 @@ Request.create([
   ship_city: "Average City",
   ship_state: "IA",
   ship_zipcode: 68128,
-  story: "Some Story",
+  story: "Some Story 4",
   sockmonkey_id: 2,
   agree_to_terms: true
   }
@@ -155,13 +155,13 @@ Request.create([
 Sockmonkey.create([
   {
   cancertype: 'All',
-  description: 'The ALL cancer fighting monkey!',
+  description: "My name is NoMo.  I'm the ring leader of SMAC! So, it is my job to make sure those with or impacted by ALL types of cancer get TONS of love and comfort.  Let's face it, family and friends can't always be there...but, I CAN!",
   favcolor: 'Green',
   remote_image_url_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/nomo.jpg',
   name: 'NoMo'
   },{
   cancertype: 'Lung',
-  description: 'The lung cancer fighting monkey!',
+  description: "Hi! My name is Phoenix.  I am proud to be the very first custom SMAC! monkey.  I fight lung cancer.  The whole SMAC! monkey idea was inspired by Leslie Lehrman's journey with Stage IV lung cancer.  No, she never smoked.  ANYONE can get lung cancer.",
   favcolor: 'Red',
   remote_image_url_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/phoenix.png',
   name: 'Phoenix'  
