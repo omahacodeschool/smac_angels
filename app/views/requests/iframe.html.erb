@@ -6,13 +6,13 @@
   <div id="iframe_requests">
     <div id="request_image" class="small-12 medium-6 large-6 columns">
       <% @requests.each do |req| %>
-        <div id="iframe-image">
+        <div id="iframe-image" class="img-req" data-story="<%= edit_story(req.story) %>">
           <%= link_to "#{image_tag(req.before_photo_url_url(:thumb), :class => "rimage", :data => { :story => edit_story(req.story) })}".html_safe, request_path(:id => req.id) %>
         </div>
       <% end %>
       
       <% @filler.each do |req| %>
-        <div id="iframe-image">
+        <div id="iframe-image" class="img-req" data-story="<%= edit_story(req.story) %>">
           <% if req.after_photo_url_url %>
             <%= link_to "#{image_tag(req.after_photo_url_url(:thumb), :class => "rimage", :data => { :story => edit_story(req.story) })}".html_safe, request_path(:id => req.id) %>
             
