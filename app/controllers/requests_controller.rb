@@ -4,7 +4,7 @@ class RequestsController < ApplicationController
   before_filter :require_login, :except => [:show, :index, :become_angel, :iframe]
   layout false, :only => :iframe
   def index
-    @requests = Request.order("created_at DESC").where(:angel_id => nil)
+    @requests = Request.order("created_at DESC").where("current_status = 0")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +19,22 @@ class RequestsController < ApplicationController
     @angel = User.where(:id => @request.angel_id)
     @user_id = session[:user_id]
     @emails = Email.where(:request_id => @request.id)
+    
+    case @request.current_status
+    when 0
+      @status = "Unmatched"
+      @tag = "Can you help?" 
+    when 5
+      @status = "Matched"
+      @tag = "Request Fulfilled!"
+    when 10
+      @status = "Complete"
+      @tag = "Request Fulfilled!"
+    else
+      @status = "Canceled"
+      @tag = "Canceled"
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @request }
@@ -80,8 +96,10 @@ class RequestsController < ApplicationController
   # DELETE /requests/1.json
   def destroy
     @request = Request.find(params[:id])
-    @request.statuses.each { |s| s.destroy }
-    @request.destroy
+    @request.current_status=11
+    @request.story="(Manually Destroyed)" + @request.story
+    @request.save
+    Status.create(:request_id => @request.id, :status => 'Deleted by Admin')
     respond_to do |format|
       format.html { redirect_to requests_url }
       format.json { head :no_content }
@@ -103,8 +121,6 @@ class RequestsController < ApplicationController
 
     @request = Request.find(params[:request_id])
     
-    
-    
     @request.add_angel(session[:user_id], params[:anon_button] ? 1 : 0)
 
     redirect_to (request_path(@request.id))
@@ -118,5 +134,36 @@ class RequestsController < ApplicationController
       @options = Request.all
       @requests << @options.sample
     end
+  end
+  
+  def unmatch
+    @request=Request.find(params[:id])
+    
+    @request.angel_id = nil
+    @request.current_status = 0
+    @request.save
+    Status.create(:request_id => @request.id, :status => 'Unmatched by Admin')
+    
+    redirect_to(request_path(@request.id))
+  end
+  
+  def match
+    @request=Request.find(params[:id])
+    
+    Status.create(:request_id => @request.id, :status => 'Matched by Admin')
+    
+    redirect_to(request_path(@request.id))
+  end
+  
+  def ship
+    @request=Request.find(params[:id])
+    
+    @request.current_status = 10
+    Status.create(:request_id => @request.id, :status => 'Shipped')
+    # Send email to both requestor and angel
+    
+    @request.save
+    
+    redirect_to(request_path(@request.id))
   end
 end

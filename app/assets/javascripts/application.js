@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ckeditor/init
 //= require fancybox
 //= require_tree .

@@ -2,8 +2,8 @@
   <h2>Unmatched Requests</h2>
   <ul>
     <% @unmatched_req.each do |unmatched|  %>
-    <% requestor = User.find(unmatched.requestor_id) %>
-    <li><%= link_to "#{requestor.lname}, #{requestor.fname}", request_path(unmatched.id) %></li>
+      <% requestor = User.find(unmatched.requestor_id) %>
+      <li><%= link_to "#{requestor.lname}, #{requestor.fname}", request_path(unmatched.id) %></li>
   <% end %>
   </ul>
 
@@ -19,8 +19,13 @@
   <h2>Completed Requests</h2>
   <ul>
   <% @completed_req.each do |completed|  %>
-    <% requestor = User.find(completed.requestor_id) %>
-    <li><%= link_to "#{requestor.lname}, #{requestor.fname}", request_path(completed.id) %></li>
+    <% if completed.requestor_id %>
+      <% requestor = User.find(completed.requestor_id) %>
+      <li><%= link_to "#{requestor.lname}, #{requestor.fname}", request_path(completed.id) %></li>
+    <% else %>
+      <li><%= link_to "**REMOVED BY ADMIN**", request_path(completed.id) %></li>
+    <% end %>
+    
   <% end %>
   </ul>
   <h2><%= link_to "View All Requests", request_history_path %></h2>

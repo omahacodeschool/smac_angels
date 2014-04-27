@@ -16,13 +16,13 @@
     <span class="large-2 large-centered columns">
       <div class="center-banner">
       <div class="name-banner">
-        <%= @request.obo ? @request.obo_fname : @request.requestor.fname %> is asking for <%= @request.sockmonkey.name %>
+        <%= @request.obo ? @request.obo_fname : @request.requestor.fname %> <%= @request.current_status > 0 ? "was" : "is" %> asking for <%= @request.sockmonkey.name %>
       </div>
 
       <div class="separator-banner large-9 large-centered small-centered columns"></div>
 
       <div class="tagline-banner">
-        Can you help?
+        <%= @tag %>
       </div>
       </div>
     </span>
@@ -67,21 +67,36 @@
     <div class="large-1 admin-box columns">
     </div>
 
-    <div class="large-2 small-6 admin-box columns mobile-hide">
-      email requestor
-    </div>
-    <div class="large-2 small-6 admin-box columns">
-      email angel
-    </div>
-    <div class="large-2 small-6 admin-box columns">
-      unmatch angel
-    </div>
-    <div class="large-2 small-6 admin-box columns">
-      match an angel
-    </div>
-    <div class="large-2 small-12 admin-box columns">
-      delete request
-    </div>
+    <!-- <%= link_to(new_email_path) do %> -->
+      <div class="large-2 small-6 admin-box columns mobile-hide">
+        email requestor
+      </div>
+    <!-- <% end %> -->
+    <!-- <%= link_to(new_email_path) do %> -->
+      <div class="large-2 small-6 admin-box columns">
+        email angel
+      </div>
+    <!-- <% end %> -->
+    <%= link_to(request_unmatch_path(@request.id)) do %>
+      <div class="large-2 small-6 admin-box columns">
+        unmatch angel
+      </div>
+    <% end %>
+    <%= link_to(request_match_path(@request.id)) do %>
+      <div class="large-2 small-6 admin-box columns">
+        match an angel
+      </div>
+    <% end %>
+    <%= link_to(request_path(@request.id), :method => :delete) do %>
+      <div class="large-2 small-12 admin-box columns">
+        delete request
+      </div>
+    <% end %>
+    <%= link_to(request_ship_path(@request.id)) do %>
+      <div class="large-2 small-12 admin-box columns">
+        mark shipped
+      </div>
+    <% end %>
     <div class="large-1 admin-box columns mobile-hide">
     </div>
   </div>
@@ -99,6 +114,15 @@
 
     <div>
     </div>
+    <% if is_admin? %>
+      <p>
+        <h2>Status</h2>
+        <br>
+        <span class="storytime"><%= @status %></span>
+      </p>
+      <br>
+      <br>
+    <% end %>
     <p>
       <h2><%= @request.obo ? @request.obo_fname : @request.requestor.fname %>'s Story</h2>
       <br>
@@ -123,6 +147,27 @@
   <br>
   <br>
   <% if is_admin? %>
+    <h2>Status Log</h2>
+    <table class="status_log">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @request.statuses.each do |status| %>
+          <tr class="status">
+            <td><%= status.status %></td>
+            <td><%= status.created_at.strftime("%b %d") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
     <h2>Email Log</h2>
     <table class="email_log">
       <thead>
