@@ -1,10 +1,10 @@
-#controller_users.banner{
-  height:800px;
-  width:100%;
-  background-color:#3299BB;
-  margin-top:-60px;
-//  top:-60px;
-}
+//#controller_users.banner{
+//  height:800px;
+//  width:100%;
+//  background-color:#3299BB;
+//  margin-top:-60px;
+////  top:-60px;
+//}
 
 .users-text-banner{
   font-family: 'Lato', sans-serif;
@@ -13,4 +13,44 @@
   color: rgba(255,255,255, 0.7);
   display:block;
   margin-top:230px;
+}
+
+#controller_users.user-show-banner{
+  height:800px;
+  width:100%;
+  background-color:#3299BB;
+  margin-top:-60px;
+}
+
+
+.user-avatar{
+  border-radius: 100%;
+  border: 15px solid rgba(255,255,255, 0.7);
+  overflow: hidden;
+}
+
+.user-avatar-angel{
+  border-radius: 100%;
+  border: 15px solid rgba(255,255,255, 0.7);
+  overflow: hidden;
+//  height:200px;
+}
+
+.fa-angle-double-right {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #BCBCBC;
+  font-size: 80px;
+//  margin-left:-60px;
+  padding-top:30px;
+  padding-right:70px;
+  padding-left:30px;
+}
+
+@media screen and (max-width: 600px) {
+  .fa-angle-double-right {
+
+  }
 }

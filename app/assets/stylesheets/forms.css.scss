@@ -66,8 +66,54 @@
   margin-bottom: 15px;
 }
 
-.form input[type="file"]{
-  opacity: 0;
+.file_button{
+  margin-top: 25px;
+}
+
+input[type="file"] {
+  box-sizing: border-box;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0 auto;
+  padding: 8px;
+  position: relative;
+  background: #424242;
+  overflow: hidden;
+  height: 60px;
+  width: 300px;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  z-index: 1;
+  cursor: pointer;
+}
+
+input[type="file"]:after { /* Mask the no file chosen label */
+  background: #424242;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+input[type="file"]::-webkit-file-upload-button { /* Style the button */
+  background: #424242;
+  display: block;
+  margin: 0 auto;
+  margin-top: 8px;
+  color: #E9E9E9;
+  font: inherit;
+  padding: 0;
+  border: none;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  -webkit-appearance: none;
+  cursor: pointer;
 }
 
 .checkbox{
@@ -80,8 +126,9 @@
   display: block;
   text-align: left;
   margin-left: 22%;
-  margin-right: 22%;
+  margin-right: 21%;
   margin-top: 0;
+  margin-bottom: 10px;
   padding-top: 10px;
   color: #E9E9E9;
   line-height: 18px;
