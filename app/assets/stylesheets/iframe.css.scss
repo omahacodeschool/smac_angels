@@ -7,10 +7,13 @@
   opacity: 85%;
   background-size: 100%;
   background-repeat: no-repeat;
-  width:50%;
   height:350px;
+  background-position: 10px;
 }
 
+#request_image {
+  overflow:hidden;
+}
 
 .smooth h1 h2{
   //background-color:rgba(255,0,0,0.5);
@@ -20,6 +23,7 @@
 //
 //  padding: 10px;
 //  
+  line-height:1.5;
   font-family: Monaco, Consolas, "Lucida Console", monospace;
   //background-color:rgba(255,0,0,0.5);
 }
