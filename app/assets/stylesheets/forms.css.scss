@@ -66,9 +66,79 @@
   margin-bottom: 15px;
 }
 
-.form input[type="file"]{
-  opacity: 0;
+.file_button{
+  margin-top: 25px;
 }
+
+input[type="file"] {
+  box-sizing: border-box;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0 auto;
+  padding: 8px;
+  position: relative;
+  background: #424242;
+  overflow: hidden;
+  height: 60px;
+  width: 300px;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  z-index: 1;
+  cursor: pointer;
+}
+
+input[type="file"]:after { /* Mask the no file chosen label */
+  background: #424242;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+input[type="file"]::-webkit-file-upload-button { /* Style the button */
+  background: #424242;
+  display: block;
+  margin: 0 auto;
+  margin-top: 8px;
+  color: #E9E9E9;
+  font: inherit;
+  padding: 0;
+  border: none;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+ 
+/* "x::-webkit-file-upload-button" forces the rules to only apply to browsers that support this pseudo-element */
+//x::-webkit-file-upload-button, input[type=file]:after {
+//  content: 'Upload File';
+//  display: inline-block;
+//  left: 100%;
+//  margin-left:3px;
+//  padding: 3px 8px 2px;
+//  position: relative;
+//  -webkit-appearance: button;
+//  display: block;
+//  margin: 0 auto;
+//  margin-top: 24px;
+//  border: none;
+//  height: 60px;
+//  width: 300px;
+//  background: #424242;
+//  color: #E9E9E9;
+//  font-family: Arial, Helvetica, sans-serif;
+//  font-weight: bold;
+//  font-size: 24px;
+//  cursor: pointer;
+//}
 
 .checkbox{
   display: inline-block;
