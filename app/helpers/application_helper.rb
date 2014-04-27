@@ -9,7 +9,10 @@ module ApplicationHelper
   #
   # Returns boolean
   def is_admin?
-    User.find(session[:user_id]).is_admin
+    if !current_user.nil?
+      User.find(session[:user_id]).is_admin
+    else
+      false
+    end
   end
-  
 end
