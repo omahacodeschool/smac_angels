@@ -214,18 +214,22 @@ input[type=submit].submit-button:hover {
 
 .admin-box{
   float:right;
-//  border:5px solid black;
-//  width:25%;
-//  min-width: 50px;
   height:80px;
   background-color:#424242;
   padding-top:30px;
+  color:#BCBCBC;
+  transition-property: all;
+  transition-duration: .8s;
+}
+
+.admin-box:hover{
   color:#FFF;
 }
 
 @media screen and (max-width: 700px) {
   .mobile-hide {
     height:0px;
+    margin-top:-50px;
   }
 }
 .email_log {

@@ -80,8 +80,6 @@
 
 <% if is_admin? %>
   <div class="row full-width-admin center-text">
-    <div class="large-1 admin-box columns">
-    </div>
 
     <!-- <%= link_to(new_email_path) do %> -->
       <div class="large-2 small-6 admin-box columns mobile-hide">
@@ -104,17 +102,16 @@
       </div>
     <% end %>
     <%= link_to(request_path(@request.id), :method => :delete) do %>
-      <div class="large-2 small-12 admin-box columns">
+      <div class="large-2 small-6 admin-box columns">
         delete request
       </div>
     <% end %>
     <%= link_to(request_ship_path(@request.id)) do %>
-      <div class="large-2 small-12 admin-box columns">
+      <div class="large-2 small-6 admin-box columns">
         mark shipped
       </div>
     <% end %>
-    <div class="large-1 admin-box columns mobile-hide">
-    </div>
+
   </div>
 <% end %>
 
