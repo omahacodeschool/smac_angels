@@ -127,8 +127,8 @@ ul{
 
 .logo_top{
   float: left;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 10px;
+  margin-left: 30px;
 }
 
 .top-bar ul{
@@ -165,7 +165,7 @@ ul{
   border-right: 0;  
 }
 
-.top-bar a:hover, nav a:active {  
+.top-bar li a:hover, nav a:active {  
   background-color: #F75E11;  
   color:#FFF;
 } 
