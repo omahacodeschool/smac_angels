@@ -174,12 +174,20 @@ input[type="file"]::-webkit-file-upload-button { /* Style the button */
   border: none;
   height: 60px;
   width: 300px;
-  background: #424242;
+  background: none;
+  //background: #424242;
   color: #E9E9E9;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
   font-size: 24px;
   cursor: pointer;
+  padding: 15px 45px;
+  color: rgba(255,255,255, 0.5);
+  border: 1px solid rgba(255,255,255, 0.5);
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.ctr_button:hover {
+  color: #FFF;
 }
 
 .ctr_button p{
