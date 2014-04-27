@@ -1,5 +1,3 @@
-
-
 * {
   .clear:before,
   .clear:after {
@@ -127,9 +125,10 @@ ul{
   z-index: 1;
 }
 
-.top-left{
+.logo_top{
   float: left;
   margin-top: 20px;
+  margin-left: 20px;
 }
 
 .top-bar ul{
@@ -286,7 +285,8 @@ ul{
   .top-bar {  
     position: fixed; 
     top: 0; 
-    z-index: 1; 
+    z-index: 1;
+    background: none; 
   }  
 
   .top-bar ul {  
@@ -318,8 +318,16 @@ ul{
   .top-bar img{
     display: none;
   }
+  
+  .logo_top{
+    display: none;
+  }
      
 }
+
+ 
+ 
+
 
 
 
