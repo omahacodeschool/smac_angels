@@ -25,35 +25,34 @@
   </div>
 </div>   
 
-<div class="row content-bottom-padding">
+  <div class="row content-padding">
 
-  <div class="requests clear">
+    <div class="requests clear">
 
-    <% if @requests %>
+      <% if @requests %>
 
-      <%= link_to :new_request do %>
-        <div class="add_request left large-3 small-11 columns">
-          <p>Request Monkey</p>
-          <a href="<%= new_request_path %>" class="fa fa-plus" title="New Request"></a>
-        </div>
-      <% end %>
+        <%= link_to :new_request do %>
+          <div class="add_request left">
+            <p>Request Monkey</p>
+            <a href="<%= new_request_path %>" class="fa fa-plus" title="New Request"></a>
+          </div>
+        <% end %>
 
-      <% @requests.each do |request| %>
+        <% @requests.each do |request| %>
     
-        <div class="request large-3 small-11 columns less-side-padding left">
-          <% if request.before_photo_url_url.nil? %>
-            <%= link_to image_tag("profile.png").html_safe, request_path(request.id) %>
-          <% else %>
-            <%= link_to image_tag(request.before_photo_url_url(:thumb), :alt => "user avatar"), request_path(request.id) %>
-          <% end %>
-
-        </div>
+          <div class="request">
+            <% if request.before_photo_url_url.nil? %>
+              <%= link_to image_tag("profile.png").html_safe, request_path(request.id), :class => 'left' %>
+            <% else %>
+              <%= link_to image_tag(request.before_photo_url_url(:thumb), :alt => "user avatar"), request_path(request.id), :class => 'left' %>
+            <% end %>
+          </div>
         
+        <% end %>
+      <% else %>
+        <h2>There are no requests at this time.  You still can become an Angel for the next Sock Monkey requestor!</h2>
+        <p><%= link_to "Become Angel", "http://smacmonkey.com" %></p>
       <% end %>
-    <% else %>
-      <h2>There are no requests at this time.  You still can become an Angel for the next Sock Monkey requestor!</h2>
-      <p><%= link_to "Become Angel", "http://smacmonkey.com" %></p>
-    <% end %>
+    </div>
+    <%#= button_to "Show More", nil, :method => "get", :class => "ctr_button" %>
   </div>
-  <%#= button_to "Show More", nil, :method => "get", :class => "ctr_button" %>
-</div>
