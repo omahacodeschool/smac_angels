@@ -4,7 +4,7 @@
       <span class="large-2 large-centered columns">
         <div class="center-banner">
         <div class="requests-text-banner">
-          Short message on how to become an Angel.
+          Become an angel and gift a "comfort creature" like NoMo or Phoenix to remind those in need that they are not alone in our fight against cancer.
         </div>
   
         <div class="separator-banner large-9 large-centered small-centered columns"></div>
@@ -17,16 +17,20 @@
      </div> 
    </div>
    
-<div class="row content-padding">
+<div class="row">
+  <div class="large-12 small-12 columns content-small-padding center">
+    <h2>Select a lucky recipient.</h2>
+  </div>
+</div>   
 
-  <h2>Select a lucky recipient.</h2>
+<div class="row content-small-padding">
 
   <div class="requests clear">
 
     <% if @requests %>
 
       <%= link_to :new_request do %>
-        <div class="add_request left">
+        <div class="add_request left large-3 small-11 columns">
           <p>Request Monkey</p>
           <a href="<%= new_request_path %>" class="fa fa-plus" title="New Request"></a>
         </div>
@@ -34,7 +38,7 @@
 
       <% @requests.each do |request| %>
     
-        <div class="request">
+        <div class="request large-3 small-11 columns">
           <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id), :class => 'left' %>
         </div>
         
