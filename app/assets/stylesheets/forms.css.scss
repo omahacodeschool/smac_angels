@@ -73,12 +73,13 @@
 input[type="file"] {
   box-sizing: border-box;
   display: block;
-  font-weight: bold;
-  font-size: 24px;
   margin: 0 auto;
-  padding: 8px;
+  padding: 12px 45px;
+  //padding: 8px;
   position: relative;
-  background: #424242;
+  background: #3299BB;
+  color: rgba(255,255,255, 0.5);
+  border: 1px solid rgba(255,255,255, 0.5);
   overflow: hidden;
   height: 60px;
   width: 300px;
@@ -89,7 +90,7 @@ input[type="file"] {
 }
 
 input[type="file"]:after { /* Mask the no file chosen label */
-  background: #424242;
+  background: #3299BB;
   content: '';
   display: block;
   height: 100%;
@@ -101,19 +102,24 @@ input[type="file"]:after { /* Mask the no file chosen label */
 }
 
 input[type="file"]::-webkit-file-upload-button { /* Style the button */
-  background: #424242;
+  background: #3299BB;
   display: block;
   margin: 0 auto;
-  margin-top: 8px;
-  color: #E9E9E9;
+  color: rgba(255,255,255, 0.5);
+  transition-property: all;
+  transition-duration: 0.5s;
   font: inherit;
-  padding: 0;
+  font-size: 24px;
   border: none;
   text-align: center;
   position: relative;
   z-index: 100;
   -webkit-appearance: none;
   cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  color: #FFF;
 }
 
 .checkbox{
@@ -188,33 +194,25 @@ input[type="file"]::-webkit-file-upload-button { /* Style the button */
   border: none;
   height: 60px;
   width: 300px;
-  background: #424242;
+  background: none;
+  //background: #424242;
   color: #E9E9E9;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
   font-size: 24px;
   cursor: pointer;
+  padding: 15px 45px;
+  color: rgba(255,255,255, 0.5);
+  border: 1px solid rgba(255,255,255, 0.5);
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.ctr_button:hover {
+  color: #FFF;
 }
 
 .ctr_button p{
   margin-top: 24px;
 }
-
-.ctr_button2{
-  display: block;
-  margin: 0 auto;
-  margin-top: 24px;
-  border: none;
-  height: 60px;
-  width: 300px;
-  background: #E9E9E9;
-  color: #424242;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 .control-label{
   display: none;
 }
