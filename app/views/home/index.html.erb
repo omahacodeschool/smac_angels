@@ -62,26 +62,21 @@
       <div class="gallery">
         <ul>
           <li>
-            <!-- <%= link_to :new_request do %>
-              <div class="add_req_gallery left">
+            <%= link_to :new_request do %>
+              <div class="add_to_gallery left large-4 columns small-12 columns">
                 <p>Request Monkey</p>
                 <a href="<%= new_request_path %>" class="hp fa fa-plus" title="New Request"></a>
               </div>
-            <% end %> -->
-            
-            <div class="idx_square">
-              <p>Request Monkey</p>
-              <a href="<%= new_request_path %>" class="hp fa fa-plus" title="New Request"></a>
-            </div>
+            <% end %>
           </li>
 
           <% @requests.each do |request| %>
           <li>
-            <div class="idx_square">
+            <div id="idx_square" class="large-4 columns small-12 columns">
               <% if !request.before_photo_url_url.nil? %>
                 <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id) %>
               <% else %>
-                <%= link_to image_tag("profile.png"), request_path(request.id) %>
+                <%= link_to image_tag("SMAC_nation.jpg"), request_path(request.id) %>
               <% end %>
             </div>
           </li>
@@ -89,7 +84,7 @@
           
           <% @filler.each do |filler| %>
             <li>
-              <div class="idx_square">
+              <div id="idx_square" class="large-4 columns small-12 columns">
                 <% if !filler.after_photo_url_url.nil? %>\
                   <%= link_to image_tag(filler.after_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
                 <% elsif !filler.before_photo_url_url.nil?   %>
@@ -104,7 +99,7 @@
           
           <% @fallback.times do |x| %>
             <li>
-              <div class="idx_square">
+              <div id="idx_square" class="large-4 columns small-12 columns">
                 <%= image_tag("landing_page/#{x+1}.jpg") %>
                 <%= image_tag("matched-ribbon.png", class: "ribbon") %>
               </div>
