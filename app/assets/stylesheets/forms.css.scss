@@ -216,7 +216,10 @@ input[type="file"]::-webkit-file-upload-button:hover {
 .control-label{
   display: none;
 }
-
+//BackEnd Madness Starts Here
+.request_submit{
+  padding:0 0 40 0;
+}
 /* `Signup form
 ----------------------------------------------------------------------------------------------------*/
 
@@ -276,7 +279,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
   margin-top: 100px;
   margin-bottom: 200px;
   background: #3299BB;
-  height: 1775px;
+  //height: 1775px;
   width: 100%;
 }
 
