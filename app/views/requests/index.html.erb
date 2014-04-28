@@ -40,17 +40,13 @@
 
       <% @requests.each do |request| %>
     
-<<<<<<< HEAD
         <div class="request large-3 small-11 columns">
-          <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id), :class => 'left' %>
-=======
-        <div class="request">
           <% if request.before_photo_url_url.nil? %>
             <%= link_to image_tag("profile.png").html_safe, request_path(request.id), :class => 'left' %>
           <% else %>
             <%= link_to image_tag(request.before_photo_url_url(:thumb), :alt => "user avatar"), request_path(request.id), :class => 'left' %>
           <% end %>
->>>>>>> master
+
         </div>
         
       <% end %>
