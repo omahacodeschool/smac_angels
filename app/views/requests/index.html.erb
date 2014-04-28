@@ -4,7 +4,7 @@
       <span class="large-2 large-centered columns">
         <div class="center-banner">
         <div class="requests-text-banner">
-          Short message on how to become an Angel.
+          The SMAC! Monkey Angel Matching Program is aiming to put Phoenix and NoMo into the arms of people impacted by cancer… reminding them no one fights it alone. 
         </div>
   
         <div class="separator-banner large-9 large-centered small-centered columns"></div>
@@ -35,7 +35,11 @@
       <% @requests.each do |request| %>
     
         <div class="request">
-          <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id), :class => 'left' %>
+          <% if request.before_photo_url_url.nil? %>
+            <%= link_to image_tag("profile.png").html_safe, request_path(request.id), :class => 'left' %>
+          <% else %>
+            <%= link_to image_tag(request.before_photo_url_url(:thumb), :alt => "user avatar"), request_path(request.id), :class => 'left' %>
+          <% end %>
         </div>
         
       <% end %>

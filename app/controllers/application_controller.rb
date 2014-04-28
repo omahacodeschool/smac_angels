@@ -18,7 +18,12 @@ class ApplicationController < ActionController::Base
     end
     #binding.pry
     return current_user
-
+  end
+  
+  def only_admin
+    if current_user.is_admin == false
+      redirect_to :root
+    end
   end
   
   private

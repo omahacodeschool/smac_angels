@@ -1,4 +1,6 @@
 class AdminController < ApplicationController
+  before_filter :require_login
+  before_filter :only_admin
   
   def index
     # !!! Should be changed to integer values from status when that is completed. !!!

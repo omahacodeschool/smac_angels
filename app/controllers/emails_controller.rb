@@ -1,4 +1,7 @@
 class EmailsController < ApplicationController
+  before_filter :require_login
+  before_filter :only_admin, :only => [:index,:show]
+  
   # Show all emails
   def index
     @emails = Email.all
