@@ -1,11 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities                    = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
+#encoding: utf-8
 
 
 
@@ -17,7 +10,7 @@ Template.create([
     name: "Signup Confirmation",
     content: "Hi there. Thank you so much for registering. You are one step closer to some SMAC! monkey mojo!\r\n\r\nYour email:((email))\r\n\r\n"
     },{
-    name: "Requestor Signup"
+    name: "Requestor Signup",
     content: "((requestor)), thank you for signing up to receive a SMAC Monkey!\r\n\r\nIt’s time to SMAC! cancer to the curb and you will soon have ((monkey)) right by your side to help you!\r\n\r\nWe'll notify you when we have matched you with an angel. Sit tight!\r\n\r\nThanks,\r\nThe SMAC! Team"
     },{
     name: "Angel Signup", 

@@ -50,6 +50,7 @@ class Email < ActiveRecord::Base
   def unique_email(email)
     user = User.find_by_email(email.to_addresses)
     email.content = email.content.gsub "((name))", user.fname
+    email.content = email.content.gsub "((email))", user.email
 
     if email.request_id
       request = Request.find(email.request_id)
