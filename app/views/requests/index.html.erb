@@ -25,7 +25,7 @@
   </div>
 </div>   
 
-<div class="row content-small-padding">
+<div class="row content-bottom-padding">
 
   <div class="requests clear">
 
@@ -40,7 +40,7 @@
 
       <% @requests.each do |request| %>
     
-        <div class="request large-3 small-11 columns left">
+        <div class="request large-3 small-11 columns less-side-padding left">
           <% if request.before_photo_url_url.nil? %>
             <%= link_to image_tag("profile.png").html_safe, request_path(request.id) %>
           <% else %>
