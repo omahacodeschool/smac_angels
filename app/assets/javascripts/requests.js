@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   $(".img-req").hover(
     function () {
-      originalText="<h2>It is a great feeling to be able to comfort someone in need. Please view the stories of those suffering with cancer who would like some creature comfort. Clicking a picture will take you to their profile.</h2>";
+      originalText="<h2>It is a great feeling to be able to comfort someone in need. Please view the stories of those battling cancer who would like a SMAC by scrolling over their name. Clicking a picture will take you to their profile.</h2>";
       var story = $(this).data("story");
       $("#story").hide().html(story).fadeIn('easing');
     }, 
