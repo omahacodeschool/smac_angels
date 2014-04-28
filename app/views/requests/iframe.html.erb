@@ -7,7 +7,7 @@
     <div id="request_image" class="small-12 medium-6 large-6 columns">
       <% @requests.each do |req| %>
         <div id="iframe-image" class="img-req" data-story="<%= edit_story(req.story) %>">
-          <%= link_to "#{image_tag(req.before_photo_url_url(:thumb), :class => "rimage", :data => { :story => edit_story(req.story) })}".html_safe, request_path(:id => req.id) %>
+          <%= link_to "#{image_tag(req. (:thumb), :class => "rimage", :data => { :story => edit_story(req.story) })}".html_safe, request_path(:id => req.id) %>
         </div>
       <% end %>
       
@@ -38,7 +38,7 @@
     </div>  
 
     <div id="story" class="smooth">
-       <h2>It is a great feeling to be able to comfort someone in need. Please view the stories of those suffering with cancer who would like a SMAC by scrolling over their name. Clicking a picture will take you to their profile.</h2>
+       <h2>It is a great feeling to be able to comfort someone in need. Please view the stories of those battling cancer who would like a SMAC by scrolling over their name. Clicking a picture will take you to their profile.</h2>
     </div>
   </div>
 </div >
