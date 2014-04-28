@@ -12,7 +12,7 @@
     <ul> 
       <li><%= link_to "Home", root_path %></li> 
       <li><%= link_to "Give", requests_path %></li>  
-      <li><%= link_to "Nominate", new_request_path %></li>
+      <li><%= link_to "Nominate", new_request_path(:nominate => true) %></li>
       <li><%= link_to "Request", new_request_path %></li>
       <% if !current_user %>
       <li><%= link_to "Sign Up", signup_path %></li> 
@@ -135,7 +135,7 @@
         
         <div id="opt3" class="large-4 columns">
           <div class="opt_icon center">
-            <a href="<%= new_request_path %>" class="fa fa-bullhorn" title="Give"></a>
+            <a href="<%= new_request_path(:nominate => true) %>" class="fa fa-bullhorn" title="Give"></a>
           </div>
           <div class="opt_text center">
             <h2>Request</h2>
@@ -184,7 +184,7 @@
       <div class="feature-divider"></div>
 
       <div class="row featurette">
-        <a href="<%= new_request_path %>"><div id="f_img2" class="large-5 columns">
+        <a href="<%= new_request_path(:nominate => true) %>"><div id="f_img2" class="large-5 columns">
           <!-- Background image is in css style -->
         </div></a>
         <div class="large-7 columns">

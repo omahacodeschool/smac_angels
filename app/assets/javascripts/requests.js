@@ -20,6 +20,8 @@ $(document).ready(function() {
     cyclic: true
   });
 
+  
+  
 
   $(".img-req").hover(
     function () {
@@ -31,4 +33,7 @@ $(document).ready(function() {
       $("#story").hide().html(originalText).fadeIn('easing');
     }
         );
+    if params[:nominate] === true {
+      $(page.click('.obo_check'))
+    }
 });
