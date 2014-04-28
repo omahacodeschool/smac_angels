@@ -163,10 +163,24 @@ input[type="file"]::-webkit-file-upload-button:hover {
 .form input[type="radio"]{
   -webkit-appearance: none; 
   -moz-appearance: none;
-  width: 15px;
-  height: 15px;
+}
+
+.big_button{
+  position:relative;
+  width: 120px;
+  height: 120px;
   background: #FFF;
   margin-left: 10px;
+  top:-130px;
+  left:-45px;
+  border:solid 5px #000;
+  cursor:pointer;
+}
+
+.monkey_pic{
+  position:relative;
+  z-index:1;
+  cursor:pointer;
 }
 
 .form input[type="radio"]:checked{
@@ -296,6 +310,11 @@ input[type="file"]::-webkit-file-upload-button:hover {
 .monkeys a{
   color: #E9E9E9;
   font-size: 24px;
+  //beware back end tom-foolery here//
+  position:relative;
+  top:-100px;
+  left:66px; 
+  //end tom-foolery//
 }
 
 #monkey_name{

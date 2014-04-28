@@ -151,13 +151,13 @@ Sockmonkey.create([
   cancertype: 'All',
   description: "My name is NoMo.  I'm the ring leader of SMAC! So, it is my job to make sure those with or impacted by ALL types of cancer get TONS of love and comfort.  Let's face it, family and friends can't always be there...but, I CAN!",
   favcolor: 'Green',
-  remote_image_url_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/nomo.jpg',
+  remote_image_url_url: 'https://smacangels.s3.amazonaws.com/uploads/sockmonkey/image_url/4/nomo_big.png',
   name: 'NoMo'
   },{
   cancertype: 'Lung',
   description: "Hi! My name is Phoenix.  I am proud to be the very first custom SMAC! monkey.  I fight lung cancer.  The whole SMAC! monkey idea was inspired by Leslie Lehrman's journey with Stage IV lung cancer.  No, she never smoked.  ANYONE can get lung cancer.",
   favcolor: 'Red',
-  remote_image_url_url: 'https://s3-us-west-2.amazonaws.com/smacangels/uploads/sockmonkey/image_url/2/phoenix.png',
+  remote_image_url_url: 'https://smacangels.s3.amazonaws.com/uploads/sockmonkey/image_url/3/Phoenix_big.png',
   name: 'Phoenix'  
   }
 ])

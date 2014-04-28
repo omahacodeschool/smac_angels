@@ -1,7 +1,7 @@
 <div id="controller_users" class="user-show-banner">
   <div class="row">
     <!-- placeholder for @request.requestor.fname -->
-    <div class="large-4 large-centered small-6 small-centered columns">
+    <div class="large-4 large-centered small-12 small-centered columns">
       <div class="avatar-banner">
 
          <%= image_tag('avatar.png') %>
@@ -42,22 +42,16 @@
       <h2><%= @user.fname %> is requesting:</h2>
 
       <% @requests.each do |request| %>
-        <div><% if request.before_photo_url.url == nil %>
-          <%= image_tag("profile.png") %>
-        <% else %>
-          <%= image_tag(request.before_photo_url_url(:thumb)) %>
-        <% end %>
-        </div>
-        
-        <% if request.obo %>
-          <div><p>This request was made by <b><%= request.obo_fname %> <%= request.obo_lname %></b> on behalf of <b><%= @user.fname %></b></p></div>
-        <% else %>
-          <div>This request was made by <b><%= @user.fname %></b> </div>
-        <% end %>
 
         <div class="content-small-padding"></div>
         <div><%= image_tag(request.sockmonkey.image_url_url(:thumb), :class => "user-avatar") %></div>
         <div class="storytime content-small-padding"><%= request.sockmonkey.name %></div>
+        
+        <% if request.obo %>
+          <div><p>Requested by <b><%= request.obo_fname %> <%= request.obo_lname %></b> on behalf of <b><%= @user.fname %></b></p></div>
+        <% else %>
+          <div>Requested by <b><%= @user.fname %></b> </div>
+        <% end %>
 
         <div class="row content-small-padding">
           <%= link_to "View Request", request_path(request.id), :class => "button-link-blue" %>
