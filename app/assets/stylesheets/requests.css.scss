@@ -182,23 +182,25 @@ input[type=submit].submit-button:hover {
 //Facebook Comments --------------------------------------------------------------------------
 
 .fb-comments {
-  margin-top:30px;
-  padding-top:80px;
-  background:#F6F6F6;
+  margin-top: 30px;
+  padding-top: 10px;
+  background: #BCBCBC;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
 }
 
-.fb-comments-container {
-  background:#E9E9E9;
-  margin:0;
-  padding:0;
-  width:100%;
-}
-
-.full-width-requests-facebook{
+#facebook-comments{
   width: 100%;
-  max-width: 100%; 
-  margin-top:-20px;
-  height:400px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 0;
+}
+
+#share-buttons{
+  padding-top:30px;
 }
 
 @media screen and (max-width: 600px) {
