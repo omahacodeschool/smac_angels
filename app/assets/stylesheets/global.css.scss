@@ -18,6 +18,7 @@ body{
 
 p {
   font-family: "HelveticaNeue-Light", helvetica, arial, sans-serif;
+  color:#7E7E7E;
 }
 
 b {
@@ -86,6 +87,14 @@ ul{
   padding-bottom: 25px;
 }
 
+.content-bottom-padding{
+  padding-bottom:100px;
+}
+
+.content-right-padding{
+  padding-right:30px;
+}
+
 .center-text{
   text-align: center;
 }
@@ -127,8 +136,8 @@ ul{
 
 .logo_top{
   float: left;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 10px;
+  margin-left: 30px;
 }
 
 .top-bar ul{
@@ -165,7 +174,7 @@ ul{
   border-right: 0;  
 }
 
-.top-bar a:hover, nav a:active {  
+.top-bar li a:hover, nav a:active {  
   background-color: #F75E11;  
   color:#FFF;
 } 
@@ -190,8 +199,8 @@ ul{
   color: rgba(255,255,255, 0.7);
   display: block;
   vertical-align:middle;
-  padding-top: 100px;
-  margin-top: 450px;
+  transition-property: all;
+  transition-duration: 1s;
 }
 
 .tagline-banner{
@@ -207,11 +216,17 @@ ul{
 
 .avatar-banner{
 //  float:left;
-  position: absolute;
-  margin-top: 195px;
+  position: relative;
+  top: 170px;
   border-radius: 100%;
-  border: 15px solid rgba(255,255,255, 0.7);
+  border: 15px solid rgba(255, 255, 255, 0.7);
   overflow: hidden;
+  max-width: 280px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 220px;
+  transition-property: all;
+  transition-duration: 2s;
 }
 
 .separator-banner{
@@ -228,8 +243,20 @@ ul{
   color: rgba(255,255,255, 0.7);
   display: block;
   vertical-align: middle;
-  margin-top: 190px;
+//  margin-top: 190px;
 }
+
+@media screen and (max-width: 660px) {
+  .name-banner {
+//    margin-top:-45px;
+    font-size: 30px;
+  }
+  .avatar-banner {
+    top:200px;
+    max-width: 285px;
+  }
+}
+
 
 /* `Footer
 ----------------------------------------------------------------------------------------------------*/
@@ -324,20 +351,3 @@ ul{
   }
      
 }
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-

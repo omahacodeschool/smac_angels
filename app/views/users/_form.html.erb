@@ -20,9 +20,9 @@
   </div>
   
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+  <div class="form-actions content-small-padding">
+    <%= f.submit "Submit", :class => 'button-link-blue' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                users_path, :class => 'btn' %>
+                users_path, :class => 'btn button-link-blue' %>
   </div>
 <% end %>
