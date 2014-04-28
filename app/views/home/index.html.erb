@@ -62,12 +62,9 @@
       <div class="gallery">
         <ul>
           <li class="large-4 columns small-12 columns">
-            <%= link_to :new_request do %>
-              <div class="add_to_gallery left">
-                <p>Request Monkey</p>
-                <a href="<%= new_request_path %>" class="hp fa fa-plus" title="New Request"></a>
-              </div>
-            <% end %>
+            <div id="idx_square">
+              <%= link_to image_tag("Request_Monkey.png"), new_request_path %>
+            </div>
           </li>
 
           <% @requests.each do |request| %>
