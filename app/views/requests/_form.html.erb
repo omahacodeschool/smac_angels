@@ -38,7 +38,7 @@
     <%= f.check_box :obo %>
   </div> -->
   
-  <div class="checkbox">
+  <div class="checkbox obo_check">
     <%= f.check_box :obo %>
     <%= f.label(:obo, "On behalf of someone else?") %>
   </div>
@@ -105,6 +105,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit 'Save', :class => "ctr_button" %>
+    <%= f.submit 'Save', :class => "ctr_button request_submit" %>
   </div>
 <% end %>

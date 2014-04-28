@@ -4,9 +4,9 @@ $(document).ready(function() {
 	$('.obo_check input:checkbox').removeAttr('checked')
 	$('.obo_check').change(function(){
     if(this.checked)
-        $('.obo_name').slideToggle('slow');
+        $('.obo_name').slideToggle('slow').trigger('autosize.resize');
     else
-        $('.obo_name').slideToggle('slow');
+        $('.obo_name').slideToggle('slow').trigger('autosize.resize');
   });
 
   $("a.fancybox").fancybox({

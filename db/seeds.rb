@@ -1,11 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities                    = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
+#encoding: utf-8
 
 
 
@@ -14,28 +7,29 @@ User.create(fname: "John", lname: "Doe", email: "john@example.com", password: "1
 
 Template.create([
   {
-  name: "Signup Confirmation",
-  content: "Hooray! Thank you for signing up, ((name))!"
-  },{
-  name: "Requestor Signup",
-  content: "((requestor)), thank you for signing up to receive a SMAC Monkey!"
-  },{
-  name: "Angel Signup",
-  content: "((angel)), thank you for signing up to give a SMAC Monkey!"
-  },{
-  name: "Shipping Notification for Angel",
-  content: "((angel)), your SMAC Monkey has shipped! We will notify you when the recipient posts photos with it!"
-  },{
-  name: "Shipping Notification for Requestor",
-  content: "MONKEY EN ROUTE!!! We're so excited! Please post a picture with your SMAC Monkey here once you receive it."
-  },{
-  name: "Feedback Notification for Angel",
-  content: "Thank you for contributing to SMAC Monkey. Your recipient just posted a photo with NoMo here!"
-  },{
-  name: "Feedback Notification for Requestor",
-  content: "Your photo has been posted! Your feedback helps show others that they are not alone in their fight against cancer. Thank you for being a part of the SMAC Monkey program."
+    name: "Signup Confirmation",
+    content: "Hi there. Thank you so much for registering. You are one step closer to some SMAC! monkey mojo!\n\nYour email:((email))\n\n"
+    },{
+    name: "Requestor Signup",
+    content: "((requestor)), thank you for signing up to receive a SMAC Monkey!\n\nIt\’s time to SMAC! cancer to the curb and you will soon have ((monkey)) right by your side to help you!\n\nWe'll notify you when we have matched you with an angel. Sit tight!\n\nThanks,\nThe SMAC! Team"
+    },{
+    name: "Angel Signup", 
+    content: "((angel)),\n\nThank you so much for being a SMAC! Angel. Cancer can be a very lonely existence. Your generosity gives someone with cancer a true “creature comfort” that can be by their side at all times- reminding them no one fights it alone.\n\nAll you have to do is go to the SMAC! website, click on the \"Order SMAC! Monkeys Now\" tab and order ((monkey)). You can can input your recipient's name and address in the \"send to\" section, which is a separate address from your \"bill to\" address.  You'll see what we mean. You can also add a short message in the \"Ordering Instructions\" if you like.  \n\nYour gift today helps fulfill SMAC!s mission:\nComfort those with cancer\nInspire giving\nCreate social change\n\nWe cannot thank you enough. You are truly an angel. \nWith endless gratitude,\nThe SMAC! Team\n"
+    },{
+    name: "Shipping Notification for Angel", 
+    content: "((angel)),\nYour SMAC Monkey has shipped! We will notify you when the recipient posts photos with it!\n\nIf you have any questions, please email us at smacnation@smacancer.com.\n\nMay the SMAC! monkey mojo always be with you!\n\nHugzzzz,\nThe SMAC! Team\n"
+    },{
+    name: "Shipping Notification for Requestor", 
+    content: "SMAC! Monkey Mojo Alert!\n\nSurprise ((name))! \n\n((monkey)) is in the mail and on his way to you. He is more than ready to help you SMAC! that cancer to the curb...and do lots of snuggling too.\n\nYou have lots of people rooting for you, including ((angel), who is your SMAC! Angel, and gifted your monkey to you.\n\nWe would LOVE to see you and your SMAC! monkey ((monkey)) together! Just simply upload a picture to URL where we can see the awesomeness that is you with new your cancer-crushing companion... and cheer you both on! \n\nIf you have any questions or trouble uploading your pic, please email us at smacnation@smacancer.com.\n\nMay the SMAC! monkey mojo always be with you!\n\nHugzzzz,\nThe SMAC! Team"
+    },{
+    name: "Feedback Notification for Angel",
+    content: "Hello amazing SMAC! Angel!\n\nYour recipient has uploaded a photo of themselves with their SMAC! monkey! Just login and go to your profile. You'll see their photo has been updated!\n\nLook at the awesomeness you created! Your generosity put a loveable “creature comfort” into the arms of someone who really needed it.\n\nWe absolutely cannot thank you enough for taking part in the SMAC! movement - a global SMAC!-down on cancer -  one cancer warrior and one SMAC! monkey at a time!\nGIVING feels so good, doesn’t it?\n\nThe SMAC! Team\n"
+    },{
+    name: "Feedback Notification for Requestor", 
+    content: "Hello SMAC!-er!\n\nYou are now officially part of SMAC! Nation and we SO hope your SMAC! monkey is bringing you lots of love, smiles, hugs, kisses and even a little mischief.  A word of warning: If you haven’t noticed already SMAC! monkeys love chocolate. Just sayin’.\n\nWe want to thank you for sharing your story and inviting a SMAC! monkey ((monkey)) to be part of your cancer journey. They never get tired of helping you SMAC! it. You can always count on their support. NO. MATTER. WHAT. No one fights it alone!\n\nAlso, thanks a million for posting your picture. We LOVE it. We sincerely hope you know you’re now part of a very caring community. SMAC! Nation is full of cancer warriors just like you with crazy-haired monkeys by their side, too.  We have a big mission - a global SMAC!-down on cancer. And, we’re doing it…together!!! SMAC! POWER!\n\nSMAC! on warrior friend. SMAC! on.\n\nThe SMAC! Team"
   }
 ])
+
 
 # :email, :password, :password_confirmation, :fname, :lname, :is_admin
 User.create([
