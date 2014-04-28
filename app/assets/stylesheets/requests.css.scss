@@ -190,15 +190,6 @@ input[type=submit].submit-button:hover {
   max-width: none;
 }
 
-#facebook-comments{
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 0;
-}
-
 #share-buttons{
   padding-top:30px;
 }
@@ -214,7 +205,6 @@ input[type=submit].submit-button:hover {
     margin: 0 5px;
     margin-top: 10px;
   }
-    
 }
 
 //Admin Controls -------------------------------------------------------------------------------
@@ -274,3 +264,12 @@ input[type=submit].submit-button:hover {
   background-color: rgba(0,150,225,0.2);
 }
     
+//Tables -------------------------------------------------------------------------------------------
+
+table {
+  color:#7B7B7B;
+}
+
+th {
+  color:#3299BB;
+}
