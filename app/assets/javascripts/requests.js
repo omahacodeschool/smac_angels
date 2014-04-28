@@ -3,10 +3,11 @@ $(document).ready(function() {
 	$('.obo_name').hide();
 	$('.obo_check input:checkbox').removeAttr('checked')
 	$('.obo_check').change(function(){
-    if(this.checked)
+    if(this.checked) {
         $('.obo_name').slideToggle('slow').trigger('autosize.resize');
-    else
+    }else{
         $('.obo_name').slideToggle('slow').trigger('autosize.resize');
+      }
   });
 
   $("a.fancybox").fancybox({
@@ -34,6 +35,7 @@ $(document).ready(function() {
     }
         );
     if params[:nominate] === true {
-      $(page.click('.obo_check'))
+      $('.obo_name').hide();
+      $(page.click('.obo_check'));
     }
 });

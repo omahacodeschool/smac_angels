@@ -44,12 +44,11 @@ class RequestsController < ApplicationController
   # GET /requests/new
   # GET /requests/new.json
   def new
+    @request = Request.new
     if params[:nominate]
-      @request = Request.new
       @request.obo = true
-    else
-      @request = Request.new
     end
+        
     @sockmonkeys = Sockmonkey.all
     respond_to do |format|
       format.html # new.html.erb
