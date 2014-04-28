@@ -1,7 +1,7 @@
 <div id="controller_requests" class="requests-show-banner">
   <div class="row">
     <!-- placeholder for @request.requestor.fname -->
-    <div class="large-4 large-centered small-6 small-centered columns">
+    <div class="large-4 large-centered small-12 small-centered columns">
       <div class="avatar-banner">
         <% if @request.before_photo_url.url == nil %>
           <%= image_tag("profile.png") %>
@@ -26,7 +26,7 @@
       </div>
       
       <% if current_user && (@request.requestor_id == @user_id || is_admin?) %>
-        <div class="row content-small-padding center-text">
+        <div class="row content-small-padding center-text edit-buttons">
           <%= link_to 'Edit', edit_request_path(@request), :class => "button-link" %> &nbsp;
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       user_path(@request),
@@ -74,11 +74,9 @@
 
 <% if is_admin? %>
   <div class="row full-width-admin center-text">
-    <div class="large-1 admin-box columns">
-    </div>
 
-      <%= link_to("/emails/new?request_id=#{@request.id}&to_id=#{@request.requestor_id}") do %>
-      <div class="large-2 small-6 admin-box columns mobile-hide">
+    <!-- <%= link_to(new_email_path) do %> -->
+      <div class="large-2 small-6 admin-box columns">
         email requestor
       </div>
     <% end %>
@@ -110,17 +108,16 @@
     <% end %>
     
     <%= link_to(request_path(@request.id), :method => :delete) do %>
-      <div class="large-2 small-12 admin-box columns">
+      <div class="large-2 small-6 admin-box columns">
         delete request
       </div>
     <% end %>
     <%= link_to(request_ship_path(@request.id)) do %>
-      <div class="large-2 small-12 admin-box columns">
+      <div class="large-2 small-6 admin-box columns">
         mark shipped
       </div>
     <% end %>
-    <div class="large-1 admin-box columns mobile-hide">
-    </div>
+
   </div>
 <% end %>
 
@@ -168,7 +165,7 @@
   <br>
   <br>
   <% if is_admin? %>
-    <h2>Status Log</h2>
+    <h2 class="content-small-padding">Status Log</h2>
     <table class="status_log">
       <thead>
         <tr>
@@ -189,7 +186,7 @@
     <br>
     <br>
     
-    <h2>Email Log</h2>
+    <h2 class="content-small-padding">Email Log</h2>
     <table class="email_log">
       <thead>
         <tr>
@@ -246,6 +243,6 @@
       <script type = "text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
   </div>
 
-          <div class="fb-comments large-12 small-12 columns" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>" data-width="500" data-num-posts="10"></div>
+          <div class="fb-comments large-12 small-12 columns" data-href="http://smac-angels-staging.herokuapp.com/requests/<%=@request.id%>"  data-num-posts="10"></div>
 
 </div>
