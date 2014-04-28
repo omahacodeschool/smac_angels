@@ -40,11 +40,11 @@
 
       <% @requests.each do |request| %>
     
-        <div class="request large-3 small-11 columns">
+        <div class="request large-3 small-11 columns left">
           <% if request.before_photo_url_url.nil? %>
-            <%= link_to image_tag("profile.png").html_safe, request_path(request.id), :class => 'left' %>
+            <%= link_to image_tag("profile.png").html_safe, request_path(request.id) %>
           <% else %>
-            <%= link_to image_tag(request.before_photo_url_url(:thumb), :alt => "user avatar"), request_path(request.id), :class => 'left' %>
+            <%= link_to image_tag(request.before_photo_url_url(:thumb), :alt => "user avatar"), request_path(request.id) %>
           <% end %>
 
         </div>
