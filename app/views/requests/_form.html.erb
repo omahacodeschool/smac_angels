@@ -19,11 +19,11 @@
       <ul>
         <% @sockmonkeys.each do |monkey| %>
           <li>
-            <%= f.label :sockmonkey_id, image_tag(monkey.image_url, height: '100', width: '100'), :value => monkey.id %>
+            <%= f.label :sockmonkey_id, image_tag(monkey.image_url, height: '80', width: '80'), :value => monkey.id, :class => "monkey_pic"%>
             
             <div id="monkey_name">
               <%= link_to "#{monkey.name}", sockmonkey_path(monkey.id), :class => "fancybox", :rel => "sockmonkey", :title => monkey.name %>
-              <%= f.radio_button :sockmonkey_id, monkey.id %>
+              <%= f.radio_button :sockmonkey_id, monkey.id, :class => "big_button" %>
             </div>
           </li>
         <% end %>
