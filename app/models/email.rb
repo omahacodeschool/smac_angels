@@ -58,7 +58,7 @@ class Email < ActiveRecord::Base
       
       if request.sockmonkey_id
         sockmonkey = Sockmonkey.find(request.sockmonkey_id)
-        email.content = email.content.gsub "((sockmonkey))", sockmonkey.name
+        email.content = email.content.gsub "((monkey))", sockmonkey.name
       end
 
       if request.angel_id

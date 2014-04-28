@@ -1,4 +1,7 @@
 class TemplatesController < ApplicationController
+  before_filter :require_login
+  before_filter :only_admin
+  
   # GET /templates
   # GET /templates.json
   def index
