@@ -65,6 +65,7 @@
   width: 100%;
   position: relative;
   margin-bottom: 25px;
+  margin-top: 125px;
 }
 
 .gallery ul{
@@ -140,12 +141,17 @@
   transition: all 1s ease;
   opacity: 0.5;
   overflow: hidden;
-  height: 554px;
+  height: auto;
 }
 
 .add_to_gallery:hover {
   opacity: 0.60;
   color: #424242;
+}
+
+.add_to_gallery a {
+  height: 100%;
+  width: 100%;
 }
 
 .add_to_gallery p {
@@ -617,14 +623,7 @@ nav a#pull {
 /* `Parallax scrolling
 ----------------------------------------------------------------------------------------------------*/ 
 
-#screen3 {  
-  margin: 0 auto; 
-  width: 100%; 
-  position: relative; 
-  padding: 100px 0;
-}
-
-#screen4 { 
+#screen1 { 
   position: relative;
   background: url("SMAC_1.jpg") 50% 0 fixed;
   background-repeat: no-repeat;
@@ -634,18 +633,6 @@ nav a#pull {
   bottom: 0;
   position: relative; 
   padding: 200px 0;
-}
-
-//#screen4 .image{
-//  background-position: 0px -150px;
-//}
-
-#screen5 { 
-  margin: 0 auto; 
-  width: 100%; 
-  position: relative; 
-  padding: 25px 0;
-  color: #fff;
 }
 
 
