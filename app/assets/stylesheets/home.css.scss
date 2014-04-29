@@ -129,10 +129,13 @@
   height: 75%;
 }
 
-.add_to_gallery {
-  position: relative;
-  display: block;
-  margin: 5px 10px 0 10px;
+#icon_link{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
   background-color: #f1712f;
   color: #fff;
   font-size: 16px;
@@ -140,26 +143,30 @@
   font-weight: bold;
   transition: all 1s ease;
   opacity: 0.5;
-  overflow: hidden;
-  height: auto;
+  overflow: hidden; 
 }
 
-.add_to_gallery:hover {
+#icon_link:hover{
   opacity: 0.60;
   color: #424242;
 }
 
-.add_to_gallery a {
+.add_to_gallery a{
+  position: relative;
+  
   height: 100%;
   width: 100%;
 }
 
-.add_to_gallery p {
+.add_to_gallery p{
+  position: absolute;
+  top: 0;
+  z-index: 1;
   color: #E9E9E9;
   font-size: 24px;
 }
 
-.hp.fa.fa-plus {
+.hp.fa.fa-plus{
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
@@ -167,10 +174,10 @@
   color: #F39A7E;
   font-size: 400px;
   text-align: center;
-  margin-top: 35px;
+  //margin-top: 35px;
 }
 
-.hp.fa.fa-plus:hover {
+.hp.fa.fa-plus:hover{
   color: #E9E9E9;
 }
 

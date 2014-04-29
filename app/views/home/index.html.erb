@@ -62,12 +62,21 @@
       <div class="gallery">
         <ul>
           <li class="large-4 columns small-12 columns">
-            <%= link_to :new_request do %>
-              <div class="add_to_gallery left">
-                <p>Request Monkey</p>
-                <a href="<%= new_request_path %>" class="hp fa fa-plus" title="New Request"></a>
+            <!-- <div id="idx_square_placeholder">
+              <%= link_to image_tag("Request_Monkey.png"), new_request_path %>
+            </div> -->
+                   
+              <!-- Works, but put link into it's own div container set as absolute. then can move icon independently. -->
+              <div class="add_to_gallery">
+                <img src="assets/Request_Monkey.png" width="100%" height="auto" position: "relative; z-index: 1;" />
+                <div id="icon_link">
+                  <p>Request Monkey</p>
+                  <%= link_to :new_request do %>
+                  <a href="<%= new_request_path %>" class="hp fa fa-plus" title="New Request"></a>
+                  <% end %>
+                </div>
               </div>
-            <% end %>
+            
           </li>
 
           <% @requests.each do |request| %>
