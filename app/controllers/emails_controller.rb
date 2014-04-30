@@ -4,7 +4,7 @@ class EmailsController < ApplicationController
   
   # Show all emails
   def index
-    @emails = Email.all
+    @emails = Email.order('id DESC')
     # @emails = Email.joins(:event).select("emails.*, http://events.name as ename").order('created_at DESC')
   end
 

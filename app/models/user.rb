@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   def shortname
   	"#{fname} #{lname[0]}."
   end
+  
+  def name
+    "#{fname} #{lname}"
+  end
 end
