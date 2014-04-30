@@ -1,8 +1,17 @@
-$(document).ready(function() {
 
-	$('.obo_name').hide();
-	$('.obo_check input:checkbox').removeAttr('checked')
-	$('.obo_check').change(function(){
+
+$(document).ready(function() {
+  
+	if($("#nominate").data("nominate")===true){
+	  $('.obo_name').hide();
+    $('.obo_name').slideToggle('slow').trigger('autosize.resize');
+	  $('.obo_check input:checkbox').prop('checked',true);
+  }else{
+    $('.obo_name').hide();
+    $('.obo_check input:checkbox').removeAttr('checked')
+  };
+  
+  $('.obo_check').change(function(){
     if(this.checked) {
         $('.obo_name').slideToggle('slow').trigger('autosize.resize');
     }else{
@@ -34,8 +43,4 @@ $(document).ready(function() {
       $("#story").hide().html(originalText).fadeIn('easing');
     }
         );
-    if params[:nominate] === true {
-      $('.obo_name').hide();
-      $(page.click('.obo_check'));
-    }
-});
+  });
