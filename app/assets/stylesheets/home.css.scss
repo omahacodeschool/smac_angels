@@ -98,12 +98,17 @@
 //  height: 100%;
 //  width: 100%;
 //}
+#idx_square {
+  transition: all 0.2s ease-in-out;
+}
 
 #idx_square:hover {
-  -webkit-transform: scale(1);
-  border: 3px solid #f1712f;
-  transition: all .1s ease;
-  z-index: .5;
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+  box-shadow: 5px 5px 5px #888888;
+//  border: 3px solid #f1712f;
+  transition: all 0.05s ease-in-out;
+  z-index: 1;
 }
 
 #idx_square p{
@@ -421,18 +426,18 @@ a {text-decoration: none;}
 .fixed {
 	position: fixed; 
 	top: 0; 
-	height: 100px; 
-	z-index: 1;
+	height: 70px; 
+	z-index: 10;
 }
 
 /* Navigation Settings */
 nav {
   position: absolute;
-  bottom: 6vh;
+  bottom: 5vh;
   width: 100%;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 1;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 10;
 }
 
 nav ul{
@@ -445,7 +450,7 @@ nav ul{
 nav li {
   display: inline-block;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 10px;
   //padding: 24px 10px;
 }
 
@@ -457,12 +462,12 @@ nav a {
   text-decoration: none;  
   line-height: 40px;  
   font-family: 'Lato', sans-serif;
-  padding-top:10px;
+  padding-top:5px;
 }  
 
 nav li a {  
   border-right: 1px solid #E9E9E9;
-  padding-bottom: 10px;    
+  padding-bottom: 5px;    
 }  
 
 nav li:last-child a {  
@@ -492,7 +497,7 @@ nav a#pull {
 
 .logo_bott{
   float: left;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-left: 20px;
 }
 
@@ -508,7 +513,7 @@ nav a#pull {
   nav {  
     position: fixed; 
     top: 0; 
-    z-index: 1;
+    z-index: 10;
     background: none; 
   }  
 
@@ -516,7 +521,7 @@ nav a#pull {
     width: 100%;  
     display: block;  
     height: auto;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     z-index: 1;  
   }  
 
