@@ -27,12 +27,8 @@
       
       <% if current_user && (@request.requestor_id == @user_id || is_admin?) %>
         <div class="row content-small-padding center-text edit-buttons">
-          <%= link_to 'Edit', edit_request_path(@request), :class => "button-link" %> &nbsp;
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      user_path(@request),
-                      :method => 'delete',
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => "button-link btn-danger" %>
+          <%= link_to 'Edit', edit_request_path(@request), :class => "button-link", :title => "Edit this request" %> &nbsp;
+          <%= link_to 'Delete', request_path(@request), :method => 'delete', :data => { :confirm => 'Are you sure?' }, :class => "button-link btn-danger" %>
         </div>
       <% end %>
       
@@ -114,7 +110,7 @@
       </div>
     <% end %>
     <%= link_to(request_ship_path(@request.id)) do %>
-      <div class="large-2 small-6 admin-box columns">
+      <div class="large-2 small-12 admin-box columns">
         mark shipped
       </div>
       <div class="large-1 small-0 admin-box mobile-hide columns"></div>
