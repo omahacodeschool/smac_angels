@@ -5,7 +5,7 @@ class TemplatesController < ApplicationController
   # GET /templates
   # GET /templates.json
   def index
-    @templates = Template.all
+    @templates = Template.order('id ASC')
 
     respond_to do |format|
       format.html # index.html.erb
