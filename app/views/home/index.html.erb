@@ -1,6 +1,6 @@
 <body>
   
-<section id="screen1">
+<section>
    
   <%= render :partial => 'layouts/nav' %>
   
@@ -32,15 +32,21 @@
 
 </section>
 
-<section id="screen2">  
+<section>  
     
     <div class="row full-width"></div>
       <div class="gallery">
         <ul>
-          <li class="large-4 columns small-12 columns">
-            <div id="idx_square">
-              <%= link_to image_tag("Request_Monkey.png"), new_request_path %>
-            </div>
+          <li class="large-4 columns small-12 columns">    
+              <div class="add_to_gallery">
+                <img src="assets/Request_Monkey.png" width="99.9%" height="auto" position: "relative; z-index: 1;" />
+                <div id="icon_link">
+                  <p>Request Monkey</p>
+                  <%= link_to :new_request do %>
+                  <a href="<%= new_request_path %>" class="hp fa fa-plus" title="New Request"></a>
+                  <% end %>
+                </div>
+              </div>
           </li>
 
           <% @requests.each do |request| %>
@@ -84,7 +90,7 @@
     
 </section>        
     
-<section id="screen3">
+<section>
     
     <div class="options">
       <div class="row">
@@ -123,7 +129,7 @@
     
 </section>     
     
-<section id="screen4" data-speed="6" data-type="background">   
+<section id="screen1" data-speed="6" data-type="background">   
     
     <div class="row full-width"></div>
       <div id="q_bkgrd">
@@ -143,7 +149,7 @@
     
 </section>
     
-<section id="screen5" data-speed="6" data-type="background">    
+<section>    
     
     <div class="features">
       <div class="row featurette">

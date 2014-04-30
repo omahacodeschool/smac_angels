@@ -65,6 +65,7 @@
   width: 100%;
   position: relative;
   margin-bottom: 25px;
+  margin-top: 125px;
 }
 
 .gallery ul{
@@ -126,52 +127,64 @@
 
 .gallery li div img.ribbon{
   position: absolute;
-  bottom: 0px;
+  bottom: -1px;
   right: 0px;
   z-index: .75;
   width: 75%;
   height: 75%;
 }
 
-.add_to_gallery {
-  position: relative;
-  display: block;
-  margin: 5px 10px 0 10px;
-  background-color: #f1712f;
+#icon_link{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: #3299BB;
   color: #fff;
   font-size: 16px;
   text-align: center;
   font-weight: bold;
   transition: all 1s ease;
   opacity: 0.5;
-  overflow: hidden;
-  height: 554px;
+  overflow: hidden; 
 }
 
-.add_to_gallery:hover {
-  opacity: 0.60;
-  color: #424242;
+#icon_link:hover{
+  background: #3299BB;
+  opacity: 1;
 }
 
-.add_to_gallery p {
+#icon_link a{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+#icon_link p{
+  position: relative;
+  top: 0;
+  z-index: 1;
   color: #E9E9E9;
-  font-size: 24px;
+  font-size: 3vh;
 }
 
-.hp.fa.fa-plus {
+.hp.fa.fa-plus{
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
-  color: #F39A7E;
-  font-size: 400px;
+  color: #E9E9E9;
+  font-size: 50vh;
   text-align: center;
-  margin-top: 35px;
+  //opacity: 0.5;
 }
 
-.hp.fa.fa-plus:hover {
-  color: #E9E9E9;
-}
+//.hp.fa.fa-plus:hover{
+//  color: #E9E9E9;
+//  opacity: 1;
+//}
 
 /* `3 calls to action
 ----------------------------------------------------------------------------------------------------*/
@@ -602,10 +615,6 @@ nav a#pull {
     text-align: center;
   }
   
-  .add_to_gallery {
-    height: 385px;
-  }
-  
   .hp.fa.fa-plus {
     font-family: FontAwesome;
     font-style: normal;
@@ -622,15 +631,7 @@ nav a#pull {
 /* `Parallax scrolling
 ----------------------------------------------------------------------------------------------------*/ 
 
-#screen3 {  
-  margin: 0 auto; 
-  width: 100%; 
-  position: relative; 
-  padding: 100px 0;
-  z-index: -1;
-}
-
-#screen4 { 
+#screen1 { 
   position: relative;
   background: url("SMAC_1.jpg") 50% 0 fixed;
   background-repeat: no-repeat;
@@ -640,18 +641,6 @@ nav a#pull {
   bottom: 0;
   position: relative; 
   padding: 200px 0;
-}
-
-//#screen4 .image{
-//  background-position: 0px -150px;
-//}
-
-#screen5 { 
-  margin: 0 auto; 
-  width: 100%; 
-  position: relative; 
-  padding: 25px 0;
-  color: #fff;
 }
 
 
