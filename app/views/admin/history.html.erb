@@ -1,4 +1,22 @@
-<% @request.each do |req| %>
-  <% requestor = User.find(req.requestor_id) %>
-  <%= link_to "#{requestor.lname}, #{requestor.fname}, #{req.current_status}", request_path(req.id) %><br/>
-<% end %>
+<div class="row center-text blue">
+  <h1>All Requests</h1>
+  
+  <%= render :partial => 'admin/adminnav' %>
+</div>
+  
+<table class="table table-striped center">
+  <thead>
+    <th>ID</th>
+    <th>Requestor</th>
+    <th>Status</th>
+  </thead>
+  <tbody>
+    <% @request.each do |request| %>
+      <tr>
+        <td class="content-right-padding"><h1><%= link_to request.id, request %></h1></td>
+        <td class="content-right-padding"><%= request.requestor.shortname %></td>
+        <td class="content-right-padding"><%= request.current_status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -12,7 +12,7 @@ SmacAngel::Application.routes.draw do
   get "requests/unmatch/:id" => "requests#unmatch", :as => "request_unmatch"
   get "requests/match/:id" => "requests#match", :as => "request_match"
   get "requests/ship/:id" => "requests#ship", :as => "request_ship"
-  get "admin/index" => "admin#index", :as =>"admin_index"
+  get "admin" => "admin#index", :as =>"admin"
   get "admin/history" => "admin#history", :as => "request_history"
   resources :templates
   resources :emails

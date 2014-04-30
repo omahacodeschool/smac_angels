@@ -65,6 +65,7 @@
   width: 100%;
   position: relative;
   margin-bottom: 25px;
+  margin-top: -80px;
 }
 
 .gallery ul{
@@ -98,12 +99,17 @@
 //  height: 100%;
 //  width: 100%;
 //}
+#idx_square {
+  transition: all 0.2s ease-in-out;
+}
 
 #idx_square:hover {
-  -webkit-transform: scale(1);
-  border: 3px solid #f1712f;
-  transition: all .1s ease;
-  z-index: .5;
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+  box-shadow: 5px 5px 5px #888888;
+//  border: 3px solid #f1712f;
+  transition: all 0.05s ease-in-out;
+  z-index: 1;
 }
 
 #idx_square p{
@@ -121,52 +127,64 @@
 
 .gallery li div img.ribbon{
   position: absolute;
-  bottom: 0px;
+  bottom: -1px;
   right: 0px;
   z-index: .75;
   width: 75%;
   height: 75%;
 }
 
-.add_to_gallery {
-  position: relative;
-  display: block;
-  margin: 5px 10px 0 10px;
-  background-color: #f1712f;
+#icon_link{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: #3299BB;
   color: #fff;
   font-size: 16px;
   text-align: center;
   font-weight: bold;
   transition: all 1s ease;
   opacity: 0.5;
-  overflow: hidden;
-  height: 554px;
+  overflow: hidden; 
 }
 
-.add_to_gallery:hover {
-  opacity: 0.60;
-  color: #424242;
+#icon_link:hover{
+  background: #3299BB;
+  opacity: 1;
 }
 
-.add_to_gallery p {
+#icon_link a{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+#icon_link p{
+  position: relative;
+  top: 0;
+  z-index: 1;
   color: #E9E9E9;
-  font-size: 24px;
+  font-size: 3vh;
 }
 
-.hp.fa.fa-plus {
+.hp.fa.fa-plus{
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
-  color: #F39A7E;
-  font-size: 400px;
+  color: #E9E9E9;
+  font-size: 50vh;
   text-align: center;
-  margin-top: 35px;
+  //opacity: 0.5;
 }
 
-.hp.fa.fa-plus:hover {
-  color: #E9E9E9;
-}
+//.hp.fa.fa-plus:hover{
+//  color: #E9E9E9;
+//  opacity: 1;
+//}
 
 /* `3 calls to action
 ----------------------------------------------------------------------------------------------------*/
@@ -421,18 +439,18 @@ a {text-decoration: none;}
 .fixed {
 	position: fixed; 
 	top: 0; 
-	height: 100px; 
-	z-index: 1;
+	height: 70px; 
+	z-index: 10;
 }
 
 /* Navigation Settings */
 nav {
   position: absolute;
-  bottom: 6vh;
+  bottom: 5vh;
   width: 100%;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 1;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 10;
 }
 
 nav ul{
@@ -445,7 +463,7 @@ nav ul{
 nav li {
   display: inline-block;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 10px;
   //padding: 24px 10px;
 }
 
@@ -457,19 +475,19 @@ nav a {
   text-decoration: none;  
   line-height: 40px;  
   font-family: 'Lato', sans-serif;
-  padding-top:10px;
+  padding-top:5px;
 }  
 
 nav li a {  
   border-right: 1px solid #E9E9E9;
-  padding-bottom: 10px;    
+  padding-bottom: 5px;    
 }  
 
 nav li:last-child a {  
   border-right: 0;  
 }
 
-nav a:hover, nav a:active {  
+nav ul a:hover {  
   background-color: #F75E11;  
   color:#FFF;
 } 
@@ -483,7 +501,7 @@ nav img{
 //}
 
 #screen1 {
-  height: 88vh;
+  height: 99vh;
 }
 
 nav a#pull {  
@@ -492,7 +510,7 @@ nav a#pull {
 
 .logo_bott{
   float: left;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-left: 20px;
 }
 
@@ -508,7 +526,7 @@ nav a#pull {
   nav {  
     position: fixed; 
     top: 0; 
-    z-index: 1;
+    z-index: 10;
     background: none; 
   }  
 
@@ -516,7 +534,7 @@ nav a#pull {
     width: 100%;  
     display: block;  
     height: auto;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     z-index: 1;  
   }  
 
@@ -597,10 +615,6 @@ nav a#pull {
     text-align: center;
   }
   
-  .add_to_gallery {
-    height: 385px;
-  }
-  
   .hp.fa.fa-plus {
     font-family: FontAwesome;
     font-style: normal;
@@ -617,15 +631,7 @@ nav a#pull {
 /* `Parallax scrolling
 ----------------------------------------------------------------------------------------------------*/ 
 
-#screen3 {  
-  margin: 0 auto; 
-  width: 100%; 
-  position: relative; 
-  padding: 100px 0;
-  z-index: -1;
-}
-
-#screen4 { 
+#screen2 { 
   position: relative;
   background: url("SMAC_1.jpg") 50% 0 fixed;
   background-repeat: no-repeat;
@@ -635,18 +641,6 @@ nav a#pull {
   bottom: 0;
   position: relative; 
   padding: 200px 0;
-}
-
-//#screen4 .image{
-//  background-position: 0px -150px;
-//}
-
-#screen5 { 
-  margin: 0 auto; 
-  width: 100%; 
-  position: relative; 
-  padding: 25px 0;
-  color: #fff;
 }
 
 

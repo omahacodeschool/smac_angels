@@ -1,0 +1,40 @@
+#sockmonkeys .center {
+  margin: 0 auto;
+}
+
+#sockmonkeys table th {
+  color: white;
+}
+
+#sockmonkeys table {
+  top: -23px;
+  position: relative;
+}
+
+#sockmonkeys #email_detail {
+  margin: 0 20px;
+}
+
+#sockmonkeys #monkey_form {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  
+  .field {
+    margin: 15px 0;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+}
+
+#sockmonkeys .new {
+  padding: 30px 0;
+  margin-bottom: 30px;
+}
+
+#sockmonkeys .submit-button {
+  padding: 10px 20px;
+  border: 1px solid white;
+}
