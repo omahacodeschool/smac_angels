@@ -151,6 +151,7 @@ class RequestsController < ApplicationController
     @request.angel_id = nil
     @request.current_status = 0
     @request.save
+    
     Status.create(:request_id => @request.id, :status => 'Unmatched by Admin')
     
     redirect_to(request_path(@request.id))
@@ -159,7 +160,14 @@ class RequestsController < ApplicationController
   def match
     @request=Request.find(params[:id])
     
+    @request.current_status = 10
+    @request.angel = current_user
+    @request.save
+    
     Status.create(:request_id => @request.id, :status => 'Matched by Admin')
+    
+    # Sed email to requestor
+    Email.new.send_email("Shipping Notification for Angel", User.find(self.angel_id), self.id)
     
     redirect_to(request_path(@request.id))
   end
@@ -169,7 +177,10 @@ class RequestsController < ApplicationController
     
     @request.current_status = 10
     Status.create(:request_id => @request.id, :status => 'Shipped')
+    
     # Send email to both requestor and angel
+    Email.new.send_email("Shipping Notification for Angel", User.find(self.angel_id), self.id)
+    Email.new.send_email("Shipping Notification for Requestor", User.find(self.requestor_id), self.id)
     
     @request.save
     

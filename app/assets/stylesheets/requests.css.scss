@@ -40,6 +40,11 @@ $mac-lightgray: #E9E9E9;
     font-size:30px;
     padding-top:100px;
   }
+  .requests {
+    margin: 0 auto;
+    width: 250px;
+    float: none;
+  }
 }
 
 .storytime{
@@ -48,10 +53,6 @@ $mac-lightgray: #E9E9E9;
 }
 
 .private-box{
-  float:right;
-//  border:5px solid black;
-//  width:25%;
-//  min-width: 50px;
   height:135px;
   background-color:#E9E9E9;
   padding-top:50px;
@@ -248,7 +249,6 @@ input[type=submit].submit-button {
 }
 
 .admin-box{
-  float:right;
   height:80px;
   background-color:#424242;
   padding-top:30px;
