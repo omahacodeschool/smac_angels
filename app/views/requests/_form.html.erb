@@ -1,4 +1,4 @@
-<div class="request-background content-padding">
+<div class="request-background">
 <%= form_for request do |f| %>
   <% if params[:nominate] == "true" %>
     <div id="nominate" data-nominate="true"></div>
@@ -21,30 +21,24 @@
     </div>
   <% end %>
 
-      <div class="monkeys center">
-        <p class="center">Choose a sock monkey!<br><br>Click my name to learn more about me.</p>
-          <ul>
-            <% @sockmonkeys.each do |monkey| %>
-              <li>
-                <%= f.label :sockmonkey_id, image_tag(monkey.image_url, height: '80', width: '80'), :value => monkey.id, :class => "monkey_pic"%>
-            
-                <div id="monkey_name">
-                  <%= link_to "#{monkey.name}", sockmonkey_path(monkey.id), :class => "fancybox", :rel => "sockmonkey", :title => monkey.name %>
-                  <%= f.radio_button :sockmonkey_id, monkey.id, :class => "big_button" %>
-                </div>
-              </li>
-            <% end %>
-          </ul>
-      </div>
-  
-      <%= f.hidden_field :requestor_id, :value => session[:user_id] %>
-  
-  <!-- <div class="checkbox">
-    <div id="cbox_label">On behalf of someone else?</div>
-    <%= label_tag(:obo, "") %>
-    <%= f.check_box :obo %>
-  </div> -->
+  <p class="center">Choose a sock monkey!<br><br>Click my name to learn more about me.</p>
+    <div class="monkeys center">
+      <% @sockmonkeys.each do |monkey| %>
 
+        <div class="monkey left">
+          <%= f.label :sockmonkey_id, image_tag(monkey.image_url, height: '80', width: '80'), :value => monkey.id, :class => "monkey_pic"%>
+          <%= f.radio_button :sockmonkey_id, monkey.id, :class => "big_button2" %>
+
+          <div class="monkey_name">
+            <%= link_to "#{monkey.name}", sockmonkey_path(monkey.id), :class => "fancybox", :rel => "sockmonkey", :title => monkey.name %>
+          </div>
+
+        </div>
+      <% end %>
+  </div>
+  
+  <%= f.hidden_field :requestor_id, :value => session[:user_id] %>
+  
   <div class="checkbox obo_check">
     <%= f.check_box :obo %>
     <%= f.label(:obo, "On behalf of someone else?") %>

@@ -162,25 +162,11 @@ input[type="file"]::-webkit-file-upload-button:hover {
 
 .form input[type="radio"]{
   -webkit-appearance: none; 
-  -moz-appearance: none;
+  -moz-appearance: button-bevel;
 }
-
-.big_button{
-  position:relative;
-  width: 120px;
-  height: 120px;
-  background: #FFF;
-  margin-left: 10px;
-  top:-130px;
-  left:-45px;
-  border:solid 5px #000;
-  cursor:pointer;
-}
-
-.monkey_pic{
-  position:relative;
-  z-index:1;
-  cursor:pointer;
+.form input[type="radio"]:checked {
+  background-color: #F75E11;
+  box-shadow: 2px 2px #F75E11, -2px -2px #F75E11;
 }
 
 .form input[type="radio"]:checked{
@@ -292,37 +278,34 @@ input[type="file"]::-webkit-file-upload-button:hover {
   color: #E9E9E9;
 }
 
-.monkeys{
-  display: block;
-  height: 350px;
-  margin-top: 0px; //EDITED BY BACK END GUY _ SORRY
-}
+.monkeys {
+  margin: 0 auto 0 auto;
+  width: 280px;
+  padding: 20px 0 0 0;
 
-.monkeys ul{
-  display: block;
-  text-decoration: none;
-  margin-top: 50px;
 }
-
-.monkeys li{
-  display: inline-block;
-  text-decoration: none;
-  margin-left: 10px;
-  margin-right: 10px;
+.monkey {
+  padding: 0 10px;
 }
-
-.monkeys a{
-  color: #E9E9E9;
-  font-size: 24px;
-  //beware back end tom-foolery here//
-  position:relative;
-  top:-100px;
-  left:66px; 
-  //end tom-foolery//
+.monkey_pic {
+  padding: 0;
+  position: absolute;
+  margin: 12px 0 0 20px;
+  cursor: pointer;
+  z-index: 1;
 }
-
-#monkey_name{
-  margin-top: 15px;
+.monkey_name {
+  margin: 5px 0 0 0;
+}
+.monkey_name a {
+  color: #424242;
+}
+.big_button2 {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border: 2px solid #ccc;
 }
 
 /* `Responsive styles
