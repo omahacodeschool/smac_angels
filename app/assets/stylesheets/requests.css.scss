@@ -60,8 +60,14 @@
 .request a {
   width: 225px;
   height: 225px;
-  margin: 5px 10px 0 10px;
+  margin: 5px 0px 0 0px;
   /*transition: all 1s ease;*/
+}
+
+.less-side-padding{
+  margin-left:-16px;
+  margin-right:-16px;
+  margin-top:-3px;
 }
 
 /*.request a:hover {
@@ -289,4 +295,14 @@ table {
 
 th {
   color:#3299BB;
+}
+
+// Request Edit Form -------------------------------------------------------------------------------
+
+#request-edit-form p {
+  color:#E9E9E9;
+}
+
+.request-background {
+  background:#3299BB;
 }
