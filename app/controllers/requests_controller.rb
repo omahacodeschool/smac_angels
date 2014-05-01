@@ -56,6 +56,11 @@ class RequestsController < ApplicationController
     end
   end
 
+  def upload_after_photo
+    binding.pry
+    @request = Request.find(params["request_id"])
+  end
+
   # GET /requests/1/edit
   def edit
     @request = Request.find(params[:id])

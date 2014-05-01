@@ -4,8 +4,10 @@
     <div class="large-4 large-centered small-12 small-centered columns">
       <div class="avatar-banner">
         <% if current_user.id == @request.requestor_id %>
-          <% if @request.current_status >= 10 && @request.after_photo_url.nil? %>
-            prompt photo button
+          <% if @request.current_status >= 10 && @request.after_photo_url.blank? %>            
+              <%= link_to('/requests/upload_after_photo?request_id='<< @request.id.to_s, method = "get") do %>
+              <% image_tag("uploadmonkeyphoto.jpg")%>
+              <% end %>
           <% else %>
             <% if @request.before_photo_url.nil? %>
               <%= image_tag("profile.png") %>
@@ -22,8 +24,6 @@
             <%= image_tag("profile.png") %>
           <% end %>
         <% end %>            
-        
-        if current user = request.requestor_id & current_status >= 2345 & request.afterphotourl == nil
       </div>
     </div>
   </div>
