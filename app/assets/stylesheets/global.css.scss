@@ -1,3 +1,9 @@
+$mac-orange: #F75E11;
+$mac-blue: #3299BB;
+$mac-darkgray: #424242;
+$mac-gray: #BCBCBC;
+$mac-lightgray: #E9E9E9;
+
 * {
   .clear:before,
   .clear:after {
@@ -23,22 +29,22 @@ p {
 }
 
 b {
-  color:#3299BB;
+  color:$mac-blue;
 }
 
 a {
   text-decoration:none;
   transition-property: all;
   transition-duration: 0.5s;
-  color:#3299BB;
+  color:$mac-blue;
   
   &:hover {
-    color:#424242;
+    color:$mac-darkgray;
   }
 }
 
 h1, h2, h3, h4 {
-  color:#3299BB;
+  color:$mac-blue;
 }
 
 ul{
@@ -71,13 +77,13 @@ ul{
 
 .button-link-blue {
   padding: 15px 45px;
-  border: 1px solid #3299BB;
+  border: 1px solid $mac-blue;
   transition-property: all;
   transition-duration: 0.5s;
   
   &:hover {
     color: #FFF;
-    background: #3299BB;
+    background: $mac-blue;
   }
 }
 
@@ -122,7 +128,7 @@ ul{
 
 #controller_requests{
   position: relative;
-  background: lightgray;
+  background: $mac-lightgray;
   height: 500px;
   top: -20px
 }
@@ -153,12 +159,12 @@ ul{
     //padding: 24px 10px;
     a {  
       border-right: 1px solid #E9E9E9; 
-      color:#424242;
+      color:$mac-darkgray;
     } 
   }
   
   a {  
-    color: #424242;  
+    color: $mac-darkgray;  
     display: inline-block;  
     width: 100px;  
     text-align: center;  
@@ -185,7 +191,7 @@ ul{
 }
 
 .top-bar li a:hover, nav li a:active {  
-  background-color: #F75E11;  
+  background-color: $mac-orange;  
   color:#FFF;
 } 
 
@@ -266,7 +272,7 @@ ul{
 
 .top-footer{
   height: 110px;
-  background: #F75E11;
+  background: $mac-orange;
 }
 
 .footer-icons {
@@ -276,7 +282,7 @@ ul{
 
 .footer {
   padding: 1em;
-  background: #424242;
+  background: $mac-darkgray;
   display: block;
   bottom: 0;
   left: 0;
@@ -317,37 +323,37 @@ ul{
     top: 0; 
     z-index: 10;
     background: none; 
+    
+    a {  
+        text-align: left;  
+        width: 100%; 
+        text-align:center;
+      }
+    
+    ul {  
+        width: 100%;  
+        display: block;  
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 1;  
+      }  
+
+    li {  
+        width: 50%;  
+        float: left;  
+        position: relative;
+        margin-top: 0;  
+        
+        a {  
+            border-bottom: 1px solid $mac-lightgray;  
+            border-right: 1px solid $mac-lightgray;  
+          }  
+      }  
+      
+    img{
+        display: none;
+      }
   }  
-
-  .top-bar ul {  
-    width: 100%;  
-    display: block;  
-    height: auto;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 1;  
-  }  
-
-  .top-bar li {  
-    width: 50%;  
-    float: left;  
-    position: relative;
-    margin-top: 0;  
-  }  
-
-  .top-bar li a {  
-    border-bottom: 1px solid #E9E9E9;  
-    border-right: 1px solid #E9E9E9;  
-  }  
-
-  .top-bar a {  
-    text-align: left;  
-    width: 100%; 
-    text-align:center;
-  }
-
-  .top-bar img{
-    display: none;
-  }
   
   .logo_top{
     display: none;

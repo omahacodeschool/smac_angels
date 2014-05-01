@@ -1,3 +1,9 @@
+$mac-orange: #F75E11;
+$mac-blue: #3299BB;
+$mac-darkgray: #424242;
+$mac-gray: #BCBCBC;
+$mac-lightgray: #E9E9E9;
+
 /* `Applies to all
 ----------------------------------------------------------------------------------------------------*/
 
@@ -7,7 +13,7 @@
   font-family: 'Lato', sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: #E9E9E9;
+  color: $mac-lightgray;
   display: block;
 }
 
@@ -17,7 +23,7 @@
   font-family: 'Lato', sans-serif;
   font-size: 18px;
   font-weight: 700;
-  color: #424242;
+  color: $mac-darkgray;
   display:block;
   cursor: pointer;
 }
@@ -77,7 +83,7 @@ input[type="file"] {
   padding: 12px 45px;
   //padding: 8px;
   position: relative;
-  background: #3299BB;
+  background: $mac-blue;
   color: rgba(255,255,255, 0.5);
   border: 1px solid rgba(255,255,255, 0.5);
   overflow: hidden;
@@ -90,7 +96,7 @@ input[type="file"] {
 }
 
 input[type="file"]:after { /* Mask the no file chosen label */
-  background: #3299BB;
+  background: $mac-blue;
   content: '';
   display: block;
   height: 100%;
@@ -102,7 +108,7 @@ input[type="file"]:after { /* Mask the no file chosen label */
 }
 
 input[type="file"]::-webkit-file-upload-button { /* Style the button */
-  background: #3299BB;
+  background: $mac-blue;
   display: block;
   margin: 0 auto;
   color: rgba(255,255,255, 0.5);
@@ -136,7 +142,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
   margin-top: 0;
   margin-bottom: 10px;
   padding-top: 10px;
-  color: #E9E9E9;
+  color: $mac-lightgray;
   line-height: 18px;
 }
 
@@ -151,12 +157,12 @@ input[type="file"]::-webkit-file-upload-button:hover {
 }
 
 .form input[type="checkbox"]:checked{
-  background: #F75E11;
+  background: $mac-orange;
 }
 
 .checkbox label{
   margin-left: 10px;
-  color: #E9E9E9;
+  color: $mac-lightgray;
   line-height: 18px;
 }
 
@@ -165,12 +171,12 @@ input[type="file"]::-webkit-file-upload-button:hover {
   -moz-appearance: button-bevel;
 }
 .form input[type="radio"]:checked {
-  background-color: #F75E11;
-  box-shadow: 2px 2px #F75E11, -2px -2px #F75E11;
+  background-color: $mac-orange;
+  box-shadow: 2px 2px $mac-orange, -2px -2px #F75E11;
 }
 
 .form input[type="radio"]:checked{
-  background: #F75E11;
+  background: $mac-orange;
 }
 
 .ctr_button{
@@ -182,7 +188,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
   width: 300px;
   background: none;
   //background: #424242;
-  color: #E9E9E9;
+  color: $mac-lightgray;
   font-size: 24px;
   cursor: pointer;
   padding: 15px 45px;
@@ -215,7 +221,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 200px;
-  background: #3299BB;
+  background: $mac-blue;
   height: 600px;
   width: 100%;
 }
@@ -226,7 +232,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
 #login{
   display: block;
   margin: 100px auto 10px auto;
-  background: #3299BB;
+  background: $mac-blue;
   /*height: 650px;*/
   width: 100%;
   padding-bottom: 20px;
@@ -238,7 +244,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
   a {
     padding-top: 15px;
     &:hover{
-      color: #E9E9E9;
+      color: $mac-lightgray;
     }
   }
 }
@@ -246,7 +252,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
 .no_account {
   margin: 0 auto 200px auto;
   padding: 10px 0 30px 0;
-  background: #3299BB;
+  background: $mac-blue;
   width: 100%;
 }
 
@@ -266,7 +272,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 200px;
-  background: #3299BB;
+  background: $mac-blue;
   //height: 1775px;
   width: 100%;
   padding-bottom:40px;
@@ -276,7 +282,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
     margin: 0 auto;
     margin-top: 20px;
     padding-top: 17px;
-    color: #E9E9E9;
+    color: $mac-lightgray;
   }
 }
 
@@ -299,7 +305,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
 .monkey_name {
   margin: 5px 0 0 0;
   a {
-    color: #424242;
+    color: $mac-darkgray;
   }
 }
 
@@ -334,23 +340,3 @@ input[type="file"]::-webkit-file-upload-button:hover {
   } 
      
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

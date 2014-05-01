@@ -1,3 +1,9 @@
+$mac-orange: #F75E11;
+$mac-blue: #3299BB;
+$mac-darkgray: #424242;
+$mac-gray: #BCBCBC;
+$mac-lightgray: #E9E9E9;
+
 #controller_home{
   background: #FFF;
   height: 700px;
@@ -25,7 +31,7 @@
   font-family: 'Lato', sans-serif;
   font-size: 60px;
   font-weight: 700;
-  color: #F75E11;
+  color: $mac-orange;
   display:block;
 }
 
@@ -43,7 +49,7 @@
   font-family: 'Raleway', sans-serif;
   font-size: 32px;
   font-weight: 300;
-  color: #424242;
+  color: $mac-darkgray;
   display: block;
 }
 
@@ -66,44 +72,44 @@
   position: relative;
   margin-bottom: 25px;
   margin-top: -80px;
-}
-
-.gallery ul{
-  list-style-type: none;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-size: 0;
-}
-
-.gallery li div{
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
+  
+  ul{
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+  }
+  
+  li div{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
 }
 
 #idx_square {
-  background: #F75E11;
-}
-
-#idx_square:hover {
-  opacity: .5;
-  transition: all 0.25s ease-in-out;
-  z-index: 1;
-}
-
-#idx_square p{
-  z-index: .25;
-  font-size: 30px;
-  text-align: center;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  color: white;
-  position: absolute;
-  top: 10%;
-  font-family: "HelveticaNeue-Light", helvetica, arial, sans-serif;
+  background: $mac-orange;
+  
+  &:hover {
+    opacity: .5;
+    transition: all 0.25s ease-in-out;
+    z-index: 1;
+  }
+  
+  #idx_square p{
+    z-index: .25;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    position: absolute;
+    top: 10%;
+    font-family: "HelveticaNeue-Light", helvetica, arial, sans-serif;
+  }  
 }
 
 .gallery li div img.ribbon{
@@ -123,7 +129,7 @@
   height: 120px;
   width: 120px;
   margin: 0 auto;
-  background: #E9E9E9;
+  background: $mac-lightgray;
   border-radius: 100%;
   z-index: 0;
   margin-top: 75px;
@@ -134,14 +140,14 @@
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
-  color: #BCBCBC;
+  color: $mac-gray;
   font-size: 80px;
   margin-top: 19px;
   margin-left: 1px;
-}
-
-.fa-gift:hover {
-  color: #F75E11;
+  
+  &:hover {
+    color: $mac-orange;
+  }
 }
 
 .fa-heart {
@@ -149,14 +155,14 @@
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
-  color: #BCBCBC;
+  color: $mac-gray;
   font-size: 80px;
   margin-top: 23px;
   margin-left: 1px;
-}
-
-.fa-heart:hover {
-  color: #F75E11;
+  
+  &:hover {
+    color: $mac-orange;
+  }
 }
 
 .fa-bullhorn {
@@ -164,23 +170,23 @@
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
-  color: #BCBCBC;
+  color: $mac-gray;
   font-size: 80px;
   margin-top: 20px;
   margin-left: 1px;
-}
-
-.fa-bullhorn:hover {
-  color: #F75E11;
+  
+  &:hover {
+    color: $mac-orange;
+  }
 }
 
 .opt_text{
   padding-left: 20px;
   padding-right: 20px;
-}
-
-.opt_text p{
-  font-size: 18px;
+  
+  p{
+    font-size: 18px;
+  }
 }
 
 /* `Quotes section
@@ -215,30 +221,30 @@
 
 .qleft_icon {
   position: relative;
-}
- 
-.qleft_icon:before {
-  content: "\f10d"; 
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: none;
-  color: #424242;
-  font-size: 40px;
+  
+  &:before {
+    content: "\f10d"; 
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    color: $mac-darkgray;
+    font-size: 40px;
+  }
 }
 
 .qright_icon {
   position: relative;
-}
-
-.qright_icon:before {
-  content: "\f10e"; 
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: none;
-  color: #424242;
-  font-size: 40px;
+  
+  &:before {
+    content: "\f10e"; 
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    color: $mac-darkgray;
+    font-size: 40px;
+  }
 }
 
 #q_text{
@@ -247,7 +253,7 @@
   width: 60%;
   font-family: 'Lato', sans-serif;
   font-size: 40px;
-  color: #424242;
+  color: $mac-darkgray;
 }
 
 #quoter{
@@ -256,7 +262,7 @@
   font-style: italic;
   font-size: 30px;
   font-weight: 100;
-  color: #424242;
+  color: $mac-darkgray;
   padding-bottom: 25px;
 }
 
@@ -293,7 +299,7 @@
   padding-right: 40px;
   line-height: 24px;
   font-size: 18px;
-  color: #424242;
+  color: $mac-darkgray;
 }
 
 .feature-heading-right{
@@ -305,7 +311,7 @@
   margin-left: 40px;
   line-height: 24px;
   font-size: 18px;
-  color: #424242;
+  color: $mac-darkgray;
 }
 
 
@@ -313,49 +319,51 @@
   background-image: url("feature1.jpg");
   width: 377px;
   height: 377px;
-  border: 20px solid #E9E9E9;
+  border: 20px solid $mac-lightgray;
   border-radius: 100%;
   background-position: 0px -100px;
   background-size: 100%;
   background-repeat: no-repeat;
-}
-
-#f_img1:hover{
-  transition: all 2s ease;
-  border: 20px solid #F75E11;
+  
+  &:hover{
+    transition: all 2s ease;
+    border: 20px solid $mac-orange;
+  }
 }
 
 #f_img2{
   background-image: url("feature2.jpg");
   width: 377px;
   height: 377px;
-  border: 20px solid #E9E9E9;
+  border: 20px solid $mac-lightgray;
   border-radius: 100%;
   background-position: 0px 0px;
   background-size: 100%;
   background-repeat: no-repeat;
-}
-
-#f_img2:hover{
-  transition: all 2s ease;
-  border: 20px solid #F75E11;
+  
+  &:hover{
+    transition: all 2s ease;
+    border: 20px solid $mac-orange;
+  }
 }
 
 #f_img3{
   background-image: url("feature3.jpg");
   width: 377px;
   height: 377px;
-  border: 20px solid #E9E9E9;
+  border: 20px solid $mac-lightgray;
   border-radius: 100%;
   background-position: 0px 0px;
   background-size: 100%;
   background-repeat: no-repeat;
+  
+  &:hover{
+    transition: all 2s ease;
+    border: 20px solid #F75E11;
+  }
 }
 
-#f_img3:hover{
-  transition: all 2s ease;
-  border: 20px solid #F75E11;
-}
+
 
 /* `Navigation
 ----------------------------------------------------------------------------------------------------*/
@@ -380,49 +388,49 @@ nav {
   height: 70px;
   background-color: rgba(255, 255, 255, 0.95);
   z-index: 10;
-}
-
-nav ul{
-  padding: 0;
-  //text-align: center;
-  margin: 0;
-  float: right;
-}
-
-nav li {
-  display: inline-block;
-  margin: 0 auto;
-  margin-top: 10px;
-  //padding: 24px 10px;
-}
-
-nav a {  
-  color: #424242;  
-  display: inline-block;  
-  width: 100px;  
-  text-align: center;  
-  text-decoration: none;  
-  line-height: 40px;  
-  font-family: 'Lato', sans-serif;
-  padding-top:5px;
-}  
-
-nav li a {  
-  border-right: 1px solid #E9E9E9;
-  padding-bottom: 5px;    
-}  
-
-nav li:last-child a {  
-  border-right: 0;  
-}
-
-nav ul a:hover {  
-  background-color: #F75E11;  
-  color:#FFF;
-} 
-
-nav img{
-  height: 60px;
+  
+  ul{
+    padding: 0;
+    //text-align: center;
+    margin: 0;
+    float: right;
+    
+    a:hover {  
+      background-color: $mac-orange;  
+      color:#FFF;
+    } 
+  }
+  
+  li {
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 10px;
+    //padding: 24px 10px;
+    
+    a {  
+      border-right: 1px solid #E9E9E9;
+      padding-bottom: 5px;    
+    }  
+    
+    &:last-child a {  
+      border-right: 0;  
+    }
+  }
+  
+  a {  
+    color: $mac-darkgray;  
+    display: inline-block;  
+    width: 100px;  
+    text-align: center;  
+    text-decoration: none;  
+    line-height: 40px;  
+    font-family: 'Lato', sans-serif;
+    padding-top:5px;
+  }  
+  
+  img{
+    height: 60px;
+  }
 }
 
 //section {
@@ -457,37 +465,38 @@ nav a#pull {
     top: 0; 
     z-index: 10;
     background: none; 
+    
+    ul {  
+        width: 100%;  
+        display: block;  
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.95);
+        z-index: 1;  
+      }  
+      
+    li {  
+        width: 50%;  
+        float: left;  
+        position: relative;
+        margin-top: 0;  
+        
+        a {  
+            border-bottom: 1px solid $mac-lightgray;  
+            border-right: 1px solid $mac-lightgray;  
+          }  
+      }  
+      
+    a {  
+        text-align: left;  
+        width: 100%; 
+        text-align:center;
+      }
+      
+    nav img{
+      display: none;
+    }
   }  
 
-  nav ul {  
-    width: 100%;  
-    display: block;  
-    height: auto;
-    background-color: rgba(255, 255, 255, 0.95);
-    z-index: 1;  
-  }  
-
-  nav li {  
-    width: 50%;  
-    float: left;  
-    position: relative;
-    margin-top: 0;  
-  }  
-
-  nav li a {  
-    border-bottom: 1px solid #E9E9E9;  
-    border-right: 1px solid #E9E9E9;  
-  }  
-
-  nav a {  
-    text-align: left;  
-    width: 100%; 
-    text-align:center;
-  }
-
-  nav img{
-    display: none;
-  }
   
   .logo_bott{
     display: none;
@@ -571,17 +580,3 @@ nav a#pull {
   position: relative; 
   padding: 200px 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

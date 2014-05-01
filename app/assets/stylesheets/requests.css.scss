@@ -1,3 +1,9 @@
+$mac-orange: #F75E11;
+$mac-blue: #3299BB;
+$mac-darkgray: #424242;
+$mac-gray: #BCBCBC;
+$mac-lightgray: #E9E9E9;
+
 .unavailable_option{
   color:#777;
 }
@@ -12,7 +18,7 @@
 #controller_requests.requests-show-banner{
   height:800px;
   width:100%;
-  background-color:#F75E11;
+  background-color:$mac-orange;
   margin-top:-40px;
 }
 
@@ -87,23 +93,24 @@
   transition: all 1s ease;
   opacity: 0.5;
   overflow: hidden;
-}
-
-.add_request:hover {
-  opacity: 1;
-  color: #3299BB;
-}
-
-.add_request p{
-  color: #E9E9E9;
+  
+  &:hover {
+    opacity: 1;
+    color: #3299BB;
+  }
+  
+  p{
+    color: #E9E9E9;
+  }
 }
 .request img {
   border: 3px solid #fff;
   transition: all 1s ease;
-}
-.request img:hover {
-  -webkit-transform: scale(1.1);
-  border: 3px solid #f1712f;
+  
+  &:hover {
+    -webkit-transform: scale(1.1);
+    border: 3px solid #f1712f;
+  }
 }
 
 //Icons ----------------------------------------------------------------------
@@ -116,11 +123,13 @@
   color: #F39A7E;
   font-size: 80px;
   margin: 0 20px;
+  
+  &:hover {
+    color: #FFF;
+  }
 }
 
-.fa-facebook-square:hover {
-  color: #FFF;
-}
+
  
 .fa-twitter {
   font-family: FontAwesome;
@@ -130,10 +139,10 @@
   color: #F39A7E;
   font-size: 80px;
   margin:0 20px;
-}
-
-.fa-twitter:hover {
-  color: #FFF;
+  
+  &:hover {
+    color: #FFF;
+  }
 }
  
 .fa-pinterest {
@@ -144,10 +153,10 @@
   color: #F39A7E;
   font-size: 80px;
   margin:0 20px;
-}
-
-.fa-pinterest:hover {
-  color:#FFF;
+  
+  &:hover {
+    color:#FFF;
+  }
 }
  
 .fa-shopping-cart {
@@ -158,10 +167,10 @@
   color: #F39A7E;
   font-size: 80px;
   margin:0 20px;
-}
-
-.fa-shopping-cart:hover {
-  color: #FFF;
+  
+  &:hover {
+    color: #FFF;
+  }
 }
 
 .fa-plus {
@@ -172,10 +181,10 @@
   color: #E9E9E9;
   font-size: 200px;
   margin-top: -15px;
-}
-
-.fa-plus:hover {
-  color: #E9E9E9;
+  
+  &:hover {
+    color: #E9E9E9;
+  }
 }
 
 // Submit Buttons ------------------------------------------------------------------------
@@ -195,11 +204,11 @@ input[type=submit].submit-button {
     background-color:white;
     transition-property: all;
     transition-duration: .8s;
-}
-
-input[type=submit].submit-button:hover {
-    color: #FFF;
-    background-color:#3299BB;
+    
+    &:hover {
+      color: #FFF;
+      background-color:#3299BB;
+  }
 }
 
 //Facebook Comments --------------------------------------------------------------------------
@@ -246,10 +255,10 @@ input[type=submit].submit-button:hover {
   color:#BCBCBC;
   transition-property: all;
   transition-duration: .8s;
-}
-
-.admin-box:hover{
+  
+  &:hover{
   color:#FFF;
+}
 }
 
 @media screen and (max-width: 700px) {
@@ -287,7 +296,7 @@ input[type=submit].submit-button:hover {
   background-color: rgba(0,150,225,0.2);
 }
     
-//Tables -------------------------------------------------------------------------------------------
+// Tables -------------------------------------------------------------------------------------------
 
 table {
   color:#7B7B7B;
