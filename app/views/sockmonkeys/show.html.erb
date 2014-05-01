@@ -1,3 +1,4 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <style type="text/css">
 
 body {
@@ -85,9 +86,14 @@ p {
 
     <div class="stat sm_rt_col">
       <h3>Favorite Color</h3>
-      <p><%= @sockmonkey.favcolor %></p>
+      <p class="favcolor"><%= @sockmonkey.favcolor %></p>
     </div>
 
   </div>
 
 </div>
+
+<script>
+  var favcolor = $('.favcolor').text();
+  $('.favcolor').css('color', favcolor);
+</script>
