@@ -72,7 +72,7 @@
   <div class="row full-width-admin center-text">
     <div class="large-1 small-0 admin-box mobile-hide columns"></div>
 
-    <!-- <%= link_to(new_email_path) do %> -->
+    <%= link_to("/emails/new?request_id=#{@request.id}&to_id=#{@request.requestor_id}") do %>
       <div class="large-2 small-6 admin-box columns">
         email requestor
       </div>
@@ -90,31 +90,45 @@
       </div>
     <% end %>
     
-    <% if @request.angel_id.nil? %>
-      <%= link_to(request_match_path(@request.id)) do %>
+    <% if @request.current_status < 10 %>
+      <% if @request.angel_id.nil? %>
+        <%= link_to(request_match_path(@request.id)) do %>
+          <div class="large-2 small-6 admin-box columns">
+            match an angel
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to(request_unmatch_path(@request.id)) do %>
+          <div class="large-2 small-6 admin-box columns">
+            unmatch angel
+          </div>
+        <% end %>
+      <% end %>
+    
+      <%= link_to(request_path(@request.id), :method => :delete) do %>
         <div class="large-2 small-6 admin-box columns">
-          match an angel
+          delete request
+        </div>
+      <% end %>
+      
+      <%= link_to(request_ship_path(@request.id)) do %>
+        <div class="large-2 small-12 admin-box columns">
+          mark shipped
         </div>
       <% end %>
     <% else %>
-      <%= link_to(request_unmatch_path(@request.id)) do %>
-        <div class="large-2 small-6 admin-box columns">
-          unmatch angel
-        </div>
-      <% end %>
+      <div class="large-2 small-6 admin-box columns">
+        <span class="unavailable_option">unmatch angel</span>
+      </div>
+      <div class="large-2 small-6 admin-box columns">
+        <span class="unavailable_option">delete request</span>
+      </div>
+      <div class="large-2 small-6 admin-box columns">
+        <span class="unavailable_option">mark shipped</span>
+      </div>
     <% end %>
     
-    <%= link_to(request_path(@request.id), :method => :delete) do %>
-      <div class="large-2 small-6 admin-box columns">
-        delete request
-      </div>
-    <% end %>
-    <%= link_to(request_ship_path(@request.id)) do %>
-      <div class="large-2 small-12 admin-box columns">
-        mark shipped
-      </div>
-      <div class="large-1 small-0 admin-box mobile-hide columns"></div>
-    <% end %>
+    <div class="large-1 small-0 admin-box mobile-hide columns"></div>
 
   </div>
 <% end %>
