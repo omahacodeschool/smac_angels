@@ -1,10 +1,8 @@
-//#controller_users.banner{
-//  height:800px;
-//  width:100%;
-//  background-color:#3299BB;
-//  margin-top:-60px;
-////  top:-60px;
-//}
+$mac-orange: #F75E11;
+$mac-blue: #3299BB;
+$mac-darkgray: #424242;
+$mac-gray: #BCBCBC;
+$mac-lightgray: #E9E9E9;
 
 .users-text-banner{
   font-family: 'Lato', sans-serif;
@@ -18,7 +16,7 @@
 #controller_users.user-show-banner{
   height:800px;
   width:100%;
-  background-color:#3299BB;
+  background-color:$mac-blue;
   margin-top:-60px;
 }
 
@@ -41,7 +39,7 @@
   font-style: normal;
   font-weight: normal;
   text-decoration: none;
-  color: #BCBCBC;
+  color: $mac-gray;
   font-size: 80px;
 //  margin-left:-60px;
   padding-top:30px;
