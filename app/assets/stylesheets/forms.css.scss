@@ -162,7 +162,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
 
 .form input[type="radio"]{
   -webkit-appearance: none; 
-  -moz-appearance: none;
+  -moz-appearance: checkbox;
 }
 
 .big_button{
@@ -292,6 +292,31 @@ input[type="file"]::-webkit-file-upload-button:hover {
   color: #E9E9E9;
 }
 
+.monkeys {
+  margin: 0 auto 0 auto;
+  width: 280px;
+  padding: 20px 0 0 0;
+
+}
+.monkey {
+  padding: 0 10px;
+}
+.monkey_pic {
+  padding: 0;
+  position: absolute;
+  margin: 14px 0 0 20px;
+}
+#monkey_name a {
+  color: #424242;
+}
+.big_button2 {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border: 2px solid #ccc;
+}
+/*
 .monkeys{
   display: block;
   height: 350px;
@@ -324,6 +349,12 @@ input[type="file"]::-webkit-file-upload-button:hover {
 #monkey_name{
   margin-top: 15px;
 }
+
+.monkey_checkbox {
+  margin-top: 25px;
+  width: 50%;
+}
+*/
 
 /* `Responsive styles
 ----------------------------------------------------------------------------------------------------*/
