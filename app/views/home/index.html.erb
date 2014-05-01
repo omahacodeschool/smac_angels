@@ -65,16 +65,10 @@
     <div class="row full-width"></div>
       <div class="gallery">
         <ul>
-          <li class="large-4 columns small-12 columns">    
-              <div class="add_to_gallery">
-                <img src="assets/Request_Monkey.png" width="99.9%" height="auto" position: "relative; z-index: 1;" />
-                <div id="icon_link">
-                  <p>Request Monkey</p>
-                  <%= link_to :new_request do %>
-                  <a href="<%= new_request_path %>" class="hp fa fa-plus" title="New Request"></a>
-                  <% end %>
-                </div>
-              </div>
+          <li class="large-4 columns small-12 columns">
+            <div id="idx_square">
+              <%= link_to image_tag("add_request.png"), new_request_path %>
+            </div>
           </li>
 
           <% @requests.each do |request| %>
@@ -85,6 +79,7 @@
               <% else %>
                 <%= link_to image_tag("SMAC_nation.jpg"), request_path(request.id) %>
               <% end %>
+              <a></a>
             </div>
           </li>
           <% end %>
