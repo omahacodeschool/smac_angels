@@ -190,15 +190,16 @@ input[type="file"]::-webkit-file-upload-button:hover {
   border: 1px solid rgba(255,255,255, 0.5);
   transition-property: all;
   transition-duration: 0.5s;
+  
+  &:hover {
+    color: #FFF;
+  }
+  
+  p {
+    margin-top: 24px;
+  }
 }
 
-.ctr_button:hover {
-  color: #FFF;
-}
-
-.ctr_button p{
-  margin-top: 24px;
-}
 .control-label{
   display: none;
 }
@@ -233,12 +234,13 @@ input[type="file"]::-webkit-file-upload-button:hover {
 
 .login_sign_up {
   text-align: center;
-}
-.login_sign_up a {
-  padding-top: 15px;
-}
-.login_sign_up a:hover {
-  color: #E9E9E9;
+  
+  a {
+    padding-top: 15px;
+    &:hover{
+      color: #E9E9E9;
+    }
+  }
 }
 
 .no_account {
@@ -268,14 +270,14 @@ input[type="file"]::-webkit-file-upload-button:hover {
   //height: 1775px;
   width: 100%;
   padding-bottom:40px;
-}
-
-#request p{
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 20px;
-  padding-top: 17px;
-  color: #E9E9E9;
+  
+  p{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 17px;
+    color: #E9E9E9;
+  }
 }
 
 .monkeys {
@@ -296,10 +298,11 @@ input[type="file"]::-webkit-file-upload-button:hover {
 }
 .monkey_name {
   margin: 5px 0 0 0;
+  a {
+    color: #424242;
+  }
 }
-.monkey_name a {
-  color: #424242;
-}
+
 .big_button2 {
   position: relative;
   width: 120px;

@@ -31,10 +31,10 @@ a {
   transition-property: all;
   transition-duration: 0.5s;
   color:#3299BB;
-}
-
-a:hover{
-  color:#424242;
+  
+  &:hover {
+    color:#424242;
+  }
 }
 
 h1, h2, h3, h4 {
