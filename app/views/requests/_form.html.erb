@@ -22,7 +22,7 @@
           <%= f.label :sockmonkey_id, image_tag(monkey.image_url, height: '80', width: '80'), :value => monkey.id, :class => "monkey_pic"%>
           <%= f.radio_button :sockmonkey_id, monkey.id, :class => "big_button2" %>
 
-          <div id="monkey_name">
+          <div class="monkey_name">
             <%= link_to "#{monkey.name}", sockmonkey_path(monkey.id), :class => "fancybox", :rel => "sockmonkey", :title => monkey.name %>
           </div>
 
