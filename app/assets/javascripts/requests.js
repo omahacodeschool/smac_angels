@@ -29,8 +29,6 @@ $(document).ready(function() {
     easingOut: 'easeOutSine',
     cyclic: true
   });
-
-  
   
 
   $(".img-req").hover(

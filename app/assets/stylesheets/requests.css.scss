@@ -315,3 +315,21 @@ th {
 .request-background {
   background:#3299BB;
 }
+
+// Animations --------------------------------------------------------------------------------------
+
+.monkey-circle {
+  -webkit-transition:all .5s ease-out;
+  -moz-transition:all .5s ease-out;
+  -ms-transition:all .5s ease-out;
+  -o-transition:all .5s ease-out;
+  transition:all .5s ease-out;
+}
+
+.monkey-circle:hover {
+  -webkit-transform:translate(0px,10px);
+  -moz-transform:translate(0px,-10px);
+  -ms-transform:translate(0px,-10px);
+  -o-transform:translate(0px,10px);
+  transform:translate(0px,-10px);
+}
