@@ -3,11 +3,27 @@
     <!-- placeholder for @request.requestor.fname -->
     <div class="large-4 large-centered small-12 small-centered columns">
       <div class="avatar-banner">
-        <% if @request.before_photo_url.url == nil %>
-          <%= image_tag("profile.png") %>
+        <% if current_user.id == @request.requestor_id %>
+          <% if @request.current_status >= 10 && @request.after_photo_url.nil? %>
+            prompt photo button
+          <% else %>
+            <% if @request.before_photo_url.nil? %>
+              <%= image_tag("profile.png") %>
+            <% else %>
+              <%= image_tag(@request.before_photo_url_url(:thumb), :alt => "user avatar") %>
+            <% end %>
+          <% end %>
         <% else %>
-          <%= image_tag(@request.before_photo_url_url(:thumb), :alt => "user avatar") %>
-        <% end %>
+          <% if @request.after_photo_url %>
+            <%= image_tag(@request.after_photo_url_url(:thumb), :alt => "user avatar") %>
+          <% elsif @request.before_photo_url %>
+            <%= image_tag(@request.before_photo_url_url(:thumb), :alt => "user avatar") %>
+          <% else %>
+            <%= image_tag("profile.png") %>
+          <% end %>
+        <% end %>            
+        
+        if current user = request.requestor_id & current_status >= 2345 & request.afterphotourl == nil
       </div>
     </div>
   </div>

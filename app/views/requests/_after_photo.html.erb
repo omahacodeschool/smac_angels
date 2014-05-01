@@ -1,0 +1,7 @@
+<% form_for request do |f| %>
+  <p class="center">Share an 'after' photo!</p>
+  <div class="file_button">
+    <!-- <p class="center">Upload After Photo</p> -->
+    <%= f.file_field :after_photo_url %>
+  </div>
+<% end %>
