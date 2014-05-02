@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
-  from_address = Mail::Address.new "matthova87@gmail.com"
-  from_address.display_name = "SMAC Monkey"
+  from_address = Mail::Address.new "smacnation@smacancer.com"
+  from_address.display_name = "SMAC Angels"
   default from: from_address.format
 
   # Public: Parse email object and push to email_layout view

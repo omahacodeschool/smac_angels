@@ -18,7 +18,7 @@ class Email < ActiveRecord::Base
     template = Template.find_by_name(email_info[0])
     email = Email.new
     email.content = template.content
-    email.subject = template.name
+    email.subject = template.subject
     email.to_addresses = email_info[1].email
     if email_info[2]
       email.request_id = email_info[2]
