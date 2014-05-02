@@ -72,7 +72,7 @@ class RequestsController < ApplicationController
     respond_to do |format|
       if @request.save
         Status.create(:request_id => @request.id, :status => 'Unmatched')
-        Email.new.send_email("Requestor Signup", User.find(@request.requestor_id), @request.id)
+        Email.new.send_email("Requestor Signup", @request.requestor, @request.id)
         format.html { redirect_to @request, notice: 'Request was successfully created.' }
         format.json { render json: @request, status: :created, location: @request }
       else
@@ -179,8 +179,8 @@ class RequestsController < ApplicationController
     Status.create(:request_id => @request.id, :status => 'Shipped')
     
     # Send email to both requestor and angel
-    Email.new.send_email("Shipping Notification for Angel", User.find(@request.angel_id), @request.id)
-    Email.new.send_email("Shipping Notification for Requestor", User.find(@request.requestor_id), @request.id)
+    Email.new.send_email("Shipping Notification for Angel", @request.angel, @request.id)
+    Email.new.send_email("Shipping Notification for Requestor", @request.requestor, @request.id)
     
     @request.save
     
