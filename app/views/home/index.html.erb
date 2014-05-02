@@ -37,14 +37,14 @@
     <div class="row full-width"></div>
       <div class="gallery">
         <ul>
-          <li class="large-4 columns small-12 columns">
+          <li class="large-4 columns small-6 columns">
             <div id="idx_square">
               <%= link_to image_tag("add_request.png"), new_request_path %>
             </div>
           </li>
 
           <% @requests.each do |request| %>
-          <li class="large-4 columns small-12 columns">
+          <li class="large-4 columns small-6 columns">
             <div id="idx_square">
               <% if !request.before_photo_url_url.nil? %>
                 <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id) %>
@@ -57,7 +57,7 @@
           <% end %>
           
           <% @filler.each do |filler| %>
-            <li class="large-4 columns small-12 columns">
+            <li class="large-4 columns small-6 columns">
               <div id="idx_square">
                 <% if !filler.after_photo_url_url.nil? %>\
                   <%= link_to image_tag(filler.after_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
@@ -72,7 +72,7 @@
           <% end %>
           
           <% @fallback.times do |x| %>
-            <li class="large-4 columns small-12 columns">
+            <li class="large-4 columns small-6 columns">
               <div id="idx_square">
                 <%= image_tag("landing_page/#{x+1}.jpg") %>
                 <%= image_tag("matched-ribbon.png", class: "ribbon") %>
