@@ -42,5 +42,16 @@ $(document).ready(function() {
     function () {
       $("#story").hide().html(originalText).fadeIn('easing');
     }
-        );
-  });
+  );
+  
+  if(".upload_photo"){
+    $(".upload_photo").click(function(){
+      $('.upload_after_photo').trigger('click');
+    });
+  }
+  
+  document.getElementById("").onchange = function() {
+      document.getElementById("form").submit();
+  };
+  
+});

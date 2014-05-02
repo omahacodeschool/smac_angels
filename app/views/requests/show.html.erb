@@ -3,27 +3,22 @@
     <!-- placeholder for @request.requestor.fname -->
     <div class="large-4 large-centered small-12 small-centered columns">
       <div class="avatar-banner">
-        <% if current_user.id == @request.requestor_id %>
-          <% if @request.current_status >= 10 && @request.after_photo_url.blank? %>            
-              <%= link_to('/requests/upload_after_photo?request_id='<< @request.id.to_s, method = "get") do %>
-              <% image_tag("uploadmonkeyphoto.jpg")%>
-              <% end %>
+        <% if !@request.after_photo_url.blank? %>
+          <% image_tag(@request.after_photo_url_url(:thumb), :alt => "user avatar") %>
+        <% else %>
+          <% if current_user.id == @request.requestor_id && @request.current_status >= 10 %>
+          <%= image_tag "uploadmonkeyphoto.jpg", :class => "upload_photo" %>
+            <%= form_for @request do |f| %>
+                <%= f.file_field :after_photo_url, :class => "upload_after_photo" %>
+            <% end %>
           <% else %>
-            <% if @request.before_photo_url.nil? %>
-              <%= image_tag("profile.png") %>
-            <% else %>
+            <% if !@request.before_photo.url.blank? %>
               <%= image_tag(@request.before_photo_url_url(:thumb), :alt => "user avatar") %>
+            <% else %>
+              <%= image_tag("profile.png") %>
             <% end %>
           <% end %>
-        <% else %>
-          <% if @request.after_photo_url %>
-            <%= image_tag(@request.after_photo_url_url(:thumb), :alt => "user avatar") %>
-          <% elsif @request.before_photo_url %>
-            <%= image_tag(@request.before_photo_url_url(:thumb), :alt => "user avatar") %>
-          <% else %>
-            <%= image_tag("profile.png") %>
-          <% end %>
-        <% end %>            
+        <% end %>          
       </div>
     </div>
   </div>
