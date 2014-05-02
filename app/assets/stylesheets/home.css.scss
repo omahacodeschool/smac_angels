@@ -508,9 +508,8 @@ nav a#pull {
   
   #resp_monkey{
     display: block;
-    margin: 0 auto;
     margin-left: -145px;
-    margin-top: 100px;
+    margin-top: 40px;
     width: 400px;
   }
   
@@ -563,7 +562,36 @@ nav a#pull {
     text-align: center;
     margin-top: 35px;
   }
-     
+  .name {
+    margin-top: 175px;
+    font-size: 48px;
+  }
+  .separator {
+    border: 0;
+  }
+  .tagline {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  #screen2 {
+    display: none;
+  }
+  .gallery {
+    margin-top: -50px;
+  }
+  #f_img1, #f_img2, #f_img3 {
+    width: 300px;
+    height: 300px;
+    margin: 260px auto 0 auto;
+    float: none;
+  }
+  #f_img2 {
+    margin-top: 0;
+  }
+  #f_img3 {
+    margin-top: 325px;
+  }
+
 }
 
 /* `Parallax scrolling
