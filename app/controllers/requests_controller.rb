@@ -179,8 +179,8 @@ class RequestsController < ApplicationController
     Status.create(:request_id => @request.id, :status => 'Shipped')
     
     # Send email to both requestor and angel
-    Email.new.send_email("Shipping Notification for Angel", User.find(self.angel_id), self.id)
-    Email.new.send_email("Shipping Notification for Requestor", User.find(self.requestor_id), self.id)
+    Email.new.send_email("Shipping Notification for Angel", User.find(@request.angel_id), @request.id)
+    Email.new.send_email("Shipping Notification for Requestor", User.find(@request.requestor_id), @request.id)
     
     @request.save
     
