@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  from_address = Mail::Address.new "matthova87@gmail.com"
+  from_address = Mail::Address.new "smacnation@smacancer.com"
   from_address.display_name = "SMAC Angels"
   default from: from_address.format
 
