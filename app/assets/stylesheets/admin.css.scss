@@ -1,3 +1,9 @@
+$mac-orange: #F75E11;
+$mac-blue: #3299BB;
+$mac-darkgray: #424242;
+$mac-gray: #BCBCBC;
+$mac-lightgray: #E9E9E9;
+
 // Place all the styles related to the admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -23,7 +29,7 @@
   }
   
   top: 10px;
-  background: #3299BB;
+  background: $mac-blue;
   padding-bottom: 30px;
 }
 

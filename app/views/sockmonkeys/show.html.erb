@@ -1,10 +1,12 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <style type="text/css">
+
 body {
   background-color: #3299BB;
   color: #424242;
 }
 img {
-  border: 4px solid #000;
+  border: 4px solid #ccc;
   margin-top: 10px;
   width:200px;
   background:#fff;
@@ -20,57 +22,78 @@ h3 {
 p {
   font-weight: bold;
   margin: 0;
-  text-align: justify;
+  text-align: center;
+  line-height: 1.75;
 }
 .monkey {
-  width: 550px;
-  margin: 40px auto 0 auto;
+  width: 80%;
+  margin: 40px auto 20px auto;
+  text-align: center;
 }
-.monkey_pic {
-  float: left;
-  margin: 0 0 0 20px;
-}
-.monkey_info {
-  float: right;
-  width: 225px;
-  line-height: 1.75;
-  padding: 0 0 0 30px;
+.monkey_info p {
+  margin: 20px 0 0 0;
+  text-align: left;
 }
 .monkey_stats {
-  clear: both;
-  width: 75%;
   margin: 0 auto;
+  padding-top: 20px;
 }
-.stat {
-  float: left;
-  text-align: center;
-  padding: 0 45px;
+.monkey_stats p {
+  font-size: 1.5em;
 }
-.stat p {
-  text-align: center;
+
+@media (min-width: 650px) {
+  .lt_col {
+    float: left;
+    margin-left: 30px;
+  }
+  .rt_col {
+    float: right;
+    width: 250px;
+  }
+  .monkey_stats {
+    clear: both;
+  }
+  .sm_lt_col {
+    float: left;
+    width: 50%;
+  }
+  .sm_rt_col {
+    float: left;
+    width: 50%;
+  }
 }
+
 </style>
 
 <div class="monkey">
 
-  <div class="monkey_pic">
-    <%= image_tag @sockmonkey.image_url %> 
-  </div>
+    <div class="monkey_pic lt_col">
+      <%= image_tag @sockmonkey.image_url %> 
+    </div>
 
-  <div class="monkey_info">
-    <h1>I'm <%= @sockmonkey.name %></h1>
-    <p><%= @sockmonkey.description %></p>
-  </div>
+    <div class="monkey_info rt_col">
+      <h1><%= @sockmonkey.name %></h1>
+      <p><%= @sockmonkey.description %></p>
+    </div>
 
   <div class="monkey_stats">
-    <div class="stat">
+
+    <div class="stat sm_lt_col">
       <h3>Cancer Type</h3>
       <p><%= @sockmonkey.cancertype %></p>
     </div>
-    <div class="stat">
+
+    <div class="stat sm_rt_col">
       <h3>Favorite Color</h3>
-      <p><%= @sockmonkey.favcolor %></p>
+      <p class="favcolor"><%= @sockmonkey.favcolor %></p>
     </div>
+
   </div>
 
 </div>
+
+<script>
+  var favcolor = $('.favcolor').text();
+  $('.favcolor').css('color', favcolor);
+</script>

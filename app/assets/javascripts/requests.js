@@ -30,9 +30,6 @@ $(document).ready(function() {
     cyclic: true
   });
 
-
-
-
   $(".img-req").hover(
     function () {
       originalText="<h2>It is a great feeling to be able to comfort someone in need. Please view the stories of those battling cancer who would like some creature comfort by scrolling over their name. Clicking a picture will take you to their profile.</h2>";

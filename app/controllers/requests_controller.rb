@@ -76,7 +76,7 @@ class RequestsController < ApplicationController
     respond_to do |format|
       if @request.save
         Status.create(:request_id => @request.id, :status => 'Unmatched')
-        Email.new.send_email("Requestor Signup", User.find(@request.requestor_id), @request.id)
+        Email.new.send_email("Requestor Signup", @request.requestor, @request.id)
         format.html { redirect_to @request, notice: 'Request was successfully created.' }
         format.json { render json: @request, status: :created, location: @request }
       else
@@ -155,16 +155,22 @@ class RequestsController < ApplicationController
     @request.angel_id = nil
     @request.current_status = 0
     @request.save
+
     Status.create(:request_id => @request.id, :status => 'Unmatched by Admin')
 
     redirect_to(request_path(@request.id))
   end
 
   def match
-    @request=Request.find(params[:id])
+    @request=Request.find(params[:id])    
+    @request.current_status = 10
+    @request.angel = current_user
+    @request.save
 
     Status.create(:request_id => @request.id, :status => 'Matched by Admin')
 
+    # Sed email to requestor
+    Email.new.send_email("Shipping Notification for Angel", User.find(self.angel_id), self.id)
     redirect_to(request_path(@request.id))
   end
 
@@ -173,8 +179,10 @@ class RequestsController < ApplicationController
 
     @request.current_status = 10
     Status.create(:request_id => @request.id, :status => 'Shipped')
-    # Send email to both requestor and angel
 
+    # Send email to both requestor and angel
+    Email.new.send_email("Shipping Notification for Angel", @request.angel, @request.id)
+    Email.new.send_email("Shipping Notification for Requestor", @request.requestor, @request.id)
     @request.save
 
     redirect_to(request_path(@request.id))

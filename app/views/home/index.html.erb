@@ -1,36 +1,8 @@
 <body>
   
 <section id="screen1">
-   
-
-  <nav>
-    <div class="logo_bott">
-      <!-- <%= link_to :root do %> -->
-        <%= image_tag "/assets/SMAC_logo.png" %>
-      <!-- <% end %> -->
-    </div>
-      
-    <ul> 
-      <li><%= link_to "Home", root_path %></li> 
-      <li><%= link_to "Give", requests_path %></li>  
-      <li><%= link_to "Nominate", new_request_path(:nominate => true) %></li>
-      <li><%= link_to "Request", new_request_path %></li>
-      <% if !current_user %>
-      <li><%= link_to "Sign Up", signup_path %></li> 
-      <% else %> 
-      <% end %>
-      <% if current_user %>
-        <li><%= link_to "Me", user_path(current_user.id) %></li>
-        <li><%= link_to "Log Out", logout_path %></li>  
-      <% else %>
-        <li><%= link_to "Log In", login_path %></li>
-      <% end %>
-    </ul>  
-    <a href="#" id="pull">Menu</a>  
-  </nav>
 
   <%= render :partial => 'layouts/nav' %>
-
   
   <div id="controller_home">
     <div class="row">
@@ -53,7 +25,7 @@
       <!-- Hidden until breakpoint -->
       <div id="resp_monkey">
         <%= image_tag "sockmonkey2.png" %>
-      <div>
+      </div>
       
     </div>
   </div>
@@ -62,17 +34,17 @@
 
 <section>  
     
-    <div class="row full-width"></div>
+    <!-- <div class="row full-width"></div> -->
       <div class="gallery">
         <ul>
-          <li class="large-4 columns small-12 columns">
+          <li class="large-4 columns small-6 columns">
             <div id="idx_square">
               <%= link_to image_tag("add_request.png"), new_request_path %>
             </div>
           </li>
 
           <% @requests.each do |request| %>
-          <li class="large-4 columns small-12 columns">
+          <li class="large-4 columns small-6 columns">
             <div id="idx_square">
               <% if !request.before_photo_url_url.nil? %>
                 <%= link_to image_tag(request.before_photo_url_url(:thumb)).html_safe, request_path(request.id) %>
@@ -85,7 +57,7 @@
           <% end %>
           
           <% @filler.each do |filler| %>
-            <li class="large-4 columns small-12 columns">
+            <li class="large-4 columns small-6 columns">
               <div id="idx_square">
                 <% if !filler.after_photo_url_url.nil? %>\
                   <%= link_to image_tag(filler.after_photo_url_url(:thumb)).html_safe, request_path(filler.id) %>
@@ -100,7 +72,7 @@
           <% end %>
           
           <% @fallback.times do |x| %>
-            <li class="large-4 columns small-12 columns">
+            <li class="large-4 columns small-6 columns">
               <div id="idx_square">
                 <%= image_tag("landing_page/#{x+1}.jpg") %>
                 <%= image_tag("matched-ribbon.png", class: "ribbon") %>
@@ -176,11 +148,11 @@
     
     <div class="features">
       <div class="row featurette">
-        <div class="large-7 columns">
+        <div class="large-7 small-12 columns">
           <h2 class="feature-heading-left"><span class="text-muted">Be an Angel! Give a sock monkey.</span></h2>
           <p class="feature-text-left">Become an angel for someone in need. Agree to cover the cost for either Phoenix or NoMo to remind everyone that they aren't in this fight alone.</p>
         </div>
-        <a href="<%= requests_path %>"><div id="f_img1" class="large-5 columns">
+        <a href="<%= requests_path %>"><div id="f_img1" class="large-5 small-12 columns">
           <!-- <%= link_to "Give", requests_path %> -->
           <!-- Background image is in css style -->
         </div></a>
@@ -189,10 +161,10 @@
       <div class="feature-divider"></div>
 
       <div class="row featurette">
-        <a href="<%= new_request_path(:nominate => true) %>"><div id="f_img2" class="large-5 columns">
+        <a href="<%= new_request_path(:nominate => true) %>"><div id="f_img2" class="large-5 small-12 columns">
           <!-- Background image is in css style -->
         </div></a>
-        <div class="large-7 columns">
+        <div class="large-7 small-12 columns">
           <h2 class="feature-heading-right"><span class="text-muted">Nominate someone you know.</span></h2>
           <p class="feature-text-right">Know someone impacted by cancer? Nominate them to recieve a SMAC! monkey. Once we match them up with an angel, they'll recieve their own sock monkey to keep with them during those rough days.</p>
         </div>
@@ -201,11 +173,11 @@
       <div class="feature-divider"></div>
 
       <div class="row featurette">
-        <div class="large-7 columns">
+        <div class="large-7 small-12 columns">
           <h2 class="feature-heading-left"><span class="text-muted">Do you want a sock monkey?</span></h2>
           <p class="feature-text-left">Are you going through treatments? Want something personal to keep by your side? Can't afford a SMAC! monkey? Request a sock monkey for yourself! Once we match you up with an angel, you'll recieve your very own sock monkey!</p>
         </div>
-        <a href="<%= new_request_path %>"><div id="f_img3" class="large-5 columns">
+        <a href="<%= new_request_path %>"><div id="f_img3" class="large-5 small-12 columns">
           <!-- Background image is in css style -->
         </div></a>
       </div>
