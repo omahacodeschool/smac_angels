@@ -9,7 +9,7 @@
           <% if current_user.id == @request.requestor_id && @request.current_status >= 10 %>
           <%= image_tag "uploadmonkeyphoto.jpg", :class => "upload_photo" %>
             <%= form_for @request do |f| %>
-                <%= f.file_field :after_photo_url, :class => "upload_after_photo" %>
+                <%= f.file_field :after_photo_url, :class => "upload_after_photo", :html => { :id => "upload_photo_id" } %>
             <% end %>
           <% else %>
             <% if !@request.before_photo.url.blank? %>
@@ -18,12 +18,12 @@
               <%= image_tag("profile.png") %>
             <% end %>
           <% end %>
-        <% end %>          
+        <% end %>
       </div>
     </div>
   </div>
-  
-  <div class="row">  
+
+  <div class="row">
     <span class="large-2 large-centered columns">
       <div class="center-banner">
       <div class="name-banner">
@@ -35,17 +35,17 @@
       <div class="tagline-banner">
         <%= @tag %>
       </div>
-      
+
       <% if current_user && (@request.requestor_id == @user_id || is_admin?) %>
         <div class="row content-small-padding center-text edit-buttons">
           <%= link_to 'Edit', edit_request_path(@request), :class => "button-link", :title => "Edit this request" %> &nbsp;
           <%= link_to 'Delete', request_path(@request), :method => 'delete', :data => { :confirm => 'Are you sure?' }, :class => "button-link btn-danger" %>
         </div>
       <% end %>
-      
+
       </div>
     </span>
-   </div> 
+   </div>
  </div>
 <% if current_user && (is_admin? || current_user.id == @request.requestor_id || current_user.id == @request.angel_id) %>
   <div class="row full-width-requests center-text">
@@ -63,19 +63,19 @@
         <%= @request.ship_state %>
     </div>
 
-    <div class="large-2 small-6 private-box columns">    
+    <div class="large-2 small-6 private-box columns">
         <b>City</b><br>
         <%= @request.ship_city %>
     </div>
 
-    <div class="large-2 small-6 private-box columns">  
+    <div class="large-2 small-6 private-box columns">
         <b>Street</b><br>
         <%= @request.ship_address %>
     </div>
 
     <div class="large-2 small-0 private-box columns mobile-hide">
     </div>
- 
+
   </div>
 <% end %>
 
@@ -88,7 +88,7 @@
         email requestor
       </div>
     <% end %>
-    
+
     <% if !@request.angel_id.nil? %>
       <%= link_to("/emails/new?request_id=#{@request.id}&to_id=#{@request.angel_id}") do %>
         <div class="large-2 small-6 admin-box columns">
@@ -100,7 +100,7 @@
         <span class="unavailable_option">email angel</span>
       </div>
     <% end %>
-    
+
     <% if @request.angel_id.nil? %>
       <%= link_to(request_match_path(@request.id)) do %>
         <div class="large-2 small-6 admin-box columns">
@@ -114,7 +114,7 @@
         </div>
       <% end %>
     <% end %>
-    
+
     <%= link_to(request_path(@request.id), :method => :delete) do %>
       <div class="large-2 small-6 admin-box columns">
         delete request
@@ -133,7 +133,7 @@
 <!-- send email to requestor, send email to angel, unmatch, match angel, delete request -->
 
 <div class="row content-padding center-text">
-      
+
   <p id="notice">
     <%= notice %>
   </p>
@@ -191,10 +191,10 @@
         <% end %>
       </tbody>
     </table>
-    
+
     <br>
     <br>
-    
+
     <h2 class="content-small-padding">Email Log</h2>
     <table class="email_log">
       <thead>
@@ -236,7 +236,7 @@
 
 
 <div class="row fb-comments">
-  
+
   <div class="large-12 small-12 center-text columns">
     <div id="share-buttons">
       <!-- Share on facebook -->
