@@ -162,7 +162,7 @@ class RequestsController < ApplicationController
   end
 
   def match
-    @request=Request.find(params[:id])    
+    @request=Request.find(params[:id])
     @request.current_status = 10
     @request.angel = current_user
     @request.save
