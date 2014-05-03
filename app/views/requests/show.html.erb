@@ -3,22 +3,7 @@
     <!-- placeholder for @request.requestor.fname -->
     <div class="large-4 large-centered small-12 small-centered columns">
       <div class="avatar-banner">
-        <% if !@request.after_photo_url.blank? %>
-          <% image_tag(@request.after_photo_url_url(:thumb), :alt => "user avatar") %>
-        <% else %>
-          <% if current_user.id == @request.requestor_id && @request.current_status >= 10 %>
-          <%= image_tag "uploadmonkeyphoto.jpg", :class => "upload_photo" %>
-            <%= form_for @request do |f| %>
-                <%= f.file_field :after_photo_url, :class => "upload_after_photo", :html => { :id => "upload_photo_id" } %>
-            <% end %>
-          <% else %>
-            <% if !@request.before_photo.url.blank? %>
-              <%= image_tag(@request.before_photo_url_url(:thumb), :alt => "user avatar") %>
-            <% else %>
-              <%= image_tag("profile.png") %>
-            <% end %>
-          <% end %>
-        <% end %>
+        <%= render_avatar(@request) %>
       </div>
     </div>
   </div>

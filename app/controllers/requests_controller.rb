@@ -19,11 +19,11 @@ class RequestsController < ApplicationController
     @angel = User.where(:id => @request.angel_id)
     @user_id = session[:user_id]
     @emails = Email.where(:request_id => @request.id)
-    
+
     case @request.current_status
     when 0
       @status = "Unmatched"
-      @tag = "Can you help?" 
+      @tag = "Can you help?"
     when 5
       @status = "Matched"
       @tag = "Request Fulfilled!"
@@ -34,7 +34,7 @@ class RequestsController < ApplicationController
       @status = "Canceled"
       @tag = "Canceled"
     end
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @request }
@@ -48,7 +48,7 @@ class RequestsController < ApplicationController
     if params[:nominate]
       @request.obo = true
     end
-        
+
     @sockmonkeys = Sockmonkey.all
     respond_to do |format|
       format.html # new.html.erb
@@ -57,7 +57,6 @@ class RequestsController < ApplicationController
   end
 
   def upload_after_photo
-    binding.pry
     @request = Request.find(params["request_id"])
   end
 
@@ -116,8 +115,8 @@ class RequestsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  # Public: 
+
+  # Public:
   # Checks to see if the user is logged in
   # Finds the user object that requested a smac monkey
   # Adds the angel to requestor's request
@@ -131,13 +130,13 @@ class RequestsController < ApplicationController
     end
 
     @request = Request.find(params[:request_id])
-    
+
     @request.add_angel(session[:user_id], params[:anon_button] ? 1 : 0)
 
     redirect_to (request_path(@request.id))
-  
+
   end
-  
+
   def iframe
     @requests = Request.where("current_status = 0").sample(6)
     @filler = Request.where("current_status > ? AND current_status < ?", 0, 11).sample(6 - @requests.length)
@@ -149,35 +148,35 @@ class RequestsController < ApplicationController
 #       @requests << @options.sample
 #     end
   end
-  
+
   def unmatch
     @request=Request.find(params[:id])
-    
+
     @request.angel_id = nil
     @request.current_status = 0
     @request.save
     Status.create(:request_id => @request.id, :status => 'Unmatched by Admin')
-    
+
     redirect_to(request_path(@request.id))
   end
-  
+
   def match
     @request=Request.find(params[:id])
-    
+
     Status.create(:request_id => @request.id, :status => 'Matched by Admin')
-    
+
     redirect_to(request_path(@request.id))
   end
-  
+
   def ship
     @request=Request.find(params[:id])
-    
+
     @request.current_status = 10
     Status.create(:request_id => @request.id, :status => 'Shipped')
     # Send email to both requestor and angel
-    
+
     @request.save
-    
+
     redirect_to(request_path(@request.id))
   end
 end

@@ -36,18 +36,18 @@
         </div>
       <% end %>
   </div>
-  
+
   <%= f.hidden_field :requestor_id, :value => session[:user_id] %>
-  
+
   <div class="checkbox obo_check">
     <%= f.check_box :obo %>
     <%= f.label(:obo, "On behalf of someone else?") %>
   </div>
 
-      <div class="obo_name field"> 
+      <div class="obo_name field">
         <%= f.text_field(:obo_fname, placeholder: "On behalf of, First Name") %>
       </div>
-      <div class="obo_name field"> 
+      <div class="obo_name field">
         <%= f.text_field(:obo_lname, placeholder: "On behalf of, Last Name") %>
       </div>
 
@@ -88,13 +88,13 @@
           <%= f.text_field :external_url, :class => 'text_field', placeholder: "URL Link" %>
         </div>
       </div>
-  
-      <p class="center">Who will be receiving the sock monkey?</p>
+      <br/>
+      <p class="center">Upload a photo to help share your story.</p>
       <div class="file_button">
         <!-- <p class="center">Upload Photo</p> -->
-        <%= f.file_field :before_photo_url %>
+        <%= f.file_field(:before_photo_url, :title => "heyoh") %>
       </div>
-  
+
       <div class="checkbox">
         <span>By checking this box you understand your mailing address will be given to your SMAC! Angel so they can ship your sock monkey to you!</span>
         <%= f.check_box :agree_to_terms %>
@@ -103,5 +103,5 @@
       <div class="actions">
         <%= f.submit 'Save', :class => "ctr_button request_submit" %>
       </div>
-    <% end %>  
+    <% end %>
 </div>
