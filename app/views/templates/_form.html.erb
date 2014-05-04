@@ -5,21 +5,21 @@
       <%= f.text_field :name, :class => 'text_field', :disabled => true %>
     </div>
   </div>
-  
+
   <div class="control-group">
     <div class="controls">
       <%= f.label :subject, :class => 'template-label' %>
       <%= f.text_field :subject, :class => 'text_field' %>
     </div>
   </div>
-  
+
   <div class="control-group">
     <div class="controls">
       <%= f.label :content, :class => 'template-label' %>
       <%= f.text_area :content, rows: 10, :class => 'text_area' %>
     </div>
   </div>
-  <p>You can use ((name)), ((email)), ((requestor)), ((monkey)), ((angel)) to substitue into the emails. Use carefully!</p>
+  <p>You can use ((name)), ((email)), ((requestor)), ((monkey)), ((angel)), ((request link)) to substitue into the emails. Use carefully!</p>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

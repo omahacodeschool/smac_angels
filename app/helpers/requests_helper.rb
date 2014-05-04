@@ -15,4 +15,31 @@ module RequestsHelper
     end
     return edited_story
   end
+
+
+  # Public : render_avatar(request)
+  # Takes an argument (the request in question) and renders an appropriate avatar.
+  #
+  # If the requestor's Smac Monkey has shipped, but they have not yet posted a photo,
+  # when the requestor views the request, their avatar will be a hidden form,
+  # prompting them to upload a photo with their smac monkey
+  #
+  # Example: render_avatar(request)
+  # returns <%= image tag with the correct url %>
+  def render_avatar(request)
+    if !request.after_photo_url.blank?
+      render partial: "avatar", locals: { link: request.after_photo_url_url(:thumb) }
+    else
+      if current_user.id == request.requestor_id && request.current_status >= 10
+        render partial: "upload_photo", locals: { request: request }
+      else
+        if !request.before_photo_url.blank?
+          render partial: "avatar", locals: { link: request.before_photo_url_url(:thumb) }
+        else
+          render partial: "avatar", locals: { link: "profile.png" }
+        end
+      end
+    end
+  end
+
 end

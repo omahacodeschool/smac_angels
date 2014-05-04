@@ -1,17 +1,17 @@
 class Email < ActiveRecord::Base
   attr_accessible :subject, :content, :request_id, :to_addresses
-  
+
   belongs_to :request
-  
-  # Public: 
-  # Create email object, 
+
+  # Public:
+  # Create email object,
   # Populate email with user info and template
   # Save email object and send email if save is successful
   #
   # Examples
   #
   # Email.new.send_email("Signup Confirmation", @user)
-  # This sends an email to @user 
+  # This sends an email to @user
   # with content from template named "Signup Confirmation"
   # def send_email(template_string, user)
   def send_email(*email_info)
@@ -25,10 +25,10 @@ class Email < ActiveRecord::Base
     end
     email.content = unique_email(email) #replace ((variables)) with "strings"
     if email.save
-      UserMailer.email_layout(email).deliver    
+      UserMailer.email_layout(email).deliver
     end
   end
-  
+
   # Public: Replaces text within ((parenthesis)) with corresponding data strings
   #
   # Examples
@@ -56,19 +56,23 @@ class Email < ActiveRecord::Base
       request = Request.find(email.request_id)
       requestor = User.find(request.requestor_id)
       email.content = email.content.gsub "((requestor))", requestor.fname
-      
+
       if request.sockmonkey_id
         sockmonkey = Sockmonkey.find(request.sockmonkey_id)
         email.content = email.content.gsub "((monkey))", sockmonkey.name
       end
 
-      if request.angel_id
-        angel = User.find(request.angel_id)
-        email.content = email.content.gsub "((angel))", angel.fname
-      end
+    if request.angel_id
+      angel = User.find(request.angel_id)
+      email.content = email.content.gsub "((angel))", angel.fname
+    end
+
+    if request.id
+      email.content = email.content.gsub "((request link))", "http://www.some_url.com/requests/#{request.id}"
+    end
 
     end
     email.content
   end
-  
+
 end
