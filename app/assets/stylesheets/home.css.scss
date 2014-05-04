@@ -6,7 +6,7 @@ $mac-lightgray: #E9E9E9;
 
 #controller_home{
   background: #FFF;
-  height: 700px;
+  height: 90%px;
   top: -60px; 
   position: relative;
   background-image: url("sockmonkey2.png");
@@ -15,6 +15,10 @@ $mac-lightgray: #E9E9E9;
   background-position: center;
   //background-size: 50%;
   //background-position: 650px 25px;
+}
+
+#homeMain{
+  height: 114%;
 }
 
 /* `Homepage banner
@@ -435,7 +439,7 @@ nav {
 //}
 
 #screen1 {
-  /*height: 99vh*/;
+  height: 90%;
 }
 
 nav a#pull {  
