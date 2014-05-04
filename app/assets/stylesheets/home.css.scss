@@ -316,13 +316,12 @@ $mac-lightgray: #E9E9E9;
 
 
 #f_img1{
-  background-image: url("feature1.jpg");
+  background-image: url("landing_page/12.jpg");
   width: 377px;
   height: 377px;
   border: 20px solid $mac-lightgray;
   border-radius: 100%;
-  background-position: 0px -100px;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   
   &:hover{
@@ -332,13 +331,12 @@ $mac-lightgray: #E9E9E9;
 }
 
 #f_img2{
-  background-image: url("feature2.jpg");
+  background-image: url("landing_page/7.jpg");
   width: 377px;
   height: 377px;
   border: 20px solid $mac-lightgray;
   border-radius: 100%;
-  background-position: 0px 0px;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   
   &:hover{
@@ -353,8 +351,7 @@ $mac-lightgray: #E9E9E9;
   height: 377px;
   border: 20px solid $mac-lightgray;
   border-radius: 100%;
-  background-position: 0px 0px;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   
   &:hover{

@@ -2,7 +2,10 @@
   <div class="row">
     <!-- placeholder for @request.requestor.fname -->
     <div class="large-4 large-centered small-12 small-centered columns">
-      <div class="content-small-padding">
+      <div class="avatar-banner">
+
+         <%= image_tag('generic-avatar.gif') %>
+
       </div>
     </div>
   </div>
@@ -41,7 +44,7 @@
       <% @requests.each do |request| %>
 
         <div class="content-small-padding"></div>
-        <div><%= image_tag(request.sockmonkey.image_url_url(:thumb), :class => "user-avatar-angel") %></div>
+        <div><%= image_tag(request.sockmonkey.image_url_url(:thumb), :class => "user-avatar monkey-circle") %></div>
         <div class="storytime content-small-padding"><%= request.sockmonkey.name %></div>
         
         <% if request.obo %>

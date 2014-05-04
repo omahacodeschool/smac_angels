@@ -95,18 +95,7 @@
           </div>
           <div class="opt_text center">
             <h2>Give</h2>
-            <p>Become an angel for someone in need. Agree to cover the cost for either Phoenix or NoMo to remind everyone that they aren't in this fight alone.</p>
-          </div>
-        </div>
-        
-        
-        <div id="opt2" class="large-4 columns">
-          <div class="opt_icon center">
-            <a href="<%= new_request_path %>" class="fa fa-heart" title="Give"></a>
-          </div>
-          <div class="opt_text center">
-            <h2>Nominate</h2>
-            <p>Know someone impacted by cancer? Nominate them to recieve a SMAC! monkey.</p>
+            <p>Become a SMAC! Angel for someone in need. Purchase a NoMo or Phoenix to remind those with cancer they aren't in this fight alone.</p>
           </div>
         </div>
         
@@ -116,9 +105,21 @@
           </div>
           <div class="opt_text center">
             <h2>Request</h2>
-            <p>Are you going through treatments? Want something personal to keep by your side? Request a sock monkey for yourself!</p>
+            <p>Need some SMAC! monkey mojo, love and comfort through your journey? Your own cancer-crushing companion by your side? Request a SMAC! monkey for yourself!</p>
           </div>
         </div>
+        
+        <div id="opt2" class="large-4 columns">
+          <div class="opt_icon center">
+            <a href="<%= new_request_path %>" class="fa fa-heart" title="Give"></a>
+          </div>
+          <div class="opt_text center">
+            <h2>Nominate</h2>
+            <p>Know someone with/impacted by cancer who could use a cuddly buddy? Nominate them to receive a SMAC! monkey.</p>
+          </div>
+        </div>
+        
+        
       </div>
     </div>
     
@@ -149,40 +150,47 @@
     <div class="features">
       <div class="row featurette">
         <div class="large-7 small-12 columns">
-          <h2 class="feature-heading-left"><span class="text-muted">Be an Angel! Give a sock monkey.</span></h2>
-          <p class="feature-text-left">Become an angel for someone in need. Agree to cover the cost for either Phoenix or NoMo to remind everyone that they aren't in this fight alone.</p>
+          <h2 class="feature-heading-left"><span class="text-muted">Become a SMAC! Angel for someone in need.</span></h2>
+          <p class="feature-text-left">"I became a SMAC! Angel and it felt so good the day I bought that monkey and I knew it was on its way to a lovely lady who wished for one!"</p>
+          <p class="feature-text-right">- Patti Shelton McComb</p>
         </div>
         <a href="<%= requests_path %>"><div id="f_img1" class="large-5 small-12 columns">
           <!-- <%= link_to "Give", requests_path %> -->
           <!-- Background image is in css style -->
         </div></a>
       </div>
-
+      
       <div class="feature-divider"></div>
 
       <div class="row featurette">
         <a href="<%= new_request_path(:nominate => true) %>"><div id="f_img2" class="large-5 small-12 columns">
-          <!-- Background image is in css style -->
+        <!-- Background image is in css style -->
         </div></a>
+        
         <div class="large-7 small-12 columns">
-          <h2 class="feature-heading-right"><span class="text-muted">Nominate someone you know.</span></h2>
-          <p class="feature-text-right">Know someone impacted by cancer? Nominate them to recieve a SMAC! monkey. Once we match them up with an angel, they'll recieve their own sock monkey to keep with them during those rough days.</p>
+          <h2 class="feature-heading-right"><span class="text-muted">Do you want a SMAC! monkey?</span></h2>
+          <p class="feature-text-left">Want a cuddly cancer-crushing companion of your own? Request a SMAC! monkey for yourself! Once we match you up with an Angel, you'll receive your very own SMAC! monkey!</p>
+
+          <p class="feature-text-left">"My 'Phoenix' gift meant A LOT to me. Makes a stranger feel loved."</p>
+          <p class="feature-text-right">- Jami Thompson</p>
         </div>
+        
       </div>
+
+      <div class="feature-divider"></div>
 
       <div class="feature-divider"></div>
 
       <div class="row featurette">
         <div class="large-7 small-12 columns">
-          <h2 class="feature-heading-left"><span class="text-muted">Do you want a sock monkey?</span></h2>
-          <p class="feature-text-left">Are you going through treatments? Want something personal to keep by your side? Can't afford a SMAC! monkey? Request a sock monkey for yourself! Once we match you up with an angel, you'll recieve your very own sock monkey!</p>
+          <h2 class="feature-heading-left"><span class="text-muted">Nominate someone you know.</span></h2>
+          <p class="feature-text-left">Know someone with/impacted by cancer who could use a creature comfort? Nominate them to receive a SMAC! monkey.
+Once we match them up with an Angel, they'll receive their own SMAC! monkey to keep by their side during those tough days.</p>
         </div>
         <a href="<%= new_request_path %>"><div id="f_img3" class="large-5 small-12 columns">
           <!-- Background image is in css style -->
         </div></a>
       </div>
-
-    </div>
 
 </section>
     
