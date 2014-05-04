@@ -163,7 +163,7 @@ Sockmonkey.create([
   },{
   cancertype: 'Lung',
   description: "Hi! My name is Phoenix.  I am proud to be the very first custom SMAC! monkey.  I fight lung cancer.  The whole SMAC! monkey idea was inspired by Leslie Lehrman's journey with Stage IV lung cancer.  No, she never smoked.  ANYONE can get lung cancer.",
-  favcolor: 'Red',
+  favcolor: 'White/Pearl',
   remote_image_url_url: 'https://smacangels.s3.amazonaws.com/uploads/sockmonkey/image_url/3/Phoenix_big.png',
   name: 'Phoenix'  
   }
