@@ -4,6 +4,15 @@ $mac-darkgray: #424242;
 $mac-gray: #BCBCBC;
 $mac-lightgray: #E9E9E9;
 
+#request_after_photo_url{
+  background: url("uploadmonkeyphoto.jpg");
+  display:none;
+}
+
+.upload_photo{
+  cursor:pointer;
+}
+
 .unavailable_option{
   color:#777;
 }
@@ -60,7 +69,7 @@ $mac-lightgray: #E9E9E9;
 
 .full-width-requests{
   width: 100%;
-  max-width: 100%; 
+  max-width: 100%;
   margin-top:-20px;
 }
 
@@ -94,12 +103,12 @@ $mac-lightgray: #E9E9E9;
   transition: all 1s ease;
   opacity: 0.5;
   overflow: hidden;
-  
+
   &:hover {
     opacity: 1;
     color: #3299BB;
   }
-  
+
   p{
     color: #E9E9E9;
   }
@@ -107,7 +116,7 @@ $mac-lightgray: #E9E9E9;
 .request img {
   border: 3px solid #fff;
   transition: all 1s ease;
-  
+
   &:hover {
     -webkit-transform: scale(1.1);
     border: 3px solid #f1712f;
@@ -124,14 +133,14 @@ $mac-lightgray: #E9E9E9;
   color: #F39A7E;
   font-size: 80px;
   margin: 0 20px;
-  
+
   &:hover {
     color: #FFF;
   }
 }
 
 
- 
+
 .fa-twitter {
   font-family: FontAwesome;
   font-style: normal;
@@ -140,12 +149,12 @@ $mac-lightgray: #E9E9E9;
   color: #F39A7E;
   font-size: 80px;
   margin:0 20px;
-  
+
   &:hover {
     color: #FFF;
   }
 }
- 
+
 .fa-pinterest {
   font-family: FontAwesome;
   font-style: normal;
@@ -154,12 +163,12 @@ $mac-lightgray: #E9E9E9;
   color: #F39A7E;
   font-size: 80px;
   margin:0 20px;
-  
+
   &:hover {
     color:#FFF;
   }
 }
- 
+
 .fa-shopping-cart {
   font-family: FontAwesome;
   font-style: normal;
@@ -168,7 +177,7 @@ $mac-lightgray: #E9E9E9;
   color: #F39A7E;
   font-size: 80px;
   margin:0 20px;
-  
+
   &:hover {
     color: #FFF;
   }
@@ -182,7 +191,7 @@ $mac-lightgray: #E9E9E9;
   color: #E9E9E9;
   font-size: 200px;
   margin-top: -15px;
-  
+
   &:hover {
     color: #E9E9E9;
   }
@@ -190,7 +199,7 @@ $mac-lightgray: #E9E9E9;
 
 // Submit Buttons ------------------------------------------------------------------------
 
-input[type=text].submit-button {padding:5px; border:2px solid #ccc; 
+input[type=text].submit-button {padding:5px; border:2px solid #ccc;
 -webkit-border-radius: 5px;
     border-radius: 5px;
 }
@@ -205,7 +214,7 @@ input[type=submit].submit-button {
     background-color:white;
     transition-property: all;
     transition-duration: .8s;
-    
+
     &:hover {
       color: #FFF;
       background-color:#3299BB;
@@ -228,8 +237,8 @@ input[type=submit].submit-button {
 }
 
 @media screen and (max-width: 600px) {
-  
-  .fa-facebook-square, 
+
+  .fa-facebook-square,
   .fa-twitter,
   .fa-pinterest,
   .fa-shopping-cart
@@ -243,7 +252,7 @@ input[type=submit].submit-button {
 //Admin Controls -------------------------------------------------------------------------------
 
 .full-width-admin{
-  max-width: 100%; 
+  max-width: 100%;
   margin-top:-20px;
   background:#424242;
 }
@@ -255,7 +264,7 @@ input[type=submit].submit-button {
   color:#BCBCBC;
   transition-property: all;
   transition-duration: .8s;
-  
+
   &:hover{
   color:#FFF;
 }
@@ -295,7 +304,7 @@ input[type=submit].submit-button {
 .status_log tr:nth-child(even){
   background-color: rgba(0,150,225,0.2);
 }
-    
+
 // Tables -------------------------------------------------------------------------------------------
 
 table {

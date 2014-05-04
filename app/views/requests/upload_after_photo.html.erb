@@ -1,0 +1,15 @@
+<div class="request-background">
+<%= form_for request do |f| %>  
+  <%= f.hidden_field :requestor_id, :value => session[:user_id] %>
+    <p class="center">Share an 'after' photo!</p>
+    <div class="file_button">
+      <!-- <p class="center">Upload After Photo</p> -->
+      <%= f.file_field :after_photo_url %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Save', :class => "ctr_button request_submit" %>
+  </div>
+<% end %>  
+</div>
