@@ -71,7 +71,7 @@
           </div>
           
           <div class="large-3 small-3 columns">
-            <% if angel.before_photo_url %>
+            <% if !angel.before_photo_url.blank? %>
               <%= image_tag(angel.before_photo_url_url(:thumb), :class => "user-avatar-angel") %>
             <% else %>
               <%= image_tag("profile.png", :class => "user-avatar-angel") %>
