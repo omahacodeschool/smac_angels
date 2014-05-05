@@ -16,7 +16,7 @@
     <% @emails.each do |email| %>
       <tr>
         <td class="content-right-padding"><h1><%= link_to email.id, email_path(email) %></h1></td>
-        <td class="content-right-padding"><%= email.request.requestor.shortname %></td>
+        <td class="content-right-padding"><%= email.request.requestor.shortname if email.request.requestor %></td>
         <td class="content-right-padding"><%= email.to_addresses %></td>
         <td class="content-right-padding"><%= email.content[0..40] %>...</td>
         <td class="content-right-padding"><%= email.created_at.strftime("%b %d, %Y") %></td>
