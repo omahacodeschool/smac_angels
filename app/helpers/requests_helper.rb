@@ -30,7 +30,7 @@ module RequestsHelper
     if !request.after_photo_url.blank?
       render partial: "avatar", locals: { link: request.after_photo_url_url(:thumb) }
     else
-      if current_user.id == request.requestor_id && request.current_status >= 10
+      if current_user && current_user.id == request.requestor_id && request.current_status >= 10
         render partial: "upload_photo", locals: { request: request }
       else
         if !request.before_photo_url.blank?
